@@ -1,1 +1,1 @@
-# ⚡ zeus-api ⚽️
+<h1 align="center">⚡ zeus-api ⚽️</h1>

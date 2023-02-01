@@ -3,7 +3,6 @@ const fs = require('fs');
 const { clickCmp } = require("puppeteer-cmp-clicker");
 
 // TODO: 
-// - Pasar los strings de numeros a numeros normales
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
 // - Tocar los "form"
 // - Organizar código

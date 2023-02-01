@@ -8,21 +8,22 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
 // - Organizar código
 
 (async () => {
+    const URLS = {
+        england: "https://www.flashscore.com/football/england/premier-league/standings/",
+        spain: "https://www.flashscore.com/football/spain/laliga/standings/",
+        france: "https://www.flashscore.com/football/france/ligue-1/standings/",
+        italy: "https://www.flashscore.com/football/italy/serie-a/standings/",
+        germany: "https://www.flashscore.com/football/germany/bundesliga/standings/"
+    }
     const browser = await pupet.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
-
-    // https://www.flashscore.com/football/england/premier-league/standings/
-    // https://www.flashscore.com/football/spain/laliga/standings/
-    // https://www.flashscore.com/football/france/ligue-1/standings/
-    // https://www.flashscore.com/football/italy/serie-a/standings/
-    // https://www.flashscore.com/football/germany/bundesliga/standings/
-    await page.goto('https://www.flashscore.com/football/spain/laliga/standings/', { waitUntil: "domcontentloaded" });
-    let res = await clickCmp({ page });
-
+    
+    await page.goto(URLS.spain, { waitUntil: "domcontentloaded" });
     await page.waitForSelector('.ui-table__body', { visible: true });
 
+    // CREATE A FUNCTION
     const result = await page.evaluate(() => {
         const json = {};
         json.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
@@ -40,10 +41,10 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
             numRow++;
             const tmp = {};
             element.querySelectorAll('.table__cell--value').innerText;
-            if(numRow < 10) {
-                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0,1));
+            if (numRow < 10) {
+                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 1));
             } else {
-                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0,2));
+                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 2));
             }
             tmp.team = element.querySelector('.tableCellParticipant__name').innerText;
             tmp.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
@@ -88,5 +89,3 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
     });
     await browser.close();
 })();
-
-

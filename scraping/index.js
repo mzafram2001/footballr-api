@@ -6,7 +6,6 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
 // - Tocar los "form"
 // - Organizar código
-// - Crear nueva carpeta
 
 (async () => {
     const browser = await pupet.launch({

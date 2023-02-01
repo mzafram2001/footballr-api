@@ -29,9 +29,9 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
         const json = {};
         json.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
         json.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText
-        json.yearStart = json.yearStart.substring(0, 4);
+        json.yearStart = parseInt(json.yearStart.substring(0, 4));
         json.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText
-        json.yearEnd = json.yearEnd.substring(5, json.yearStart - 1);
+        json.yearEnd = parseInt(json.yearEnd.substring(5, json.yearStart - 1));
         json.standings = [];
         var numRow = 0;
 
@@ -43,19 +43,19 @@ const { clickCmp } = require("puppeteer-cmp-clicker");
             const tmp = {};
             element.querySelectorAll('.table__cell--value').innerText;
             if(numRow < 10) {
-                tmp.position = element.querySelector('.tableCellRank').innerText.substring(0,1);
+                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0,1));
             } else {
-                tmp.position = element.querySelector('.tableCellRank').innerText.substring(0,2);
+                tmp.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0,2));
             }
             tmp.team = element.querySelector('.tableCellParticipant__name').innerText;
-            tmp.playedGames = element.querySelector('.table__cell--value').innerText;
-            tmp.wins = document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText;
-            tmp.draws = document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText;
-            tmp.loses = document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText;
-            tmp.goalsFor = element.querySelector('.table__cell--score').innerText.substring(0, 2);
-            tmp.goalsAgainst = element.querySelector('.table__cell--score').innerText.substring(3, 5);
-            tmp.goalsDifference = (parseInt(tmp.goalsFor) - parseInt(tmp.goalsAgainst)).toString();
-            tmp.points = element.querySelector('.table__cell--points').innerText;
+            tmp.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
+            tmp.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
+            tmp.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
+            tmp.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
+            tmp.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+            tmp.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+            tmp.goalsDifference = parseInt(tmp.goalsFor) - parseInt(tmp.goalsAgainst);
+            tmp.points = parseInt(element.querySelector('.table__cell--points').innerText);
             tmp.form = [];
             for (var i = 2; i < 7; i++) {
                 const tmp2 = {};

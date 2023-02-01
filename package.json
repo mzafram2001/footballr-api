@@ -19,5 +19,11 @@
   "dependencies": {
     "puppeteer": "^19.6.3",
     "puppeteer-cmp-clicker": "^1.0.3"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
   }
 }

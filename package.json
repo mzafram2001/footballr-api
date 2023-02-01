@@ -1,0 +1,23 @@
+{
+  "name": "zeus-api",
+  "version": "1.0.0",
+  "description": "Football API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzafram2001/zeus-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzafram2001/zeus-api/issues"
+  },
+  "homepage": "https://github.com/mzafram2001/zeus-api#readme",
+  "dependencies": {
+    "puppeteer": "^19.6.3",
+    "puppeteer-cmp-clicker": "^1.0.3"
+  }
+}

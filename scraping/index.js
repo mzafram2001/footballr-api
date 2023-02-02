@@ -72,7 +72,7 @@ async function getStandings(url) {
         return JSON;
     });
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = "standingsLaLigaFlashcore.json";
+        case "LaLiga": var fileLocation = "./results/standingsLaLigaFlashcore.json";
             break;
         case "Bundesliga": var fileLocation = "./results/standings/standingsBundesligaFlashcore.json";
             break;

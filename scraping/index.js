@@ -27,12 +27,14 @@ async function getStandings(url) {
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
         JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
-        JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText
+        JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
         JSON.yearStart = parseInt(JSON.yearStart.substring(0, 4));
-        JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText
+        JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
         JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
         JSON.standings = [];
         var numRow = 0;
+        var dumpString;
+        var dumpStringArray;
         const ROWS = document.querySelectorAll('.ui-table__row  ');
         console.log(ROWS);
         ROWS.forEach(element => {
@@ -45,9 +47,11 @@ async function getStandings(url) {
                 TMP.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 2));
             }
             TMP.team = {};
-            TMP.team.id = "NOT_FINISHED";
+            dumpString = element.querySelector('.tableCellParticipant__image').getAttribute('href');
+            dumpStringArray = dumpString.split('/');
+            TMP.team.id = dumpStringArray[3];
             TMP.team.name = element.querySelector('.tableCellParticipant__name').innerText;
-            TMP.team.crest = "NOT_FINISHED";
+            TMP.team.crest = TMP.team.id + ".png";
             TMP.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
             TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
             TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);

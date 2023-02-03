@@ -27,15 +27,15 @@
                 "name": "Real Madrid",
                 "crest": "W8mj7MDD.png"
             },
-            "playedGames": 18,
-            "wins": 13,
+            "playedGames": 19,
+            "wins": 14,
             "draws": 3,
             "loses": 2,
-            "goalsFor": 38,
+            "goalsFor": 40,
             "goalsAgainst": 16,
-            "goalDifference": 22,
-            "points": 42,
-            "form": "D,W,L,W,W"
+            "goalDifference": 24,
+            "points": 45,
+            "form": "W,D,W,L,W"
         },
         {
             "position": 3,
@@ -108,6 +108,23 @@
         {
             "position": 7,
             "team": {
+                "id": "IP5zl0cJ",
+                "name": "Ath Bilbao",
+                "crest": "IP5zl0cJ.png"
+            },
+            "playedGames": 20,
+            "wins": 8,
+            "draws": 5,
+            "loses": 7,
+            "goalsFor": 29,
+            "goalsAgainst": 21,
+            "goalDifference": 8,
+            "points": 29,
+            "form": "W,L,L,L,D"
+        },
+        {
+            "position": 8,
+            "team": {
                 "id": "8bcjFy6O",
                 "name": "Rayo Vallecano",
                 "crest": "8bcjFy6O.png"
@@ -123,7 +140,7 @@
             "form": "W,L,W,L,D"
         },
         {
-            "position": 8,
+            "position": 9,
             "team": {
                 "id": "ETdxjU8a",
                 "name": "Osasuna",
@@ -138,23 +155,6 @@
             "goalDifference": 0,
             "points": 28,
             "form": "L,D,W,D,L"
-        },
-        {
-            "position": 9,
-            "team": {
-                "id": "IP5zl0cJ",
-                "name": "Ath Bilbao",
-                "crest": "IP5zl0cJ.png"
-            },
-            "playedGames": 19,
-            "wins": 7,
-            "draws": 5,
-            "loses": 7,
-            "goalsFor": 25,
-            "goalsAgainst": 20,
-            "goalDifference": 5,
-            "points": 26,
-            "form": "L,L,L,D,D"
         },
         {
             "position": 10,
@@ -231,15 +231,15 @@
                 "name": "Valencia",
                 "crest": "CQeaytrD.png"
             },
-            "playedGames": 18,
+            "playedGames": 19,
             "wins": 5,
             "draws": 5,
-            "loses": 8,
+            "loses": 9,
             "goalsFor": 25,
-            "goalsAgainst": 21,
-            "goalDifference": 4,
+            "goalsAgainst": 23,
+            "goalDifference": 2,
             "points": 20,
-            "form": "L,D,L,L,W"
+            "form": "L,L,D,L,L"
         },
         {
             "position": 15,
@@ -299,15 +299,15 @@
                 "name": "Cadiz CF",
                 "crest": "hdWjLJUJ.png"
             },
-            "playedGames": 19,
+            "playedGames": 20,
             "wins": 4,
             "draws": 7,
-            "loses": 8,
-            "goalsFor": 14,
-            "goalsAgainst": 29,
-            "goalDifference": -15,
+            "loses": 9,
+            "goalsFor": 15,
+            "goalsAgainst": 33,
+            "goalDifference": -18,
             "points": 19,
-            "form": "W,L,D,W,D"
+            "form": "L,W,L,D,W"
         },
         {
             "position": 19,

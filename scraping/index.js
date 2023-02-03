@@ -1,6 +1,5 @@
 const PUPPETER = require('puppeteer');
 const FS = require('fs');
-// const CLICKCMP = require("puppeteer-cmp-clicker");
 
 // TODO: 
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
@@ -94,4 +93,4 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.spain);
+getStandings(URLS.france);

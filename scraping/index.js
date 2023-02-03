@@ -3,7 +3,6 @@ const FS = require('fs');
 // const CLICKCMP = require("puppeteer-cmp-clicker");
 
 // TODO: 
-// - Tocar los "form"
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
 // - Organizar código
 

@@ -1,1 +1,347 @@
-{"name":"Serie A","yearStart":2022,"yearEnd":2023,"standings":[{"position":1,"team":{"id":"69Dxbc61","name":"Napoli","crest":"69Dxbc61.png"},"playedGames":20,"wins":17,"draws":2,"loses":1,"goalsFor":48,"goalsAgainst":15,"goalDifference":33,"points":53,"form":"W,W,W,W,L"},{"position":2,"team":{"id":"Iw7eKK25","name":"Inter","crest":"Iw7eKK25.png"},"playedGames":20,"wins":13,"draws":1,"loses":6,"goalsFor":40,"goalsAgainst":26,"goalDifference":14,"points":40,"form":"W,L,W,D,W"},{"position":3,"team":{"id":"URcSl02h","name":"Lazio","crest":"URcSl02h.png"},"playedGames":20,"wins":11,"draws":5,"loses":4,"goalsFor":36,"goalsAgainst":16,"goalDifference":20,"points":38,"form":"D,W,W,D,L"},{"position":4,"team":{"id":"8C9JjMXu","name":"Atalanta","crest":"8C9JjMXu.png"},"playedGames":20,"wins":11,"draws":5,"loses":4,"goalsFor":39,"goalsAgainst":23,"goalDifference":16,"points":38,"form":"W,D,W,W,D"},{"position":5,"team":{"id":"8Sa8HInO","name":"AC Milan","crest":"8Sa8HInO.png"},"playedGames":20,"wins":11,"draws":5,"loses":4,"goalsFor":37,"goalsAgainst":29,"goalDifference":8,"points":38,"form":"L,L,D,D,W"},{"position":6,"team":{"id":"zVqqL0ma","name":"AS Roma","crest":"zVqqL0ma.png"},"playedGames":20,"wins":11,"draws":4,"loses":5,"goalsFor":26,"goalsAgainst":18,"goalDifference":8,"points":37,"form":"L,W,W,D,W"},{"position":7,"team":{"id":"rXw8YKDE","name":"Udinese","crest":"rXw8YKDE.png"},"playedGames":20,"wins":7,"draws":8,"loses":5,"goalsFor":28,"goalsAgainst":22,"goalDifference":6,"points":29,"form":"D,W,L,L,D"},{"position":8,"team":{"id":"MZFZnvX4","name":"Torino","crest":"MZFZnvX4.png"},"playedGames":20,"wins":7,"draws":6,"loses":7,"goalsFor":21,"goalsAgainst":22,"goalDifference":-1,"points":27,"form":"D,W,L,D,D"},{"position":9,"team":{"id":"0M9xNN8N","name":"Bologna","crest":"0M9xNN8N.png"},"playedGames":20,"wins":7,"draws":5,"loses":8,"goalsFor":26,"goalsAgainst":30,"goalDifference":-4,"points":26,"form":"W,D,W,L,L"},{"position":10,"team":{"id":"0ESCnI1H","name":"Empoli","crest":"0ESCnI1H.png"},"playedGames":20,"wins":6,"draws":8,"loses":6,"goalsFor":19,"goalsAgainst":24,"goalDifference":-5,"points":26,"form":"D,W,W,D,D"},{"position":11,"team":{"id":"4YSMlwj7","name":"Monza","crest":"4YSMlwj7.png"},"playedGames":20,"wins":7,"draws":4,"loses":9,"goalsFor":25,"goalsAgainst":28,"goalDifference":-3,"points":25,"form":"W,D,W,D,D"},{"position":12,"team":{"id":"Q3A3IbXH","name":"Fiorentina","crest":"Q3A3IbXH.png"},"playedGames":20,"wins":6,"draws":6,"loses":8,"goalsFor":22,"goalsAgainst":26,"goalDifference":-4,"points":24,"form":"D,L,L,W,D"},{"position":13,"team":{"id":"C06aJvIB","name":"Juventus","crest":"C06aJvIB.png"},"playedGames":20,"wins":11,"draws":5,"loses":4,"goalsFor":30,"goalsAgainst":17,"goalDifference":13,"points":23,"form":"L,D,L,W,W"},{"position":14,"team":{"id":"Mq05g4BP","name":"Salernitana","crest":"Mq05g4BP.png"},"playedGames":20,"wins":5,"draws":6,"loses":9,"goalsFor":25,"goalsAgainst":38,"goalDifference":-13,"points":21,"form":"W,L,L,D,L"},{"position":15,"team":{"id":"G8lYsMgU","name":"Lecce","crest":"G8lYsMgU.png"},"playedGames":20,"wins":4,"draws":8,"loses":8,"goalsFor":19,"goalsAgainst":24,"goalDifference":-5,"points":20,"form":"L,L,D,D,W"},{"position":16,"team":{"id":"QDdvI0zl","name":"Sassuolo","crest":"QDdvI0zl.png"},"playedGames":20,"wins":5,"draws":5,"loses":10,"goalsFor":23,"goalsAgainst":31,"goalDifference":-8,"points":20,"form":"W,D,L,L,L"},{"position":17,"team":{"id":"re6VD39b","name":"Spezia","crest":"re6VD39b.png"},"playedGames":20,"wins":4,"draws":6,"loses":10,"goalsFor":17,"goalsAgainst":32,"goalDifference":-15,"points":18,"form":"L,L,W,D,D"},{"position":18,"team":{"id":"rJVAIaHo","name":"Verona","crest":"rJVAIaHo.png"},"playedGames":20,"wins":3,"draws":4,"loses":13,"goalsFor":18,"goalsAgainst":32,"goalDifference":-14,"points":13,"form":"D,W,L,W,D"},{"position":19,"team":{"id":"nJbCGx2U","name":"Sampdoria","crest":"nJbCGx2U.png"},"playedGames":20,"wins":2,"draws":3,"loses":15,"goalsFor":8,"goalsAgainst":4,"goalDifference":4,"points":9,"form":"L,L,L,L,W"},{"position":20,"team":{"id":"KUzfp5N3","name":"Cremonese","crest":"KUzfp5N3.png"},"playedGames":20,"wins":0,"draws":8,"loses":12,"goalsFor":15,"goalsAgainst":35,"goalDifference":-20,"points":8,"form":"L,D,L,L,L"}]}
+{
+    "name": "Serie A",
+    "yearStart": 2022,
+    "yearEnd": 2023,
+    "standings": [
+        {
+            "position": 1,
+            "team": {
+                "id": "69Dxbc61",
+                "name": "Napoli",
+                "crest": "69Dxbc61.png"
+            },
+            "playedGames": 20,
+            "wins": 17,
+            "draws": 2,
+            "loses": 1,
+            "goalsFor": 48,
+            "goalsAgainst": 15,
+            "goalDifference": 33,
+            "points": 53,
+            "form": "W,W,W,W,L"
+        },
+        {
+            "position": 2,
+            "team": {
+                "id": "Iw7eKK25",
+                "name": "Inter",
+                "crest": "Iw7eKK25.png"
+            },
+            "playedGames": 20,
+            "wins": 13,
+            "draws": 1,
+            "loses": 6,
+            "goalsFor": 40,
+            "goalsAgainst": 26,
+            "goalDifference": 14,
+            "points": 40,
+            "form": "W,L,W,D,W"
+        },
+        {
+            "position": 3,
+            "team": {
+                "id": "URcSl02h",
+                "name": "Lazio",
+                "crest": "URcSl02h.png"
+            },
+            "playedGames": 20,
+            "wins": 11,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 36,
+            "goalsAgainst": 16,
+            "goalDifference": 20,
+            "points": 38,
+            "form": "D,W,W,D,L"
+        },
+        {
+            "position": 4,
+            "team": {
+                "id": "8C9JjMXu",
+                "name": "Atalanta",
+                "crest": "8C9JjMXu.png"
+            },
+            "playedGames": 20,
+            "wins": 11,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 39,
+            "goalsAgainst": 23,
+            "goalDifference": 16,
+            "points": 38,
+            "form": "W,D,W,W,D"
+        },
+        {
+            "position": 5,
+            "team": {
+                "id": "8Sa8HInO",
+                "name": "AC Milan",
+                "crest": "8Sa8HInO.png"
+            },
+            "playedGames": 20,
+            "wins": 11,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 37,
+            "goalsAgainst": 29,
+            "goalDifference": 8,
+            "points": 38,
+            "form": "L,L,D,D,W"
+        },
+        {
+            "position": 6,
+            "team": {
+                "id": "zVqqL0ma",
+                "name": "AS Roma",
+                "crest": "zVqqL0ma.png"
+            },
+            "playedGames": 20,
+            "wins": 11,
+            "draws": 4,
+            "loses": 5,
+            "goalsFor": 26,
+            "goalsAgainst": 18,
+            "goalDifference": 8,
+            "points": 37,
+            "form": "L,W,W,D,W"
+        },
+        {
+            "position": 7,
+            "team": {
+                "id": "rXw8YKDE",
+                "name": "Udinese",
+                "crest": "rXw8YKDE.png"
+            },
+            "playedGames": 20,
+            "wins": 7,
+            "draws": 8,
+            "loses": 5,
+            "goalsFor": 28,
+            "goalsAgainst": 22,
+            "goalDifference": 6,
+            "points": 29,
+            "form": "D,W,L,L,D"
+        },
+        {
+            "position": 8,
+            "team": {
+                "id": "MZFZnvX4",
+                "name": "Torino",
+                "crest": "MZFZnvX4.png"
+            },
+            "playedGames": 20,
+            "wins": 7,
+            "draws": 6,
+            "loses": 7,
+            "goalsFor": 21,
+            "goalsAgainst": 22,
+            "goalDifference": -1,
+            "points": 27,
+            "form": "D,W,L,D,D"
+        },
+        {
+            "position": 9,
+            "team": {
+                "id": "0M9xNN8N",
+                "name": "Bologna",
+                "crest": "0M9xNN8N.png"
+            },
+            "playedGames": 20,
+            "wins": 7,
+            "draws": 5,
+            "loses": 8,
+            "goalsFor": 26,
+            "goalsAgainst": 30,
+            "goalDifference": -4,
+            "points": 26,
+            "form": "W,D,W,L,L"
+        },
+        {
+            "position": 10,
+            "team": {
+                "id": "0ESCnI1H",
+                "name": "Empoli",
+                "crest": "0ESCnI1H.png"
+            },
+            "playedGames": 20,
+            "wins": 6,
+            "draws": 8,
+            "loses": 6,
+            "goalsFor": 19,
+            "goalsAgainst": 24,
+            "goalDifference": -5,
+            "points": 26,
+            "form": "D,W,W,D,D"
+        },
+        {
+            "position": 11,
+            "team": {
+                "id": "4YSMlwj7",
+                "name": "Monza",
+                "crest": "4YSMlwj7.png"
+            },
+            "playedGames": 20,
+            "wins": 7,
+            "draws": 4,
+            "loses": 9,
+            "goalsFor": 25,
+            "goalsAgainst": 28,
+            "goalDifference": -3,
+            "points": 25,
+            "form": "W,D,W,D,D"
+        },
+        {
+            "position": 12,
+            "team": {
+                "id": "Q3A3IbXH",
+                "name": "Fiorentina",
+                "crest": "Q3A3IbXH.png"
+            },
+            "playedGames": 20,
+            "wins": 6,
+            "draws": 6,
+            "loses": 8,
+            "goalsFor": 22,
+            "goalsAgainst": 26,
+            "goalDifference": -4,
+            "points": 24,
+            "form": "D,L,L,W,D"
+        },
+        {
+            "position": 13,
+            "team": {
+                "id": "C06aJvIB",
+                "name": "Juventus",
+                "crest": "C06aJvIB.png"
+            },
+            "playedGames": 20,
+            "wins": 11,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 30,
+            "goalsAgainst": 17,
+            "goalDifference": 13,
+            "points": 23,
+            "form": "L,D,L,W,W"
+        },
+        {
+            "position": 14,
+            "team": {
+                "id": "Mq05g4BP",
+                "name": "Salernitana",
+                "crest": "Mq05g4BP.png"
+            },
+            "playedGames": 20,
+            "wins": 5,
+            "draws": 6,
+            "loses": 9,
+            "goalsFor": 25,
+            "goalsAgainst": 38,
+            "goalDifference": -13,
+            "points": 21,
+            "form": "W,L,L,D,L"
+        },
+        {
+            "position": 15,
+            "team": {
+                "id": "G8lYsMgU",
+                "name": "Lecce",
+                "crest": "G8lYsMgU.png"
+            },
+            "playedGames": 20,
+            "wins": 4,
+            "draws": 8,
+            "loses": 8,
+            "goalsFor": 19,
+            "goalsAgainst": 24,
+            "goalDifference": -5,
+            "points": 20,
+            "form": "L,L,D,D,W"
+        },
+        {
+            "position": 16,
+            "team": {
+                "id": "QDdvI0zl",
+                "name": "Sassuolo",
+                "crest": "QDdvI0zl.png"
+            },
+            "playedGames": 20,
+            "wins": 5,
+            "draws": 5,
+            "loses": 10,
+            "goalsFor": 23,
+            "goalsAgainst": 31,
+            "goalDifference": -8,
+            "points": 20,
+            "form": "W,D,L,L,L"
+        },
+        {
+            "position": 17,
+            "team": {
+                "id": "re6VD39b",
+                "name": "Spezia",
+                "crest": "re6VD39b.png"
+            },
+            "playedGames": 20,
+            "wins": 4,
+            "draws": 6,
+            "loses": 10,
+            "goalsFor": 17,
+            "goalsAgainst": 32,
+            "goalDifference": -15,
+            "points": 18,
+            "form": "L,L,W,D,D"
+        },
+        {
+            "position": 18,
+            "team": {
+                "id": "rJVAIaHo",
+                "name": "Verona",
+                "crest": "rJVAIaHo.png"
+            },
+            "playedGames": 20,
+            "wins": 3,
+            "draws": 4,
+            "loses": 13,
+            "goalsFor": 18,
+            "goalsAgainst": 32,
+            "goalDifference": -14,
+            "points": 13,
+            "form": "D,W,L,W,D"
+        },
+        {
+            "position": 19,
+            "team": {
+                "id": "nJbCGx2U",
+                "name": "Sampdoria",
+                "crest": "nJbCGx2U.png"
+            },
+            "playedGames": 20,
+            "wins": 2,
+            "draws": 3,
+            "loses": 15,
+            "goalsFor": 8,
+            "goalsAgainst": 4,
+            "goalDifference": 4,
+            "points": 9,
+            "form": "L,L,L,L,W"
+        },
+        {
+            "position": 20,
+            "team": {
+                "id": "KUzfp5N3",
+                "name": "Cremonese",
+                "crest": "KUzfp5N3.png"
+            },
+            "playedGames": 20,
+            "wins": 0,
+            "draws": 8,
+            "loses": 12,
+            "goalsFor": 15,
+            "goalsAgainst": 35,
+            "goalDifference": -20,
+            "points": 8,
+            "form": "L,D,L,L,L"
+        }
+    ]
+}

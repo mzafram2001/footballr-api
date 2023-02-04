@@ -73,13 +73,13 @@ async function getStandings(url) {
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = path.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
             break;
-        case "Bundesliga": var fileLocation = "./results/standingsBundesligaFlashcore.json";
+        case "Bundesliga": var fileLocation = path.join(process.cwd(), "./db/standingsBundesligaFlashcore.json");
             break;
-        case "Serie A": var fileLocation = "./results/standingsSerieAFlashcore.json";
+        case "Serie A": var fileLocation = path.join(process.cwd(), "./db/standingsSerieAFlashcore.json");
             break;
-        case "Ligue 1": var fileLocation = "./results/standingsLigue1Flashcore.json";
+        case "Ligue 1": var fileLocation = path.join(process.cwd(), "./db/standingsLigue1Flashcore.json");
             break;
-        case "Premier League": var fileLocation = "./results/standingsPremierLeagueFlashcore.json";
+        case "Premier League": var fileLocation = path.join(process.cwd(), "./db/standingsPremierLeagueFlashcore.json");
             break;
     }
 

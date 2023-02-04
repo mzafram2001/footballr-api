@@ -1,5 +1,6 @@
 const PUPPETER = require('puppeteer');
 const FS = require('fs');
+const path = require('path');
 
 // TODO: 
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
@@ -70,7 +71,7 @@ async function getStandings(url) {
         return JSON;
     });
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = "./results/standingsLaLigaFlashcore.json";
+        case "LaLiga": var fileLocation = path.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
             break;
         case "Bundesliga": var fileLocation = "./results/standingsBundesligaFlashcore.json";
             break;

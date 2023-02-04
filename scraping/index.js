@@ -1,6 +1,6 @@
 const PUPPETER = require('puppeteer');
 const FS = require('fs');
-const path = require('path');
+const PATH = require('path');
 
 // TODO: 
 // - Reorganizar esquema de JSON como MiduDev (y repo y todo)
@@ -72,15 +72,15 @@ async function getStandings(url) {
         return JSON;
     });
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = path.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
+        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
             break;
-        case "Bundesliga": var fileLocation = path.join(process.cwd(), "./db/standingsBundesligaFlashcore.json");
+        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/standingsBundesligaFlashcore.json");
             break;
-        case "Serie A": var fileLocation = path.join(process.cwd(), "./db/standingsSerieAFlashcore.json");
+        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/standingsSerieAFlashcore.json");
             break;
-        case "Ligue 1": var fileLocation = path.join(process.cwd(), "./db/standingsLigue1Flashcore.json");
+        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/standingsLigue1Flashcore.json");
             break;
-        case "Premier League": var fileLocation = path.join(process.cwd(), "./db/standingsPremierLeagueFlashcore.json");
+        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/standingsPremierLeagueFlashcore.json");
             break;
     }
 

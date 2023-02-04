@@ -50,8 +50,8 @@ async function getStandings(url) {
             dumpStringArray = dumpString.split('/');
             TMP.team.id = dumpStringArray[3];
             TMP.team.name = element.querySelector('.tableCellParticipant__name').innerText;
-            TMP.team.logo = "https://github.com/mzafram2001/zeus-api/tree/main/static/logos/" + TMP.team.id + "_logo.png";
-            TMP.team.kit = "https://github.com/mzafram2001/zeus-api/tree/main/static/kits/" + TMP.team.id + "_kit.png";
+            TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/" + TMP.team.id + "_logo.png";
+            TMP.team.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/" + TMP.team.id + "_kit.png";
             TMP.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
             TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
             TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
@@ -95,4 +95,4 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.germany);
+getStandings(URLS.spain);

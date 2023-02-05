@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import standingsLaLiga from "../db/standingsLaLigaFlashcore.json";
+import standingsLaLiga2021 from "../db/standingsLaLiga2021Flashcore.json";
 import standingsLigue1 from "../db/standingsLigue1Flashcore.json";
 import standingsSerieA from "../db/standingsSerieAFlashcore.json";
 import standingsBundesliga from "../db/standingsBundesligaFlashcore.json";
@@ -11,6 +12,10 @@ APP.get('/', (ctx) => {
 	return ctx.json([
 		{
 			endpoint: '/standingsLaLiga',
+			message: 'Returns LaLiga standings.'
+		},
+		{
+			endpoint: '/standingsLaLiga/2021',
 			message: 'Returns LaLiga standings.'
 		},
 		{
@@ -34,22 +39,26 @@ APP.get('/', (ctx) => {
 
 APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);
-})
+});
 
 APP.get('/standingsLigue1', (ctx) => {
 	return ctx.json(standingsLigue1);
-})
+});
 
 APP.get('/standingsSerieA', (ctx) => {
 	return ctx.json(standingsSerieA);
-})
+});
 
 APP.get('/standingsBundesliga', (ctx) => {
 	return ctx.json(standingsBundesliga);
-})
+});
 
 APP.get('/standingsPremierLeague', (ctx) => {
 	return ctx.json(standingsPremierLeague);
-})
+});
+
+APP.get('/standingsLaLiga/2021', (ctx) => {
+	return ctx.json(standingsLaLiga2021);
+});
 
 export default APP;

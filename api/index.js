@@ -12,27 +12,27 @@ APP.get('/', (ctx) => {
 	return ctx.json([
 		{
 			endpoint: '/standingsLaLiga',
-			message: 'Returns LaLiga standings.'
+			message: 'Returns LaLiga 2022 standings.'
 		},
 		{
 			endpoint: '/standingsLaLiga/2021',
-			message: 'Returns LaLiga standings.'
+			message: 'Returns LaLiga 2021 standings.'
 		},
 		{
 			endpoint: '/standingsLigue1',
-			message: 'Returns Ligue1 standings.'
+			message: 'Returns Ligue1 2022 standings.'
 		},
 		{
 			endpoint: '/standingsSerieA',
-			message: 'Returns SerieA standings.'
+			message: 'Returns SerieA 2022 standings.'
 		},
 		{
 			endpoint: '/standingsBundesliga',
-			message: 'Returns Bundesliga standings.'
+			message: 'Returns Bundesliga 2022 standings.'
 		},
 		{
 			endpoint: '/standingsPremierLeague',
-			message: 'Returns PremierLeague standings.'
+			message: 'Returns PremierLeague 2022 standings.'
 		}
 	]);
 })

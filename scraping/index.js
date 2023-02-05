@@ -10,6 +10,7 @@ const PATH = require('path');
 const URLS = {
     england: "https://www.flashscore.com/football/england/premier-league/standings/",
     spain: "https://www.flashscore.com/football/spain/laliga/standings/",
+    // spain_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/standings",
     france: "https://www.flashscore.com/football/france/ligue-1/standings/",
     italy: "https://www.flashscore.com/football/italy/serie-a/standings/",
     germany: "https://www.flashscore.com/football/germany/bundesliga/standings/"
@@ -61,7 +62,7 @@ async function getStandings(url) {
             TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
             TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             for (var i = 2; i < 7; i++) {
-                if(i == 2) {
+                if (i == 2) {
                     TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText;
                 } else {
                     TMP.form = TMP.form.concat(",", element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText);
@@ -74,6 +75,8 @@ async function getStandings(url) {
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
             break;
+        /*case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLiga2021Flashcore.json");
+            break;*/
         case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/standingsBundesligaFlashcore.json");
             break;
         case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/standingsSerieAFlashcore.json");

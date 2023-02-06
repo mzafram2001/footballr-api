@@ -8,8 +8,8 @@
             "team": {
                 "id": "69Dxbc61",
                 "name": "Napoli",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/69Dxbc61_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/69Dxbc61_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/69Dxbc61_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/69Dxbc61_kit.png"
             },
             "playedGames": 20,
             "wins": 17,
@@ -26,8 +26,8 @@
             "team": {
                 "id": "Iw7eKK25",
                 "name": "Inter",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/Iw7eKK25_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/Iw7eKK25_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Iw7eKK25_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Iw7eKK25_kit.png"
             },
             "playedGames": 20,
             "wins": 13,
@@ -44,8 +44,8 @@
             "team": {
                 "id": "zVqqL0ma",
                 "name": "AS Roma",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/zVqqL0ma_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/zVqqL0ma_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/zVqqL0ma_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/zVqqL0ma_kit.png"
             },
             "playedGames": 21,
             "wins": 12,
@@ -62,8 +62,8 @@
             "team": {
                 "id": "URcSl02h",
                 "name": "Lazio",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/URcSl02h_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/URcSl02h_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/URcSl02h_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/URcSl02h_kit.png"
             },
             "playedGames": 20,
             "wins": 11,
@@ -80,8 +80,8 @@
             "team": {
                 "id": "8Sa8HInO",
                 "name": "AC Milan",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/8Sa8HInO_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/8Sa8HInO_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/8Sa8HInO_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/8Sa8HInO_kit.png"
             },
             "playedGames": 20,
             "wins": 11,
@@ -98,8 +98,8 @@
             "team": {
                 "id": "8C9JjMXu",
                 "name": "Atalanta",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/8C9JjMXu_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/8C9JjMXu_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/8C9JjMXu_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/8C9JjMXu_kit.png"
             },
             "playedGames": 21,
             "wins": 11,
@@ -116,8 +116,8 @@
             "team": {
                 "id": "rXw8YKDE",
                 "name": "Udinese",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/rXw8YKDE_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/rXw8YKDE_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/rXw8YKDE_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/rXw8YKDE_kit.png"
             },
             "playedGames": 20,
             "wins": 7,
@@ -134,8 +134,8 @@
             "team": {
                 "id": "MZFZnvX4",
                 "name": "Torino",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/MZFZnvX4_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/MZFZnvX4_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/MZFZnvX4_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/MZFZnvX4_kit.png"
             },
             "playedGames": 20,
             "wins": 7,
@@ -152,8 +152,8 @@
             "team": {
                 "id": "0M9xNN8N",
                 "name": "Bologna",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/0M9xNN8N_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/0M9xNN8N_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/0M9xNN8N_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/0M9xNN8N_kit.png"
             },
             "playedGames": 20,
             "wins": 7,
@@ -170,8 +170,8 @@
             "team": {
                 "id": "0ESCnI1H",
                 "name": "Empoli",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/0ESCnI1H_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/0ESCnI1H_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/0ESCnI1H_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/0ESCnI1H_kit.png"
             },
             "playedGames": 21,
             "wins": 6,
@@ -188,8 +188,8 @@
             "team": {
                 "id": "4YSMlwj7",
                 "name": "Monza",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/4YSMlwj7_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/4YSMlwj7_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/4YSMlwj7_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/4YSMlwj7_kit.png"
             },
             "playedGames": 20,
             "wins": 7,
@@ -206,8 +206,8 @@
             "team": {
                 "id": "Q3A3IbXH",
                 "name": "Fiorentina",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/Q3A3IbXH_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/Q3A3IbXH_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Q3A3IbXH_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Q3A3IbXH_kit.png"
             },
             "playedGames": 20,
             "wins": 6,
@@ -224,8 +224,8 @@
             "team": {
                 "id": "C06aJvIB",
                 "name": "Juventus",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/C06aJvIB_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/C06aJvIB_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/C06aJvIB_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/C06aJvIB_kit.png"
             },
             "playedGames": 20,
             "wins": 11,
@@ -242,8 +242,8 @@
             "team": {
                 "id": "G8lYsMgU",
                 "name": "Lecce",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/G8lYsMgU_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/G8lYsMgU_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/G8lYsMgU_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/G8lYsMgU_kit.png"
             },
             "playedGames": 21,
             "wins": 5,
@@ -260,8 +260,8 @@
             "team": {
                 "id": "QDdvI0zl",
                 "name": "Sassuolo",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/QDdvI0zl_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/QDdvI0zl_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/QDdvI0zl_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/QDdvI0zl_kit.png"
             },
             "playedGames": 21,
             "wins": 6,
@@ -278,8 +278,8 @@
             "team": {
                 "id": "Mq05g4BP",
                 "name": "Salernitana",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/Mq05g4BP_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/Mq05g4BP_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Mq05g4BP_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Mq05g4BP_kit.png"
             },
             "playedGames": 20,
             "wins": 5,
@@ -296,8 +296,8 @@
             "team": {
                 "id": "re6VD39b",
                 "name": "Spezia",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/re6VD39b_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/re6VD39b_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/re6VD39b_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/re6VD39b_kit.png"
             },
             "playedGames": 20,
             "wins": 4,
@@ -314,8 +314,8 @@
             "team": {
                 "id": "rJVAIaHo",
                 "name": "Verona",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/rJVAIaHo_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/rJVAIaHo_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/rJVAIaHo_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/rJVAIaHo_kit.png"
             },
             "playedGames": 20,
             "wins": 3,
@@ -332,8 +332,8 @@
             "team": {
                 "id": "nJbCGx2U",
                 "name": "Sampdoria",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/nJbCGx2U_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/nJbCGx2U_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nJbCGx2U_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nJbCGx2U_kit.png"
             },
             "playedGames": 20,
             "wins": 2,
@@ -350,8 +350,8 @@
             "team": {
                 "id": "KUzfp5N3",
                 "name": "Cremonese",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/logos/KUzfp5N3_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-api/main/static/kits/KUzfp5N3_kit.png"
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/KUzfp5N3_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/KUzfp5N3_kit.png"
             },
             "playedGames": 21,
             "wins": 0,

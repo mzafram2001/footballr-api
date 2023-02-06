@@ -33,6 +33,10 @@ APP.get('/', (ctx) => {
 		{
 			endpoint: '/standingsPremierLeague',
 			message: 'Returns PremierLeague 2022 standings.'
+		},
+		{
+			version: '0.1a',
+			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);
 })

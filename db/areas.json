@@ -54,7 +54,7 @@
             "id": 7,
             "name": "Europe",
             "countryCode": "EUR",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/european-union.png",
             "parentAreaId": 1,
             "parentArea": "World"
         },
@@ -62,7 +62,7 @@
             "id": 10,
             "name": "England",
             "countryCode": "ENG",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/england.png",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
@@ -70,7 +70,7 @@
             "id": 11,
             "name": "Spain",
             "countryCode": "ESP",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/spain.png",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
@@ -78,7 +78,7 @@
             "id": 12,
             "name": "France",
             "countryCode": "FRA",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/france.png",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
@@ -86,7 +86,7 @@
             "id": 13,
             "name": "Germany",
             "countryCode": "GER",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
@@ -94,7 +94,7 @@
             "id": 14,
             "name": "Italy",
             "countryCode": "ITA",
-            "flag": null,
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png",
             "parentAreaId": 7,
             "parentArea": "Europe"
         }

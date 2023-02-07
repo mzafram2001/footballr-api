@@ -1,0 +1,26 @@
+[
+    {
+        "endpoint": "/standingsLaLiga",
+        "description": "Returns LaLiga 2022 standings."
+    },
+    {
+        "endpoint": "/standingsLaLiga/2021",
+        "description": "Returns LaLiga 2021 standings."
+    },
+    {
+        "endpoint": "/standingsLigue1",
+        "description": "Returns Ligue1 2022 standings."
+    },
+    {
+        "endpoint": "/standingsSerieA",
+        "description": "Returns SerieA 2022 standings."
+    },
+    {
+        "endpoint": "/standingsBundesliga",
+        "description": "Returns Bundesliga 2022 standings."
+    },
+    {
+        "endpoint": "/standingsPremierLeague",
+        "description": "Returns PremierLeague 2022 standings."
+    }
+]

@@ -13,7 +13,14 @@ APP.get('/', (ctx) => {
 	return ctx.json([
 		{
 			endpoint: '/areas',
-			message: 'List all available areas.'
+			description: 'List all available areas.',
+			"parameters": [
+				{
+					"name": "countryCode",
+					"endpoint": "/areas/:countryCode",
+					"description": "List one area given by her countryCode."
+				}
+			]
 		},
 		{
 			endpoint: '/competitions',
@@ -53,6 +60,13 @@ APP.get('/', (ctx) => {
 APP.get('/areas', (ctx) => {
 	return ctx.json(areas);
 });
+
+app.get('/areas/:countryCode', (ctx) => {
+	// return area by id
+	const countryCode = ctx.params.countryCode;
+	const area = areas.find(a => a.countryCode === countryCode);
+	return foundArea ? ctx.json(area) : ctx.json({ message: 'Area not found.' }, 404)
+})
 
 APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);

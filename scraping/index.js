@@ -3,7 +3,6 @@ const FS = require('fs');
 const PATH = require('path');
 
 // TODO: 
-// - Reorganizar esquema de JSON como MiduDev (y repo y todo)
 // - Organizar código
 
 // // // // // // // // // // URLs // // // // // // // // // //

@@ -52,7 +52,7 @@ APP.get('/', (ctx) => {
 			message: 'Returns PremierLeague 2022 standings.'
 		}*/,
 		{
-			version: '0.1a',
+			version: '0.12a',
 			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);
@@ -63,7 +63,9 @@ APP.get('/areas', (ctx) => {
 });
 
 APP.get('/areas/:countryCode', (ctx) => {
-	return ctx.json({ message: 'Area not found.' });
+	const countryCode = ctx.req.param("countryCode");
+	const found = areas.find((area) => area.countryCode === countryCode)
+	return found ? ctx.json(found) : ctx.json({ message: 'Area not found' }, 404)
 });
 
 /*APP.get('/standingsLaLiga', (ctx) => {

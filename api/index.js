@@ -11,6 +11,10 @@ const APP = new Hono();
 APP.get('/', (ctx) => {
 	return ctx.json([
 		{
+			endpoint: '/areas',
+			message: 'List all available areas.'
+		},
+		{
 			endpoint: '/standingsLaLiga',
 			message: 'Returns LaLiga 2022 standings.'
 		},

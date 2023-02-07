@@ -26,6 +26,18 @@ async function getStandings(url) {
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
         JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
+        switch (JSON.name) {
+            case "LaLiga": JSON.area = "ESP";
+                break;
+            case "Bundesliga": JSON.area = "GER";
+                break;
+            case "Serie A": JSON.area = "ITA";
+                break;
+            case "Ligue 1": JSON.area = "FRA";
+                break;
+            case "Premier League": JSON.area = "ENG";
+                break;
+        }
         JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
         JSON.yearStart = parseInt(JSON.yearStart.substring(0, 4));
         JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
@@ -97,4 +109,4 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.spain);
+getStandings(URLS.italy);

@@ -1,12 +1,12 @@
 import { Hono } from 'hono';
-import { cors } from 'hono/cors'
 import standingsLaLiga from "../db/standingsLaLigaFlashcore.json";
 import standingsLaLiga2021 from "../db/standingsLaLiga2021Flashcore.json";
 import standingsLigue1 from "../db/standingsLigue1Flashcore.json";
 import standingsSerieA from "../db/standingsSerieAFlashcore.json";
 import standingsBundesliga from "../db/standingsBundesligaFlashcore.json";
 import standingsPremierLeague from "../db/standingsPremierLeagueFlashcore.json";
-import areas from "../db/areas.json"
+import areas from "../db/areas.json";
+import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
@@ -17,40 +17,16 @@ APP.get('/', (ctx) => {
 			description: 'List all available areas.',
 			parameters: [
 				{
-					"name": "countryCode",
-					"endpoint": "/areas/:countryCode",
-					"description": "List one area given by her country code."
+					name: "countryCode",
+					endpoint: "/areas/:countryCode",
+					description: "List one area given by her country code."
 				}
 			]
-		}/*,
+		},
 		{
 			endpoint: '/competitions',
-			message: 'List all available competitions.'
+			description: 'List all available competitions.'
 		},
-		{
-			endpoint: '/standingsLaLiga',
-			message: 'Returns LaLiga 2022 standings.'
-		},
-		{
-			endpoint: '/standingsLaLiga/2021',
-			message: 'Returns LaLiga 2021 standings.'
-		},
-		{
-			endpoint: '/standingsLigue1',
-			message: 'Returns Ligue1 2022 standings.'
-		},
-		{
-			endpoint: '/standingsSerieA',
-			message: 'Returns SerieA 2022 standings.'
-		},
-		{
-			endpoint: '/standingsBundesliga',
-			message: 'Returns Bundesliga 2022 standings.'
-		},
-		{
-			endpoint: '/standingsPremierLeague',
-			message: 'Returns PremierLeague 2022 standings.'
-		}*/,
 		{
 			version: '0.12a',
 			message: 'Created with ❤️ by Miguel Zafra.'
@@ -63,12 +39,16 @@ APP.get('/areas', (ctx) => {
 });
 
 APP.get('/areas/:countryCode', (ctx) => {
-	const countryCode = ctx.req.param("countryCode");
+	const countryCode = ctx.req.param("countryCode").toUpperCase();
 	const found = areas.find((area) => area.countryCode === countryCode)
 	return found ? ctx.json(found) : ctx.json({ message: 'Area not found' }, 404)
 });
 
-/*APP.get('/standingsLaLiga', (ctx) => {
+APP.get('/competitions', (ctx) => {
+	return ctx.json(competitions);
+});
+
+APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);
 });
 
@@ -90,6 +70,6 @@ APP.get('/standingsPremierLeague', (ctx) => {
 
 APP.get('/standingsLaLiga/2021', (ctx) => {
 	return ctx.json(standingsLaLiga2021);
-});*/
+});
 
 export default APP;

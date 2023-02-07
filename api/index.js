@@ -66,7 +66,7 @@ APP.get('/areas/:countryCode', (ctx) => {
 	return ctx.json({ message: 'Area not found.' });
 });
 
-APP.get('/standingsLaLiga', (ctx) => {
+/*APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);
 });
 
@@ -88,6 +88,6 @@ APP.get('/standingsPremierLeague', (ctx) => {
 
 APP.get('/standingsLaLiga/2021', (ctx) => {
 	return ctx.json(standingsLaLiga2021);
-});
+});*/
 
 export default APP;

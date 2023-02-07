@@ -16,6 +16,10 @@ APP.get('/', (ctx) => {
 			message: 'List all available areas.'
 		},
 		{
+			endpoint: '/competitions',
+			message: 'List all available competitions.'
+		},
+		{
 			endpoint: '/standingsLaLiga',
 			message: 'Returns LaLiga 2022 standings.'
 		},

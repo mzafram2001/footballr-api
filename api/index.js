@@ -5,6 +5,7 @@ import standingsLigue1 from "../db/standingsLigue1Flashcore.json";
 import standingsSerieA from "../db/standingsSerieAFlashcore.json";
 import standingsBundesliga from "../db/standingsBundesligaFlashcore.json";
 import standingsPremierLeague from "../db/standingsPremierLeagueFlashcore.json";
+import areas from "../db/areas.json"
 
 const APP = new Hono();
 
@@ -44,6 +45,10 @@ APP.get('/', (ctx) => {
 		}
 	]);
 })
+
+APP.get('/areas', (ctx) => {
+	return ctx.json(areas);
+});
 
 APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);

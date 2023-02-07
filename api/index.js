@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { cors } from 'hono/cors'
 import standingsLaLiga from "../db/standingsLaLigaFlashcore.json";
 import standingsLaLiga2021 from "../db/standingsLaLiga2021Flashcore.json";
 import standingsLigue1 from "../db/standingsLigue1Flashcore.json";
@@ -14,14 +15,14 @@ APP.get('/', (ctx) => {
 		{
 			endpoint: '/areas',
 			description: 'List all available areas.',
-			"parameters": [
+			parameters: [
 				{
 					"name": "countryCode",
 					"endpoint": "/areas/:countryCode",
-					"description": "List one area given by her countryCode."
+					"description": "List one area given by her country code."
 				}
 			]
-		},
+		}/*,
 		{
 			endpoint: '/competitions',
 			message: 'List all available competitions.'
@@ -49,7 +50,7 @@ APP.get('/', (ctx) => {
 		{
 			endpoint: '/standingsPremierLeague',
 			message: 'Returns PremierLeague 2022 standings.'
-		},
+		}*/,
 		{
 			version: '0.1a',
 			message: 'Created with ❤️ by Miguel Zafra.'
@@ -61,12 +62,9 @@ APP.get('/areas', (ctx) => {
 	return ctx.json(areas);
 });
 
-app.get('/areas/:countryCode', (ctx) => {
-	// return area by id
-	const countryCode = ctx.params.countryCode;
-	const area = areas.find(a => a.countryCode === countryCode);
-	return foundArea ? ctx.json(area) : ctx.json({ message: 'Area not found.' }, 404)
-})
+APP.get('/areas/:countryCode', (ctx) => {
+	return ctx.json({ message: 'Area not found.' });
+});
 
 APP.get('/standingsLaLiga', (ctx) => {
 	return ctx.json(standingsLaLiga);

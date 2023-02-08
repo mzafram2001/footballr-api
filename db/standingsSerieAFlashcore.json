@@ -1,5 +1,6 @@
 {
     "name": "Serie A",
+    "area": "ITA",
     "yearStart": 2022,
     "yearEnd": 2023,
     "standings": [
@@ -168,6 +169,24 @@
         {
             "position": 10,
             "team": {
+                "id": "C06aJvIB",
+                "name": "Juventus",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/C06aJvIB_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/C06aJvIB_kit.png"
+            },
+            "playedGames": 21,
+            "wins": 12,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 33,
+            "goalsAgainst": 17,
+            "goalDifference": 16,
+            "points": 26,
+            "form": "W,L,D,L,W"
+        },
+        {
+            "position": 11,
+            "team": {
                 "id": "4YSMlwj7",
                 "name": "Monza",
                 "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/4YSMlwj7_logo.png",
@@ -184,7 +203,7 @@
             "form": "D,W,D,W,D"
         },
         {
-            "position": 11,
+            "position": 12,
             "team": {
                 "id": "0ESCnI1H",
                 "name": "Empoli",
@@ -202,7 +221,7 @@
             "form": "L,D,W,W,D"
         },
         {
-            "position": 12,
+            "position": 13,
             "team": {
                 "id": "Q3A3IbXH",
                 "name": "Fiorentina",
@@ -218,24 +237,6 @@
             "goalDifference": -5,
             "points": 24,
             "form": "L,D,L,L,W"
-        },
-        {
-            "position": 13,
-            "team": {
-                "id": "C06aJvIB",
-                "name": "Juventus",
-                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/C06aJvIB_logo.png",
-                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/C06aJvIB_kit.png"
-            },
-            "playedGames": 20,
-            "wins": 11,
-            "draws": 5,
-            "loses": 4,
-            "goalsFor": 30,
-            "goalsAgainst": 17,
-            "goalDifference": 13,
-            "points": 23,
-            "form": "L,D,L,W,W"
         },
         {
             "position": 14,
@@ -281,15 +282,15 @@
                 "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Mq05g4BP_logo.png",
                 "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Mq05g4BP_kit.png"
             },
-            "playedGames": 20,
+            "playedGames": 21,
             "wins": 5,
             "draws": 6,
-            "loses": 9,
+            "loses": 10,
             "goalsFor": 25,
-            "goalsAgainst": 38,
-            "goalDifference": -13,
+            "goalsAgainst": 41,
+            "goalDifference": -16,
             "points": 21,
-            "form": "W,L,L,D,L"
+            "form": "L,W,L,L,D"
         },
         {
             "position": 17,

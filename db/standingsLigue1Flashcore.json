@@ -1,1 +1,368 @@
-{"name":"Ligue 1","area":"FRA","yearStart":2022,"yearEnd":2023,"standings":[{"position":1,"team":{"id":"CjhkPw0k","name":"Paris SG","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/CjhkPw0k_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/CjhkPw0k_kit.png"},"playedGames":22,"wins":17,"draws":3,"loses":2,"goalsFor":54,"goalsAgainst":17,"goalDifference":37,"points":54,"form":"W,W,D,L,W"},{"position":2,"team":{"id":"SblU3Hee","name":"Marseille","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/SblU3Hee_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/SblU3Hee_kit.png"},"playedGames":22,"wins":14,"draws":4,"loses":4,"goalsFor":43,"goalsAgainst":20,"goalDifference":23,"points":46,"form":"L,W,D,W,W"},{"position":3,"team":{"id":"IBmris38","name":"Lens","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/IBmris38_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/IBmris38_kit.png"},"playedGames":22,"wins":13,"draws":7,"loses":2,"goalsFor":34,"goalsAgainst":16,"goalDifference":18,"points":46,"form":"D,L,D,W,D"},{"position":4,"team":{"id":"2PIvr8o4","name":"Monaco","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2PIvr8o4_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2PIvr8o4_kit.png"},"playedGames":22,"wins":13,"draws":5,"loses":4,"goalsFor":48,"goalsAgainst":29,"goalDifference":19,"points":44,"form":"W,W,D,W,D"},{"position":5,"team":{"id":"d2nnj1IE","name":"Rennes","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/d2nnj1IE_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/d2nnj1IE_kit.png"},"playedGames":22,"wins":12,"draws":4,"loses":6,"goalsFor":41,"goalsAgainst":25,"goalDifference":16,"points":40,"form":"L,W,L,W,L"},{"position":6,"team":{"id":"pfDZL71o","name":"Lille","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/pfDZL71o_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/pfDZL71o_kit.png"},"playedGames":22,"wins":11,"draws":5,"loses":6,"goalsFor":38,"goalsAgainst":27,"goalDifference":11,"points":38,"form":"W,D,L,W,D"},{"position":7,"team":{"id":"jgNAYRGi","name":"Lorient","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/jgNAYRGi_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/jgNAYRGi_kit.png"},"playedGames":22,"wins":10,"draws":6,"loses":6,"goalsFor":35,"goalsAgainst":34,"goalDifference":1,"points":36,"form":"D,L,W,L,D"},{"position":8,"team":{"id":"YagoQJpq","name":"Nice","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/YagoQJpq_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/YagoQJpq_kit.png"},"playedGames":22,"wins":9,"draws":7,"loses":6,"goalsFor":27,"goalsAgainst":21,"goalDifference":6,"points":34,"form":"W,W,W,D,W"},{"position":9,"team":{"id":"2akflumR","name":"Lyon","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2akflumR_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2akflumR_kit.png"},"playedGames":22,"wins":9,"draws":5,"loses":8,"goalsFor":33,"goalsAgainst":24,"goalDifference":9,"points":32,"form":"W,D,W,L,D"},{"position":10,"team":{"id":"tItR6sEf","name":"Reims","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/tItR6sEf_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/tItR6sEf_kit.png"},"playedGames":22,"wins":6,"draws":12,"loses":4,"goalsFor":26,"goalsAgainst":26,"goalDifference":0,"points":30,"form":"D,W,D,D,W"},{"position":11,"team":{"id":"IRuMRua1","name":"Clermont","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/IRuMRua1_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/IRuMRua1_kit.png"},"playedGames":22,"wins":8,"draws":6,"loses":8,"goalsFor":24,"goalsAgainst":29,"goalDifference":-5,"points":30,"form":"L,D,D,W,W"},{"position":12,"team":{"id":"MLmY2yB1","name":"Toulouse","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/MLmY2yB1_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/MLmY2yB1_kit.png"},"playedGames":22,"wins":8,"draws":5,"loses":9,"goalsFor":36,"goalsAgainst":38,"goalDifference":-2,"points":29,"form":"L,W,W,D,W"},{"position":13,"team":{"id":"veuetnGG","name":"Nantes","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/veuetnGG_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/veuetnGG_kit.png"},"playedGames":22,"wins":5,"draws":10,"loses":7,"goalsFor":23,"goalsAgainst":26,"goalDifference":-3,"points":25,"form":"W,L,D,W,D"},{"position":14,"team":{"id":"Cr4VGaUl","name":"Brest","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Cr4VGaUl_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Cr4VGaUl_kit.png"},"playedGames":22,"wins":4,"draws":8,"loses":10,"goalsFor":24,"goalsAgainst":35,"goalDifference":-11,"points":20,"form":"D,D,W,D,D"},{"position":15,"team":{"id":"Eyf00syR","name":"Montpellier","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Eyf00syR_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Eyf00syR_kit.png"},"playedGames":22,"wins":6,"draws":2,"loses":14,"goalsFor":31,"goalsAgainst":45,"goalDifference":-14,"points":20,"form":"L,L,W,L,L"},{"position":16,"team":{"id":"fsfAHubD","name":"Troyes","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/fsfAHubD_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/fsfAHubD_kit.png"},"playedGames":22,"wins":4,"draws":7,"loses":11,"goalsFor":33,"goalsAgainst":48,"goalDifference":-15,"points":19,"form":"L,L,D,L,L"},{"position":17,"team":{"id":"nP6UzIU1","name":"Strasbourg","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nP6UzIU1_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nP6UzIU1_kit.png"},"playedGames":22,"wins":3,"draws":9,"loses":10,"goalsFor":27,"goalsAgainst":39,"goalDifference":-12,"points":18,"form":"W,L,L,W,D"},{"position":18,"team":{"id":"2aeoANM8","name":"AC Ajaccio","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2aeoANM8_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2aeoANM8_kit.png"},"playedGames":22,"wins":5,"draws":3,"loses":14,"goalsFor":18,"goalsAgainst":39,"goalDifference":-21,"points":18,"form":"L,W,L,L,L"},{"position":19,"team":{"id":"MTLr36WA","name":"Auxerre","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/MTLr36WA_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/MTLr36WA_kit.png"},"playedGames":22,"wins":3,"draws":5,"loses":14,"goalsFor":18,"goalsAgainst":46,"goalDifference":-28,"points":14,"form":"D,L,L,L,L"},{"position":20,"team":{"id":"SAlF91iL","name":"Angers","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/SAlF91iL_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/SAlF91iL_kit.png"},"playedGames":22,"wins":2,"draws":3,"loses":17,"goalsFor":18,"goalsAgainst":47,"goalDifference":-29,"points":9,"form":"D,L,L,L,L"}]}
+{
+    "name": "Ligue 1",
+    "area": "FRA",
+    "yearStart": 2022,
+    "yearEnd": 2023,
+    "standings": [
+        {
+            "position": 1,
+            "team": {
+                "id": "CjhkPw0k",
+                "name": "Paris SG",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/CjhkPw0k_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/CjhkPw0k_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 17,
+            "draws": 3,
+            "loses": 2,
+            "goalsFor": 54,
+            "goalsAgainst": 17,
+            "goalDifference": 37,
+            "points": 54,
+            "form": "W,W,D,L,W"
+        },
+        {
+            "position": 2,
+            "team": {
+                "id": "SblU3Hee",
+                "name": "Marseille",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/SblU3Hee_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/SblU3Hee_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 14,
+            "draws": 4,
+            "loses": 4,
+            "goalsFor": 43,
+            "goalsAgainst": 20,
+            "goalDifference": 23,
+            "points": 46,
+            "form": "L,W,D,W,W"
+        },
+        {
+            "position": 3,
+            "team": {
+                "id": "IBmris38",
+                "name": "Lens",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/IBmris38_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/IBmris38_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 13,
+            "draws": 7,
+            "loses": 2,
+            "goalsFor": 34,
+            "goalsAgainst": 16,
+            "goalDifference": 18,
+            "points": 46,
+            "form": "D,L,D,W,D"
+        },
+        {
+            "position": 4,
+            "team": {
+                "id": "2PIvr8o4",
+                "name": "Monaco",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2PIvr8o4_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2PIvr8o4_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 13,
+            "draws": 5,
+            "loses": 4,
+            "goalsFor": 48,
+            "goalsAgainst": 29,
+            "goalDifference": 19,
+            "points": 44,
+            "form": "W,W,D,W,D"
+        },
+        {
+            "position": 5,
+            "team": {
+                "id": "d2nnj1IE",
+                "name": "Rennes",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/d2nnj1IE_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/d2nnj1IE_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 12,
+            "draws": 4,
+            "loses": 6,
+            "goalsFor": 41,
+            "goalsAgainst": 25,
+            "goalDifference": 16,
+            "points": 40,
+            "form": "L,W,L,W,L"
+        },
+        {
+            "position": 6,
+            "team": {
+                "id": "pfDZL71o",
+                "name": "Lille",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/pfDZL71o_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/pfDZL71o_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 11,
+            "draws": 5,
+            "loses": 6,
+            "goalsFor": 38,
+            "goalsAgainst": 27,
+            "goalDifference": 11,
+            "points": 38,
+            "form": "W,D,L,W,D"
+        },
+        {
+            "position": 7,
+            "team": {
+                "id": "jgNAYRGi",
+                "name": "Lorient",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/jgNAYRGi_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/jgNAYRGi_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 10,
+            "draws": 6,
+            "loses": 6,
+            "goalsFor": 35,
+            "goalsAgainst": 34,
+            "goalDifference": 1,
+            "points": 36,
+            "form": "D,L,W,L,D"
+        },
+        {
+            "position": 8,
+            "team": {
+                "id": "YagoQJpq",
+                "name": "Nice",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/YagoQJpq_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/YagoQJpq_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 9,
+            "draws": 7,
+            "loses": 6,
+            "goalsFor": 27,
+            "goalsAgainst": 21,
+            "goalDifference": 6,
+            "points": 34,
+            "form": "W,W,W,D,W"
+        },
+        {
+            "position": 9,
+            "team": {
+                "id": "2akflumR",
+                "name": "Lyon",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2akflumR_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2akflumR_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 9,
+            "draws": 5,
+            "loses": 8,
+            "goalsFor": 33,
+            "goalsAgainst": 24,
+            "goalDifference": 9,
+            "points": 32,
+            "form": "W,D,W,L,D"
+        },
+        {
+            "position": 10,
+            "team": {
+                "id": "tItR6sEf",
+                "name": "Reims",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/tItR6sEf_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/tItR6sEf_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 6,
+            "draws": 12,
+            "loses": 4,
+            "goalsFor": 26,
+            "goalsAgainst": 26,
+            "goalDifference": 0,
+            "points": 30,
+            "form": "D,W,D,D,W"
+        },
+        {
+            "position": 11,
+            "team": {
+                "id": "IRuMRua1",
+                "name": "Clermont",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/IRuMRua1_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/IRuMRua1_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 8,
+            "draws": 6,
+            "loses": 8,
+            "goalsFor": 24,
+            "goalsAgainst": 29,
+            "goalDifference": -5,
+            "points": 30,
+            "form": "L,D,D,W,W"
+        },
+        {
+            "position": 12,
+            "team": {
+                "id": "MLmY2yB1",
+                "name": "Toulouse",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/MLmY2yB1_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/MLmY2yB1_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 8,
+            "draws": 5,
+            "loses": 9,
+            "goalsFor": 36,
+            "goalsAgainst": 38,
+            "goalDifference": -2,
+            "points": 29,
+            "form": "L,W,W,D,W"
+        },
+        {
+            "position": 13,
+            "team": {
+                "id": "veuetnGG",
+                "name": "Nantes",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/veuetnGG_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/veuetnGG_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 5,
+            "draws": 10,
+            "loses": 7,
+            "goalsFor": 23,
+            "goalsAgainst": 26,
+            "goalDifference": -3,
+            "points": 25,
+            "form": "W,L,D,W,D"
+        },
+        {
+            "position": 14,
+            "team": {
+                "id": "Cr4VGaUl",
+                "name": "Brest",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Cr4VGaUl_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Cr4VGaUl_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 4,
+            "draws": 8,
+            "loses": 10,
+            "goalsFor": 24,
+            "goalsAgainst": 35,
+            "goalDifference": -11,
+            "points": 20,
+            "form": "D,D,W,D,D"
+        },
+        {
+            "position": 15,
+            "team": {
+                "id": "Eyf00syR",
+                "name": "Montpellier",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Eyf00syR_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Eyf00syR_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 6,
+            "draws": 2,
+            "loses": 14,
+            "goalsFor": 31,
+            "goalsAgainst": 45,
+            "goalDifference": -14,
+            "points": 20,
+            "form": "L,L,W,L,L"
+        },
+        {
+            "position": 16,
+            "team": {
+                "id": "fsfAHubD",
+                "name": "Troyes",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/fsfAHubD_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/fsfAHubD_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 4,
+            "draws": 7,
+            "loses": 11,
+            "goalsFor": 33,
+            "goalsAgainst": 48,
+            "goalDifference": -15,
+            "points": 19,
+            "form": "L,L,D,L,L"
+        },
+        {
+            "position": 17,
+            "team": {
+                "id": "nP6UzIU1",
+                "name": "Strasbourg",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nP6UzIU1_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nP6UzIU1_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 3,
+            "draws": 9,
+            "loses": 10,
+            "goalsFor": 27,
+            "goalsAgainst": 39,
+            "goalDifference": -12,
+            "points": 18,
+            "form": "W,L,L,W,D"
+        },
+        {
+            "position": 18,
+            "team": {
+                "id": "2aeoANM8",
+                "name": "AC Ajaccio",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2aeoANM8_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2aeoANM8_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 5,
+            "draws": 3,
+            "loses": 14,
+            "goalsFor": 18,
+            "goalsAgainst": 39,
+            "goalDifference": -21,
+            "points": 18,
+            "form": "L,W,L,L,L"
+        },
+        {
+            "position": 19,
+            "team": {
+                "id": "MTLr36WA",
+                "name": "Auxerre",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/MTLr36WA_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/MTLr36WA_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 3,
+            "draws": 5,
+            "loses": 14,
+            "goalsFor": 18,
+            "goalsAgainst": 46,
+            "goalDifference": -28,
+            "points": 14,
+            "form": "D,L,L,L,L"
+        },
+        {
+            "position": 20,
+            "team": {
+                "id": "SAlF91iL",
+                "name": "Angers",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/SAlF91iL_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/SAlF91iL_kit.png"
+            },
+            "playedGames": 22,
+            "wins": 2,
+            "draws": 3,
+            "loses": 17,
+            "goalsFor": 18,
+            "goalsAgainst": 47,
+            "goalDifference": -29,
+            "points": 9,
+            "form": "D,L,L,L,L"
+        }
+    ]
+}

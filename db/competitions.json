@@ -1,26 +1,27 @@
 [
     {
-        "endpoint": "/standingsLaLiga",
-        "description": "Returns LaLiga 2022 standings."
+        "id": 1,
+        "name": "Premier League",
+        "description": "England's first division."
     },
     {
-        "endpoint": "/standingsLaLiga/2021",
-        "description": "Returns LaLiga 2021 standings."
+        "id": 2,
+        "name": "LaLiga",
+        "description": "Spain's first division."
     },
     {
-        "endpoint": "/standingsLigue1",
-        "description": "Returns Ligue1 2022 standings."
+        "id": 3,
+        "name": "Ligue 1",
+        "description": "France's first division."
     },
     {
-        "endpoint": "/standingsSerieA",
-        "description": "Returns SerieA 2022 standings."
+        "id": 4,
+        "name": "Serie A",
+        "description": "Italy's first division."
     },
     {
-        "endpoint": "/standingsBundesliga",
-        "description": "Returns Bundesliga 2022 standings."
-    },
-    {
-        "endpoint": "/standingsPremierLeague",
-        "description": "Returns PremierLeague 2022 standings."
+        "id": 5,
+        "name": "Bundesliga",
+        "description": "Germany's first division."
     }
 ]

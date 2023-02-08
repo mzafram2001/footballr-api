@@ -1,5 +1,6 @@
 {
     "name": "LaLiga",
+    "area": "ESP",
     "yearStart": 2021,
     "yearEnd": 2022,
     "standings": [

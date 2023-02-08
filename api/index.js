@@ -17,9 +17,9 @@ APP.get('/', (ctx) => {
 			description: 'List all available areas.',
 			parameters: [
 				{
-					name: "countryCode",
-					endpoint: "/areas/:countryCode",
-					description: "List one area given by her country code."
+					name: "id",
+					endpoint: "/areas/:id",
+					description: "List one area given by area id."
 				}
 			]
 		},
@@ -45,9 +45,9 @@ APP.get('/areas', (ctx) => {
 	return ctx.json(areas);
 });
 
-APP.get('/areas/:countryCode', (ctx) => {
-	const countryCode = ctx.req.param("countryCode").toUpperCase();
-	const found = areas.find((area) => area.countryCode === countryCode)
+APP.get('/areas/:id', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const found = areas.find((area) => area.id === id)
 	return found ? ctx.json(found) : ctx.json({ message: 'Area not found' }, 404)
 });
 

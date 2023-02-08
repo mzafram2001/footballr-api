@@ -100,7 +100,15 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 			case "PRL": ;
 				break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
-				return ctx.json(standingsLaLiga2021);
+				switch (year) {
+					case "2015":;
+					case "2016":;
+					case "2017":;
+					case "2018":;
+					case "2019":;
+					case "2020":;
+					case "2021": return ctx.json(standingsLaLiga2021);
+				}
 			};
 				break;
 			case "LI1": ;

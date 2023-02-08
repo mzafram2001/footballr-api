@@ -45,7 +45,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/standings/:year",
-					description: "List the standings for a league, given by start year. 🔍"
+					description: "List the standings for a league, given by start year (2015 - 2021). 🔍"
 				}
 			]
 		},

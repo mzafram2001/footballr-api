@@ -1,5 +1,7 @@
 import { Hono } from 'hono';
 import standingsLaLiga from "../db/standingsLaLigaFlashcore.json";
+import standingsLaLiga2019 from "../db/standingsLaLiga2019Flashcore.json";
+import standingsLaLiga2020 from "../db/standingsLaLiga2020Flashcore.json";
 import standingsLaLiga2021 from "../db/standingsLaLiga2021Flashcore.json";
 import standingsLigue1 from "../db/standingsLigue1Flashcore.json";
 import standingsSerieA from "../db/standingsSerieAFlashcore.json";
@@ -105,8 +107,8 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2016":;
 					case "2017":;
 					case "2018":;
-					case "2019":;
-					case "2020":;
+					case "2019": return ctx.json(standingsLaLiga2019);;
+					case "2020": return ctx.json(standingsLaLiga2020);;
 					case "2021": return ctx.json(standingsLaLiga2021);
 				}
 			};

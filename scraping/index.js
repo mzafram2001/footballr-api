@@ -109,4 +109,4 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.italy);
+getStandings(URLS.spain);

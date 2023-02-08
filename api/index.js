@@ -25,10 +25,17 @@ APP.get('/', (ctx) => {
 		},
 		{
 			endpoint: '/competitions',
-			description: 'List all available competitions.'
+			description: 'List all available competitions.',
+			parameters: [
+				{
+					name: "id",
+					endpoint: "/competitions/:id/standings",
+					description: "List the current league standings for a league."
+				}
+			]
 		},
 		{
-			version: '0.12a',
+			version: '0.15a',
 			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);
@@ -46,6 +53,14 @@ APP.get('/areas/:countryCode', (ctx) => {
 
 APP.get('/competitions', (ctx) => {
 	return ctx.json(competitions);
+});
+
+APP.get('/competitions/:id', (ctx) => {
+	return ctx.json({ message: 'PENDING' }, 404)
+});
+
+APP.get('/competitions/:id/standings', (ctx) => {
+	return ctx.json({ message: 'PENDING' }, 404)
 });
 
 APP.get('/standingsLaLiga', (ctx) => {

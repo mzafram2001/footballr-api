@@ -20,7 +20,7 @@
             "goalsAgainst": 7,
             "goalDifference": 35,
             "points": 53,
-            "form": "W,W,W,W,W"
+            "form": "?,W,W,W,W"
         },
         {
             "position": 2,
@@ -38,7 +38,7 @@
             "goalsAgainst": 17,
             "goalDifference": 23,
             "points": 45,
-            "form": "L,W,D,W,L"
+            "form": "?,L,W,D,W"
         },
         {
             "position": 3,
@@ -56,7 +56,7 @@
             "goalsAgainst": 19,
             "goalDifference": 9,
             "points": 39,
-            "form": "L,D,W,W,W"
+            "form": "?,L,D,W,W"
         },
         {
             "position": 4,
@@ -74,7 +74,7 @@
             "goalsAgainst": 17,
             "goalDifference": 12,
             "points": 35,
-            "form": "D,W,W,D,L"
+            "form": "?,D,W,W,D"
         },
         {
             "position": 5,
@@ -92,7 +92,7 @@
             "goalsAgainst": 22,
             "goalDifference": 5,
             "points": 32,
-            "form": "W,W,L,W,L"
+            "form": "?,W,W,L,W"
         },
         {
             "position": 6,
@@ -110,7 +110,7 @@
             "goalsAgainst": 17,
             "goalDifference": 5,
             "points": 31,
-            "form": "L,L,W,D,W"
+            "form": "?,L,L,W,D"
         },
         {
             "position": 7,
@@ -128,7 +128,7 @@
             "goalsAgainst": 20,
             "goalDifference": 4,
             "points": 31,
-            "form": "L,L,W,L,W"
+            "form": "?,L,L,W,L"
         },
         {
             "position": 8,
@@ -146,7 +146,7 @@
             "goalsAgainst": 21,
             "goalDifference": 8,
             "points": 29,
-            "form": "W,L,L,L,D"
+            "form": "?,W,L,L,L"
         },
         {
             "position": 9,
@@ -164,7 +164,7 @@
             "goalsAgainst": 19,
             "goalDifference": 0,
             "points": 29,
-            "form": "D,L,D,W,D"
+            "form": "?,D,L,D,W"
         },
         {
             "position": 10,
@@ -182,7 +182,7 @@
             "goalsAgainst": 18,
             "goalDifference": -2,
             "points": 28,
-            "form": "W,L,W,L,W"
+            "form": "?,W,L,W,L"
         },
         {
             "position": 11,
@@ -200,7 +200,7 @@
             "goalsAgainst": 29,
             "goalDifference": -2,
             "points": 24,
-            "form": "W,L,L,W,D"
+            "form": "?,W,L,L,W"
         },
         {
             "position": 12,
@@ -218,7 +218,7 @@
             "goalsAgainst": 32,
             "goalDifference": -10,
             "points": 23,
-            "form": "W,W,L,D,W"
+            "form": "?,W,W,L,D"
         },
         {
             "position": 13,
@@ -236,7 +236,7 @@
             "goalsAgainst": 28,
             "goalDifference": -13,
             "points": 23,
-            "form": "W,W,L,L,L"
+            "form": "?,W,W,L,L"
         },
         {
             "position": 14,
@@ -254,7 +254,7 @@
             "goalsAgainst": 31,
             "goalDifference": -8,
             "points": 22,
-            "form": "L,W,D,D,L"
+            "form": "?,L,W,D,D"
         },
         {
             "position": 15,
@@ -272,7 +272,7 @@
             "goalsAgainst": 30,
             "goalDifference": -6,
             "points": 21,
-            "form": "D,L,W,W,D"
+            "form": "?,D,L,W,W"
         },
         {
             "position": 16,
@@ -290,7 +290,7 @@
             "goalsAgainst": 29,
             "goalDifference": -8,
             "points": 21,
-            "form": "L,W,W,L,W"
+            "form": "?,L,W,W,L"
         },
         {
             "position": 17,
@@ -308,7 +308,7 @@
             "goalsAgainst": 24,
             "goalDifference": 1,
             "points": 20,
-            "form": "L,L,L,D,L"
+            "form": "?,L,L,L,D"
         },
         {
             "position": 18,
@@ -326,7 +326,7 @@
             "goalsAgainst": 33,
             "goalDifference": -18,
             "points": 19,
-            "form": "L,W,L,D,W"
+            "form": "?,L,W,L,D"
         },
         {
             "position": 19,
@@ -344,7 +344,7 @@
             "goalsAgainst": 27,
             "goalDifference": -10,
             "points": 18,
-            "form": "D,L,L,L,L"
+            "form": "?,D,L,L,L"
         },
         {
             "position": 20,
@@ -362,7 +362,7 @@
             "goalsAgainst": 40,
             "goalDifference": -25,
             "points": 9,
-            "form": "W,L,D,D,L"
+            "form": "?,W,L,D,D"
         }
     ]
 }

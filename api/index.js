@@ -10,32 +10,45 @@ import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
+const MIN_YEAR = 2015;
+const MAX_YEAR = 2022;
+
 APP.get('/', (ctx) => {
 	return ctx.json([
 		{
 			endpoint: '/areas',
-			description: 'List all available areas.',
+			description: 'List all available areas. 🌍',
 			parameters: [
 				{
 					name: "id",
 					endpoint: "/areas/:id",
-					description: "List one area given by area id."
+					description: "List one area given by id. 🔍"
 				}
 			]
 		},
 		{
 			endpoint: '/competitions',
-			description: 'List all available competitions.',
+			description: 'List all available competitions. 🏆',
 			parameters: [
 				{
 					name: "id",
+					endpoint: "/competitions/:id",
+					description: "List one competition given by id. 🔍"
+				},
+				{
+					name: "standings",
 					endpoint: "/competitions/:id/standings",
-					description: "List the current league standings for a league."
+					description: "List the current standings for a league. 🔍"
+				},
+				{
+					name: "year",
+					endpoint: "/competitions/:id/standings/:year",
+					description: "List the standings for a league, given by start year. 🔍"
 				}
 			]
 		},
 		{
-			version: '0.15a',
+			version: '0.2a',
 			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);
@@ -47,8 +60,8 @@ APP.get('/areas', (ctx) => {
 
 APP.get('/areas/:id', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
-	const found = areas.find((area) => area.id === id)
-	return found ? ctx.json(found) : ctx.json({ message: 'Area not found' }, 404)
+	const found = areas.find((area) => area.id === id);
+	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
 APP.get('/competitions', (ctx) => {
@@ -56,35 +69,62 @@ APP.get('/competitions', (ctx) => {
 });
 
 APP.get('/competitions/:id', (ctx) => {
-	return ctx.json({ message: 'PENDING' }, 404)
+	const id = ctx.req.param("id").toUpperCase();
+	const found = competitions.find((competition) => competition.id === id);
+	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
 APP.get('/competitions/:id/standings', (ctx) => {
-	return ctx.json({ message: 'PENDING' }, 404)
+	const id = ctx.req.param("id").toUpperCase();
+	const found = competitions.find((competition) => competition.id === id);
+	if (found) {
+		switch (id) {
+			case "PRL": return ctx.json(standingsPremierLeague);
+			case "LAL": return ctx.json(standingsLaLiga);
+			case "LI1": return ctx.json(standingsLigue1);
+			case "SEA": return ctx.json(standingsSerieA);
+			case "BUN": return ctx.json(standingsBundesliga);
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
 });
 
-APP.get('/standingsLaLiga', (ctx) => {
-	return ctx.json(standingsLaLiga);
-});
-
-APP.get('/standingsLigue1', (ctx) => {
-	return ctx.json(standingsLigue1);
-});
-
-APP.get('/standingsSerieA', (ctx) => {
-	return ctx.json(standingsSerieA);
-});
-
-APP.get('/standingsBundesliga', (ctx) => {
-	return ctx.json(standingsBundesliga);
-});
-
-APP.get('/standingsPremierLeague', (ctx) => {
-	return ctx.json(standingsPremierLeague);
+APP.get('/competitions/:id/standings/:year', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const year = ctx.req.param("year");
+	const found = competitions.find((competition) => competition.id === id);
+	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (found) {
+		switch (id) {
+			case "PRL": ;
+				break;
+			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				return ctx.json(standingsLaLiga + year);
+			};
+				break;
+			case "LI1": ;
+				break;
+			case "SEA": ;
+				break;
+			case "BUN": ;
+				break;
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
 });
 
 APP.get('/standingsLaLiga/2021', (ctx) => {
 	return ctx.json(standingsLaLiga2021);
 });
+
+APP.notFound((ctx) => {
+	const { pathname } = new URL(ctx.req.url);
+	if (ctx.req.url.at(-1) === '/') {
+		return ctx.redirect(pathname.slice(0, -1));
+	}
+	return ctx.json({ message: 'Not Found. 😔' }, 404);
+})
 
 export default APP;

@@ -70,16 +70,16 @@
         "parentArea": "Europe"
     },
     {
-        "id": "GER",
-        "name": "Germany",
-        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png",
+        "id": "ITA",
+        "name": "Italy",
+        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png",
         "parentAreaId": 7,
         "parentArea": "Europe"
     },
     {
-        "id": "ITA",
-        "name": "Italy",
-        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png",
+        "id": "GER",
+        "name": "Germany",
+        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png",
         "parentAreaId": 7,
         "parentArea": "Europe"
     }

@@ -20,11 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run:
-          npm install puppeteer@18.1.0
           node scraping/index.js
           git config user.name zeus-api-bot
           git add -A

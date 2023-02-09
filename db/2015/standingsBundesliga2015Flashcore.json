@@ -1,1 +1,332 @@
-{"name":"Bundesliga","area":"GER","yearStart":2015,"yearEnd":2016,"standings":[{"position":1,"team":{"id":"nVp0wiqd","name":"Bayern Munich","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nVp0wiqd_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nVp0wiqd_kit.png"},"playedGames":34,"wins":28,"draws":4,"loses":2,"goalsFor":80,"goalsAgainst":17,"goalDifference":63,"points":88,"form":"W,W,D,W,W"},{"position":2,"team":{"id":"nP1i5US1","name":"Dortmund","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nP1i5US1_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nP1i5US1_kit.png"},"playedGames":34,"wins":24,"draws":6,"loses":4,"goalsFor":82,"goalsAgainst":34,"goalDifference":48,"points":78,"form":"D,L,W,W,W"},{"position":3,"team":{"id":"4jcj2zMd","name":"Bayer Leverkusen","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/4jcj2zMd_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/4jcj2zMd_kit.png"},"playedGames":34,"wins":18,"draws":6,"loses":10,"goalsFor":56,"goalsAgainst":40,"goalDifference":16,"points":60,"form":"W,L,W,W,W"},{"position":4,"team":{"id":"88HSzjDr","name":"B. Monchengladbach","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/88HSzjDr_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/88HSzjDr_kit.png"},"playedGames":34,"wins":17,"draws":4,"loses":13,"goalsFor":67,"goalsAgainst":50,"goalDifference":17,"points":55,"form":"W,W,D,W,L"},{"position":5,"team":{"id":"0Ija0Ej9","name":"Schalke","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/0Ija0Ej9_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/0Ija0Ej9_kit.png"},"playedGames":34,"wins":15,"draws":7,"loses":12,"goalsFor":51,"goalsAgainst":49,"goalDifference":2,"points":52,"form":"W,D,W,L,L"},{"position":6,"team":{"id":"EuakNmc1","name":"Mainz","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/EuakNmc1_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/EuakNmc1_kit.png"},"playedGames":34,"wins":14,"draws":8,"loses":12,"goalsFor":46,"goalsAgainst":42,"goalDifference":4,"points":50,"form":"D,W,D,L,L"},{"position":7,"team":{"id":"2y0u8Wrq","name":"Hertha Berlin","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2y0u8Wrq_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2y0u8Wrq_kit.png"},"playedGames":34,"wins":14,"draws":8,"loses":12,"goalsFor":42,"goalsAgainst":42,"goalDifference":0,"points":50,"form":"D,L,L,L,L"},{"position":8,"team":{"id":"nwkTahLL","name":"Wolfsburg","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nwkTahLL_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nwkTahLL_kit.png"},"playedGames":34,"wins":12,"draws":9,"loses":13,"goalsFor":47,"goalsAgainst":49,"goalDifference":-2,"points":45,"form":"W,W,L,L,L"},{"position":9,"team":{"id":"WG9pOTse","name":"FC Koln","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/WG9pOTse_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/WG9pOTse_kit.png"},"playedGames":34,"wins":10,"draws":13,"loses":11,"goalsFor":38,"goalsAgainst":42,"goalDifference":-4,"points":43,"form":"D,D,D,W,W"},{"position":10,"team":{"id":"v9k3aY5F","name":"Hamburger SV","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/v9k3aY5F_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/v9k3aY5F_kit.png"},"playedGames":34,"wins":11,"draws":8,"loses":15,"goalsFor":40,"goalsAgainst":46,"goalDifference":-6,"points":41,"form":"W,L,D,W,L"},{"position":11,"team":{"id":"ne5QkLtB","name":"Ingolstadt","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/ne5QkLtB_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/ne5QkLtB_kit.png"},"playedGames":34,"wins":10,"draws":10,"loses":14,"goalsFor":33,"goalsAgainst":42,"goalDifference":-9,"points":40,"form":"L,L,L,D,L"},{"position":12,"team":{"id":"fTVNku3I","name":"Augsburg","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/fTVNku3I_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/fTVNku3I_kit.png"},"playedGames":34,"wins":9,"draws":11,"loses":14,"goalsFor":42,"goalsAgainst":52,"goalDifference":-10,"points":38,"form":"L,D,D,W,W"},{"position":13,"team":{"id":"Ig1f1fy3","name":"Werder Bremen","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Ig1f1fy3_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Ig1f1fy3_kit.png"},"playedGames":34,"wins":10,"draws":8,"loses":16,"goalsFor":50,"goalsAgainst":65,"goalDifference":-15,"points":38,"form":"W,D,W,L,W"},{"position":14,"team":{"id":"S0hPB9rA","name":"Darmstadt","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/S0hPB9rA_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/S0hPB9rA_kit.png"},"playedGames":34,"wins":9,"draws":11,"loses":14,"goalsFor":38,"goalsAgainst":53,"goalDifference":-15,"points":38,"form":"L,W,L,L,W"},{"position":15,"team":{"id":"hQAtP9Sl","name":"Hoffenheim","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/hQAtP9Sl_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/hQAtP9Sl_kit.png"},"playedGames":34,"wins":9,"draws":10,"loses":15,"goalsFor":39,"goalsAgainst":54,"goalDifference":-15,"points":37,"form":"L,L,W,L,W"},{"position":16,"team":{"id":"8vndvXTk","name":"Eintracht Frankfurt","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/8vndvXTk_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/8vndvXTk_kit.png"},"playedGames":34,"wins":9,"draws":9,"loses":16,"goalsFor":34,"goalsAgainst":52,"goalDifference":-18,"points":36,"form":"L,W,W,W,L"},{"position":17,"team":{"id":"nJQmYp1B","name":"Stuttgart","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nJQmYp1B_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nJQmYp1B_kit.png"},"playedGames":34,"wins":9,"draws":6,"loses":19,"goalsFor":50,"goalsAgainst":75,"goalDifference":-25,"points":33,"form":"L,L,L,L,L"},{"position":18,"team":{"id":"dfNCCCzS","name":"Hannover","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/dfNCCCzS_logo.png","kit":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/dfNCCCzS_kit.png"},"playedGames":34,"wins":7,"draws":4,"loses":23,"goalsFor":31,"goalsAgainst":62,"goalDifference":-31,"points":25,"form":"L,W,L,D,W"}]}
+{
+    "name": "Bundesliga",
+    "area": "GER",
+    "yearStart": 2015,
+    "yearEnd": 2016,
+    "standings": [
+        {
+            "position": 1,
+            "team": {
+                "id": "nVp0wiqd",
+                "name": "Bayern Munich",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nVp0wiqd_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nVp0wiqd_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 28,
+            "draws": 4,
+            "loses": 2,
+            "goalsFor": 80,
+            "goalsAgainst": 17,
+            "goalDifference": 63,
+            "points": 88,
+            "form": "W,W,D,W,W"
+        },
+        {
+            "position": 2,
+            "team": {
+                "id": "nP1i5US1",
+                "name": "Dortmund",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nP1i5US1_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nP1i5US1_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 24,
+            "draws": 6,
+            "loses": 4,
+            "goalsFor": 82,
+            "goalsAgainst": 34,
+            "goalDifference": 48,
+            "points": 78,
+            "form": "D,L,W,W,W"
+        },
+        {
+            "position": 3,
+            "team": {
+                "id": "4jcj2zMd",
+                "name": "Bayer Leverkusen",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/4jcj2zMd_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/4jcj2zMd_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 18,
+            "draws": 6,
+            "loses": 10,
+            "goalsFor": 56,
+            "goalsAgainst": 40,
+            "goalDifference": 16,
+            "points": 60,
+            "form": "W,L,W,W,W"
+        },
+        {
+            "position": 4,
+            "team": {
+                "id": "88HSzjDr",
+                "name": "B. Monchengladbach",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/88HSzjDr_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/88HSzjDr_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 17,
+            "draws": 4,
+            "loses": 13,
+            "goalsFor": 67,
+            "goalsAgainst": 50,
+            "goalDifference": 17,
+            "points": 55,
+            "form": "W,W,D,W,L"
+        },
+        {
+            "position": 5,
+            "team": {
+                "id": "0Ija0Ej9",
+                "name": "Schalke",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/0Ija0Ej9_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/0Ija0Ej9_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 15,
+            "draws": 7,
+            "loses": 12,
+            "goalsFor": 51,
+            "goalsAgainst": 49,
+            "goalDifference": 2,
+            "points": 52,
+            "form": "W,D,W,L,L"
+        },
+        {
+            "position": 6,
+            "team": {
+                "id": "EuakNmc1",
+                "name": "Mainz",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/EuakNmc1_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/EuakNmc1_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 14,
+            "draws": 8,
+            "loses": 12,
+            "goalsFor": 46,
+            "goalsAgainst": 42,
+            "goalDifference": 4,
+            "points": 50,
+            "form": "D,W,D,L,L"
+        },
+        {
+            "position": 7,
+            "team": {
+                "id": "2y0u8Wrq",
+                "name": "Hertha Berlin",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/2y0u8Wrq_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/2y0u8Wrq_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 14,
+            "draws": 8,
+            "loses": 12,
+            "goalsFor": 42,
+            "goalsAgainst": 42,
+            "goalDifference": 0,
+            "points": 50,
+            "form": "D,L,L,L,L"
+        },
+        {
+            "position": 8,
+            "team": {
+                "id": "nwkTahLL",
+                "name": "Wolfsburg",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nwkTahLL_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nwkTahLL_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 12,
+            "draws": 9,
+            "loses": 13,
+            "goalsFor": 47,
+            "goalsAgainst": 49,
+            "goalDifference": -2,
+            "points": 45,
+            "form": "W,W,L,L,L"
+        },
+        {
+            "position": 9,
+            "team": {
+                "id": "WG9pOTse",
+                "name": "FC Koln",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/WG9pOTse_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/WG9pOTse_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 10,
+            "draws": 13,
+            "loses": 11,
+            "goalsFor": 38,
+            "goalsAgainst": 42,
+            "goalDifference": -4,
+            "points": 43,
+            "form": "D,D,D,W,W"
+        },
+        {
+            "position": 10,
+            "team": {
+                "id": "v9k3aY5F",
+                "name": "Hamburger SV",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/v9k3aY5F_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/v9k3aY5F_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 11,
+            "draws": 8,
+            "loses": 15,
+            "goalsFor": 40,
+            "goalsAgainst": 46,
+            "goalDifference": -6,
+            "points": 41,
+            "form": "W,L,D,W,L"
+        },
+        {
+            "position": 11,
+            "team": {
+                "id": "ne5QkLtB",
+                "name": "Ingolstadt",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/ne5QkLtB_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/ne5QkLtB_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 10,
+            "draws": 10,
+            "loses": 14,
+            "goalsFor": 33,
+            "goalsAgainst": 42,
+            "goalDifference": -9,
+            "points": 40,
+            "form": "L,L,L,D,L"
+        },
+        {
+            "position": 12,
+            "team": {
+                "id": "fTVNku3I",
+                "name": "Augsburg",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/fTVNku3I_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/fTVNku3I_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 9,
+            "draws": 11,
+            "loses": 14,
+            "goalsFor": 42,
+            "goalsAgainst": 52,
+            "goalDifference": -10,
+            "points": 38,
+            "form": "L,D,D,W,W"
+        },
+        {
+            "position": 13,
+            "team": {
+                "id": "Ig1f1fy3",
+                "name": "Werder Bremen",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/Ig1f1fy3_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/Ig1f1fy3_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 10,
+            "draws": 8,
+            "loses": 16,
+            "goalsFor": 50,
+            "goalsAgainst": 65,
+            "goalDifference": -15,
+            "points": 38,
+            "form": "W,D,W,L,W"
+        },
+        {
+            "position": 14,
+            "team": {
+                "id": "S0hPB9rA",
+                "name": "Darmstadt",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/S0hPB9rA_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/S0hPB9rA_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 9,
+            "draws": 11,
+            "loses": 14,
+            "goalsFor": 38,
+            "goalsAgainst": 53,
+            "goalDifference": -15,
+            "points": 38,
+            "form": "L,W,L,L,W"
+        },
+        {
+            "position": 15,
+            "team": {
+                "id": "hQAtP9Sl",
+                "name": "Hoffenheim",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/hQAtP9Sl_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/hQAtP9Sl_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 9,
+            "draws": 10,
+            "loses": 15,
+            "goalsFor": 39,
+            "goalsAgainst": 54,
+            "goalDifference": -15,
+            "points": 37,
+            "form": "L,L,W,L,W"
+        },
+        {
+            "position": 16,
+            "team": {
+                "id": "8vndvXTk",
+                "name": "Eintracht Frankfurt",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/8vndvXTk_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/8vndvXTk_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 9,
+            "draws": 9,
+            "loses": 16,
+            "goalsFor": 34,
+            "goalsAgainst": 52,
+            "goalDifference": -18,
+            "points": 36,
+            "form": "L,W,W,W,L"
+        },
+        {
+            "position": 17,
+            "team": {
+                "id": "nJQmYp1B",
+                "name": "Stuttgart",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/nJQmYp1B_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/nJQmYp1B_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 9,
+            "draws": 6,
+            "loses": 19,
+            "goalsFor": 50,
+            "goalsAgainst": 75,
+            "goalDifference": -25,
+            "points": 33,
+            "form": "L,L,L,L,L"
+        },
+        {
+            "position": 18,
+            "team": {
+                "id": "dfNCCCzS",
+                "name": "Hannover",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/dfNCCCzS_logo.png",
+                "kit": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/dfNCCCzS_kit.png"
+            },
+            "playedGames": 34,
+            "wins": 7,
+            "draws": 4,
+            "loses": 23,
+            "goalsFor": 31,
+            "goalsAgainst": 62,
+            "goalDifference": -31,
+            "points": 25,
+            "form": "L,W,L,D,W"
+        }
+    ]
+}

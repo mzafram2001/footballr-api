@@ -152,16 +152,16 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-/*getStandings(URLS.spain);
+getStandings(URLS.spain);
 getStandings(URLS.england);
 getStandings(URLS.italy);
 getStandings(URLS.france);
-getStandings(URLS.germany);*/
+getStandings(URLS.germany);
 
-getStandings(URLS.italy_2015);
+/*getStandings(URLS.italy_2015);
 getStandings(URLS.italy_2016);
 getStandings(URLS.italy_2017);
 getStandings(URLS.italy_2018);
 getStandings(URLS.italy_2019);
 getStandings(URLS.italy_2020);
-getStandings(URLS.italy_2021);
+getStandings(URLS.italy_2021);*/

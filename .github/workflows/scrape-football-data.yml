@@ -15,11 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install Dependencies
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
         with:
           node-version: 16
+          args: install
+      - name: Test Code
+      - uses: mujo-code/puppeteer-headful@16.6.0
+        env:
+          CI: "true"
+        with:
+          args: npm test
       - run:
           node scraping/index.js
           git config user.name zeus-api-bot

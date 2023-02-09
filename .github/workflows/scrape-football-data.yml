@@ -19,9 +19,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.14.2
+          node-version: 16
       - run:
-          node .\scraping\index.js
+          node scraping/index.js
           git config user.name zeus-api-bot
           git add -A
           git commit -m "[bot] UPDATE zeus-api database"

@@ -1,0 +1,28 @@
+name: Scrape Football Data
+
+on:
+  workflow_dispatch:
+  
+  repository_dispatch:
+    types:
+      - webhook
+  
+  schedule:
+   - cron: "*/15 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.2
+      - run:
+          node .\scraping\index.js
+          git config user.name zeus-api-bot
+          git add -A
+          git commit -m "[bot] UPDATE zeus-api database"
+          git push origin main

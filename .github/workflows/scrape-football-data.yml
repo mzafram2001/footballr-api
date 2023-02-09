@@ -21,8 +21,6 @@ jobs:
         with:
           node-version: 16
       - run:
-          npm install -g npm 
-          npm i puppeteer
           node scraping/index.js
           git config user.name zeus-api-bot
           git add -A

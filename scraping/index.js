@@ -7,13 +7,49 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england: "https://www.flashscore.com/football/england/premier-league/standings/",
-    spain: "https://www.flashscore.com/football/spain/laliga/standings/",
-    // spain_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/standings",
-    // spain_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/standings",
-    // spain_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/standings",
-    france: "https://www.flashscore.com/football/france/ligue-1/standings/",
-    italy: "https://www.flashscore.com/football/italy/serie-a/standings/",
+    england_2015: "https://www.flashscore.com/football/england/premier-league-2015-2016/standings/",
+    england_2016: "https://www.flashscore.com/football/england/premier-league-2016-2017/standings/",
+    england_2017: "https://www.flashscore.com/football/england/premier-league-2017-2018/standings/",
+    england_2018: "https://www.flashscore.com/football/england/premier-league-2018-2019/standings/",
+    england_2019: "https://www.flashscore.com/football/england/premier-league-2019-2020/standings/",
+    england_2020: "https://www.flashscore.com/football/england/premier-league-2020-2021/standings/",
+    england_2021: "https://www.flashscore.com/football/england/premier-league-2021-2022/standings/",
+    england_2022: "https://www.flashscore.com/football/england/premier-league/standings/",
+
+    spain_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/standings",
+    spain_2016: "https://www.flashscore.com/football/spain/laliga-2016-2017/standings",
+    spain_2017: "https://www.flashscore.com/football/spain/laliga-2017-2018/standings",
+    spain_2018: "https://www.flashscore.com/football/spain/laliga-2018-2019/standings",
+    spain_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/standings",
+    spain_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/standings",
+    spain_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/standings",
+    spain_2022: "https://www.flashscore.com/football/spain/laliga/standings/",
+
+    france_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/standings",
+    france_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/standings",
+    france_2017: "https://www.flashscore.com/football/france/ligue-1-2017-2018/standings",
+    france_2018: "https://www.flashscore.com/football/france/ligue-1-2018-2019/standings",
+    france_2019: "https://www.flashscore.com/football/france/ligue-1-2019-2020/standings",
+    france_2020: "https://www.flashscore.com/football/france/ligue-1-2020-2021/standings",
+    france_2021: "https://www.flashscore.com/football/france/ligue-1-2021-2022/standings",
+    france_2022: "https://www.flashscore.com/football/france/ligue-1/standings/",
+
+    italy_2015: "https://www.flashscore.com/football/italy/serie-a-2015-2016/standings",
+    italy_2016: "https://www.flashscore.com/football/italy/serie-a-2016-2017/standings",
+    italy_2017: "https://www.flashscore.com/football/italy/serie-a-2017-2018/standings",
+    italy_2018: "https://www.flashscore.com/football/italy/serie-a-2018-2019/standings",
+    italy_2019: "https://www.flashscore.com/football/italy/serie-a-2019-2020/standings",
+    italy_2020: "https://www.flashscore.com/football/italy/serie-a-2020-2021/standings",
+    italy_2021: "https://www.flashscore.com/football/italy/serie-a-2021-2022/standings",
+    italy_2022: "https://www.flashscore.com/football/italy/serie-a/standings/",
+
+    germany_2015: "https://www.flashscore.com/football/germany/bundesliga-2015-2016/standings",
+    germany_2016: "https://www.flashscore.com/football/germany/bundesliga-2016-2017/standings",
+    germany_2017: "https://www.flashscore.com/football/germany/bundesliga-2017-2018/standings",
+    germany_2018: "https://www.flashscore.com/football/germany/bundesliga-2018-2019/standings",
+    germany_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/standings",
+    germany_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/standings",
+    germany_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings",
     germany: "https://www.flashscore.com/football/germany/bundesliga/standings/"
 };
 
@@ -70,8 +106,13 @@ async function getStandings(url) {
             TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
             TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
             TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
-            TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
-            TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+            if(parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+                TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
+                TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+            } else {
+                TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+                TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+            }
             TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
             TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             for (var i = 1; i < 6; i++) {
@@ -86,21 +127,17 @@ async function getStandings(url) {
         return JSON;
     });
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLigaFlashcore.json");
+        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        /*case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLiga2021Flashcore.json");
-            break;*/
-        //case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLiga2020Flashcore.json");
-            //break;
-        //case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/standingsLaLiga2019Flashcore.json");
-            //break;
-        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/standingsBundesligaFlashcore.json");
+        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/standingsSerieAFlashcore.json");
+        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsBundesliga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/standingsLigue1Flashcore.json");
+        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsSerieA" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/standingsPremierLeagueFlashcore.json");
+        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLigue1" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsPremierLeague" + RESULT.yearStart + "Flashcore.json");
             break;
     }
 
@@ -115,4 +152,16 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.spain);
+/*getStandings(URLS.spain);
+getStandings(URLS.england);
+getStandings(URLS.italy);
+getStandings(URLS.france);
+getStandings(URLS.germany);*/
+
+getStandings(URLS.italy_2015);
+getStandings(URLS.italy_2016);
+getStandings(URLS.italy_2017);
+getStandings(URLS.italy_2018);
+getStandings(URLS.italy_2019);
+getStandings(URLS.italy_2020);
+getStandings(URLS.italy_2021);

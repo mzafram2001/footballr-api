@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import standingsLaLiga from "../db/standingsLaLigaFlashcore.json";
+import standingsLaLiga2022 from "../db/standingsLaLiga2022Flashcore.json";
 import standingsLaLiga2019 from "../db/standingsLaLiga2019Flashcore.json";
 import standingsLaLiga2020 from "../db/standingsLaLiga2020Flashcore.json";
 import standingsLaLiga2021 from "../db/standingsLaLiga2021Flashcore.json";
@@ -82,7 +82,7 @@ APP.get('/competitions/:id/standings', (ctx) => {
 	if (found) {
 		switch (id) {
 			case "PRL": return ctx.json(standingsPremierLeague);
-			case "LAL": return ctx.json(standingsLaLiga);
+			case "LAL": return ctx.json(standingsLaLiga2022);
 			case "LI1": return ctx.json(standingsLigue1);
 			case "SEA": return ctx.json(standingsSerieA);
 			case "BUN": return ctx.json(standingsBundesliga);

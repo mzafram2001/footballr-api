@@ -29,6 +29,6 @@ jobs:
           pnpm install
           node scraping/index.js
           git config user.name zeus-api-bot
-          git add
+          git add -all
           git commit -m "[bot] UPDATE zeus-api database"
           git push origin main

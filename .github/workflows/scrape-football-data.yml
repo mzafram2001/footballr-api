@@ -19,9 +19,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16.x
       - run:
-          sudo apt-get install -y libxml2-utils
+          sudo npm i puppeteer
           node scraping/index.js
           git config user.name zeus-api-bot
           git add -A

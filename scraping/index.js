@@ -156,7 +156,7 @@ getStandings(URLS.england_2022);
 getStandings(URLS.spain_2022);
 getStandings(URLS.france_2022);
 getStandings(URLS.italy_2022);
-getStandings(URLS.germany_2022);
+
 
 /*getStandings(URLS.italy_2015);
 getStandings(URLS.italy_2016);

@@ -50,7 +50,7 @@ const URLS = {
     germany_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/standings",
     germany_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/standings",
     germany_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings",
-    germany: "https://www.flashscore.com/football/germany/bundesliga/standings/"
+    germany_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/"
 };
 
 // // // // // // // // // // CODE // // // // // // // // // //
@@ -152,11 +152,11 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings("https://www.flashscore.com/football/spain/laliga/standings/");
-getStandings("https://www.flashscore.com/football/england/premier-league/standings/");
-getStandings("https://www.flashscore.com/football/italy/serie-a/standings/");
-getStandings("https://www.flashscore.com/football/france/ligue-1/standings/");
-getStandings("https://www.flashscore.com/football/germany/bundesliga/standings/");
+getStandings(URLS.england_2022);
+getStandings(URLS.spain_2022);
+getStandings(URLS.france_2022);
+getStandings(URLS.italy_2022);
+getStandings(URLS.germany_2022);
 
 /*getStandings(URLS.italy_2015);
 getStandings(URLS.italy_2016);

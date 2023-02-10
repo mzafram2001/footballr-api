@@ -18,17 +18,12 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
       - uses: pnpm/action-setup@v2
         with:
-          version: 6.0.2
-          run_install: |
-            - recursive: true
+          version: 7.18.2
+          run_install: true
       - run:
-          pnpm install
           node scraping/index.js
           git config user.name zeus-api-bot
-          git add -all
-          git commit -m "[bot] UPDATE zeus-api database"
+          git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update database"
           git push origin main

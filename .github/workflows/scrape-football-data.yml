@@ -27,6 +27,5 @@ jobs:
       - run:
           node scraping/index.js
           git config user.name zeus-api-bot
-          git add -A
-          git commit -m "[bot] update Zeus database"
+          git commit -am "[bot] update Zeus database"
           git push origin main

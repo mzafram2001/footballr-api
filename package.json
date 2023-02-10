@@ -1,7 +1,7 @@
 {
   "name": "zeus-api",
   "version": "1.0.0",
-  "description": "Football API and web",
+  "description": "Football API",
   "main": "index.js",
   "scripts": {
     "dev:api": "wrangler dev api/index.js",

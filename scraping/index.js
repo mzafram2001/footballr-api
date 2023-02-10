@@ -59,7 +59,7 @@ async function getStandings(url) {
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto("https://www.flashscore.com/football/germany/bundesliga/standings/", { waitUntil: "domcontentloaded" });
+    await PAGE.goto(url, { waitUntil: "domcontentloaded" });
     await PAGE.waitForSelector('.ui-table__body', { visible: true });
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
@@ -152,11 +152,11 @@ async function getStandings(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.spain);
-getStandings(URLS.england);
-getStandings(URLS.italy);
-getStandings(URLS.france);
-getStandings(URLS.germany);
+getStandings("https://www.flashscore.com/football/spain/laliga/standings/");
+getStandings("https://www.flashscore.com/football/england/premier-league/standings/");
+getStandings("https://www.flashscore.com/football/italy/serie-a/standings/");
+getStandings("https://www.flashscore.com/football/france/ligue-1/standings/");
+getStandings("https://www.flashscore.com/football/germany/bundesliga/standings/");
 
 /*getStandings(URLS.italy_2015);
 getStandings(URLS.italy_2016);

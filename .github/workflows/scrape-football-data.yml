@@ -29,6 +29,6 @@ jobs:
           pnpm i puppeteer
           node scraping/index.js
           git config user.name zeus-api-bot
-          git add -A
+          git add *
           git commit -m "[bot] UPDATE zeus-api database"
           git push origin main

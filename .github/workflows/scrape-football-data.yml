@@ -20,8 +20,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - uses: tj-actions/puppeteer@v4
+        id: puppeteer
+        with:
+          files: |
+           scraping/index.js
       - run:
-          npm ci
           node scraping/index.js
           git config user.name zeus-api-bot
           git add -A

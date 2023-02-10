@@ -1,4 +1,4 @@
-name: Scrape Football Data
+name: Deply API
 
 on:
   workflow_dispatch:
@@ -7,8 +7,9 @@ on:
     types:
       - webhook
   
-  schedule:
-   - cron: "*/15 * * * *"
+  push:
+   branches:
+    - main
 
 jobs:
   build:
@@ -24,8 +25,8 @@ jobs:
         with:
           version: 7.18.2
           run_install: true
-      - run: |
-          node scraping/index.js
-          git config user.name zeus-api-bot
-          git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
-          git push origin main
+      - uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: api
+      

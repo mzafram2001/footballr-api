@@ -50,10 +50,12 @@ const URLS = {
     germany_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/standings",
     germany_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/standings",
     germany_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings",
-    germany_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/"
+    germany_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/",
+
+    spain_matches: "https://www.flashscore.com/football/spain/laliga/results/"
 };
 
-// // // // // // // // // // CODE // // // // // // // // // //
+// // // // // // // // // // CODE STANDINGS // // // // // // // // // //
 async function getStandings(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -106,7 +108,7 @@ async function getStandings(url) {
             TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
             TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
             TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
-            if(parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+            if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
                 TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
                 TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
             } else {
@@ -151,18 +153,111 @@ async function getStandings(url) {
     await BROWSER.close();
 }
 
+// // // // // // // // // // CODE MATCHES // // // // // // // // // //
+async function getMatches(url) {
+    const BROWSER = await PUPPETER.launch({
+        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const PAGE = await BROWSER.newPage();
+    await PAGE.goto(url, { waitUntil: "domcontentloaded" });
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.focus('#live-table > div.event.event--results > div > div > a')
+    await PAGE.keyboard.type('\n');
+    await PAGE.click('.event__more');
+
+    const RESULT = await PAGE.evaluate(() => {
+        const JSON = {};
+        JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
+        switch (JSON.name) {
+            case "LaLiga": JSON.area = "ESP";
+                break;
+            case "Bundesliga": JSON.area = "GER";
+                break;
+            case "Serie A": JSON.area = "ITA";
+                break;
+            case "Ligue 1": JSON.area = "FRA";
+                break;
+            case "Premier League": JSON.area = "ENG";
+                break;
+        };
+        JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
+        JSON.yearStart = parseInt(JSON.yearStart.substring(0, 4));
+        JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
+        JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
+        JSON.season = [];
+
+        const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
+        const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
+
+        var num = 0;
+        var numReset = 0;
+        var round = 0;
+
+        ROUNDS_SELECTOR.forEach(element => {
+            const TMP = {};
+            TMP.round = element.innerText.substring(6);
+            round = parseInt(TMP.round);
+            TMP.matches = [];
+            /*for (var i = num; i < MATCHES_SELECTOR.length; i++) {
+                const TMP2 = {};
+                TMP2.id = MATCHES_SELECTOR[i].id.substring(4);
+                TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
+                TMP.matches.push(TMP2);
+                num++;
+                numReset++;
+                // 2 igual a partidos que tenemos para la jornada 21 (osea esta incompleta)
+                if (numReset == 1 && round == 21) {
+                    numReset = 0;
+                    break;
+                }
+                // cada 10 partidos (= 1 jornada hacemos un reset)
+                if (numReset % 10 == 0) {
+                    numReset = 0;
+                    break;
+                }
+            }*/
+            JSON.season.push(TMP);
+        });
+        return JSON;
+    });
+
+    /*for (let res of RESULT.season) {
+        for (let match of res.matches) {
+            await PAGE.goto(match.linkMatch);
+            console.log(match.linkMatch);
+            // coger info del partido
+        }
+    }*/
+
+    switch (RESULT.name) {
+        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesBundesliga" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesSerieA" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesLigue1" + RESULT.yearStart + "Flashcore.json");
+            break;
+        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesPremierLeague" + RESULT.yearStart + "Flashcore.json");
+            break;
+    }
+
+    FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
+        if (err) {
+            console.log('An error occured while writing JSON Object to File.');
+            return console.log(err);
+        }
+        console.log('JSON file has been saved.');
+    });
+    await BROWSER.close();
+}
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.england_2022);
-getStandings(URLS.spain_2022);
-getStandings(URLS.france_2022);
-getStandings(URLS.italy_2022);
-getStandings(URLS.germany_2022);
+// getStandings(URLS.england_2022);
+// getStandings(URLS.spain_2022);
+// getStandings(URLS.france_2022);
+// getStandings(URLS.italy_2022);
+// getStandings(URLS.germany_2022);
 
-
-/*getStandings(URLS.italy_2015);
-getStandings(URLS.italy_2016);
-getStandings(URLS.italy_2017);
-getStandings(URLS.italy_2018);
-getStandings(URLS.italy_2019);
-getStandings(URLS.italy_2020);
-getStandings(URLS.italy_2021);*/
+getMatches(URLS.spain_matches);

@@ -99,7 +99,7 @@ APP.get('/', (ctx) => {
 			]
 		},
 		{
-			version: '0.32a',
+			version: '0.34a',
 			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);

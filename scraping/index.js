@@ -117,8 +117,8 @@ async function getStandings(url) {
             }
             TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
             TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
-            for (var i = 1; i < 6; i++) {
-                if (i == 1) {
+            for (var i = 2; i < 7; i++) {
+                if (i == 2) {
                     TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText;
                 } else {
                     TMP.form = TMP.form.concat(",", element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText);

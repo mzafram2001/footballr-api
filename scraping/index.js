@@ -216,6 +216,13 @@ async function getMatches(url) {
                     TMP2.id = MATCHES_SELECTOR[j].id.substring(4);
                     TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
                     TMP.matches.push(TMP2);
+                    numReset++;
+                    // cada 10 partidos (= 1 jornada hacemos un reset)
+                    if (numReset % 10 == 0) {
+                        numSave = j;
+                        numReset = 0;
+                        break;
+                    }
                 }
                 JSON.season.push(TMP);
             }

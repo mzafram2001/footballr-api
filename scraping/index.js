@@ -188,12 +188,44 @@ async function getMatches(url) {
 
         const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
-
         var num = 0;
         var numReset = 0;
         var round = 0;
+        for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
+            const TMP = {};
+            var found = false;
+            TMP.round = ROUNDS_SELECTOR[i].innerText.substring(6);
+            round = parseInt(TMP.round);
+            TMP.matches = [];
+            for (index in JSON.season) {
+                if (JSON.season[index].round == TMP.round) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                // REVISAR
+                for (var j = MATCHES_SELECTOR.length - 1; j >= num; j--) {
+                    const TMP2 = {};
+                    TMP2.id = MATCHES_SELECTOR[j].id.substring(4);
+                    TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
+                    TMP.matches.push(TMP2);
 
-        ROUNDS_SELECTOR.forEach(element => {
+                    num++;
+                    numReset++;
+
+                    // cada 10 partidos (= 1 jornada hacemos un reset)
+                    if (numReset % 10 == 0) {
+                        numReset = 0;
+                        break;
+                    }
+
+                }
+                JSON.season.push(TMP);
+            }
+        }
+
+        /*ROUNDS_SELECTOR.forEach(element => {
             const TMP = {};
             TMP.round = element.innerText.substring(6);
             round = parseInt(TMP.round);
@@ -215,9 +247,9 @@ async function getMatches(url) {
                     numReset = 0;
                     break;
                 }
-            }*/
+            }
             JSON.season.push(TMP);
-        });
+        });*/
         return JSON;
     });
 
@@ -254,10 +286,10 @@ async function getMatches(url) {
     await BROWSER.close();
 }
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-// getStandings(URLS.england_2022);
-// getStandings(URLS.spain_2022);
-// getStandings(URLS.france_2022);
-// getStandings(URLS.italy_2022);
-// getStandings(URLS.germany_2022);
+getStandings(URLS.england_2022);
+getStandings(URLS.spain_2022);
+getStandings(URLS.france_2022);
+getStandings(URLS.italy_2022);
+getStandings(URLS.germany_2022);
 
 getMatches(URLS.spain_matches);

@@ -160,57 +160,6 @@ async function getMatches(url) {
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "domcontentloaded" });
-
-    const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
-    MATCHES_SELECTOR.forEach(element => {
-        var id = element.id.substring(4);
-        var link = "https://www.flashscore.com/match/" + id;
-        PAGE.goto(link);
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
     await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.focus('#live-table > div.event.event--results > div > div > a')
@@ -243,46 +192,60 @@ async function getMatches(url) {
         JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
         JSON.season = [];
 
-        //FUERA DEL LOOP RESULT EN VEZ DE HACERLO DESDE FUERA, COGER TODOS LOS LINKS Y ENTRAR PARTIDO A PARTIDO Y SACAR TODA LA INFO
-
         const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
+        var numSave;
+        numSave = MATCHES_SELECTOR.length - 1;
+        var numReset = 0;
         var round = 0;
-        var matchdays = [];
-
-
-
-
-
-
-
-        /*for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
+        for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
             const TMP = {};
-            var duplicatedRound = false;
-            TMP.round = parseInt(ROUNDS_SELECTOR[i].innerText.substring(6));
+            var found = false;
+            TMP.round = ROUNDS_SELECTOR[i].innerText.substring(6);
             round = parseInt(TMP.round);
-            matchdays.push(round);
             TMP.matches = [];
             for (index in JSON.season) {
                 if (JSON.season[index].round == TMP.round) {
-                    foundRound = true;
+                    found = true;
                     break;
                 }
             }
-            if (!foundRound) {
-                MATCHES_SELECTOR.forEach(element => {
+            if (!found) {
+                for (var j = numSave; j >= 0; j--) {
                     const TMP2 = {};
-                    var foundRoundId;
-                    TMP2.id = element.id.substring(4);
+                    TMP2.id = MATCHES_SELECTOR[j].id.substring(4);
                     TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
-
-
-
                     TMP.matches.push(TMP2);
-                });
+                }
                 JSON.season.push(TMP);
             }
-        }*/
+        }
+
+        /*ROUNDS_SELECTOR.forEach(element => {
+            const TMP = {};
+            TMP.round = element.innerText.substring(6);
+            round = parseInt(TMP.round);
+            TMP.matches = [];
+            /*for (var i = num; i < MATCHES_SELECTOR.length; i++) {
+                const TMP2 = {};
+                TMP2.id = MATCHES_SELECTOR[i].id.substring(4);
+                TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
+                TMP.matches.push(TMP2);
+                num++;
+                numReset++;
+                // 2 igual a partidos que tenemos para la jornada 21 (osea esta incompleta)
+                if (numReset == 1 && round == 21) {
+                    numReset = 0;
+                    break;
+                }
+                // cada 10 partidos (= 1 jornada hacemos un reset)
+                if (numReset % 10 == 0) {
+                    numReset = 0;
+                    break;
+                }
+            }
+            JSON.season.push(TMP);
+        });*/
         return JSON;
     });
 

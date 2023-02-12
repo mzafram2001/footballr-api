@@ -279,10 +279,10 @@ async function getMatches(url) {
     await BROWSER.close();
 }
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-// getStandings(URLS.england_2022);
-// getStandings(URLS.spain_2022);
-// getStandings(URLS.france_2022);
-// getStandings(URLS.italy_2022);
-// getStandings(URLS.germany_2022);
+getStandings(URLS.england_2022);
+getStandings(URLS.spain_2022);
+getStandings(URLS.france_2022);
+getStandings(URLS.italy_2022);
+getStandings(URLS.germany_2022);
 
-getMatches(URLS.spain_matches_2022);
+// getMatches(URLS.spain_matches_2022);

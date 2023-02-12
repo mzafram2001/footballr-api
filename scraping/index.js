@@ -57,6 +57,12 @@ const URLS = {
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 };
 
+async function delay(time) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+    });
+}
+
 // // // // // // // // // // CODE STANDINGS // // // // // // // // // //
 async function getStandings(url) {
     const BROWSER = await PUPPETER.launch({
@@ -164,13 +170,15 @@ async function getMatches(url) {
     await PAGE.goto(url, { waitUntil: "domcontentloaded" });
     // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
     await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.focus('#live-table > div.event.event--results > div > div > a')
-    await PAGE.keyboard.type('\n');
-    await PAGE.click('.event__more');
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.focus('#live-table > div.event.event--results > div > div > a')
-    await PAGE.keyboard.type('\n');
-    await PAGE.click('.event__more');
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -233,11 +241,17 @@ async function getMatches(url) {
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText;
             TMP.home = document.querySelector('.duelParticipant__home').innerText;
             TMP.away = document.querySelector('.duelParticipant__away').innerText;
+            TMP.homeGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText;
+            TMP.awayGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText;
+            TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
             return TMP;
         });
         match.date = MATCH.date;
         match.home = MATCH.home;
         match.away = MATCH.away;
+        match.homeGoals = MATCH.homeGoals;
+        match.awayGoals = MATCH.awayGoals;
+        match.status = MATCH.status;
     }
 
     switch (RESULT.name) {

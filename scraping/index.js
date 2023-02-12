@@ -1,6 +1,7 @@
 const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
+const { match } = require('assert');
 
 // TODO: 
 // - Organizar código
@@ -52,7 +53,8 @@ const URLS = {
     germany_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings",
     germany_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/",
 
-    spain_matches: "https://www.flashscore.com/football/spain/laliga/results/"
+    spain_matches_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/results/",
+    spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 };
 
 // // // // // // // // // // CODE STANDINGS // // // // // // // // // //
@@ -191,17 +193,22 @@ async function getMatches(url) {
         JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
         JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
         JSON.season = [];
-
+        JSON.matchesIteration = [];
         const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
-        var numSave;
-        numSave = MATCHES_SELECTOR.length - 1;
-        var numReset = 0;
         var round = 0;
+        // Creo un array de objetos con todos los partidos
+        for (var i = MATCHES_SELECTOR.length - 1; i >= 0; i--) {
+            const TMP2 = {};
+            TMP2.id = MATCHES_SELECTOR[i].id.substring(4);
+            TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
+            JSON.matchesIteration.push(TMP2);
+        }
+        // Meto en el JSON todas las rounds sin repetirlas
         for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
             const TMP = {};
             var found = false;
-            TMP.round = ROUNDS_SELECTOR[i].innerText.substring(6);
+            TMP.round = parseInt(ROUNDS_SELECTOR[i].innerText.substring(6));
             round = parseInt(TMP.round);
             TMP.matches = [];
             for (index in JSON.season) {
@@ -211,58 +218,27 @@ async function getMatches(url) {
                 }
             }
             if (!found) {
-                for (var j = numSave; j >= 0; j--) {
-                    const TMP2 = {};
-                    TMP2.id = MATCHES_SELECTOR[j].id.substring(4);
-                    TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
-                    TMP.matches.push(TMP2);
-                    numReset++;
-                    // cada 10 partidos (= 1 jornada hacemos un reset)
-                    if (numReset % 10 == 0) {
-                        numSave = j;
-                        numReset = 0;
-                        break;
-                    }
-                }
                 JSON.season.push(TMP);
             }
         }
-
-        /*ROUNDS_SELECTOR.forEach(element => {
-            const TMP = {};
-            TMP.round = element.innerText.substring(6);
-            round = parseInt(TMP.round);
-            TMP.matches = [];
-            /*for (var i = num; i < MATCHES_SELECTOR.length; i++) {
-                const TMP2 = {};
-                TMP2.id = MATCHES_SELECTOR[i].id.substring(4);
-                TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
-                TMP.matches.push(TMP2);
-                num++;
-                numReset++;
-                // 2 igual a partidos que tenemos para la jornada 21 (osea esta incompleta)
-                if (numReset == 1 && round == 21) {
-                    numReset = 0;
-                    break;
-                }
-                // cada 10 partidos (= 1 jornada hacemos un reset)
-                if (numReset % 10 == 0) {
-                    numReset = 0;
-                    break;
-                }
-            }
-            JSON.season.push(TMP);
-        });*/
         return JSON;
     });
 
-    /*for (let res of RESULT.season) {
-        for (let match of res.matches) {
-            await PAGE.goto(match.linkMatch);
-            console.log(match.linkMatch);
-            // coger info del partido
-        }
-    }*/
+    for (let match of RESULT.matchesIteration) {
+        await PAGE.goto(match.link);
+        console.log(match.link);
+
+        const MATCH = await PAGE.evaluate(() => {
+            const TMP = {};
+            TMP.date = document.querySelector('.duelParticipant__startTime').innerText;
+            TMP.home = document.querySelector('.duelParticipant__home').innerText;
+            TMP.away = document.querySelector('.duelParticipant__away').innerText;
+            return TMP;
+        });
+        match.date = MATCH.date;
+        match.home = MATCH.home;
+        match.away = MATCH.away;
+    }
 
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
@@ -289,10 +265,10 @@ async function getMatches(url) {
     await BROWSER.close();
 }
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.england_2022);
-getStandings(URLS.spain_2022);
-getStandings(URLS.france_2022);
-getStandings(URLS.italy_2022);
-getStandings(URLS.germany_2022);
+// getStandings(URLS.england_2022);
+// getStandings(URLS.spain_2022);
+// getStandings(URLS.france_2022);
+// getStandings(URLS.italy_2022);
+// getStandings(URLS.germany_2022);
 
-getMatches(URLS.spain_matches);
+getMatches(URLS.spain_matches_2022);

@@ -57,6 +57,7 @@ const URLS = {
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 };
 
+// // // // // // // // // // DELAY STANDINGS // // // // // // // // // //
 async function delay(time) {
     return new Promise(function (resolve) {
         setTimeout(resolve, time)
@@ -238,17 +239,46 @@ async function getMatches(url) {
 
         const MATCH = await PAGE.evaluate(() => {
             const TMP = {};
-            TMP.date = document.querySelector('.duelParticipant__startTime').innerText;
+            var dumpString;
+            var dumpStringArray;
+
+            TMP.homeTeam = {};
+            dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
+            dumpStringArray = dumpString.split('/');
+            TMP.homeTeam.id = dumpStringArray[3];
+            TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.homeTeam.id + "_logo.png";
+            TMP.homeTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.homeTeam.id + "_kit.png";
+
+            TMP.awayTeam = {};
+            dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
+            dumpStringArray = dumpString.split('/');
+            TMP.awayTeam.id = dumpStringArray[3];
+            TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            
+            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.awayTeam.id + "_logo.png";
+            TMP.awayTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.awayTeam.id + "_kit.png";
+
+            /*window.addEventListener('DOMContentLoaded', () => {
+                TMP.homeTeam.short = document.querySelector('head > title').substring(0,3);
+                TMP.awayTeam.short = document.querySelector('head > title').substring(8,11);
+            });*/
+
+            TMP.round = parseInt(document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText.substring(15));
+            TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
+            TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             TMP.home = document.querySelector('.duelParticipant__home').innerText;
             TMP.away = document.querySelector('.duelParticipant__away').innerText;
-            TMP.homeGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText;
-            TMP.awayGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText;
+            TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
+            TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
             return TMP;
         });
+        match.round = MATCH.round;
         match.date = MATCH.date;
-        match.home = MATCH.home;
-        match.away = MATCH.away;
+        match.hour = MATCH.hour;
+        match.homeTeam = MATCH.homeTeam;
+        match.awayTeam = MATCH.awayTeam;
         match.homeGoals = MATCH.homeGoals;
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
@@ -279,10 +309,10 @@ async function getMatches(url) {
     await BROWSER.close();
 }
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.england_2022);
-getStandings(URLS.spain_2022);
-getStandings(URLS.france_2022);
-getStandings(URLS.italy_2022);
-getStandings(URLS.germany_2022);
+// getStandings(URLS.england_2022);
+// getStandings(URLS.spain_2022);
+// getStandings(URLS.france_2022);
+// getStandings(URLS.italy_2022);
+// getStandings(URLS.germany_2022);
 
-// getMatches(URLS.spain_matches_2022);
+getMatches(URLS.spain_matches_2022);

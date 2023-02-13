@@ -259,6 +259,9 @@ async function getMatches(url) {
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.awayTeam.id + "_logo.png";
             TMP.awayTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.awayTeam.id + "_kit.png";
 
+            TMP.homeTeam.short = window.title.substring(0,3);
+            TMP.awayTeam.short = window.title.substring(8,11);
+            
             /*window.addEventListener('DOMContentLoaded', () => {
                 TMP.homeTeam.short = document.querySelector('head > title').substring(0,3);
                 TMP.awayTeam.short = document.querySelector('head > title').substring(8,11);

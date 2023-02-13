@@ -82,7 +82,6 @@ async function getMatches(url) {
     for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link);
         console.log(match.link);
-
         const MATCH = await PAGE.evaluate(() => {
             const TMP = {};
             var dumpString;
@@ -123,7 +122,6 @@ async function getMatches(url) {
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
     }
-
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
@@ -138,7 +136,6 @@ async function getMatches(url) {
         case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesPremierLeague" + RESULT.yearStart + "Flashcore.json");
             break;
     }
-
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

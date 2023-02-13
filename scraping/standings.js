@@ -85,6 +85,10 @@ async function getStandings(url) {
         console.log(ROWS);
         ROWS.forEach(element => {
             numRow++;
+            var isLive_Document = document.getElementsByClassName('table__cell--changedValue');
+            var isLive_Element = element.getElementsByClassName('table__cell--changedValue');
+            var isLive_Winning = element.getElementsByClassName('liveScore--isWinning');
+            var isLive_Losing = element.getElementsByClassName('liveScore--isLosing');
             const TMP = {};
             element.querySelectorAll('.table__cell--value').innerText;
             if (numRow < 10) {
@@ -99,19 +103,65 @@ async function getStandings(url) {
             TMP.team.name = element.querySelector('.tableCellParticipant__name').innerText;
             TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.team.id + "_logo.png";
             TMP.team.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.team.id + "_kit.png";
-            TMP.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
-            TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
-            TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
-            TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
-            if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
-                TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
-                TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+            if (isLive_Element.length > 0) {
+                if (isLive_Document.length == 6) {
+                    TMP.playedGames = parseInt(element.querySelector('.table__cell--changedValue').innerText);
+                    TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
+                    TMP.draws = parseInt(element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(6) > span').innerText);
+                    TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(7)').innerText);
+                    if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+                    } else {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+                    }
+                    TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
+                    TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(9) > span').innerText);
+                } else if (isLive_Document.length == 7 && isLive_Winning.length > 0) {
+                    TMP.playedGames = parseInt(element.querySelector('.table__cell--changedValue').innerText);
+                    TMP.wins = parseInt(element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(5) > span').innerText);
+                    TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
+                    TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(7)').innerText);
+                    if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+                    } else {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+                    }
+                    TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
+                    TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(9) > span').innerText);
+                } else if (isLive_Document.length == 7 && isLive_Losing.length > 0) {
+                    TMP.playedGames = parseInt(element.querySelector('.table__cell--changedValue').innerText);
+                    TMP.wins = TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
+                    TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
+                    TMP.loses = parseInt(element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(7) > span').innerText);
+                    if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+                    } else {
+                        TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+                        TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+                    }
+                    TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
+                    TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
+                }
             } else {
-                TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
-                TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+                TMP.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
+                TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
+                TMP.draws = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(5)').innerText);
+                TMP.loses = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(6)').innerText);
+                if (parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3)) >= 100) {
+                    TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 3));
+                    TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(4, 6));
+                } else {
+                    TMP.goalsFor = parseInt(element.querySelector('.table__cell--score').innerText.substring(0, 2));
+                    TMP.goalsAgainst = parseInt(element.querySelector('.table__cell--score').innerText.substring(3, 5));
+                }
+                TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
+                TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             }
-            TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
-            TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             for (var i = 2; i < 7; i++) {
                 if (i == 2) {
                     TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText;
@@ -137,7 +187,6 @@ async function getStandings(url) {
         case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsPremierLeague" + RESULT.yearStart + "Flashcore.json");
             break;
     }
-
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

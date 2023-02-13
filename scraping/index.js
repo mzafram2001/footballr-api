@@ -236,7 +236,6 @@ async function getMatches(url) {
     for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link);
         console.log(match.link);
-        delay(5000);
 
         const MATCH = await PAGE.evaluate(() => {
             const TMP = {};

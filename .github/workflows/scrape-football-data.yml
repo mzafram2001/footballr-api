@@ -25,7 +25,7 @@ jobs:
           version: 7.18.2
           run_install: true
       - run: |
-          node scraping/index.js
+          node scraping/standings.js
           git config user.name zeus-api-bot
           git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
           git push origin main

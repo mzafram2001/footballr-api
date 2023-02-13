@@ -1,4 +1,4 @@
-name: Scrape Football Data
+name: Scrape Football Standings
 
 on:
   workflow_dispatch:

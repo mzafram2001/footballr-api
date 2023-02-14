@@ -125,6 +125,7 @@ async function getMatches(url) {
 
             // coger nombre jugador
             // coger asistencia jugador
+            // poner todos los iconos
             TMP.summary = [];
             var events = document.querySelectorAll('.smv__participantRow');
             events.forEach(element => {
@@ -144,6 +145,8 @@ async function getMatches(url) {
                         case "card-ico ": TMP2.type = "Yellow Card > Red Card";
                             break;
                         case "card-ico redCard-ico": TMP2.type = "Red Card";
+                            break;
+                        case "var ": TMP2.type = "Var";
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;

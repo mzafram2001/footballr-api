@@ -85,7 +85,7 @@ async function getMatches(url) {
     });
 
     for (let match of RESULT.matchesIteration) {
-        await PAGE.goto(match.link, {'waitUntil': 'networkidle0'});
+        await PAGE.goto(match.link, { 'waitUntil': 'networkidle0' });
         console.log(match.link);
         const MATCH = await PAGE.evaluate(() => {
             const TMP = {};
@@ -99,7 +99,7 @@ async function getMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            TMP.homeTeam.shorthand = title.innerText.substring(0,3);
+            TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.homeTeam.id + "_logo.png";
             TMP.homeTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.homeTeam.id + "_kit.png";
             TMP.homeTeam.lineup = [];
@@ -109,7 +109,7 @@ async function getMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            TMP.awayTeam.shorthand = title.innerText.substring(8,11);
+            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.awayTeam.id + "_logo.png";
             TMP.awayTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.awayTeam.id + "_kit.png";
             TMP.awayTeam.lineup = [];
@@ -123,18 +123,46 @@ async function getMatches(url) {
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
 
-            // mirar porque falla
+            // coger nombre jugador
+            // coger asistencia jugador
             TMP.summary = [];
             var events = document.querySelectorAll('.smv__participantRow');
             events.forEach(element => {
                 const TMP2 = {};
-                if(element.getAttribute('class') == 'smv__participantRow smv__homeParticipant') {
-                    TMP2.actionTeam = "HOME";
-                    TMP2.type = "";
+                var eventIcon = element.querySelector('svg').getAttribute('class');
+                if (element.getAttribute('class') == 'smv__participantRow smv__homeParticipant') {
+                    TMP2.actionTeam = "Home";
+                    switch (eventIcon) {
+                        case "card-ico yellowCard-ico": TMP2.type = "Yellow Card";
+                            break;
+                        case "soccer ": TMP2.type = "Goal";
+                            break;
+                        case "soccer footballOwnGoal-ico": TMP2.type = "Own Goal";
+                            break;
+                        case "substitution ": TMP2.type = "Substitution";
+                            break;
+                        case "card-ico ": TMP2.type = "Yellow Card > Red Card";
+                            break;
+                        case "card-ico redCard-ico": TMP2.type = "Red Card";
+                            break;
+                    }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;
-                } else if(element.getAttribute('class') == 'smv__participantRow smv__awayParticipant') {
-                    TMP2.actionTeam = "AWAY";
-                    TMP2.type = "";
+                } else if (element.getAttribute('class') == 'smv__participantRow smv__awayParticipant') {
+                    TMP2.actionTeam = "Away";
+                    switch (eventIcon) {
+                        case "card-ico yellowCard-ico": TMP2.type = "Yellow Card";
+                            break;
+                        case "soccer ": TMP2.type = "Goal";
+                            break;
+                        case "soccer footballOwnGoal-ico": TMP2.type = "Own Goal";
+                            break;
+                        case "substitution ": TMP2.type = "Substitution";
+                            break;
+                        case "card-ico ": TMP2.type = "Yellow Card > Red Card";
+                            break;
+                        case "card-ico redCard-ico": TMP2.type = "Red Card";
+                            break;
+                    }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;
                 }
                 TMP.summary.push(TMP2);

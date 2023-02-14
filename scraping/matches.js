@@ -85,29 +85,35 @@ async function getMatches(url) {
     });
 
     for (let match of RESULT.matchesIteration) {
-        await PAGE.goto(match.link);
+        await PAGE.goto(match.link, {'waitUntil': 'networkidle0'});
         console.log(match.link);
         const MATCH = await PAGE.evaluate(() => {
             const TMP = {};
             var dumpString;
             var dumpStringArray;
 
+            var title = document.evaluate("/html/head/title", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
             TMP.homeTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            TMP.homeTeam.shorthand = title.innerText.substring(0,3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.homeTeam.id + "_logo.png";
             TMP.homeTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.homeTeam.id + "_kit.png";
+            TMP.homeTeam.lineup = [];
 
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            TMP.awayTeam.shorthand = title.innerText.substring(8,11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.awayTeam.id + "_logo.png";
             TMP.awayTeam.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.awayTeam.id + "_kit.png";
-            
+            TMP.awayTeam.lineup = [];
+
             TMP.round = parseInt(document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText.substring(15));
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
@@ -116,6 +122,29 @@ async function getMatches(url) {
             TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
+
+            // mirar porque falla
+            TMP.summary = [];
+            var events = document.querySelectorAll('.smv__participantRow');
+            events.forEach(element => {
+                const TMP2 = {};
+                if(element.getAttribute('class') == 'smv__participantRow smv__homeParticipant') {
+                    TMP2.actionTeam = "HOME";
+                    TMP2.type = "";
+                    TMP2.minute = element.querySelector('.smv__timeBox').innerText;
+                } else if(element.getAttribute('class') == 'smv__participantRow smv__awayParticipant') {
+                    TMP2.actionTeam = "AWAY";
+                    TMP2.type = "";
+                    TMP2.minute = element.querySelector('.smv__timeBox').innerText;
+                }
+                TMP.summary.push(TMP2);
+            });
+
+            // acciones partido (summary)
+            // alineaciones (lineups)
+            // stats
+
+
             return TMP;
         });
         match.round = MATCH.round;
@@ -126,6 +155,7 @@ async function getMatches(url) {
         match.homeGoals = MATCH.homeGoals;
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
+        match.summary = MATCH.summary;
     }
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");

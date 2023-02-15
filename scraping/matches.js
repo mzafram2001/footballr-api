@@ -123,7 +123,6 @@ async function getMatches(url) {
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
 
-            // coger nombre jugador
             // coger asistencia jugador
             // poner todos los iconos
             TMP.summary = [];
@@ -134,36 +133,136 @@ async function getMatches(url) {
                 if (element.getAttribute('class') == 'smv__participantRow smv__homeParticipant') {
                     TMP2.actionTeam = "Home";
                     switch (eventIcon) {
-                        case "card-ico yellowCard-ico": TMP2.type = "Yellow Card";
+                        case "card-ico yellowCard-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Yellow Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "soccer ": TMP2.type = "Goal";
+                        case "soccer ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Goal";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "soccer footballOwnGoal-ico": TMP2.type = "Own Goal";
+                        case "soccer footballOwnGoal-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Own Goal";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "substitution ": TMP2.type = "Substitution";
+                        case "substitution ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Substitution";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "card-ico ": TMP2.type = "Yellow Card > Red Card";
+                        case "card-ico ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Yellow Card > Red Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "card-ico redCard-ico": TMP2.type = "Red Card";
+                        case "card-ico redCard-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Red Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "var ": TMP2.type = "Var";
+                        case "var ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "VAR";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;
                 } else if (element.getAttribute('class') == 'smv__participantRow smv__awayParticipant') {
                     TMP2.actionTeam = "Away";
                     switch (eventIcon) {
-                        case "card-ico yellowCard-ico": TMP2.type = "Yellow Card";
+                        case "card-ico yellowCard-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Yellow Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "soccer ": TMP2.type = "Goal";
+                        case "soccer ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Goal";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "soccer footballOwnGoal-ico": TMP2.type = "Own Goal";
+                        case "soccer footballOwnGoal-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Own Goal";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "substitution ": TMP2.type = "Substitution";
+                        case "substitution ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Substitution";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "card-ico ": TMP2.type = "Yellow Card > Red Card";
+                        case "card-ico ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Yellow Card > Red Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
-                        case "card-ico redCard-ico": TMP2.type = "Red Card";
+                        case "card-ico redCard-ico":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Red Card";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            break;
+                        case "var ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "VAR";
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;

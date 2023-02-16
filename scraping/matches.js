@@ -122,7 +122,7 @@ async function getMatches(url) {
             TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
-            
+
             // coger asistencia jugador
             // poner todos los iconos
             TMP.summary = [];
@@ -301,7 +301,7 @@ async function getMatches(url) {
             });
 
             TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText;
-            TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g,''));
+            TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g, ''));
             return TMP;
         });
         match.round = MATCH.round;
@@ -316,6 +316,19 @@ async function getMatches(url) {
         match.stadium = MATCH.stadium;
         match.attendance = MATCH.attendance;
     }
+
+    // FALTA
+    /*for(var i = 0; i <= RESULT.matchesIteration.length; i++) {
+        for(var j = 0; j <= RESULT.season.length; j++) {
+            if(RESULT.matchesIteration[i].round == RESULT.season[j].round) {
+                console.log(RESULT.season[j]);
+                console.log(RESULT.matchesIteration[i]);
+                RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
+                delete RESULT.matchesIteration[i];
+            }
+        }
+    }*/
+
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;

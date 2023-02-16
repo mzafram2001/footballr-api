@@ -122,7 +122,7 @@ async function getMatches(url) {
             TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
-
+            
             // coger asistencia jugador
             // poner todos los iconos
             TMP.summary = [];
@@ -150,6 +150,15 @@ async function getMatches(url) {
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Goal";
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
+                            if (hasAssist.length > 0) {
+                                dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
+                                dumpStringArray = dumpString.split('/');
+                                dumpStringArraySecondary = dumpStringArray[2].split('-');
+                                lastName = dumpStringArraySecondary[0];
+                                firstName = dumpStringArraySecondary[1];
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            }
                             break;
                         case "soccer footballOwnGoal-ico":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -168,6 +177,12 @@ async function getMatches(url) {
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Substitution";
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
+                            dumpStringArray = dumpString.split('/');
+                            dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            lastName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[1];
+                            TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                         case "card-ico ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -218,6 +233,15 @@ async function getMatches(url) {
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Goal";
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
+                            if (hasAssist.length > 0) {
+                                dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
+                                dumpStringArray = dumpString.split('/');
+                                dumpStringArraySecondary = dumpStringArray[2].split('-');
+                                lastName = dumpStringArraySecondary[0];
+                                firstName = dumpStringArraySecondary[1];
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            }
                             break;
                         case "soccer footballOwnGoal-ico":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -235,7 +259,13 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Substitution";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1)
+                            dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
+                            dumpStringArray = dumpString.split('/');
+                            dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            lastName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[1];
+                            TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                         case "card-ico ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -270,11 +300,8 @@ async function getMatches(url) {
                 TMP.summary.push(TMP2);
             });
 
-            // acciones partido (summary)
-            // alineaciones (lineups)
-            // stats
-
-
+            TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText;
+            TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g,''));
             return TMP;
         });
         match.round = MATCH.round;
@@ -286,6 +313,8 @@ async function getMatches(url) {
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
         match.summary = MATCH.summary;
+        match.stadium = MATCH.stadium;
+        match.attendance = MATCH.attendance;
     }
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");

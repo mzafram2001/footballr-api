@@ -318,17 +318,23 @@ async function getMatches(url) {
     }
 
     // FALTA
-    for(var i = 0; i <= RESULT.matchesIteration.length; i++) {
-        for(var j = 0; j <= RESULT.season.length; j++) {
-            if(RESULT.matchesIteration[i].round == RESULT.season[j].round) {
-                console.log(RESULT.season[j]);
-                console.log(RESULT.matchesIteration[i]);
+    for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
+        var pushIt = false;
+        var j = 0;
+        while (j <= RESULT.season.length && pushIt == false) {
+            if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
+                //console.log(season[j]);
+                //console.log(matches[i]);
+                // matches.splice(i , 1);
                 RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
-                delete RESULT.matchesIteration[i];
-                // cuando se hace el delete queda la posicion en empty!!!!!!!
+                pushIt = true;
             }
+            j++
         }
     }
+
+    // RESULT.matchesIteration.splice(0,1);
+    delete RESULT.matchesIteration;
 
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");

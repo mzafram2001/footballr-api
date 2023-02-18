@@ -174,17 +174,17 @@ async function getStandings(url) {
         return JSON;
     });
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
+        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
+        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsBundesliga" + RESULT.yearStart + "Flashcore.json");
+        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsBundesliga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsSerieA" + RESULT.yearStart + "Flashcore.json");
+        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsSerieA" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsLigue1" + RESULT.yearStart + "Flashcore.json");
+        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLigue1" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standingsPremierLeague" + RESULT.yearStart + "Flashcore.json");
+        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsPremierLeague" + RESULT.yearStart + "Flashcore.json");
             break;
     }
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {

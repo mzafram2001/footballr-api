@@ -4,6 +4,12 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
+    spain_matches_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/results/",
+    spain_matches_2016: "https://www.flashscore.com/football/spain/laliga-2016-2017/results/",
+    spain_matches_2017: "https://www.flashscore.com/football/spain/laliga-2017-2018/results/",
+    spain_matches_2018: "https://www.flashscore.com/football/spain/laliga-2018-2019/results/",
+    spain_matches_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/results/",
+    spain_matches_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/results/",
     spain_matches_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/results/",
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 }
@@ -26,11 +32,11 @@ async function getMatches(url) {
         document.querySelector('.event__more').click();
     });
     await delay(4000);
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -203,13 +209,13 @@ async function getMatches(url) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                         case "var ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
+                            /*var dumpString = element.querySelector('a').getAttribute('href');
                             var dumpStringArray = dumpString.split('/');
                             var dumpStringArraySecondary = dumpStringArray[2].split('-');
                             var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "VAR";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            var firstName = dumpStringArraySecondary[1];*/
+                            TMP2.type = "VAR > Goal Disallowed";
+                            // TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;
@@ -422,19 +428,20 @@ async function getMatches(url) {
     delete RESULT.matchesIteration;
 
     switch (RESULT.name) {
-        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" /*+ RESULT.yearStart + */ + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
+        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
+        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesBundesliga" + RESULT.yearStart + "Flashcore.json");
+        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesBundesliga" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesSerieA" + RESULT.yearStart + "Flashcore.json");
+        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesSerieA" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesLigue1" + RESULT.yearStart + "Flashcore.json");
+        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesLigue1" + RESULT.yearStart + "Flashcore.json");
             break;
-        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matchesPremierLeague" + RESULT.yearStart + "Flashcore.json");
+        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/matches/matchesPremierLeague" + RESULT.yearStart + "Flashcore.json");
             break;
     }
+
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

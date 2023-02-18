@@ -323,16 +323,13 @@ async function getMatches(url) {
         var j = 0;
         while (j <= RESULT.season.length && pushIt == false) {
             if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
-                //console.log(season[j]);
-                //console.log(matches[i]);
-                // matches.splice(i , 1);
                 RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
                 pushIt = true;
             }
             j++
         }
     }
-    
+
     delete RESULT.matchesIteration;
 
     switch (RESULT.name) {

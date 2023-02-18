@@ -40,6 +40,8 @@ async function getMatches(url) {
         switch (JSON.name) {
             case "LaLiga": JSON.area = "ESP";
                 break;
+            case "Primera Division": JSON.area = "ESP";
+                break;
             case "Bundesliga": JSON.area = "GER";
                 break;
             case "Serie A": JSON.area = "ITA";

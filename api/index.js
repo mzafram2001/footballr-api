@@ -69,37 +69,57 @@ APP.get('/', (ctx) => {
 		{
 			endpoint: '/areas',
 			description: 'List all available areas. 🌍',
+			example: "https://zeus-api.olympus.workers.dev/areas",
+			status: "Available. 🟢",
 			parameters: [
 				{
 					name: "id",
 					endpoint: "/areas/:id",
-					description: "List one area given by id. 🔍"
+					description: "List one area given by id. 🔍",
+					example: "https://zeus-api.olympus.workers.dev/areas/ITA",
+					status: "Available. 🟢"
 				}
 			]
 		},
 		{
 			endpoint: '/competitions',
 			description: 'List all available competitions. 🏆',
+			example: "https://zeus-api.olympus.workers.dev/competitions",
+			status: "Available. 🟢",
 			parameters: [
 				{
 					name: "id",
 					endpoint: "/competitions/:id",
-					description: "List one competition given by id. 🔍"
+					description: "List one competition given by id. 🔍",
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL",
+					status: "Available. 🟢"
 				},
 				{
 					name: "standings",
 					endpoint: "/competitions/:id/standings",
-					description: "List the current standings for a league. 🔍"
+					description: "List the current standings for a league. 🔍",
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
+					status: "Available. 🟢"
 				},
 				{
 					name: "year",
 					endpoint: "/competitions/:id/standings/:year",
-					description: "List the standings for a league, given by start year (2015 - 2021). 🔍"
+					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021). 🔍",
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
+					status: "Available. 🟢"
+				},
+				{
+					name: "matches",
+					endpoint: '/competitions/matches',
+					description: 'List all available matches. ⚽',
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2016",
+					status: "Not available. 🔴",
 				}
 			]
 		},
 		{
-			version: '0.40a',
+			name: "Zeus API ⚡",
+			version: '0.41a',
 			message: 'Created with ❤️ by Miguel Zafra.'
 		}
 	]);

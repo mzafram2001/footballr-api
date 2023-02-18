@@ -206,13 +206,11 @@ async function getMatches(url) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                         case "var ":
-                            /*var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];*/
                             TMP2.type = "VAR > Goal Disallowed";
-                            // TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            break;
+                        default:
+                            TMP2.type = "-";
+                            TMP2.player = "-";
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;
@@ -289,13 +287,11 @@ async function getMatches(url) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             break;
                         case "var ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "VAR";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            TMP2.type = "VAR > Goal Disallowed";
+                            break;
+                        default:
+                            TMP2.type = "-";
+                            TMP2.player = "-";
                             break;
                     }
                     TMP2.minute = element.querySelector('.smv__timeBox').innerText;

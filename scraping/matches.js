@@ -332,8 +332,7 @@ async function getMatches(url) {
             j++
         }
     }
-
-    // RESULT.matchesIteration.splice(0,1);
+    
     delete RESULT.matchesIteration;
 
     switch (RESULT.name) {

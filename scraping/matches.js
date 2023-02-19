@@ -32,6 +32,11 @@ async function getMatches(url) {
         document.querySelector('.event__more').click();
     });
     await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -40,7 +45,9 @@ async function getMatches(url) {
         switch (JSON.name) {
             case "LaLiga": JSON.area = "ESP";
                 break;
-            case "Primera Division": JSON.area = "ESP";
+            case "Primera Division": 
+                JSON.name = "LaLiga";
+                JSON.area = "ESP";
                 break;
             case "Bundesliga": JSON.area = "GER";
                 break;
@@ -143,7 +150,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Yellow Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "soccer ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -152,7 +163,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Goal";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
                             if (hasAssist.length > 0) {
                                 dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
@@ -160,7 +175,12 @@ async function getMatches(url) {
                                 dumpStringArraySecondary = dumpStringArray[2].split('-');
                                 lastName = dumpStringArraySecondary[0];
                                 firstName = dumpStringArraySecondary[1];
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                                if (firstName == undefined) {
+                                    TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                                } else if (lastName == undefined) {
+                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                                }
+
                             }
                             break;
                         case "soccer footballOwnGoal-ico":
@@ -170,7 +190,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Own Goal";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "substitution ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -179,13 +203,21 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Substitution";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
                             dumpStringArray = dumpString.split('/');
                             dumpStringArraySecondary = dumpStringArray[2].split('-');
                             lastName = dumpStringArraySecondary[0];
                             firstName = dumpStringArraySecondary[1];
-                            TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "card-ico ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -194,7 +226,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Yellow Card > Red Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "card-ico redCard-ico":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -203,11 +239,27 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Red Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "var ":
                             TMP2.type = "VAR > Goal Disallowed";
                             break;
+                        case "warning ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Penalty Missed";
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                         default:
                             TMP2.type = "-";
                             TMP2.player = "-";
@@ -224,7 +276,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Yellow Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "soccer ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -233,7 +289,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Goal";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
                             if (hasAssist.length > 0) {
                                 dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
@@ -241,7 +301,11 @@ async function getMatches(url) {
                                 dumpStringArraySecondary = dumpStringArray[2].split('-');
                                 lastName = dumpStringArraySecondary[0];
                                 firstName = dumpStringArraySecondary[1];
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                                if (firstName == undefined) {
+                                    TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                                } else if (lastName == undefined) {
+                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                                }
                             }
                             break;
                         case "soccer footballOwnGoal-ico":
@@ -251,7 +315,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Own Goal";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "substitution ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -260,13 +328,21 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Substitution";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1)
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
                             dumpStringArray = dumpString.split('/');
                             dumpStringArraySecondary = dumpStringArray[2].split('-');
                             lastName = dumpStringArraySecondary[0];
                             firstName = dumpStringArraySecondary[1];
-                            TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "card-ico ":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -275,7 +351,11 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Yellow Card > Red Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "card-ico redCard-ico":
                             var dumpString = element.querySelector('a').getAttribute('href');
@@ -284,11 +364,27 @@ async function getMatches(url) {
                             var lastName = dumpStringArraySecondary[0];
                             var firstName = dumpStringArraySecondary[1];
                             TMP2.type = "Red Card";
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                             break;
                         case "var ":
                             TMP2.type = "VAR > Goal Disallowed";
                             break;
+                        case "warning ":
+                            var dumpString = element.querySelector('a').getAttribute('href');
+                            var dumpStringArray = dumpString.split('/');
+                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                            var lastName = dumpStringArraySecondary[0];
+                            var firstName = dumpStringArraySecondary[1];
+                            TMP2.type = "Penalty Missed";
+                            if (firstName == undefined) {
+                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                            } else if (lastName == undefined) {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            }
                         default:
                             TMP2.type = "-";
                             TMP2.player = "-";
@@ -299,8 +395,18 @@ async function getMatches(url) {
                 TMP.summary.push(TMP2);
             });
 
-            TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText;
-            TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g, ''));
+            var myData = document.querySelectorAll('.mi__item');
+            if (myData.length == 2) {
+                TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(1) > span.mi__item__val').innerText;
+                TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText.replace(/\s/g, ''));
+            } else if (myData.length == 3) {
+                TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText;
+                TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g, ''));
+            } else if (myData.length == 0) {
+                TMP.stadium = "-";
+                TMP.attendance = "-";
+            }
+
             return TMP;
         });
         match.round = MATCH.round;
@@ -399,11 +505,28 @@ async function getMatches(url) {
                         TMP.dangerousAttacksAway = parseInt(element.querySelector('.stat__awayValue').innerText);
                         break;
                 }
-            })
-
+            });
             return TMP;
         });
         match.stats = MATCH_STATS;
+    }
+
+    for (let match of RESULT.matchesIteration) {
+        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'networkidle0' });
+        console.log(match.link + "/#/match-summary/lineups");
+        const MATCH_LINEUPS = await PAGE.evaluate(() => {
+            const TMP = {};
+            const HOME = document.querySelector('.lf__formation .lf__formationDense');
+            const AWAY = document.querySelector('.lf__formation .lf__formationAway .lf__formationDense');
+            TMP.homeTeam = {};
+            TMP.awayTeam = {};
+            TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
+            TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
+            
+            return TMP;
+        });
+        match.homeTeam.lineup = MATCH_LINEUPS.homeTeam;
+        match.awayTeam.lineup = MATCH_LINEUPS.awayTeam;
     }
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {

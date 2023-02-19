@@ -110,7 +110,7 @@ APP.get('/', (ctx) => {
 				},
 				{
 					name: "matches",
-					endpoint: '/competitions/matches',
+					endpoint: '/competitions/:id/matches/:year',
 					description: 'List all available matches. ⚽',
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2016",
 					status: "Not available. 🔴",
@@ -119,8 +119,8 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.41a',
-			message: 'Created with ❤️ by Miguel Zafra.'
+			version: '0.42a',
+			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);
 })

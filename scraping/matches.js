@@ -32,11 +32,11 @@ async function getMatches(url) {
         document.querySelector('.event__more').click();
     });
     await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
+    /*await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);
+    await delay(4000);*/
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {

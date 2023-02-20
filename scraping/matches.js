@@ -32,11 +32,11 @@ async function getMatches(url) {
         document.querySelector('.event__more').click();
     });
     await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
+    /*await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);
+    await delay(4000);*/
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -576,4 +576,8 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
+<<<<<<< HEAD
 getMatches(URLS.spain_matches_2019);
+=======
+getMatches(URLS.spain_matches_2022);
+>>>>>>> 019cbceb809c551f9730fd6719f744c951ad9f96

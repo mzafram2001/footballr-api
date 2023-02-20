@@ -576,4 +576,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getMatches(URLS.spain_matches_2022);
+getMatches(URLS.spain_matches_2019);

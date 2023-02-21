@@ -56,7 +56,7 @@ async function getStandings(url) {
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "domcontentloaded" });
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
     await PAGE.waitForSelector('.ui-table__body', { visible: true });
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};

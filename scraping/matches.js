@@ -20,7 +20,7 @@ async function getMatches(url) {
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "domcontentloaded" });
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
     await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
@@ -512,17 +512,23 @@ async function getMatches(url) {
 
     for (let match of RESULT.matchesIteration) {
         // 'waitUntil' : ['load', 'domcontentloaded', 'networkidle0', 'networkidle2']
-        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'domcontentloaded' });
+        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'networkidle0' });
         delay(2000);
         console.log(match.link + "/#/match-summary/lineups");
+        var hasDiffStadium = document.querySelectorAll('#detail > div.infoBox__wrapper.infoBoxModule');
         const MATCH_LINEUPS = await PAGE.evaluate(() => {
             const TMP = {};
             const HOME = document.querySelector('.lf__formation .lf__formationDense');
             const AWAY = document.querySelector('.lf__formation .lf__formationAway .lf__formationDense');
             TMP.homeTeam = {};
             TMP.awayTeam = {};
-            TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
-            TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
+            if (hasDiffStadium.length > 0) {
+                TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
+                TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
+            } else if (hasDiffStadium.length == 0) {
+                TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
+                TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
+            }
             return TMP;
         });
         match.homeTeam.lineup = MATCH_LINEUPS.homeTeam;

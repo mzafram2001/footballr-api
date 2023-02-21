@@ -111,15 +111,23 @@ APP.get('/', (ctx) => {
 				{
 					name: "matches",
 					endpoint: '/competitions/:id/matches/:year',
-					description: 'List all available matches. ⚽',
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2016",
+					description: 'List all available matches. 🆚',
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2017",
+					status: "Not available. 🔴",
+				}
+				,
+				{
+					name: "scorers",
+					endpoint: '/competitions/:id/scorers/:year',
+					description: 'List all available scorers. ⚽',
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/scorers/2019",
 					status: "Not available. 🔴",
 				}
 			]
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.42a',
+			version: '0.44a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);

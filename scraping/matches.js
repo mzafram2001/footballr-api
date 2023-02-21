@@ -45,7 +45,7 @@ async function getMatches(url) {
         switch (JSON.name) {
             case "LaLiga": JSON.area = "ESP";
                 break;
-            case "Primera Division": 
+            case "Primera Division":
                 JSON.name = "LaLiga";
                 JSON.area = "ESP";
                 break;
@@ -180,7 +180,6 @@ async function getMatches(url) {
                                 } else if (lastName == undefined) {
                                     TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
                                 }
-
                             }
                             break;
                         case "soccer footballOwnGoal-ico":
@@ -512,7 +511,9 @@ async function getMatches(url) {
     }
 
     for (let match of RESULT.matchesIteration) {
-        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'networkidle0' });
+        // 'waitUntil' : ['load', 'domcontentloaded', 'networkidle0', 'networkidle2']
+        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'domcontentloaded' });
+        delay(2000);
         console.log(match.link + "/#/match-summary/lineups");
         const MATCH_LINEUPS = await PAGE.evaluate(() => {
             const TMP = {};
@@ -520,9 +521,8 @@ async function getMatches(url) {
             const AWAY = document.querySelector('.lf__formation .lf__formationAway .lf__formationDense');
             TMP.homeTeam = {};
             TMP.awayTeam = {};
-            TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
-            TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
-            
+            TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
+            TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
             return TMP;
         });
         match.homeTeam.lineup = MATCH_LINEUPS.homeTeam;
@@ -576,8 +576,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-<<<<<<< HEAD
-getMatches(URLS.spain_matches_2019);
-=======
 getMatches(URLS.spain_matches_2022);
->>>>>>> 019cbceb809c551f9730fd6719f744c951ad9f96

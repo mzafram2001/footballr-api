@@ -605,7 +605,7 @@ async function getMatches(url) {
                         } else {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                         }
-                        TMP.awayPlayers.players.push(TMP2);
+                        TMP.awayTeam.players.push(TMP2);
                     });
                 });
             }
@@ -663,3 +663,6 @@ async function delay(time) {
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getMatches(URLS.spain_matches_2022);
+
+
+// MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!

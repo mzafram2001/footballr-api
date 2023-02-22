@@ -686,7 +686,6 @@ async function getMatches(url) {
                                 case 5: TMP.homeTeam.MF6 = "-";
                                     break;
                             }
-
                         }
                     }
                 }
@@ -738,7 +737,6 @@ async function getMatches(url) {
                                 case 5: TMP.awayTeam.MF6 = "-";
                                     break;
                             }
-
                         }
                     }
                 }

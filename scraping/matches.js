@@ -154,6 +154,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "soccer ":
@@ -167,6 +169,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
                             if (hasAssist.length > 0) {
@@ -179,6 +183,8 @@ async function getMatches(url) {
                                     TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                                 } else if (lastName == undefined) {
                                     TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                                } else {
+                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                                 }
                             }
                             break;
@@ -193,6 +199,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "substitution ":
@@ -206,6 +214,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
                             dumpStringArray = dumpString.split('/');
@@ -216,6 +226,8 @@ async function getMatches(url) {
                                 TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "card-ico ":
@@ -229,6 +241,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "card-ico redCard-ico":
@@ -242,6 +256,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "var ":
@@ -258,6 +274,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                         default:
                             TMP2.type = "-";
@@ -279,6 +297,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "soccer ":
@@ -292,6 +312,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
                             if (hasAssist.length > 0) {
@@ -304,6 +326,8 @@ async function getMatches(url) {
                                     TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                                 } else if (lastName == undefined) {
                                     TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                                } else {
+                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                                 }
                             }
                             break;
@@ -318,6 +342,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "substitution ":
@@ -331,6 +357,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
                             dumpStringArray = dumpString.split('/');
@@ -341,6 +369,8 @@ async function getMatches(url) {
                                 TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "card-ico ":
@@ -354,6 +384,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "card-ico redCard-ico":
@@ -367,6 +399,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                             break;
                         case "var ":
@@ -383,6 +417,8 @@ async function getMatches(url) {
                                 TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             } else if (lastName == undefined) {
                                 TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                            } else {
+                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                             }
                         default:
                             TMP2.type = "-";
@@ -519,14 +555,59 @@ async function getMatches(url) {
             const TMP = {};
             var hasDiffStadium = document.querySelectorAll('#detail > div.infoBox__wrapper.infoBoxModule');
             TMP.homeTeam = {};
+            TMP.homeTeam.players = [];
             TMP.awayTeam = {};
+            TMP.awayTeam.players = [];
             if (hasDiffStadium.length > 0) {
                 TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
                 TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
 
             } else if (hasDiffStadium.length == 0) {
+                var homeColumns = document.querySelectorAll('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div:nth-child(1) > .lf__line');
+                var awayColumns = document.querySelectorAll('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div.lf__formation.lf__formationAway.lf__formationDense > .lf__line');
                 TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
                 TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
+                homeColumns.forEach(element => {
+                    var homePlayers = element.querySelectorAll('.lf__player');
+                    homePlayers.forEach(player => {
+                        TMP2 = {};
+                        var dumpString = player.querySelector('a').getAttribute('href');
+                        var dumpStringArray = dumpString.split('/');
+                        var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                        var lastName = dumpStringArraySecondary[0];
+                        var firstName = dumpStringArraySecondary[1];
+                        TMP2.id = dumpStringArray[3];
+                        if (firstName == undefined) {
+                            TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        } else if (lastName == undefined) {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                        } else {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        }
+                        TMP.homeTeam.players.push(TMP2);
+                    });
+                });
+
+                awayColumns.forEach(element => {
+                    var awayPlayers = element.querySelectorAll('.lf__player');
+                    awayPlayers.forEach(player => {
+                        TMP2 = {};
+                        var dumpString = player.querySelector('a').getAttribute('href');
+                        var dumpStringArray = dumpString.split('/');
+                        var dumpStringArraySecondary = dumpStringArray[2].split('-');
+                        var lastName = dumpStringArraySecondary[0];
+                        var firstName = dumpStringArraySecondary[1];
+                        TMP2.id = dumpStringArray[3];
+                        if (firstName == undefined) {
+                            TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        } else if (lastName == undefined) {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                        } else {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        }
+                        TMP.awayPlayers.players.push(TMP2);
+                    });
+                });
             }
             return TMP;
         });

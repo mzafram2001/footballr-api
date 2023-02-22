@@ -515,19 +515,233 @@ async function getMatches(url) {
         await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'networkidle0' });
         delay(2000);
         console.log(match.link + "/#/match-summary/lineups");
-        var hasDiffStadium = document.querySelectorAll('#detail > div.infoBox__wrapper.infoBoxModule');
         const MATCH_LINEUPS = await PAGE.evaluate(() => {
             const TMP = {};
-            const HOME = document.querySelector('.lf__formation .lf__formationDense');
-            const AWAY = document.querySelector('.lf__formation .lf__formationAway .lf__formationDense');
+            var hasDiffStadium = document.querySelectorAll('#detail > div.infoBox__wrapper.infoBoxModule');
             TMP.homeTeam = {};
             TMP.awayTeam = {};
             if (hasDiffStadium.length > 0) {
                 TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
                 TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
+                const homeElement = document.querySelector('#detail > div:nth-child(9) > div.lf__fieldWrap > div > div:nth-child(1)');
+                const awayElement = document.querySelector('#detail > div:nth-child(9) > div.lf__fieldWrap > div > div.lf__formation.lf__formationAway.lf__formationDense');
+                const homeElementsInside = homeElement.querySelectorAll('.lf__line');
+                const awayElementsInside = awayElement.querySelectorAll('.lf__line');
+                for (var h = 0; h < homeElementsInside.length; h++) {
+                    var playersInRow = homeElementsInside[h].querySelectorAll('lf__player');
+                    if (h == 0 && playersInRow.length == 1) {
+                        TMP.homeTeam.GK = "-";
+                    } else if (h == homeElementsInside.length - 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.FW1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.FW2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.FW3 = "-";
+                                    break;
+                            }
+                        }
+                    } else if (h == 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.DF1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.DF2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.DF3 = "-";
+                                    break;
+                                case 3: TMP.homeTeam.DF4 = "-";
+                                    break;
+                                case 4: TMP.homeTeam.DF5 = "-";
+                                    break;
+                                case 5: TMP.homeTeam.DF6 = "-";
+                                    break;
+                            }
+                        }
+                    } else {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.MF1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.MF2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.MF3 = "-";
+                                    break;
+                                case 3: TMP.homeTeam.MF4 = "-";
+                                    break;
+                                case 4: TMP.homeTeam.MF5 = "-";
+                                    break;
+                                case 5: TMP.homeTeam.MF6 = "-";
+                                    break;
+                            }
+
+                        }
+                    }
+                }
+                for (var a = 0; a < awayElementsInside.length; a++) {
+                    var playersInRow = awayElementsInside[a].querySelectorAll('lf__player');
+                    if (a == 0 && playersInRow.length == 1) {
+                        TMP.awayTeam.GK = "-";
+                    } else if (a == awayElementsInside.length - 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.FW1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.FW2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.FW3 = "-";
+                                    break;
+                            }
+                        }
+                    } else if (a == 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.DF1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.DF2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.DF3 = "-";
+                                    break;
+                                case 3: TMP.awayTeam.DF4 = "-";
+                                    break;
+                                case 4: TMP.awayTeam.DF5 = "-";
+                                    break;
+                                case 5: TMP.awayTeam.DF6 = "-";
+                                    break;
+                            }
+                        }
+                    } else {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.MF1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.MF2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.MF3 = "-";
+                                    break;
+                                case 3: TMP.awayTeam.MF4 = "-";
+                                    break;
+                                case 4: TMP.awayTeam.MF5 = "-";
+                                    break;
+                                case 5: TMP.awayTeam.MF6 = "-";
+                                    break;
+                            }
+
+                        }
+                    }
+                }
             } else if (hasDiffStadium.length == 0) {
                 TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
                 TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
+                const homeElement = document.querySelector('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div:nth-child(1)');
+                const awayElement = document.querySelector('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div.lf__formation.lf__formationAway.lf__formationDense');
+                const homeElementsInside = homeElement.querySelectorAll('.lf__line');
+                const awayElementsInside = awayElement.querySelectorAll('.lf__line');
+                for (var h = 0; h < homeElementsInside.length; h++) {
+                    var playersInRow = homeElementsInside[h].querySelectorAll('lf__player');
+                    if (h == 0) {
+                        TMP.homeTeam.GK1 = "-";
+                    } else if (h == homeElementsInside.length - 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.FW1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.FW2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.FW3 = "-";
+                                    break;
+                            }
+                        }
+                    } else if (h == 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.DF1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.DF2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.DF3 = "-";
+                                    break;
+                                case 3: TMP.homeTeam.DF4 = "-";
+                                    break;
+                                case 4: TMP.homeTeam.DF5 = "-";
+                                    break;
+                                case 5: TMP.homeTeam.DF6 = "-";
+                                    break;
+                            }
+                        }
+                    } else {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.homeTeam.MF1 = "-";
+                                    break;
+                                case 1: TMP.homeTeam.MF2 = "-";
+                                    break;
+                                case 2: TMP.homeTeam.MF3 = "-";
+                                    break;
+                                case 3: TMP.homeTeam.MF4 = "-";
+                                    break;
+                                case 4: TMP.homeTeam.MF5 = "-";
+                                    break;
+                                case 5: TMP.homeTeam.MF6 = "-";
+                                    break;
+                            }
+
+                        }
+                    }
+                }
+                for (var a = 0; a < awayElementsInside.length; a++) {
+                    var playersInRow = awayElementsInside[a].querySelectorAll('lf__player');
+                    if (a == 0) {
+                        TMP.awayTeam.GK1 = "-";
+                    } else if (a == awayElementsInside.length - 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.FW1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.FW2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.FW3 = "-";
+                                    break;
+                            }
+                        }
+                    } else if (a == 1) {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.DF1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.DF2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.DF3 = "-";
+                                    break;
+                                case 3: TMP.awayTeam.DF4 = "-";
+                                    break;
+                                case 4: TMP.awayTeam.DF5 = "-";
+                                    break;
+                                case 5: TMP.awayTeam.DF6 = "-";
+                                    break;
+                            }
+                        }
+                    } else {
+                        for (var p = 0; p < playersInRow.length; p++) {
+                            switch (p) {
+                                case 0: TMP.awayTeam.MF1 = "-";
+                                    break;
+                                case 1: TMP.awayTeam.MF2 = "-";
+                                    break;
+                                case 2: TMP.awayTeam.MF3 = "-";
+                                    break;
+                                case 3: TMP.awayTeam.MF4 = "-";
+                                    break;
+                                case 4: TMP.awayTeam.MF5 = "-";
+                                    break;
+                                case 5: TMP.awayTeam.MF6 = "-";
+                                    break;
+                            }
+
+                        }
+                    }
+                }
             }
             return TMP;
         });

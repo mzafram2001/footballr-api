@@ -1,52 +1,54 @@
-[
-    {
-        "id": "PRL",
-        "name": "Premier League",
-        "description": "England's first division.",
-        "area": {
-            "id": "ENG",
-            "name": "England",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/england.png"
+{
+    "competitions": [
+        {
+            "id": "PRL",
+            "name": "Premier League",
+            "description": "England's first division.",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/england.png"
+            }
+        },
+        {
+            "id": "LAL",
+            "name": "LaLiga",
+            "description": "Spain's first division.",
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/spain.png"
+            }
+        },
+        {
+            "id": "LI1",
+            "name": "Ligue 1",
+            "description": "France's first division.",
+            "area": {
+                "id": "FRA",
+                "name": "France",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/france.png"
+            }
+        },
+        {
+            "id": "SEA",
+            "name": "Serie A",
+            "description": "Italy's first division.",
+            "area": {
+                "id": "ITA",
+                "name": "Italy",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png"
+            }
+        },
+        {
+            "id": "BUN",
+            "name": "Bundesliga",
+            "description": "Germany's first division.",
+            "area": {
+                "id": "GER",
+                "name": "Germany",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png"
+            }
         }
-    },
-    {
-        "id": "LAL",
-        "name": "LaLiga",
-        "description": "Spain's first division.",
-        "area": {
-            "id": "ESP",
-            "name": "Spain",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/spain.png"
-        }
-    },
-    {
-        "id": "LI1",
-        "name": "Ligue 1",
-        "description": "France's first division.",
-        "area": {
-            "id": "FRA",
-            "name": "France",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/france.png"
-        }
-    },
-    {
-        "id": "SEA",
-        "name": "Serie A",
-        "description": "Italy's first division.",
-        "area": {
-            "id": "ITA",
-            "name": "Italy",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png"
-        }
-    },
-    {
-        "id": "BUN",
-        "name": "Bundesliga",
-        "description": "Germany's first division.",
-        "area": {
-            "id": "GER",
-            "name": "Germany",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png"
-        }
-    }
-]
+    ]
+}

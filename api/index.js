@@ -95,38 +95,38 @@ APP.get('/', (ctx) => {
 					status: "Available. 🟢"
 				},
 				{
-					name: "standings",
-					endpoint: "/competitions/:id/standings",
-					description: "List the current standings for a league. 🔍",
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
-					status: "Available. 🟢"
-				},
-				{
 					name: "year",
-					endpoint: "/competitions/:id/standings/:year",
+					endpoint: "/competitions/:id/XXXXX/:year",
 					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021). 🔍",
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
 					status: "Available. 🟢"
 				},
 				{
+					name: "standings",
+					endpoint: "/competitions/:id/standings",
+					description: "List the current standings for a league. 🔝",
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
+					status: "Available. 🟢"
+				},
+				{
 					name: "matches",
-					endpoint: '/competitions/:id/matches/:year',
-					description: 'List all available matches. 🆚',
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2017",
+					endpoint: '/competitions/:id/matches/',
+					description: 'List the current matches for a league. 🆚',
+					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
 					status: "Not available. 🔴",
 				},
 				{
 					name: "scorers",
-					endpoint: '/competitions/:id/scorers/:year',
-					description: 'List all available scorers. ⚽',
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/scorers/2019",
+					endpoint: '/competitions/:id/scorers/',
+					description: 'List the current scorers for a league. ⚽',
+					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
 					status: "Not available. 🔴",
 				}
 			]
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.45a',
+			version: '0.53a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);
@@ -148,13 +148,13 @@ APP.get('/competitions', (ctx) => {
 
 APP.get('/competitions/:id', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
-	const found = competitions.find((competition) => competition.id === id);
+	const found = competitions.competitions.find((competition) => competition.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
 APP.get('/competitions/:id/standings', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
-	const found = competitions.find((competition) => competition.id === id);
+	const found = competitions.competitions.find((competition) => competition.id === id);
 	if (found) {
 		switch (id) {
 			case "PRL": return ctx.json(standingsPremierLeague2022);
@@ -171,7 +171,7 @@ APP.get('/competitions/:id/standings', (ctx) => {
 APP.get('/competitions/:id/standings/:year', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
 	const year = ctx.req.param("year");
-	const found = competitions.find((competition) => competition.id === id);
+	const found = competitions.competitions.find((competition) => competition.id === id);
 	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
 	if (found) {
 		switch (id) {

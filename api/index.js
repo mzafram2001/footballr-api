@@ -7,6 +7,12 @@ import standingsLigue12022 from "../db/2022/standings/standingsLigue12022Flashco
 import standingsSerieA2022 from "../db/2022/standings/standingsSerieA2022Flashcore.json";
 import standingsBundesliga2022 from "../db/2022/standings/standingsBundesliga2022Flashcore.json";
 
+import scorersPremierLeague2022 from "../db/2022/scorers/scorersPremierLeague2022Flashcore.json";
+import scorersLaLiga2022 from "../db/2022/scorers/scorersLaLiga2022Flashcore.json";
+import scorersLigue12022 from "../db/2022/scorers/scorersLigue12022Flashcore.json";
+import scorersSerieA2022 from "../db/2022/scorers/scorersSerieA2022Flashcore.json";
+import scorersBundesliga2022 from "../db/2022/scorers/scorersBundesliga2022Flashcore.json";
+
 // 2021
 import standingsPremierLeague2021 from "../db/2021/standings/standingsPremierLeague2021Flashcore.json";
 import standingsLaLiga2021 from "../db/2021/standings/standingsLaLiga2021Flashcore.json";
@@ -68,59 +74,59 @@ APP.get('/', (ctx) => {
 	return ctx.json([
 		{
 			endpoint: '/areas',
-			description: 'List all available areas. 🌍',
+			description: 'List all available areas 🌍.',
 			example: "https://zeus-api.olympus.workers.dev/areas",
-			status: "Available. 🟢",
+			status: "Available 🟢.",
 			parameters: [
 				{
 					name: "id",
 					endpoint: "/areas/:id",
-					description: "List one area given by id. 🔍",
+					description: "List one area given by id 🔍.",
 					example: "https://zeus-api.olympus.workers.dev/areas/ITA",
-					status: "Available. 🟢"
+					status: "Available 🟢."
 				}
 			]
 		},
 		{
 			endpoint: '/competitions',
-			description: 'List all available competitions. 🏆',
+			description: 'List all available competitions 🏆.',
 			example: "https://zeus-api.olympus.workers.dev/competitions",
-			status: "Available. 🟢",
+			status: "Available 🟢.",
 			parameters: [
 				{
 					name: "id",
 					endpoint: "/competitions/:id",
-					description: "List one competition given by id. 🔍",
+					description: "List one competition given by id 🔍.",
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL",
-					status: "Available. 🟢"
+					status: "Available 🟢."
 				},
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021). 🔍",
+					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021) 🔍.",
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
-					status: "Available. 🟢"
+					status: "Available 🟢."
 				},
 				{
 					name: "standings",
 					endpoint: "/competitions/:id/standings",
-					description: "List the current standings for a league. 🔝",
+					description: "List the current standings for a league 🔝.",
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
-					status: "Available. 🟢"
+					status: "Available 🟢."
 				},
 				{
 					name: "matches",
 					endpoint: '/competitions/:id/matches/',
-					description: 'List the current matches for a league. 🆚',
+					description: 'List the current matches for a league 🆚.',
 					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
-					status: "Not available. 🔴",
+					status: "Not available 🔴.",
 				},
 				{
 					name: "scorers",
 					endpoint: '/competitions/:id/scorers/',
-					description: 'List the current scorers for a league. ⚽',
+					description: 'List the current scorers for a league ⚽.',
 					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
-					status: "Not available. 🔴",
+					status: "Not available 🔴.",
 				}
 			]
 		},
@@ -138,7 +144,7 @@ APP.get('/areas', (ctx) => {
 
 APP.get('/areas/:id', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
-	const found = areas.areas.find((area) =>  area.id === id);
+	const found = areas.areas.find((area) => area.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
@@ -241,8 +247,27 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 	}
 });
 
-APP.get('/standingsLaLiga/2021', (ctx) => {
-	return ctx.json(standingsLaLiga2021);
+// matches
+
+// scorers
+APP.get('/competitions/:id/scorers', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (found) {
+		switch (id) {
+			case "PRL": return ctx.json(scorersPremierLeague2022);
+			case "LAL": return ctx.json(scorersLaLiga2022);
+			case "LI1": return ctx.json(scorersLigue12022);
+			case "SEA": return ctx.json(scorersSerieA2022);
+			case "BUN": return ctx.json(scorersBundesliga2022);
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+});
+
+APP.get('/competitions/:id/scorers/:year', (ctx) => {
+
 });
 
 APP.notFound((ctx) => {

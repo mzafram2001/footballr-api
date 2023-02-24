@@ -146,7 +146,11 @@ APP.get('/', (ctx) => {
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
 					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021) 🔍.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
+					example: [
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2016",
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/scorers/2016",
+					],
 					status: "Available 🟢."
 				},
 				{
@@ -168,13 +172,31 @@ APP.get('/', (ctx) => {
 					endpoint: '/competitions/:id/scorers/',
 					description: 'List the current scorers for a league ⚽.',
 					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
-					status: "Not available 🔴.",
+					status: "Available 🟢.",
 				}
 			]
 		},
 		{
+			endpoint: '/teams',
+			description: 'List all available teams 🛡️.',
+			example: "https://zeus-api.olympus.workers.dev/teams",
+			status: "Not available 🔴.",
+			parameters: [
+
+			]
+		},
+		{
+			endpoint: '/players',
+			description: 'List all available players 🏃.',
+			example: "https://zeus-api.olympus.workers.dev/players",
+			status: "Not available 🔴.",
+			parameters: [
+
+			]
+		},
+		{
 			name: "Zeus API ⚡",
-			version: '0.53a',
+			version: '0.56a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);

@@ -114,8 +114,7 @@ APP.get('/', (ctx) => {
 					description: 'List all available matches. 🆚',
 					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2017",
 					status: "Not available. 🔴",
-				}
-				,
+				},
 				{
 					name: "scorers",
 					endpoint: '/competitions/:id/scorers/:year',
@@ -127,7 +126,7 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.44a',
+			version: '0.45a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);
@@ -139,7 +138,7 @@ APP.get('/areas', (ctx) => {
 
 APP.get('/areas/:id', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
-	const found = areas.find((area) => area.id === id);
+	const found = areas.areas.find((area) =>  area.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 

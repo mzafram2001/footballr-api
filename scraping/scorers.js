@@ -4,19 +4,49 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    spain_scorers_2015: "",
-    spain_scorers_2016: "",
-    spain_scorers_2017: "",
-    spain_scorers_2018: "",
-    spain_scorers_2019: "",
-    spain_scorers_2020: "",
-    spain_scorers_2021: "",
+    spain_scorers_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/standings/#/IclHToOB/top_scorers",
+    spain_scorers_2016: "https://www.flashscore.com/football/spain/laliga-2016-2017/standings/#/rH7SFawI/top_scorers",
+    spain_scorers_2017: "https://www.flashscore.com/football/spain/laliga-2017-2018/standings/#/8COD1Gpp/top_scorers",
+    spain_scorers_2018: "https://www.flashscore.com/football/spain/laliga-2018-2019/standings/#/IVm2O3QA/top_scorers",
+    spain_scorers_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/standings/#/MNGIgau5/top_scorers",
+    spain_scorers_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/standings/#/I58n6IRP/top_scorers",
+    spain_scorers_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/standings/#/MPV5cuep/top_scorers",
     spain_scorers_2022: "https://www.flashscore.com/football/spain/laliga/standings/#/COQ6iu30/top_scorers",
 
-
+    france_scorers_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/standings/#/OIZw1WG1/top_scorers",
+    france_scorers_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/standings/#/pSvKVQK1/top_scorers",
+    france_scorers_2017: "https://www.flashscore.com/football/france/ligue-1-2017-2018/standings/#/M5Lr4AbP/top_scorers",
+    france_scorers_2018: "https://www.flashscore.com/football/france/ligue-1-2018-2019/standings/#/8h0R5CTo/top_scorers",
+    france_scorers_2019: "https://www.flashscore.com/football/france/ligue-1-2019-2020/standings/#/2oEAASks/top_scorers",
+    france_scorers_2020: "https://www.flashscore.com/football/france/ligue-1-2020-2021/standings/#/6upiPpqU/top_scorers",
+    france_scorers_2021: "https://www.flashscore.com/football/france/ligue-1-2021-2022/standings/#/0W4LIGb1/top_scorers",
     france_scorers_2022: "https://www.flashscore.com/football/france/ligue-1/standings/#/zmkW5aIi/top_scorers",
+
+    england_scorers_2015: "https://www.flashscore.com/football/england/premier-league-2015-2016/standings/#/faBBhyuM/top_scorers",
+    england_scorers_2016: "https://www.flashscore.com/football/england/premier-league-2016-2017/standings/#/fZHsKRg9/top_scorers",
+    england_scorers_2017: "https://www.flashscore.com/football/england/premier-league-2017-2018/standings/#/WOO1nDO2/top_scorers",
+    england_scorers_2018: "https://www.flashscore.com/football/england/premier-league-2018-2019/standings/#/v1t6uXL7/top_scorers",
+    england_scorers_2019: "https://www.flashscore.com/football/england/premier-league-2019-2020/standings/#/CxZEqxa7/top_scorers",
+    england_scorers_2020: "https://www.flashscore.com/football/england/premier-league-2020-2021/standings/#/zTRyeuJg/top_scorers",
+    england_scorers_2021: "https://www.flashscore.com/football/england/premier-league-2021-2022/standings/#/6kJqdMr2/top_scorers",
     england_scorers_2022: "https://www.flashscore.com/football/england/premier-league/standings/#/nunhS7Vn/top_scorers",
+
+    germany_scorers_2015: "https://www.flashscore.com/football/germany/bundesliga-2015-2016/standings/#/zcgMPDzF/top_scorers",
+    germany_scorers_2016: "https://www.flashscore.com/football/germany/bundesliga-2016-2017/standings/#/ljIBgFCg/top_scorers",
+    germany_scorers_2017: "https://www.flashscore.com/football/germany/bundesliga-2017-2018/standings/#/U5NfqEkf/top_scorers",
+    germany_scorers_2018: "https://www.flashscore.com/football/germany/bundesliga-2018-2019/standings/#/8Qib5JJC/top_scorers",
+    germany_scorers_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/standings/#/dAfCUJq0/top_scorers",
+    germany_scorers_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/standings/#/bk1Zgnfk/top_scorers",
+    germany_scorers_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings/#/jFKYts6j/top_scorers",
     germany_scorers_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/#/OIbxfZZI/top_scorers",
+
+    italy_scorers_2015: "https://www.flashscore.com/football/italy/serie-a-2015-2016/standings/#/tU4tmZrf/top_scorers",
+    italy_scorers_2016: "https://www.flashscore.com/football/italy/serie-a-2016-2017/standings/#/vcYBi9B8/top_scorers",
+    italy_scorers_2017: "https://www.flashscore.com/football/italy/serie-a-2017-2018/standings/#/zZpeJHDG/top_scorers",
+    italy_scorers_2018: "https://www.flashscore.com/football/italy/serie-a-2018-2019/standings/#/Gfk7JcX4/top_scorers",
+    italy_scorers_2019: "https://www.flashscore.com/football/italy/serie-a-2019-2020/standings/#/pImv7QRb/top_scorers",
+    italy_scorers_2020: "https://www.flashscore.com/football/italy/serie-a-2020-2021/standings/#/hKAgCv6t/top_scorers",
+    italy_scorers_2021: "https://www.flashscore.com/football/italy/serie-a-2021-2022/standings/#/YHxmuFsJ/top_scorers",
     italy_scorers_2022: "https://www.flashscore.com/football/italy/serie-a/standings/#/UcnjEEGS/top_scorers",
 }
 

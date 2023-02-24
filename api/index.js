@@ -267,7 +267,76 @@ APP.get('/competitions/:id/scorers', (ctx) => {
 });
 
 APP.get('/competitions/:id/scorers/:year', (ctx) => {
-
+	const id = ctx.req.param("id").toUpperCase();
+	const year = ctx.req.param("year");
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (found) {
+		switch (id) {
+			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(standingsPremierLeague2015);
+					case "2016": return ctx.json(standingsPremierLeague2016);
+					case "2017": return ctx.json(standingsPremierLeague2017);
+					case "2018": return ctx.json(standingsPremierLeague2018);
+					case "2019": return ctx.json(standingsPremierLeague2019);
+					case "2020": return ctx.json(standingsPremierLeague2020);
+					case "2021": return ctx.json(standingsPremierLeague2021);
+				}
+			};
+				break;
+			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(standingsLaLiga2015);
+					case "2016": return ctx.json(standingsLaLiga2016);
+					case "2017": return ctx.json(standingsLaLiga2017);
+					case "2018": return ctx.json(standingsLaLiga2018);
+					case "2019": return ctx.json(standingsLaLiga2019);
+					case "2020": return ctx.json(standingsLaLiga2020);
+					case "2021": return ctx.json(standingsLaLiga2021);
+				}
+			};
+				break;
+			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(standingsLigue12015);
+					case "2016": return ctx.json(standingsLigue12016);
+					case "2017": return ctx.json(standingsLigue12017);
+					case "2018": return ctx.json(standingsLigue12018);
+					case "2019": return ctx.json(standingsLigue12019);
+					case "2020": return ctx.json(standingsLigue12020);
+					case "2021": return ctx.json(standingsLigue12021);
+				}
+			};
+				break;
+			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(standingsSerieA2015);
+					case "2016": return ctx.json(standingsSerieA2016);
+					case "2017": return ctx.json(standingsSerieA2017);
+					case "2018": return ctx.json(standingsSerieA2018);
+					case "2019": return ctx.json(standingsSerieA2019);
+					case "2020": return ctx.json(standingsSerieA2020);
+					case "2021": return ctx.json(standingsSerieA2021);
+				}
+			};
+				break;
+			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(standingsBundesliga2015);
+					case "2016": return ctx.json(standingsBundesliga2016);
+					case "2017": return ctx.json(standingsBundesliga2017);
+					case "2018": return ctx.json(standingsBundesliga2018);
+					case "2019": return ctx.json(standingsBundesliga2019);
+					case "2020": return ctx.json(standingsBundesliga2020);
+					case "2021": return ctx.json(standingsBundesliga2021);
+				}
+			};
+				break;
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
 });
 
 APP.notFound((ctx) => {

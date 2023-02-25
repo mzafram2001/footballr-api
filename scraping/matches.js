@@ -662,7 +662,7 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getMatches(URLS.spain_matches_2018);
+getMatches(URLS.spain_matches_2022);
 
 
 // MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!

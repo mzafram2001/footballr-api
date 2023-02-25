@@ -93,26 +93,32 @@ async function getScorers(url) {
             TMP.position = numRow;
             dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
-            TMP.playerid = dumpStringArray[3];
+            TMP.player = {};
+            TMP.team = {};
+            TMP.player.id = dumpStringArray[3];
             dumpStringArraySecondary = dumpStringArray[2].split('-');
             var lastName = dumpStringArraySecondary[0];
             var firstName = dumpStringArraySecondary[1];
             if (firstName == undefined) {
-                TMP.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                TMP.player.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             } else if (lastName == undefined) {
-                TMP.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
+                TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
             } else {
-                TMP.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             }
-            TMP.nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
+            TMP.player.nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
             dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             dumpStringArraySecondary = dumpStringArray[2].split('-');
             var teamName = dumpStringArraySecondary[0];
+            TMP.team.id = dumpStringArray[3];
             if (teamName == undefined) {
-                TMP.team = "-";
+                TMP.team.name = "-";
             }
-            TMP.team = String(teamName).charAt(0).toUpperCase() + String(teamName).slice(1);
+            TMP.team.name = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').innerText;
+            TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/"+TMP.team.id+"_logo.png";
+            TMP.team.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/"+TMP.team.id+"_kit.png";
+            
             TMP.goals = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--goals.topScorers__cell').innerText);
             TMP.assists = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--gray.topScorers__cell').innerText);
             JSON.scorers.push(TMP);

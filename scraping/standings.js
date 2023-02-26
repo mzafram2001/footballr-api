@@ -104,7 +104,6 @@ async function getStandings(url) {
             TMP.team.id = dumpStringArray[3];
             TMP.team.name = element.querySelector('.tableCellParticipant__name').innerText;
             TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/logos/" + TMP.team.id + "_logo.png";
-            TMP.team.kit = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/kits/" + TMP.team.id + "_kit.png";
             if (isLive_Element.length > 0) {
                 if (isLive_Document.length == 6) {
                     TMP.playedGames = parseInt(element.querySelector('.table__cell--changedValue').innerText);

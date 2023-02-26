@@ -196,7 +196,7 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.57a',
+			version: '0.58a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);

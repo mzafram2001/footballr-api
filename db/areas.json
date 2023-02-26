@@ -45,42 +45,42 @@
         {
             "id": "EUR",
             "name": "Europe",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/european-union.png",
+            "flag": null,
             "parentAreaId": 1,
             "parentArea": "World"
         },
         {
             "id": "ENG",
             "name": "England",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/england.png",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
         {
             "id": "ESP",
             "name": "Spain",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/spain.png",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
         {
             "id": "FRA",
             "name": "France",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/france.png",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
         {
             "id": "ITA",
             "name": "Italy",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/italy.png",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hlKvieGH.svg",
             "parentAreaId": 7,
             "parentArea": "Europe"
         },
         {
             "id": "GER",
             "name": "Germany",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/germany.png",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ptQide1O.svg",
             "parentAreaId": 7,
             "parentArea": "Europe"
         }

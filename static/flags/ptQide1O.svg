@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-286 409.9 22 22" style="enable-background:new -286 409.9 22 22;" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#B82E22;}
+	.st2{fill:#DF3536;}
+	.st3{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st4{clip-path:url(#SVGID_4_);fill:#FFFFFF;}
+	.st5{fill:#E2E2E2;}
+</style>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st1" cx="-275" cy="420.9" r="8"/>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st0" cx="-275" cy="420.9" r="8"/>
+  <circle class="st2" cx="275" cy="-420.9" r="8" style="fill: rgb(255, 204, 0);" transform="matrix(0, 1, -1, 0, -695.899963, 145.899994)"/>
+  <rect x="-261.201" y="317.011" class="st0" width="2.684" height="12.788" style="fill: rgb(0, 0, 0);" transform="matrix(0, 1, -1, 0, 48.214745, 674.073059)"/>
+  <rect x="-274.145" y="450.113" class="st0" width="2.844" height="15.116" style="fill: rgb(0, 0, 0);" transform="matrix(0, 1, -1, 0, 182.70787, 689.358948)"/>
+  <rect x="271.99" y="-430.24" class="st0" width="6.02" height="18.68" style="fill: rgb(221, 0, 0);" transform="matrix(0, -1, 1, 0, 145.899994, 695.899963)"/>
+  <g transform="matrix(0, 1, -1, 0, 145.900024, 695.900024)">
+    <path class="st5" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z"/>
+  </g>
+</svg>

@@ -13,7 +13,7 @@
   <circle class="st1" cx="-275" cy="420.9" r="8"/>
   <circle class="st0" cx="-275" cy="420.9" r="11"/>
   <circle class="st0" cx="-275" cy="420.9" r="8"/>
-  <circle class="st2" cx="-275" cy="420.9" r="8" style="fill: rgb(0, 77, 152);"/>
+  <circle class="st2" cx="-275" cy="420.9" r="8" style="fill: rgb(255, 255, 255);"/>
   <g>
     <g>
       <defs>
@@ -34,9 +34,9 @@
       <rect x="-273.6" y="409.9" class="st4" width="2.9" height="21.9"/>
     </g>
   </g>
-  <rect x="-279.3" y="412" class="st5" width="2.9" height="18.2" style="fill: rgb(165, 0, 68);"/>
-  <rect x="-273.6" y="412" class="st5" width="2.9" height="18.2" style="fill: rgb(165, 0, 68);"/>
+  <rect x="-279.3" y="412" class="st5" width="2.9" height="18.2" style="fill: rgb(238, 37, 35);"/>
+  <rect x="-273.6" y="412" class="st5" width="2.9" height="18.2" style="fill-rule: nonzero; paint-order: fill; fill: rgb(238, 37, 35);"/>
   <g>
-    <path class="st6" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: rgb(237, 187, 0);"/>
+    <path class="st6" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: rgb(0, 0, 0);"/>
   </g>
 </svg>

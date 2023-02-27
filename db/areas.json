@@ -36,6 +36,398 @@
             "parentArea": "World"
         },
         {
+            "id": "ALG",
+            "name": "Algeria",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nc87N1BR.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ANG",
+            "name": "Angola",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/rTRqsooo.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "BEN",
+            "name": "Benin",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/tKuIoRxU.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "BOT",
+            "name": "Botswana",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/naNvXTwI.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "BUF",
+            "name": "Burkina Faso",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bJOXzWga.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "BUR",
+            "name": "Burundi",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/IeBFvsBE.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "CAM",
+            "name": "Cameroon",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zk1uVG2D.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "CAV",
+            "name": "Cape Verde",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/MocyWdm7.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "CAR",
+            "name": "Central African",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/MiKwAcg9.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "CHA",
+            "name": "Chad",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/t8VC3nNA.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "COM",
+            "name": "Comoros",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QLUC9wv3.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "CON",
+            "name": "Congo",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8MPhk9w5.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "DRC",
+            "name": "Democratic Republic Congo",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/phn9mm8H.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "IVC",
+            "name": "Ivory Coast",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/SrdijyIE.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "DJI",
+            "name": "Djibouti",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/0xAwONtF.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "EQG",
+            "name": "Equatorial Guinea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vN7WWxY0.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "EGY",
+            "name": "Egypt",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bejDn7NN.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ERI",
+            "name": "Eritrea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ns8a5zLl.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ETH",
+            "name": "Ethiopia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/4AGUPqC2.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "GAB",
+            "name": "Gabon",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YJL8W78U.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "GAM",
+            "name": "Gambia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hADVg0uE.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "GHA",
+            "name": "Ghana",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "GUI",
+            "name": "Guinea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lGDZlkOb.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "BIS",
+            "name": "Guinea Bissau",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/0rJs9H8F.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "KEN",
+            "name": "Kenya",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/CIAJw1QK.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "LES",
+            "name": "Lesotho",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fTM4XmgO.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "LIB",
+            "name": "Liberia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UZzaxY9t.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "LBY",
+            "name": "Libya",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zm8nIuZl.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MAD",
+            "name": "Madagascar",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/88OzY9OB.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MAW",
+            "name": "Malawi",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vT8sNsdL.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MAL",
+            "name": "Mali",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/jVn5lThB.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MAU",
+            "name": "Mauritania",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Q5QPxhPn.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MAS",
+            "name": "Mauritius",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/tpBfGJ31.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MOR",
+            "name": "Morocco",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/IDKYO3R8.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "MOZ",
+            "name": "Mozambique",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2aBNiivt.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "NAM",
+            "name": "Namibia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QLENxLuR.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "NIR",
+            "name": "Niger",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Eevd7UNo.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "NIG",
+            "name": "Nigeria",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/EBE2Xb3l.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "REU",
+            "name": "Reunion",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/dxsMtLP1.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "RWA",
+            "name": "Rwanda",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/4dPTyCvg.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "STP",
+            "name": "Sao Tome and Principe",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2wlDrsek.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SEN",
+            "name": "Senegal",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hOIsJLJr.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SEY",
+            "name": "Seychelles",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/v5CBuNe8.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SLE",
+            "name": "Sierra Leone",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/0W8SXIIf.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SOM",
+            "name": "Somalia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Aiu9mqIL.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SOM",
+            "name": "Somalia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Aiu9mqIL.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SAF",
+            "name": "South Africa",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/W2ijYvlr.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SSU",
+            "name": "South Sudan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bBswuetq.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "SUD",
+            "name": "Sudan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OGhP26xH.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ESW",
+            "name": "Eswatini",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xW0C2Y47.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "TAN",
+            "name": "Tanzania",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/KzAbFwJ7.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "TOG",
+            "name": "Togo",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/noW84S74.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "TUN",
+            "name": "Tunisia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QqZVYk95.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "UGA",
+            "name": "Uganda",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hnw06lwh.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ZAM",
+            "name": "Zambia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zBS458hb.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
+            "id": "ZIM",
+            "name": "Zimbabwe",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/APEVkV8h.svg",
+            "parentAreaId": "AFR",
+            "parentArea": "Africa"
+        },
+        {
             "id": "OCE",
             "name": "Oceania",
             "flag": null,

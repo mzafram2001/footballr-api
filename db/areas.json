@@ -11,77 +11,77 @@
             "id": "ASI",
             "name": "Asia",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "NCA",
             "name": "North America",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "SAM",
             "name": "South America",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "AFR",
             "name": "Africa",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "OCE",
             "name": "Oceania",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "EUR",
             "name": "Europe",
             "flag": null,
-            "parentAreaId": 1,
+            "parentAreaId": "INT",
             "parentArea": "World"
         },
         {
             "id": "ENG",
             "name": "England",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg",
-            "parentAreaId": 7,
+            "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
         {
             "id": "ESP",
             "name": "Spain",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg",
-            "parentAreaId": 7,
+            "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
         {
             "id": "FRA",
             "name": "France",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg",
-            "parentAreaId": 7,
+            "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
         {
             "id": "ITA",
             "name": "Italy",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hlKvieGH.svg",
-            "parentAreaId": 7,
+            "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
         {
             "id": "GER",
             "name": "Germany",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ptQide1O.svg",
-            "parentAreaId": 7,
+            "parentAreaId": "EUR",
             "parentArea": "Europe"
         }
     ]

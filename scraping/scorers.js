@@ -107,6 +107,39 @@ async function getScorers(url) {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             }
             TMP.player.nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
+            TMP.area = {};
+            switch (TMP.player.nationality) {
+                case "England":
+                    TMP.area.id = "ENG";
+                    TMP.area.name = "England";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg";
+                    break;
+                case "Spain":
+                    TMP.area.id = "ESP";
+                    TMP.area.name = "Spain";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg";
+                    break;
+                case "Germany":
+                    TMP.area.id = "GER";
+                    TMP.area.name = "Germany";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ptQide1O.svg";
+                    break;
+                case "Italy":
+                    TMP.area.id = "ITA";
+                    TMP.area.name = "Italy";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hlKvieGH.svg";
+                    break;
+                case "France":
+                    TMP.area.id = "FRA";
+                    TMP.area.name = "France";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg";
+                    break;
+                default:
+                    TMP.area.id = "-";
+                    TMP.area.name = "-";
+                    TMP.area.flag = "-";
+                    break;
+            }
             dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             dumpStringArraySecondary = dumpStringArray[2].split('-');
@@ -117,7 +150,7 @@ async function getScorers(url) {
             }
             TMP.team.name = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').innerText;
             TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.team.id + ".svg";
-            
+
             TMP.goals = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--goals.topScorers__cell').innerText);
             TMP.assists = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--gray.topScorers__cell').innerText);
             JSON.scorers.push(TMP);

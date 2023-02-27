@@ -206,8 +206,8 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.england_2022);
-getStandings(URLS.spain_2022);
-getStandings(URLS.france_2022);
-getStandings(URLS.italy_2022);
-getStandings(URLS.germany_2022);
+getStandings(URLS.england_2021);
+getStandings(URLS.spain_2021);
+getStandings(URLS.france_2021);
+getStandings(URLS.italy_2021);
+getStandings(URLS.germany_2021);

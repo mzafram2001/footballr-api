@@ -92,7 +92,7 @@ async function getStandings(url) {
             var isLive_Winning = element.getElementsByClassName('liveScore--isWinning');
             var isLive_Losing = element.getElementsByClassName('liveScore--isLosing');
             const TMP = {};
-            element.querySelectorAll('.table__cell--value').innerText;
+            element.querySelectorAll('.table__cell--value   ').innerText;
             if (numRow < 10) {
                 TMP.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 1));
             } else {
@@ -163,6 +163,7 @@ async function getStandings(url) {
                 TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
                 TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             }
+            // TEMPORADAS ANTERIORES (FOR (VAR I = 1; I < 6; I++) { IF(I == 1) } //////////// TEMPORADA ACTUAL (FOR (VAR I = 2; I < 7; I++) { IF(I == 2) }
             for (var i = 2; i < 7; i++) {
                 if (i == 2) {
                     TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText;
@@ -206,8 +207,8 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings(URLS.england_2021);
-getStandings(URLS.spain_2021);
-getStandings(URLS.france_2021);
-getStandings(URLS.italy_2021);
-getStandings(URLS.germany_2021);
+getStandings(URLS.england_2022);
+getStandings(URLS.spain_2022);
+getStandings(URLS.france_2022);
+getStandings(URLS.italy_2022);
+getStandings(URLS.germany_2022);

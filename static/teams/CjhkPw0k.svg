@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-286 409.9 22 22" style="enable-background:new -286 409.9 22 22;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-275" y1="409.9" x2="-275" y2="431.9" id="gradient-0">
+      <stop offset="0" style="stop-color: rgba(219, 219, 219, 1)"/>
+      <stop offset="1" style="stop-color: rgba(168, 168, 168, 1)"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-278.75" y1="411.8" x2="-278.75" y2="430" id="gradient-1" spreadMethod="pad">
+      <stop offset="0" style="stop-color: rgba(219, 219, 219, 1)"/>
+      <stop offset="1" style="stop-color: rgba(168, 168, 168, 1)"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-271.25" y1="411.8" x2="-271.25" y2="430" id="gradient-2">
+      <stop offset="0" style="stop-color: rgba(219, 219, 219, 1)"/>
+      <stop offset="1" style="stop-color: rgba(168, 168, 168, 1)"/>
+    </linearGradient>
+  </defs>
+  <style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#B82E22;}
+	.st2{fill:#A82323;}
+	.st3{clip-path:url(#SVGID_2_);}
+	.st4{fill:#4AC5E8;}
+	.st5{fill:#E2E2E2;}
+</style>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st1" cx="-275" cy="420.9" r="8"/>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st0" cx="-275" cy="420.9" r="8" style="fill: rgb(201, 14, 27);"/>
+  <g>
+    <g>
+      <defs>
+        <circle id="SVGID_1_" cx="-275" cy="420.9" r="8"/>
+      </defs>
+      <clipPath id="SVGID_2_">
+        <circle cx="-275" cy="420.9" r="8" transform="matrix(1, 0, 0, 1, 0, 0)" style="overflow: visible;"/>
+      </clipPath>
+      <g class="st3">
+        <rect x="-286" y="409.9" class="st4" width="6.4" height="22" style="fill: rgb(0, 65, 112);"/>
+        <rect x="-270.4" y="409.9" class="st4" width="6.4" height="22" style="fill: rgb(0, 65, 112);"/>
+      </g>
+    </g>
+  </g>
+  <rect x="-280" y="411.8" class="st5" width="2.5" height="18.2" style="fill: url(#gradient-1);"/>
+  <rect x="-272.5" y="411.8" class="st5" width="2.5" height="18.2" style="fill: url(#gradient-2);"/>
+  <g>
+    <path class="st5" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: url(#gradient-0);"/>
+  </g>
+</svg>

@@ -15,6 +15,349 @@
             "parentArea": "World"
         },
         {
+            "id": "AFG",
+            "name": "Afghanistan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/4M0iRO5p.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "ARM",
+            "name": "Armenia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2TEHMnnn.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "AZE",
+            "name": "Azerbaijan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UTJj1saj.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "BAH",
+            "name": "Bahrain",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GITLc4Fp.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "BAN",
+            "name": "Bangladesh",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/C4edrALb.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "BHU",
+            "name": "Bhutan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ze0Gl6S3.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "BRU",
+            "name": "Brunei",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nV3KmQsA.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "CAO",
+            "name": "Cambodia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/CtLZIDbc.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "CHI",
+            "name": "China",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f5AvIXD3.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "EAT",
+            "name": "East Timor",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j51C4UuG.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "GEO",
+            "name": "Georgia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YVovjspA.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "IND",
+            "name": "India",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/A1UUGpep.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "INO",
+            "name": "Indonesia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/88ErHiT9.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "IRA",
+            "name": "Iran",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xrRx85iA.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "IRQ",
+            "name": "Iraq",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/K8aAGt6r.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "ISR",
+            "name": "Israel",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/rqK1ypob.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "JPN",
+            "name": "Japan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ULXPdOUj.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "JOR",
+            "name": "Jordan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vNcmJoU2.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "KAZ",
+            "name": "Kazakhstan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/l6fBVhqk.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "KUW",
+            "name": "Kuwait",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UTDwCIKD.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "KYR",
+            "name": "Kyrgyzstan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/pMXTD85a.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "LAO",
+            "name": "Laos",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2VDnGBrG.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "LEB",
+            "name": "Lebanon",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/jHmbM6XM.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "MAY",
+            "name": "Malaysia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/rDaObqDr.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "MLD",
+            "name": "Maldives",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/viclpWjn.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "MON",
+            "name": "Mongolia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/KCc4lYff.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "MYA",
+            "name": "Myanmar",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2JBsa3Sl.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "NEP",
+            "name": "Nepal",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lhkLpjfJ.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "NOK",
+            "name": "North Korea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bwsf2p7T.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "OMA",
+            "name": "Oman",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/EDZck0CK.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "PAK",
+            "name": "Pakistan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YDdhqj6h.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "PAL",
+            "name": "Palestine",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/raIKZdDJ.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "PHI",
+            "name": "Philippines",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UentCdsm.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "PHI",
+            "name": "Philippines",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UentCdsm.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "QAT",
+            "name": "Qatar",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zqzHL77i.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "RUS",
+            "name": "Russia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hrgrswHh.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "SAA",
+            "name": "Saudi Arabia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/biSY8ox4.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "SIN",
+            "name": "Singapore",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/G0dqs0hU.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "SOK",
+            "name": "South Korea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/K6Gs7P6G.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "SRL",
+            "name": "Sri Lanka",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GW4b2iPg.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "SYR",
+            "name": "Syria",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bDoeW1BH.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "TAJ",
+            "name": "Tajikistan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WlExKTT4.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "THA",
+            "name": "Thailand",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zHgBrkd7.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "TUR",
+            "name": "Turkey",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QeijuHo5.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "TUK",
+            "name": "Turkmenistan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/SUftDSK5.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "UAE",
+            "name": "United Arab Emirates",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Knrj3QiN.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "UZB",
+            "name": "Uzbekistan",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/EZYKKRMc.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "VIE",
+            "name": "Vietnam",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xAcurtwO.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
+            "id": "YEM",
+            "name": "Yemen",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GGzYeY4n.svg",
+            "parentAreaId": "ASI",
+            "parentArea": "Asia"
+        },
+        {
             "id": "NCA",
             "name": "North America",
             "flag": null,

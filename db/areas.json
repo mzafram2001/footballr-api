@@ -316,13 +316,6 @@
             "parentArea": "Asia"
         },
         {
-            "id": "TUR",
-            "name": "Turkey",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QeijuHo5.svg",
-            "parentAreaId": "ASI",
-            "parentArea": "Asia"
-        },
-        {
             "id": "TUK",
             "name": "Turkmenistan",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/SUftDSK5.svg",
@@ -820,7 +813,7 @@
             "parentArea": "Europe"
         },
         {
-            "id": "BAH",
+            "id": "BOH",
             "name": "Bosnia and Herzegovina",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fqe7WYTr.svg",
             "parentAreaId": "EUR",
@@ -981,14 +974,14 @@
             "parentArea": "Europe"
         },
         {
-            "id": "MLD",
+            "id": "MLV",
             "name": "Moldova",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zsDPKQGb.svg",
             "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
         {
-            "id": "MON",
+            "id": "MCO",
             "name": "Monaco",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2YStJ7uw.svg",
             "parentAreaId": "EUR",

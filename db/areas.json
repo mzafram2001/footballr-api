@@ -785,6 +785,90 @@
             "parentArea": "World"
         },
         {
+            "id": "ALB",
+            "name": "Albania",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ELP2K4oB.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "AND",
+            "name": "Andorra",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/dnO5z404.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "AST",
+            "name": "Austria",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/naHiWdnt.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "BEL",
+            "name": "Belarus",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lhXEH2VT.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "BLG",
+            "name": "Belgium",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GbB957na.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "BAH",
+            "name": "Bosnia and Herzegovina",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fqe7WYTr.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "BUL",
+            "name": "Bulgaria",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WEeqYLaT.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "CRO",
+            "name": "Croatia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/K8aznggo.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "CYP",
+            "name": "Cyprus",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fumziNU3.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "CZR",
+            "name": "Czech Republic",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/6LHwBDGU.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "DEN",
+            "name": "Denmark",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/0KUdxQVi.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "EST",
+            "name": "Estonia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YJwM4R15.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
             "id": "ENG",
             "name": "England",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg",
@@ -792,9 +876,9 @@
             "parentArea": "Europe"
         },
         {
-            "id": "ESP",
-            "name": "Spain",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg",
+            "id": "FIN",
+            "name": "Finland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QuVpPpic.svg",
             "parentAreaId": "EUR",
             "parentArea": "Europe"
         },
@@ -806,6 +890,41 @@
             "parentArea": "Europe"
         },
         {
+            "id": "GER",
+            "name": "Germany",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ptQide1O.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "GRE",
+            "name": "Greece",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/COuk57Ci.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "HUN",
+            "name": "Hungary",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/MTVhw6Go.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "ICE",
+            "name": "Iceland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/6TsAIrGN.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "IRE",
+            "name": "Ireland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Gfyqk1aG.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
             "id": "ITA",
             "name": "Italy",
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hlKvieGH.svg",
@@ -813,9 +932,170 @@
             "parentArea": "Europe"
         },
         {
-            "id": "GER",
-            "name": "Germany",
-            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ptQide1O.svg",
+            "id": "KOS",
+            "name": "Kosovo",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/v1DTPQwI.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "LAT",
+            "name": "Latvia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WC2jLpW4.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "LIE",
+            "name": "Liechtenstein",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8KIf01Ed.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "LIT",
+            "name": "Lithuania",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lfrBTu8p.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "LUX",
+            "name": "Luxembourg",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2cnFSaNj.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "NMA",
+            "name": "North Macedonia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GrTQ3oHB.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "MTA",
+            "name": "Malta",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YHpMYsVG.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "MLD",
+            "name": "Moldova",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zsDPKQGb.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "MON",
+            "name": "Monaco",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2YStJ7uw.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "MOT",
+            "name": "Montenegro",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hOduZ1pN.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "NTH",
+            "name": "Netherlands",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WYintcWb.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "NOR",
+            "name": "Norway",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8rP6JO0H.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "POL",
+            "name": "Poland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2HzmcynI.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "POR",
+            "name": "Portugal",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WvJrjFVN.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "ROM",
+            "name": "Romania",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/IaD8jZpU.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SMA",
+            "name": "San Marino",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Wlrb53yT.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SER",
+            "name": "Serbia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8Kl6iq0i.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SLK",
+            "name": "Slovakia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/KpLb2q1U.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SLN",
+            "name": "Slovenia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/tfMf3PoO.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "ESP",
+            "name": "Spain",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SWE",
+            "name": "Sweden",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OQyqbHWB.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "SWI",
+            "name": "Switzerland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/rHJ2vy1B.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "TUR",
+            "name": "Turkey",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QeijuHo5.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
+        },
+        {
+            "id": "UKR",
+            "name": "Ukraine",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j1JtDMwo.svg",
             "parentAreaId": "EUR",
             "parentArea": "Europe"
         }

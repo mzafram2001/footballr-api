@@ -358,11 +358,242 @@
             "parentArea": "World"
         },
         {
+            "id": "CAN",
+            "name": "Canada",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/x4toKORL.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "MEX",
+            "name": "Mexico",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/O6iHcNkd.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "USA",
+            "name": "United States of America",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fuitL4CF.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "PRI",
+            "name": "Puerto Rico",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lAKMkNQF.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "DRE",
+            "name": "Dominican Republic",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nB5iYoh5.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "CUB",
+            "name": "Cuba",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/GlhxMpc9.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "GRE",
+            "name": "Greenland",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hvMLTyfg.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "HAI",
+            "name": "Haiti",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nk4v10Z1.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "BEL",
+            "name": "Belize",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/C2ngn92p.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "CRI",
+            "name": "Costa Rica",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/C4ePE2kq.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "ESA",
+            "name": "El Salvador",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8b5z2tKe.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "GUA",
+            "name": "Guatemala",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8KhCLQs3.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "HON",
+            "name": "Honduras",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fP8cJrsS.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "NIC",
+            "name": "Nicaragua",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/6L9QjkfT.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "PAN",
+            "name": "Panama",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OWKqbCfi.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "JAM",
+            "name": "Jamaica",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/CWmDb3zj.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "BAH",
+            "name": "Bahamas",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/zcP861Rj.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "BAR",
+            "name": "Barbados",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WUFp3SYb.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
+            "id": "DOM",
+            "name": "Dominica",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/SxBa1k2P.svg",
+            "parentAreaId": "NCA",
+            "parentArea": "North America"
+        },
+        {
             "id": "SAM",
             "name": "South America",
             "flag": null,
             "parentAreaId": "INT",
             "parentArea": "World"
+        },
+        {
+            "id": "ARG",
+            "name": "Argentina",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "BRA",
+            "name": "Brazil",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/I9l9aqLq.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "BOL",
+            "name": "Bolivia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nXdi7mbc.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "CHL",
+            "name": "Chile",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/KUCG35cM.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "COL",
+            "name": "Colombia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/G02s4PCS.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "ECU",
+            "name": "Ecuador",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8tbm8Tri.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "FLI",
+            "name": "Falkland Islands",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vHnnkIu6.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "GUY",
+            "name": "Guyana",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/0ATgM6fd.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "PAR",
+            "name": "Paraguay",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YaNlqp6j.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "PER",
+            "name": "Peru",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Uend67D3.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "SRI",
+            "name": "Suriname",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/jefTDM4k.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "TAT",
+            "name": "Trinidad and Tobago",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UTg8M6Sd.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "URU",
+            "name": "Uruguay",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xMk44orG.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
+        },
+        {
+            "id": "VEN",
+            "name": "Venezuela",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/raj05RS9.svg",
+            "parentAreaId": "SAM",
+            "parentArea": "South America"
         },
         {
             "id": "AFR",

@@ -1002,6 +1002,69 @@
             "parentArea": "World"
         },
         {
+            "id": "AUS",
+            "name": "Australia",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xSrf6qMM.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "FIJ",
+            "name": "Fiji",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/hW4TJi0B.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "NZE",
+            "name": "New Zealand",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/rLctHkpU.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "PNG",
+            "name": "Papua New Guinea",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OjkU0PHe.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "SMA",
+            "name": "Samoa",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/UyfgO6vF.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "SOL",
+            "name": "Solomon Islands",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fF5OOS92.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "TGA",
+            "name": "Tonga",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ChcXI7PL.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "TUV",
+            "name": "Tuvalu",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/lnQSFOWl.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
+            "id": "VAN",
+            "name": "Vanuatu",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ng4XIBFH.svg",
+            "parentAreaId": "OCE",
+            "parentArea": "Oceania"
+        },
+        {
             "id": "EUR",
             "name": "Europe",
             "flag": null,

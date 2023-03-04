@@ -41,6 +41,16 @@ async function getLast10Matches(url) {
             });
             JSON_DATA["matchesIteration"] = [];
             JSON_DATA.matchesIteration.push(RESULT);
+
+
+
+
+
+
+
+
+
+            
             FS.writeFile(fileLocationNew, JSON.stringify(JSON_DATA), 'utf8', function (err) {
                 if (err) {
                     console.log('An error occured while writing JSON Object to File.');

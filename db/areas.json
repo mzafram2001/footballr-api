@@ -1385,6 +1385,13 @@
             "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j1JtDMwo.svg",
             "parentAreaId": "EUR",
             "parentArea": "Europe"
+        },
+        {
+            "id": "WAL",
+            "name": "Wales",
+            "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YcUP0Nqp.svg",
+            "parentAreaId": "EUR",
+            "parentArea": "Europe"
         }
     ]
 }

@@ -134,6 +134,71 @@ async function getScorers(url) {
                     TMP.area.name = "France";
                     TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg";
                     break;
+                case "Argentina":
+                    TMP.area.id = "ARG";
+                    TMP.area.name = "Argentina";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg";
+                    break;
+                case "Uruguay":
+                    TMP.area.id = "URU";
+                    TMP.area.name = "Uruguay";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xMk44orG.svg";
+                    break;
+                case "Portugal":
+                    TMP.area.id = "POR";
+                    TMP.area.name = "Portugal";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WvJrjFVN.svg";
+                    break;
+                case "Wales":
+                    TMP.area.id = "WAL";
+                    TMP.area.name = "Wales";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YcUP0Nqp.svg";
+                    break;
+                case "Croatia":
+                    TMP.area.id = "CRO";
+                    TMP.area.name = "Croatia";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/K8aznggo.svg";
+                    break;
+                case "Morocco":
+                    TMP.area.id = "MOR";
+                    TMP.area.name = "Morocco";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/IDKYO3R8.svg";
+                    break;
+                case "Sweden":
+                    TMP.area.id = "SWE";
+                    TMP.area.name = "Sweden";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OQyqbHWB.svg";
+                    break;
+                case "Brazil":
+                    TMP.area.id = "BRA";
+                    TMP.area.name = "Brazil";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/I9l9aqLq.svg";
+                    break;
+                case "Turkey":
+                    TMP.area.id = "TUR";
+                    TMP.area.name = "Turkey";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QeijuHo5.svg";
+                    break;
+                case "Netherlands":
+                    TMP.area.id = "NTH";
+                    TMP.area.name = "Netherlands";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/WYintcWb.svg";
+                    break;
+                case "Poland":
+                    TMP.area.id = "POL";
+                    TMP.area.name = "Poland";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2HzmcynI.svg";
+                    break;
+                case "Kosovo":
+                    TMP.area.id = "KOS";
+                    TMP.area.name = "Kosovo";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/v1DTPQwI.svg";
+                    break;
+                case "Norway":
+                    TMP.area.id = "NOR";
+                    TMP.area.name = "Norway";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8rP6JO0H.svg";
+                    break;
                 default:
                     TMP.area.id = "-";
                     TMP.area.name = "-";

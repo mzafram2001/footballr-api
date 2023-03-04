@@ -13,9 +13,40 @@ const URLS = {
     spain_matches_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/results/",
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 
+    germany_matches_2015: "https://www.flashscore.com/football/germany/bundesliga-2015-2016/results/",
+    germany_matches_2016: "https://www.flashscore.com/football/germany/bundesliga-2016-2017/results/",
+    germany_matches_2017: "https://www.flashscore.com/football/germany/bundesliga-2017-2018/results/",
+    germany_matches_2018: "https://www.flashscore.com/football/germany/bundesliga-2018-2019/results/",
+    germany_matches_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/results/",
+    germany_matches_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/results/",
+    germany_matches_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/results/",
     germany_matches_2022: "https://www.flashscore.com/football/germany/bundesliga/results/",
+    
+    england_matches_2015: "https://www.flashscore.com/football/england/premier-league-2015-2016/results/",
+    england_matches_2016: "https://www.flashscore.com/football/england/premier-league-2016-2017/results/",
+    england_matches_2017: "https://www.flashscore.com/football/england/premier-league-2017-2018/results/",
+    england_matches_2018: "https://www.flashscore.com/football/england/premier-league-2018-2019/results/",
+    england_matches_2019: "https://www.flashscore.com/football/england/premier-league-2019-2020/results/",
+    england_matches_2020: "https://www.flashscore.com/football/england/premier-league-2020-2021/results/",
+    england_matches_2021: "https://www.flashscore.com/football/england/premier-league-2021-2022/results/",
     england_matches_2022: "https://www.flashscore.com/football/england/premier-league/results/",
+    
+    france_matches_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/results/",
+    france_matches_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/results/",
+    france_matches_2017: "https://www.flashscore.com/football/france/ligue-1-2017-2018/results/",
+    france_matches_2018: "https://www.flashscore.com/football/france/ligue-1-2018-2019/results/",
+    france_matches_2019: "https://www.flashscore.com/football/france/ligue-1-2019-2020/results/",
+    france_matches_2020: "https://www.flashscore.com/football/france/ligue-1-2020-2021/results/",
+    france_matches_2021: "https://www.flashscore.com/football/france/ligue-1-2021-2022/results/",
     france_matches_2022: "https://www.flashscore.com/football/france/ligue-1/results/",
+    
+    italy_matches_2015: "https://www.flashscore.com/football/italy/serie-a-2015-2016/results/",
+    italy_matches_2016: "https://www.flashscore.com/football/italy/serie-a-2016-2017/results/",
+    italy_matches_2017: "https://www.flashscore.com/football/italy/serie-a-2017-2018/results/",
+    italy_matches_2018: "https://www.flashscore.com/football/italy/serie-a-2018-2019/results/",
+    italy_matches_2019: "https://www.flashscore.com/football/italy/serie-a-2019-2020/results/",
+    italy_matches_2020: "https://www.flashscore.com/football/italy/serie-a-2020-2021/results/",
+    italy_matches_2021: "https://www.flashscore.com/football/italy/serie-a-2021-2022/results/",
     italy_matches_2022: "https://www.flashscore.com/football/italy/serie-a/results/",
 }
 
@@ -1250,7 +1281,6 @@ getAllMatches(URLS.germany_matches_2022);
 getAllMatches(URLS.england_matches_2022);
 getAllMatches(URLS.france_matches_2022);
 getAllMatches(URLS.italy_matches_2022);
+
 // getLast10Matches(URLS.spain_matches_2022);
-
-
 // MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!

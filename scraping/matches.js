@@ -1237,7 +1237,7 @@ async function getAllMatches(url) {
                 RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
                 pushIt = true;
             }
-            j++
+            j++;
         }
     }
 

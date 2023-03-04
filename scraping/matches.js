@@ -14,8 +14,59 @@ const URLS = {
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
 }
 
+async function getLast10Matches(url) {
+    const BROWSER = await PUPPETER.launch({
+        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const PAGE = await BROWSER.newPage();
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
+    var area = url.split('/');
+    switch (area[4]) {
+        case "spain":
+            var fileLocation = PATH.join(process.cwd(), "./db/2022/matches/matchesLaLiga2022Flashcore.json");
+            var fileLocationNew = PATH.join(process.cwd(), "./db/2022/matches/updatedMatches.json");
+            const FILE_DATA = FS.readFileSync(fileLocation, "utf8");
+            const JSON_DATA = JSON.parse(FILE_DATA);
+            const RESULT = await PAGE.evaluate(() => {
+                const JSON = {};
+                JSON.matchesIteration = [];
+                const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
+                for (var i = 0; i < 10; i++) {
+                    const TMP = {};
+                    TMP.id = MATCHES_SELECTOR[i].id.substring(4);
+                    TMP.link = "https://www.flashscore.com/match/" + TMP.id;
+                    JSON.matchesIteration.push(TMP);
+                }
+                return JSON;
+            });
+            JSON_DATA["matchesIteration"] = [];
+            JSON_DATA.matchesIteration.push(RESULT);
+            FS.writeFile(fileLocationNew, JSON.stringify(JSON_DATA), 'utf8', function (err) {
+                if (err) {
+                    console.log('An error occured while writing JSON Object to File.');
+                    return console.log(err);
+                }
+                console.log('JSON file has been saved.');
+            });
+            break;
+    }
+    await BROWSER.close();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
-async function getMatches(url) {
+async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
@@ -660,7 +711,8 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getMatches(URLS.spain_matches_2022);
+// getAllMatches(URLS.spain_matches_2022);
+getLast10Matches(URLS.spain_matches_2022);
 
 
 // MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!

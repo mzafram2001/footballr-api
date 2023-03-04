@@ -594,36 +594,6 @@ async function getLast10Matches(url) {
     await BROWSER.close();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({

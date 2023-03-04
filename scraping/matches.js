@@ -12,6 +12,11 @@ const URLS = {
     spain_matches_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/results/",
     spain_matches_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/results/",
     spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
+
+    germany_matches_2022: "https://www.flashscore.com/football/germany/bundesliga/results/",
+    england_matches_2022: "https://www.flashscore.com/football/england/premier-league/results/",
+    france_matches_2022: "https://www.flashscore.com/football/france/ligue-1/results/",
+    italy_matches_2022: "https://www.flashscore.com/football/italy/serie-a/results/",
 }
 
 async function getLast10Matches(url) {
@@ -1241,6 +1246,10 @@ async function delay(time) {
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getAllMatches(URLS.spain_matches_2022);
+getAllMatches(URLS.germany_matches_2022);
+getAllMatches(URLS.england_matches_2022);
+getAllMatches(URLS.france_matches_2022);
+getAllMatches(URLS.italy_matches_2022);
 // getLast10Matches(URLS.spain_matches_2022);
 
 

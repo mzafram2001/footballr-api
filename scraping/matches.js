@@ -1232,7 +1232,7 @@ async function getAllMatches(url) {
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
         var pushIt = false;
         var j = 0;
-        while (j <= RESULT.season.length && pushIt == false) {
+        while (j <= RESULT.season.length - 1 && pushIt == false) {
             if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
                 RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
                 pushIt = true;

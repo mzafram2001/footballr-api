@@ -26,6 +26,7 @@ jobs:
           run_install: true
       - run: |
           node scraping/matches.js
-          git config user.name zeus-api-bot
+          git config --global user.name zeus-api-bot
+          git config user.name 
           git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
           git push origin main

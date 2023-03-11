@@ -633,7 +633,7 @@ async function getLast10Matches(url) {
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
-        headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });

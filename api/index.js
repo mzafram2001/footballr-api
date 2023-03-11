@@ -109,7 +109,7 @@ import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
-const MIN_YEAR = 2015;
+const MIN_YEAR = 2020;
 const MAX_YEAR = 2022;
 
 APP.get('/', (ctx) => {
@@ -145,11 +145,11 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2021) 🔍.",
+					description: "List the standings, matches or scorers for a league, given by start year (2020 - 2021) 🔍.",
 					example: [
-						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2016",
-						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2016",
-						"https://zeus-api.olympus.workers.dev/competitions/LAL/scorers/2016",
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2020",
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2020",
+						"https://zeus-api.olympus.workers.dev/competitions/LAL/scorers/2020",
 					],
 					status: "Available 🟢."
 				},

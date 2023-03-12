@@ -1,0 +1,32 @@
+name: Scrape Football Matches LaLiga
+
+on:
+  workflow_dispatch:
+  
+  repository_dispatch:
+    types:
+      - webhook
+  
+  schedule:
+   - cron: "* */24 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.18.2
+          run_install: true
+      - run: |
+          node scraping/matchesLaLiga.js
+          git config --global user.name zeus-api-bot
+          git config user.name 
+          git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
+          git push origin main

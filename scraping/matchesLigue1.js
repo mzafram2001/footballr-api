@@ -274,5 +274,3 @@ async function delay(time) {
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getAllMatches(URLS.france_matches_2020);
-
-// MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!

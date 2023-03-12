@@ -183,7 +183,7 @@ APP.get('/', (ctx) => {
 					endpoint: '/competitions/:id/matches/',
 					description: 'List the current matches for a league 🆚.',
 					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
-					status: "Not available 🔴.",
+					status: "Available 🟢.",
 				},
 				{
 					name: "scorers",
@@ -214,7 +214,7 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.61a',
+			version: '0.65a',
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);

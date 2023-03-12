@@ -13,11 +13,11 @@ import scorersLigue12022 from "../db/2022/scorers/scorersLigue12022Flashcore.jso
 import scorersSerieA2022 from "../db/2022/scorers/scorersSerieA2022Flashcore.json";
 import scorersBundesliga2022 from "../db/2022/scorers/scorersBundesliga2022Flashcore.json";
 
-import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
+//import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
 import matchesLaLiga2022 from "../db/2022/matches/matchesLaLiga2022Flashcore.json";
-import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
-import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
-import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
+//import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
+//import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
+//import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
 
 // 2021
 import standingsPremierLeague2021 from "../db/2021/standings/standingsPremierLeague2021Flashcore.json";
@@ -32,11 +32,11 @@ import scorersLigue12021 from "../db/2021/scorers/scorersLigue12021Flashcore.jso
 import scorersSerieA2021 from "../db/2021/scorers/scorersSerieA2021Flashcore.json";
 import scorersBundesliga2021 from "../db/2021/scorers/scorersBundesliga2021Flashcore.json";
 
-import matchesPremierLeague2021 from "../db/2021/matches/matchesPremierLeague2021Flashcore.json";
+//import matchesPremierLeague2021 from "../db/2021/matches/matchesPremierLeague2021Flashcore.json";
 import matchesLaLiga2021 from "../db/2021/matches/matchesLaLiga2021Flashcore.json";
-import matchesLigue12021 from "../db/2021/matches/matchesLigue12021Flashcore.json";
-import matchesSerieA2021 from "../db/2021/matches/matchesSerieA2021Flashcore.json";
-import matchesBundesliga2021 from "../db/2021/matches/matchesBundesliga2021Flashcore.json";
+//import matchesLigue12021 from "../db/2021/matches/matchesLigue12021Flashcore.json";
+//import matchesSerieA2021 from "../db/2021/matches/matchesSerieA2021Flashcore.json";
+//import matchesBundesliga2021 from "../db/2021/matches/matchesBundesliga2021Flashcore.json";
 
 // 2020
 import standingsPremierLeague2020 from "../db/2020/standings/standingsPremierLeague2020Flashcore.json";
@@ -51,11 +51,11 @@ import scorersLigue12020 from "../db/2020/scorers/scorersLigue12020Flashcore.jso
 import scorersSerieA2020 from "../db/2020/scorers/scorersSerieA2020Flashcore.json";
 import scorersBundesliga2020 from "../db/2020/scorers/scorersBundesliga2020Flashcore.json";
 
-import matchesPremierLeague2020 from "../db/2020/matches/matchesPremierLeague2020Flashcore.json";
+//import matchesPremierLeague2020 from "../db/2020/matches/matchesPremierLeague2020Flashcore.json";
 import matchesLaLiga2020 from "../db/2020/matches/matchesLaLiga2020Flashcore.json";
-import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.json";
-import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
-import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
+//import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.json";
+//import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
+//import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
 
 // 2019
 import standingsPremierLeague2019 from "../db/2019/standings/standingsPremierLeague2019Flashcore.json";
@@ -193,7 +193,7 @@ APP.get('/', (ctx) => {
 					status: "Available 🟢.",
 				}
 			]
-		},
+		},/*
 		{
 			endpoint: '/teams',
 			description: 'List all available teams 🛡️.',
@@ -211,7 +211,7 @@ APP.get('/', (ctx) => {
 			parameters: [
 
 			]
-		},
+		},*/
 		{
 			name: "Zeus API ⚡",
 			version: '0.65a',

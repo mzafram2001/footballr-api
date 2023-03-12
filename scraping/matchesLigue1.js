@@ -101,9 +101,7 @@ async function getAllMatches(url) {
             const TMP = {};
             var dumpString;
             var dumpStringArray;
-
             var title = document.evaluate("/html/head/title", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-
             TMP.homeTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
@@ -111,8 +109,6 @@ async function getAllMatches(url) {
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
-            TMP.homeTeam.lineup = [];
-
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
@@ -120,8 +116,6 @@ async function getAllMatches(url) {
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
-            TMP.awayTeam.lineup = [];
-
             TMP.round = parseInt(document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText.substring(15));
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
@@ -130,316 +124,7 @@ async function getAllMatches(url) {
             TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
-
             TMP.stats = [];
-
-            TMP.summary = [];
-            var events = document.querySelectorAll('.smv__participantRow');
-            events.forEach(element => {
-                const TMP2 = {};
-                var eventIcon = element.querySelector('svg').getAttribute('class');
-                if (element.getAttribute('class') == 'smv__participantRow smv__homeParticipant') {
-                    TMP2.actionTeam = "Home";
-                    switch (eventIcon) {
-                        case "card-ico yellowCard-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Yellow Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "soccer ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Goal";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
-                            if (hasAssist.length > 0) {
-                                dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
-                                dumpStringArray = dumpString.split('/');
-                                dumpStringArraySecondary = dumpStringArray[2].split('-');
-                                lastName = dumpStringArraySecondary[0];
-                                firstName = dumpStringArraySecondary[1];
-                                if (firstName == undefined) {
-                                    TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                                } else if (lastName == undefined) {
-                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                                } else {
-                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                                }
-                            }
-                            break;
-                        case "soccer footballOwnGoal-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Own Goal";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "substitution ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Substitution";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
-                            dumpStringArray = dumpString.split('/');
-                            dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            lastName = dumpStringArraySecondary[0];
-                            firstName = dumpStringArraySecondary[1];
-                            if (firstName == undefined) {
-                                TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "card-ico ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Yellow Card > Red Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "card-ico redCard-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Red Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "var ":
-                            TMP2.type = "VAR > Goal Disallowed";
-                            break;
-                        case "warning ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Penalty Missed";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                        default:
-                            TMP2.type = "-";
-                            TMP2.player = "-";
-                            break;
-                    }
-                    TMP2.minute = element.querySelector('.smv__timeBox').innerText;
-                } else if (element.getAttribute('class') == 'smv__participantRow smv__awayParticipant') {
-                    TMP2.actionTeam = "Away";
-                    switch (eventIcon) {
-                        case "card-ico yellowCard-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Yellow Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "soccer ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Goal";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            var hasAssist = element.querySelectorAll('div > div.smv__assist > a');
-                            if (hasAssist.length > 0) {
-                                dumpString = element.querySelector('div > div.smv__assist > a').getAttribute('href');
-                                dumpStringArray = dumpString.split('/');
-                                dumpStringArraySecondary = dumpStringArray[2].split('-');
-                                lastName = dumpStringArraySecondary[0];
-                                firstName = dumpStringArraySecondary[1];
-                                if (firstName == undefined) {
-                                    TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                                } else if (lastName == undefined) {
-                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                                } else {
-                                    TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                                }
-                            }
-                            break;
-                        case "soccer footballOwnGoal-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Own Goal";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "substitution ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Substitution";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            dumpString = element.querySelector('div > div.smv__incidentSubOut > a').getAttribute('href');
-                            dumpStringArray = dumpString.split('/');
-                            dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            lastName = dumpStringArraySecondary[0];
-                            firstName = dumpStringArraySecondary[1];
-                            if (firstName == undefined) {
-                                TMP2.assist = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.assist = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "card-ico ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Yellow Card > Red Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "card-ico redCard-ico":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Red Card";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                            break;
-                        case "var ":
-                            TMP2.type = "VAR > Goal Disallowed";
-                            break;
-                        case "warning ":
-                            var dumpString = element.querySelector('a').getAttribute('href');
-                            var dumpStringArray = dumpString.split('/');
-                            var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                            var lastName = dumpStringArraySecondary[0];
-                            var firstName = dumpStringArraySecondary[1];
-                            TMP2.type = "Penalty Missed";
-                            if (firstName == undefined) {
-                                TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            } else if (lastName == undefined) {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                            } else {
-                                TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                            }
-                        default:
-                            TMP2.type = "-";
-                            TMP2.player = "-";
-                            break;
-                    }
-                    TMP2.minute = element.querySelector('.smv__timeBox').innerText;
-                }
-                TMP.summary.push(TMP2);
-            });
-
-            var myData = document.querySelectorAll('.mi__item');
-            if (myData.length == 2) {
-                TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(1) > span.mi__item__val').innerText;
-                TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText.replace(/\s/g, ''));
-            } else if (myData.length == 3) {
-                TMP.stadium = document.querySelector('#detail > div.section > div.mi__data > div:nth-child(2) > span.mi__item__val').innerText;
-                TMP.attendance = parseInt(document.querySelector('#detail > div.section > div.mi__data > div:nth-child(3) > span.mi__item__val').innerText.replace(/\s/g, ''));
-            } else if (myData.length == 0) {
-                TMP.stadium = "-";
-                TMP.attendance = "-";
-            }
-
             return TMP;
         });
         match.round = MATCH.round;
@@ -451,9 +136,6 @@ async function getAllMatches(url) {
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
         match.stats = MATCH.stats;
-        match.summary = MATCH.summary;
-        match.stadium = MATCH.stadium;
-        match.attendance = MATCH.attendance;
     }
 
     for (let match of RESULT.matchesIteration) {
@@ -542,75 +224,6 @@ async function getAllMatches(url) {
             return TMP;
         });
         match.stats = MATCH_STATS;
-    }
-
-    for (let match of RESULT.matchesIteration) {
-        // 'waitUntil' : ['load', 'domcontentloaded', 'networkidle0', 'networkidle2']
-        await PAGE.goto(match.link + "/#/match-summary/lineups", { 'waitUntil': 'networkidle0' });
-        delay(2000);
-        console.log(match.link + "/#/match-summary/lineups");
-        const MATCH_LINEUPS = await PAGE.evaluate(() => {
-            const TMP = {};
-            var hasDiffStadium = document.querySelectorAll('#detail > div.infoBox__wrapper.infoBoxModule');
-            TMP.homeTeam = {};
-            TMP.homeTeam.players = [];
-            TMP.awayTeam = {};
-            TMP.awayTeam.players = [];
-            if (hasDiffStadium.length > 0) {
-                TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(1)').innerText;
-                TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(9) > div.lf__header.section__title > span:nth-child(3)').innerText;
-
-            } else if (hasDiffStadium.length == 0) {
-                var homeColumns = document.querySelectorAll('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div:nth-child(1) > .lf__line');
-                var awayColumns = document.querySelectorAll('#detail > div:nth-child(8) > div.lf__fieldWrap > div > div.lf__formation.lf__formationAway.lf__formationDense > .lf__line');
-                TMP.homeTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(1)').innerText;
-                TMP.awayTeam.formation = document.querySelector('#detail > div:nth-child(8) > div.lf__header.section__title > span:nth-child(3)').innerText;
-                homeColumns.forEach(element => {
-                    var homePlayers = element.querySelectorAll('.lf__player');
-                    homePlayers.forEach(player => {
-                        TMP2 = {};
-                        var dumpString = player.querySelector('a').getAttribute('href');
-                        var dumpStringArray = dumpString.split('/');
-                        var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                        var lastName = dumpStringArraySecondary[0];
-                        var firstName = dumpStringArraySecondary[1];
-                        TMP2.id = dumpStringArray[3];
-                        if (firstName == undefined) {
-                            TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                        } else if (lastName == undefined) {
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                        } else {
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                        }
-                        TMP.homeTeam.players.push(TMP2);
-                    });
-                });
-
-                awayColumns.forEach(element => {
-                    var awayPlayers = element.querySelectorAll('.lf__player');
-                    awayPlayers.forEach(player => {
-                        TMP2 = {};
-                        var dumpString = player.querySelector('a').getAttribute('href');
-                        var dumpStringArray = dumpString.split('/');
-                        var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                        var lastName = dumpStringArraySecondary[0];
-                        var firstName = dumpStringArraySecondary[1];
-                        TMP2.id = dumpStringArray[3];
-                        if (firstName == undefined) {
-                            TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                        } else if (lastName == undefined) {
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                        } else {
-                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-                        }
-                        TMP.awayTeam.players.push(TMP2);
-                    });
-                });
-            }
-            return TMP;
-        });
-        match.homeTeam.lineup = MATCH_LINEUPS.homeTeam;
-        match.awayTeam.lineup = MATCH_LINEUPS.awayTeam;
     }
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {

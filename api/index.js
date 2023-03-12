@@ -13,6 +13,12 @@ import scorersLigue12022 from "../db/2022/scorers/scorersLigue12022Flashcore.jso
 import scorersSerieA2022 from "../db/2022/scorers/scorersSerieA2022Flashcore.json";
 import scorersBundesliga2022 from "../db/2022/scorers/scorersBundesliga2022Flashcore.json";
 
+import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
+import matchesLaLiga2022 from "../db/2022/matches/matchesLaLiga2022Flashcore.json";
+import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
+import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
+import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
+
 // 2021
 import standingsPremierLeague2021 from "../db/2021/standings/standingsPremierLeague2021Flashcore.json";
 import standingsLaLiga2021 from "../db/2021/standings/standingsLaLiga2021Flashcore.json";
@@ -26,6 +32,12 @@ import scorersLigue12021 from "../db/2021/scorers/scorersLigue12021Flashcore.jso
 import scorersSerieA2021 from "../db/2021/scorers/scorersSerieA2021Flashcore.json";
 import scorersBundesliga2021 from "../db/2021/scorers/scorersBundesliga2021Flashcore.json";
 
+import matchesPremierLeague2021 from "../db/2021/matches/matchesPremierLeague2021Flashcore.json";
+import matchesLaLiga2021 from "../db/2021/matches/matchesLaLiga2021Flashcore.json";
+import matchesLigue12021 from "../db/2021/matches/matchesLigue12021Flashcore.json";
+import matchesSerieA2021 from "../db/2021/matches/matchesSerieA2021Flashcore.json";
+import matchesBundesliga2021 from "../db/2021/matches/matchesBundesliga2021Flashcore.json";
+
 // 2020
 import standingsPremierLeague2020 from "../db/2020/standings/standingsPremierLeague2020Flashcore.json";
 import standingsLaLiga2020 from "../db/2020/standings/standingsLaLiga2020Flashcore.json";
@@ -38,6 +50,12 @@ import scorersLaLiga2020 from "../db/2020/scorers/scorersLaLiga2020Flashcore.jso
 import scorersLigue12020 from "../db/2020/scorers/scorersLigue12020Flashcore.json";
 import scorersSerieA2020 from "../db/2020/scorers/scorersSerieA2020Flashcore.json";
 import scorersBundesliga2020 from "../db/2020/scorers/scorersBundesliga2020Flashcore.json";
+
+import matchesPremierLeague2020 from "../db/2020/matches/matchesPremierLeague2020Flashcore.json";
+import matchesLaLiga2020 from "../db/2020/matches/matchesLaLiga2020Flashcore.json";
+import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.json";
+import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
+import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
 
 // 2019
 import standingsPremierLeague2019 from "../db/2019/standings/standingsPremierLeague2019Flashcore.json";
@@ -312,6 +330,94 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 });
 
 // matches
+APP.get('/competitions/:id/matches', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (found) {
+		switch (id) {
+			case "PRL": return ctx.json(matchesPremierLeague2022);
+			case "LAL": return ctx.json(matchesLaLiga2022);
+			case "LI1": return ctx.json(matchesLigue12022);
+			case "SEA": return ctx.json(matchesSerieA2022);
+			case "BUN": return ctx.json(matchesBundesliga2022);
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+});
+
+APP.get('/competitions/:id/matches/:year', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const year = ctx.req.param("year");
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (found) {
+		switch (id) {
+			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(matchesPremierLeague2015);
+					case "2016": return ctx.json(matchesPremierLeague2016);
+					case "2017": return ctx.json(matchesPremierLeague2017);
+					case "2018": return ctx.json(matchesPremierLeague2018);
+					case "2019": return ctx.json(matchesPremierLeague2019);
+					case "2020": return ctx.json(matchesPremierLeague2020);
+					case "2021": return ctx.json(matchesPremierLeague2021);
+				}
+			};
+				break;
+			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(matchesLaLiga2015);
+					case "2016": return ctx.json(matchesLaLiga2016);
+					case "2017": return ctx.json(matchesLaLiga2017);
+					case "2018": return ctx.json(matchesLaLiga2018);
+					case "2019": return ctx.json(matchesLaLiga2019);
+					case "2020": return ctx.json(matchesLaLiga2020);
+					case "2021": return ctx.json(matchesLaLiga2021);
+				}
+			};
+				break;
+			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(matchesLigue12015);
+					case "2016": return ctx.json(matchesLigue12016);
+					case "2017": return ctx.json(matchesLigue12017);
+					case "2018": return ctx.json(matchesLigue12018);
+					case "2019": return ctx.json(matchesLigue12019);
+					case "2020": return ctx.json(matchesLigue12020);
+					case "2021": return ctx.json(matchesLigue12021);
+				}
+			};
+				break;
+			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(matchesSerieA2015);
+					case "2016": return ctx.json(matchesSerieA2016);
+					case "2017": return ctx.json(matchesSerieA2017);
+					case "2018": return ctx.json(matchesSerieA2018);
+					case "2019": return ctx.json(matchesSerieA2019);
+					case "2020": return ctx.json(matchesSerieA2020);
+					case "2021": return ctx.json(matchesSerieA2021);
+				}
+			};
+				break;
+			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2015": return ctx.json(matchesBundesliga2015);
+					case "2016": return ctx.json(matchesBundesliga2016);
+					case "2017": return ctx.json(matchesBundesliga2017);
+					case "2018": return ctx.json(matchesBundesliga2018);
+					case "2019": return ctx.json(matchesBundesliga2019);
+					case "2020": return ctx.json(matchesBundesliga2020);
+					case "2021": return ctx.json(matchesBundesliga2021);
+				}
+			};
+				break;
+		}
+	} if (!found) {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+});
 
 // scorers
 APP.get('/competitions/:id/scorers', (ctx) => {

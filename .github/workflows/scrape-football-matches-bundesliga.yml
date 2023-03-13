@@ -28,6 +28,7 @@ jobs:
           node scraping/matchesBundesliga.js
           git config --global user.name zeus-api-bot
           git config user.name 
+          git add -A
           git commit -am "[bot] update Zeus database"
           git pull --rebase origin main
           git push -f origin main

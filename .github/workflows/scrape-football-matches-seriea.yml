@@ -29,4 +29,5 @@ jobs:
           git config --global user.name zeus-api-bot
           git config user.name 
           git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
+          git pull --rebase <remote>
           git push -f origin main

@@ -27,7 +27,7 @@ jobs:
       - run: |
           node scraping/matchesLaLiga.js
           git config --global user.name zeus-api-bot
-          git config user.name 
-          git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update Zeus database"
+          git config user.namegit add -A
+          git commit -am "[bot] update Zeus database"
           git pull --rebase origin main
           git push -f origin main

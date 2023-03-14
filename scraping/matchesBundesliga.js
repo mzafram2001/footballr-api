@@ -124,7 +124,7 @@ async function getAllMatches(url) {
             TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
             TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
             TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
-            TMP.stats = [];
+            // TMP.stats = [];
             return TMP;
         });
         match.round = MATCH.round;
@@ -135,10 +135,10 @@ async function getAllMatches(url) {
         match.homeGoals = MATCH.homeGoals;
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
-        match.stats = MATCH.stats;
+        // match.stats = MATCH.stats;
     }
 
-    for (let match of RESULT.matchesIteration) {
+    /*for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
         const MATCH_STATS = await PAGE.evaluate(() => {
@@ -224,7 +224,7 @@ async function getAllMatches(url) {
             return TMP;
         });
         match.stats = MATCH_STATS;
-    }
+    }*/
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
         var pushIt = false;

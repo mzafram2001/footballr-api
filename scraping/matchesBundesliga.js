@@ -119,6 +119,9 @@ async function getAllMatches(url) {
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
+            if (TMP.round == null) {
+                TMP.round = "Relegation Play-Offs";
+            }
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             TMP.home = document.querySelector('.duelParticipant__home').innerText;

@@ -13,11 +13,11 @@ import scorersLigue12022 from "../db/2022/scorers/scorersLigue12022Flashcore.jso
 import scorersSerieA2022 from "../db/2022/scorers/scorersSerieA2022Flashcore.json";
 import scorersBundesliga2022 from "../db/2022/scorers/scorersBundesliga2022Flashcore.json";
 
-//import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
+import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
 import matchesLaLiga2022 from "../db/2022/matches/matchesLaLiga2022Flashcore.json";
-//import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
-//import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
-//import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
+import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
+import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
+import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
 
 // 2021
 import standingsPremierLeague2021 from "../db/2021/standings/standingsPremierLeague2021Flashcore.json";

@@ -278,4 +278,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.england_matches_2020);
+getAllMatches(URLS.england_matches_2021);

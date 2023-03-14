@@ -116,7 +116,9 @@ async function getAllMatches(url) {
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
-            TMP.round = parseInt(document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText.substring(15));
+            dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
+            dumpStringArray = dumpString.split(" ");
+            TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1];
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             TMP.home = document.querySelector('.duelParticipant__home').innerText;

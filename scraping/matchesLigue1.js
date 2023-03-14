@@ -116,7 +116,12 @@ async function getAllMatches(url) {
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
-            TMP.round = parseInt(document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText.substring(15));
+            dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
+            dumpStringArray = dumpString.split(" ");
+            TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
+            if (TMP.round == null) {
+                TMP.round = "Relegation Play-Offs";
+            }
             TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             TMP.home = document.querySelector('.duelParticipant__home').innerText;
@@ -135,10 +140,10 @@ async function getAllMatches(url) {
         match.homeGoals = MATCH.homeGoals;
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
-        match.stats = MATCH.stats;
+        // match.stats = MATCH.stats;
     }
 
-    for (let match of RESULT.matchesIteration) {
+    /*for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
         const MATCH_STATS = await PAGE.evaluate(() => {
@@ -224,7 +229,7 @@ async function getAllMatches(url) {
             return TMP;
         });
         match.stats = MATCH_STATS;
-    }
+    }*/
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
         var pushIt = false;

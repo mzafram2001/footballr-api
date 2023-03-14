@@ -106,9 +106,9 @@ async function getScorers(url) {
             } else {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             }
-            TMP.player.nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
+            var nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
             TMP.area = {};
-            switch (TMP.player.nationality) {
+            switch (nationality) {
                 case "England":
                     TMP.area.id = "ENG";
                     TMP.area.name = "England";

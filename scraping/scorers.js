@@ -423,5 +423,4 @@ getScorers(URLS.england_scorers_2022);
 getScorers(URLS.germany_scorers_2022);
 getScorers(URLS.italy_scorers_2022);
 
-
 // MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!s

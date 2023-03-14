@@ -51,11 +51,11 @@ import scorersLigue12020 from "../db/2020/scorers/scorersLigue12020Flashcore.jso
 import scorersSerieA2020 from "../db/2020/scorers/scorersSerieA2020Flashcore.json";
 import scorersBundesliga2020 from "../db/2020/scorers/scorersBundesliga2020Flashcore.json";
 
-//import matchesPremierLeague2020 from "../db/2020/matches/matchesPremierLeague2020Flashcore.json";
+import matchesPremierLeague2020 from "../db/2020/matches/matchesPremierLeague2020Flashcore.json";
 import matchesLaLiga2020 from "../db/2020/matches/matchesLaLiga2020Flashcore.json";
-//import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.json";
-//import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
-//import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
+import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.json";
+import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
+import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
 
 // 2019
 import standingsPremierLeague2019 from "../db/2019/standings/standingsPremierLeague2019Flashcore.json";

@@ -535,6 +535,13 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 
 // TESTING -> LUEGO PONER ERROR 404 SI NO SE DAN PARAMETROS
 APP.get('/simulation', (ctx) => {
+	const date = new Date();
+	let day = date.getDate();
+	let month = date.getMonth() + 1;
+	let year = date.getFullYear();
+	let hours = date.getHours() + 1;
+	let minutes = date.getMinutes();
+
 	// Ejemplo de uso
 	const equipo1 = "Real Madrid";
 	const jugadoresEquipo1 = ["Courtois", "Carvajal", "Varane", "Ramos", "Marcelo", "Kroos", "Modric", "Casemiro", "Asensio", "Benzema", "Vinicius"];
@@ -576,6 +583,8 @@ APP.get('/simulation', (ctx) => {
 	golesEquipo2.forEach(gol => console.log(`${gol.minuto} - ${gol.jugador}`));
 
 	return ctx.json({
+		date: day + "." + month + "." + year,
+		hour: hours + ":" + minutes,
 		homeTeam: {
 			id: "W8mj7MDD",
 			name: equipo1,

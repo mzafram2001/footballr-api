@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-286 409.9 22 22" style="enable-background:new -286 409.9 22 22;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-275" y1="412.9" x2="-275" y2="428.9" id="gradient-0">
+      <stop offset="0" style="stop-color: rgba(255, 255, 255, 1)"/>
+      <stop offset="1" style="stop-color: rgba(204, 204, 204, 1)"/>
+    </linearGradient>
+  </defs>
+  <style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#B82E22;}
+	.st2{fill:#373737;}
+	.st3{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st4{clip-path:url(#SVGID_4_);fill:#FFFFFF;}
+	.st5{fill:#DF3636;}
+	.st6{fill:#E2E2E2;}
+</style>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st1" cx="-275" cy="420.9" r="8"/>
+  <circle class="st0" cx="-275" cy="420.9" r="11"/>
+  <circle class="st0" cx="-275" cy="420.9" r="8"/>
+  <circle class="st2" cx="-275" cy="420.9" r="8" style="fill: url(#gradient-0);"/>
+  <rect x="-273.45" y="411.8" class="st5" width="2.9" height="18.2" style="fill: rgb(9, 20, 83);"/>
+  <rect x="-279.45" y="411.8" class="st5" width="2.9" height="18.2" style="fill: rgb(9, 20, 83);"/>
+  <g>
+    <path class="st6" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style=""/>
+  </g>
+</svg>

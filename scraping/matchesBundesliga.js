@@ -237,6 +237,7 @@ async function getAllMatches(url) {
         while (j <= RESULT.season.length - 1 && pushIt == false) {
             if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
                 RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
+                delete RESULT.matchesIteration[i].link;
                 pushIt = true;
             }
             j++;

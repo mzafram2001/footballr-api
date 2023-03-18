@@ -219,12 +219,25 @@ APP.get('/', (ctx) => {
 			example: "https://zeus-api.olympus.workers.dev/simulation",
 			status: "Available 🟢.",
 			parameters: [
-
+				{
+					name: "teams",
+					endpoint: "/simulation/:homeTeamId/:awayTeamId",
+					description: "Returns a simulated match between two teams, given by id's 🌲.",
+					example: "https://zeus-api.olympus.workers.dev/simulation/W8mj7MDD/SKbpVP5K",
+					status: "Not available 🔴."
+				},
+				{
+					name: "year",
+					endpoint: "/simulation/:homeTeamId/:awayTeamId/:year",
+					description: "Returns a simulated match between two teams, given by id's and start year (2020 - 2021) 🌳.",
+					example: "https://zeus-api.olympus.workers.dev/simulation/W8mj7MDD/SKbpVP5K",
+					status: "Not available 🔴."
+				}
 			]
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.78a',
+			version: '0.8a',
 			updated: Date(),
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
@@ -520,7 +533,7 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 	}
 });
 
-// TESTING
+// TESTING -> LUEGO PONER ERROR 404 SI NO SE DAN PARAMETROS
 APP.get('/simulation', (ctx) => {
 	// Ejemplo de uso
 	const equipo1 = "Real Madrid";

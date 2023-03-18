@@ -2,6 +2,7 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
+// para eliminar links con ctrl + F => "link":"https://www.flashscore.com/match/.{10}
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
     spain_matches_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/results/",

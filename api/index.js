@@ -193,7 +193,17 @@ APP.get('/', (ctx) => {
 					status: "Available 🟢.",
 				}
 			]
-		},/*
+		},
+		{
+			endpoint: '/simulation',
+			description: 'Simulates a football match 🔀.',
+			example: "https://zeus-api.olympus.workers.dev/simulation",
+			status: "Available 🟢.",
+			parameters: [
+
+			]
+		},
+		/*
 		{
 			endpoint: '/teams',
 			description: 'List all available teams 🛡️.',
@@ -508,6 +518,68 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 	} if (!found) {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
+});
+
+// TESTING
+APP.get('/simulation', (ctx) => {
+	// Ejemplo de uso
+	const equipo1 = "Real Madrid";
+	const jugadoresEquipo1 = ["Courtois", "Carvajal", "Varane", "Ramos", "Marcelo", "Kroos", "Modric", "Casemiro", "Asensio", "Benzema", "Vinicius"];
+	const equipo2 = "Barcelona";
+	const jugadoresEquipo2 = ["Ter Stegen", "Dest", "Piqué", "Lenglet", "Jordi Alba", "Busquets", "De Jong", "Pedri", "Messi", "Griezmann", "Dembele"];
+	const golesEquipo1 = [];
+	const golesEquipo2 = [];
+
+	for (let i = 0; i < 90; i++) {
+		const minuto = i + 1;
+
+		// Generamos un número aleatorio para determinar si se marca un gol
+		const golEquipo1 = Math.random() < 0.015;
+		const golEquipo2 = Math.random() < 0.015;
+
+		// Si se marca un gol, elegimos un jugador al azar
+		if (golEquipo1) {
+			let jugador = jugadoresEquipo1[Math.floor(Math.random() * jugadoresEquipo1.length)];
+			while (jugador == jugadoresEquipo1[0]) {
+				jugador = jugadoresEquipo1[Math.floor(Math.random() * jugadoresEquipo1.length)];
+			}
+			golesEquipo1.push({ minuto, jugador });
+		}
+		if (golEquipo2) {
+			let jugador = jugadoresEquipo2[Math.floor(Math.random() * jugadoresEquipo2.length)];
+			while (jugador == jugadoresEquipo2[0]) {
+				jugador = jugadoresEquipo2[Math.floor(Math.random() * jugadoresEquipo2.length)];
+			}
+			golesEquipo2.push({ minuto, jugador });
+		}
+	}
+
+	console.log(`Resultado final: ${equipo1} ${golesEquipo1.length} - ${golesEquipo2.length} ${equipo2}`);
+
+	console.log(`Goles ${equipo1}:`);
+	golesEquipo1.forEach(gol => console.log(`${gol.minuto} - ${gol.jugador}`));
+
+	console.log(`Goles ${equipo2}:`);
+	golesEquipo2.forEach(gol => console.log(`${gol.minuto} - ${gol.jugador}`));
+
+	return ctx.json({
+		homeTeam: {
+			id: "W8mj7MDD",
+			name: equipo1,
+			shorthand: "RMA",
+			logo: "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W8mj7MDD.svg"
+		},
+		awayTeam: {
+			id: "SKbpVP5K",
+			name: equipo2,
+			shorthand: "FCB",
+			logo: "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg"
+		},
+		homeGoals: golesEquipo1.length,
+		awayGoals: golesEquipo2.length,
+		status: "FINISHED",
+		message: 'This is not a real match, it is a simulation.'
+	});
 });
 
 APP.notFound((ctx) => {

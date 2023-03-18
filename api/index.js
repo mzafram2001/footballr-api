@@ -194,15 +194,6 @@ APP.get('/', (ctx) => {
 				}
 			]
 		},
-		{
-			endpoint: '/simulation',
-			description: 'Simulates a football match 🔀.',
-			example: "https://zeus-api.olympus.workers.dev/simulation",
-			status: "Available 🟢.",
-			parameters: [
-
-			]
-		},
 		/*
 		{
 			endpoint: '/teams',
@@ -222,6 +213,15 @@ APP.get('/', (ctx) => {
 
 			]
 		},*/
+		{
+			endpoint: '/simulation',
+			description: 'Simulates a football match 🔀.',
+			example: "https://zeus-api.olympus.workers.dev/simulation",
+			status: "Available 🟢.",
+			parameters: [
+
+			]
+		},
 		{
 			name: "Zeus API ⚡",
 			version: '0.78a',

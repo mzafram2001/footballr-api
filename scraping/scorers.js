@@ -107,8 +107,8 @@ async function getScorers(url) {
                 lastName = dumpStringArraySecondary[0];
                 firstName = dumpStringArraySecondary[1];
             } else if (dumpStringArraySecondary.length == 3) {
-                lastName = dumpStringArraySecondary[0];
-                middleName = dumpStringArraySecondary[1];
+                lastName = dumpStringArraySecondary[1];
+                middleName = dumpStringArraySecondary[0];
                 firstName = dumpStringArraySecondary[2];
             }
             if (firstName == undefined) {

@@ -110,6 +110,8 @@ async function getScorers(url) {
                 lastName = dumpStringArraySecondary[1];
                 middleName = dumpStringArraySecondary[0];
                 firstName = dumpStringArraySecondary[2];
+            } else {
+                firstName = dumpStringArraySecondary[0];
             }
             if (firstName == undefined) {
                 TMP.player.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);

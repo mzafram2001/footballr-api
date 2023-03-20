@@ -97,14 +97,20 @@ async function getScorers(url) {
             TMP.team = {};
             TMP.player.id = dumpStringArray[3];
             dumpStringArraySecondary = dumpStringArray[2].split('-');
-            var lastName = dumpStringArraySecondary[0];
-            var firstName = dumpStringArraySecondary[1];
-            if (firstName == undefined) {
+            if(dumpStringArraySecondary.length == 2) {
+                var lastName = dumpStringArraySecondary[0];
+                var firstName = dumpStringArraySecondary[1];
+            } else if (dumpStringArraySecondary.length == 3) {
+                var lastName = dumpStringArraySecondary[0];
+                var middleName = dumpStringArraySecondary[1];
+                var firstName = dumpStringArraySecondary[2];
+            }
+            if (firstName == undefined || middleName == undefined) {
                 TMP.player.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
-            } else if (lastName == undefined) {
+            } else if (lastName == undefined || middleName == undefined) {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
             } else {
-                TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             }
             var nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
             TMP.area = {};

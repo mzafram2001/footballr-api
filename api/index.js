@@ -132,10 +132,11 @@ const MAX_YEAR = 2022;
 
 APP.get('/', (ctx) => {
 	const date = new Date();
+	date.toLocaleString('en-US', { timeZone: 'Europe/Spain' })
 	let day = date.getDate();
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
-	let hours = date.getHours() + 9;
+	let hours = date.getHours() + 1;
 	let minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
 	
 	return ctx.json([

@@ -131,6 +131,13 @@ const MIN_YEAR = 2020;
 const MAX_YEAR = 2022;
 
 APP.get('/', (ctx) => {
+	const date = new Date();
+	let day = date.getDate();
+	let month = date.getMonth() + 1;
+	let year = date.getFullYear();
+	let hours = date.getHours() + 1;
+	let minutes = date.getMinutes();
+	
 	return ctx.json([
 		{
 			endpoint: '/areas',
@@ -238,7 +245,7 @@ APP.get('/', (ctx) => {
 		{
 			name: "Zeus API ⚡",
 			version: '0.80a',
-			updated: Date(),
+			updated: day + "." + month + "." + year + " " + hours + ":" + minutes,
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
 	]);

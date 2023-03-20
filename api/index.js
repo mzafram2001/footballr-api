@@ -132,7 +132,6 @@ const MAX_YEAR = 2022;
 
 APP.get('/', (ctx) => {
 	const date = new Date();
-	date.toLocaleString('en-US', { timeZone: 'Europe/Spain' })
 	let day = date.getDate();
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();

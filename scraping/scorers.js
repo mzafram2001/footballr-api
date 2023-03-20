@@ -86,9 +86,15 @@ async function getScorers(url) {
         var dumpString;
         var dumpStringArray;
         var dumpStringArraySecondary;
+        var lastName;
+        var middleName;
+        var firstName;
         const ROWS = document.querySelectorAll('.ui-table__row .topScorers__row ');
         for (var i = 0; i < 10; i++) {
             const TMP = {};
+            lastName = undefined;
+            middleName = undefined;
+            firstName = undefined;
             numRow++;
             TMP.position = numRow;
             dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a').getAttribute('href');
@@ -98,12 +104,12 @@ async function getScorers(url) {
             TMP.player.id = dumpStringArray[3];
             dumpStringArraySecondary = dumpStringArray[2].split('-');
             if(dumpStringArraySecondary.length == 2) {
-                var lastName = dumpStringArraySecondary[0];
-                var firstName = dumpStringArraySecondary[1];
+                lastName = dumpStringArraySecondary[0];
+                firstName = dumpStringArraySecondary[1];
             } else if (dumpStringArraySecondary.length == 3) {
-                var lastName = dumpStringArraySecondary[0];
-                var middleName = dumpStringArraySecondary[1];
-                var firstName = dumpStringArraySecondary[2];
+                lastName = dumpStringArraySecondary[0];
+                middleName = dumpStringArraySecondary[1];
+                firstName = dumpStringArraySecondary[2];
             }
             if (firstName == undefined) {
                 TMP.player.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);

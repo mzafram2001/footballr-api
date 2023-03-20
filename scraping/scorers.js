@@ -109,7 +109,7 @@ async function getScorers(url) {
                 TMP.player.name = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             } else if (lastName == undefined) {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-            } else if (middleName == undefined {
+            } else if (middleName == undefined) {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
             } else {
                 TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);

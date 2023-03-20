@@ -136,7 +136,7 @@ APP.get('/', (ctx) => {
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
 	let hours = date.getHours() + 1;
-	let minutes = (date.getMinutes()<20?'0':'') + date.getMinutes();
+	let minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
 	
 	return ctx.json([
 		{

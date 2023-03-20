@@ -425,10 +425,10 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getScorers(URLS.spain_scorers_2022);
-getScorers(URLS.france_scorers_2022);
-getScorers(URLS.england_scorers_2022);
-getScorers(URLS.germany_scorers_2022);
-getScorers(URLS.italy_scorers_2022);
+getScorers(URLS.spain_scorers_2021);
+getScorers(URLS.france_scorers_2021);
+getScorers(URLS.england_scorers_2021);
+getScorers(URLS.germany_scorers_2021);
+getScorers(URLS.italy_scorers_2021);
 
 // MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!s

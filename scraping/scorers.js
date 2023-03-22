@@ -263,7 +263,7 @@ async function getScorers(url) {
                 case "Ivory Coast":
                     TMP.area.id = "IVC";
                     TMP.area.name = "Ivory Coast";
-                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/SrdijyIE.svg";
+                    TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/G2FRjBgn.svg";
                     break;
                 case "Algeria":
                     TMP.area.id = "ALG";

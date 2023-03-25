@@ -107,6 +107,32 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.homeTeam.name) {
+                case "Manchester Utd": TMP.homeTeam.name = "Manchester United";
+                    break;
+                case "Tottenham": TMP.homeTeam.name = "Tottenham Hotspur";
+                    break;
+                case "Newcastle": TMP.homeTeam.name = "Newcastle United";
+                    break;
+                case "Wolves": TMP.homeTeam.name = "Wolverhampton Wanderers";
+                    break;
+                case "Leeds": TMP.homeTeam.name = "Leeds United";
+                    break;
+                case "Nottingham": TMP.homeTeam.name = "Nottingham Forest";
+                    break;
+                case "Leicester": TMP.homeTeam.name = "Leicester City";
+                    break;
+                case "West Ham": TMP.homeTeam.name = "West Ham United";
+                    break;
+                case "Bournemouth": TMP.homeTeam.name = "Athletic Bournemouth";
+                    break;
+                case "West Brom": TMP.homeTeam.name = "West Bromwich";
+                    break;
+                case "Sheffield Utd": TMP.homeTeam.name = "Sheffield United";
+                    break;
+                case "Norwich": TMP.homeTeam.name = "Norwich City";
+                    break;
+            }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
             TMP.awayTeam = {};
@@ -114,6 +140,32 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.awayTeam.name) {
+                case "Manchester Utd": TMP.awayTeam.name = "Manchester United";
+                    break;
+                case "Tottenham": TMP.awayTeam.name = "Tottenham Hotspur";
+                    break;
+                case "Newcastle": TMP.awayTeam.name = "Newcastle United";
+                    break;
+                case "Wolves": TMP.awayTeam.name = "Wolverhampton Wanderers";
+                    break;
+                case "Leeds": TMP.awayTeam.name = "Leeds United";
+                    break;
+                case "Nottingham": TMP.awayTeam.name = "Nottingham Forest";
+                    break;
+                case "Leicester": TMP.awayTeam.name = "Leicester City";
+                    break;
+                case "West Ham": TMP.awayTeam.name = "West Ham United";
+                    break;
+                case "Bournemouth": TMP.awayTeam.name = "Athletic Bournemouth";
+                    break;
+                case "West Brom": TMP.awayTeam.name = "West Bromwich";
+                    break;
+                case "Sheffield Utd": TMP.awayTeam.name = "Sheffield United";
+                    break;
+                case "Norwich": TMP.awayTeam.name = "Norwich City";
+                    break;
+            }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;

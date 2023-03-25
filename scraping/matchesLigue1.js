@@ -3,7 +3,7 @@ const FS = require('fs');
 const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
-const URLS = { 
+const URLS = {
     france_matches_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/results/",
     france_matches_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/results/",
     france_matches_2017: "https://www.flashscore.com/football/france/ligue-1-2017-2018/results/",
@@ -107,6 +107,38 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.homeTeam.name) {
+                case "Paris SG": TMP.homeTeam.name = "Paris Saint-Germain";
+                    break;
+                case "Marseille": TMP.homeTeam.name = "Olympique Marseille";
+                    break;
+                case "Lens": TMP.homeTeam.name = "Racing Lens";
+                    break;
+                case "Rennes": TMP.homeTeam.name = "Stade Rennais";
+                    break;
+                case "Lille": TMP.homeTeam.name = "Olympique Lille";
+                    break;
+                case "Nice": TMP.homeTeam.name = "Olympique Nice";
+                    break;
+                case "Reims": TMP.homeTeam.name = "Stade Reims";
+                    break;
+                case "Lyon": TMP.homeTeam.name = "Olympique Lyonnais";
+                    break;
+                case "Strasbourg": TMP.homeTeam.name = "Racing Strasbourg";
+                    break;
+                case "Brest": TMP.homeTeam.name = "Stade Brestois";
+                    break;
+                case "AC Ajaccio": TMP.homeTeam.name = "Athletic Ajaccien";
+                    break;
+                case "Angers": TMP.homeTeam.name = "Sporting Angers";
+                    break;
+                case "St Etienne": TMP.homeTeam.name = "Saint-Étienne Loire";
+                    break;
+                case "Bordeaux": TMP.homeTeam.name = "Girondins Bordeaux";
+                    break;
+                case "Nimes": TMP.homeTeam.name = "Olympique Nîmes";
+                    break;
+            }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
             TMP.awayTeam = {};
@@ -114,6 +146,38 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.awayTeam.name) {
+                case "Paris SG": TMP.awayTeam.name = "Paris Saint-Germain";
+                    break;
+                case "Marseille": TMP.awayTeam.name = "Olympique Marseille";
+                    break;
+                case "Lens": TMP.awayTeam.name = "Racing Lens";
+                    break;
+                case "Rennes": TMP.awayTeam.name = "Stade Rennais";
+                    break;
+                case "Lille": TMP.awayTeam.name = "Olympique Lille";
+                    break;
+                case "Nice": TMP.awayTeam.name = "Olympique Nice";
+                    break;
+                case "Reims": TMP.awayTeam.name = "Stade Reims";
+                    break;
+                case "Lyon": TMP.awayTeam.name = "Olympique Lyonnais";
+                    break;
+                case "Strasbourg": TMP.awayTeam.name = "Racing Strasbourg";
+                    break;
+                case "Brest": TMP.awayTeam.name = "Stade Brestois";
+                    break;
+                case "AC Ajaccio": TMP.awayTeam.name = "Athletic Ajaccien";
+                    break;
+                case "Angers": TMP.awayTeam.name = "Sporting Angers";
+                    break;
+                case "St Etienne": TMP.awayTeam.name = "Saint-Étienne Loire";
+                    break;
+                case "Bordeaux": TMP.awayTeam.name = "Girondins Bordeaux";
+                    break;
+                case "Nimes": TMP.awayTeam.name = "Olympique Nîmes";
+                    break;
+            }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;

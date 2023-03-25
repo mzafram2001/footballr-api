@@ -107,6 +107,22 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.homeTeam.name) {
+                case "Atl. Madrid": TMP.homeTeam.name = "Atlético Madrid";
+                    break;
+                case "Betis": TMP.homeTeam.name = "Real Betis";
+                    break;
+                case "Granada CF": TMP.homeTeam.name = "Granada";
+                    break;
+                case "Ath Bilbao": TMP.homeTeam.name = "Athletic Bilbao";
+                    break;
+                case "Cadiz CF": TMP.homeTeam.name = "Cádiz";
+                    break;
+                case "Alaves": TMP.homeTeam.name = "Deportivo Alavés";
+                    break;
+                case "Almeria": TMP.homeTeam.name = "Almería";
+                    break;
+            }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
             TMP.awayTeam = {};
@@ -114,6 +130,22 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.awayTeam.name) {
+                case "Atl. Madrid": TMP.awayTeam.name = "Atlético Madrid";
+                    break;
+                case "Betis": TMP.awayTeam.name = "Real Betis";
+                    break;
+                case "Granada CF": TMP.awayTeam.name = "Granada";
+                    break;
+                case "Ath Bilbao": TMP.awayTeam.name = "Athletic Bilbao";
+                    break;
+                case "Cadiz CF": TMP.awayTeam.name = "Cádiz";
+                    break;
+                case "Alaves": TMP.awayTeam.name = "Deportivo Alavés";
+                    break;
+                case "Almeria": TMP.awayTeam.name = "Almería";
+                    break;
+            }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;

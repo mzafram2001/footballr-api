@@ -107,6 +107,18 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.homeTeam.name) {
+                case "Dortmund": TMP.homeTeam.name = "Borussia Dortmund";
+                    break;
+                case "RB Leipzig": TMP.homeTeam.name = "RasenBallsport Leipzig";
+                    break;
+                case "B. Monchengladbach": TMP.homeTeam.name = "Borussia Mönchengladbach";
+                    break;
+                case "FC Koln": TMP.homeTeam.name = "Köln";
+                    break;
+                case "Greuther Furth": TMP.homeTeam.name = "Greuther Fürth";
+                    break;
+            }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
             TMP.awayTeam = {};
@@ -114,6 +126,18 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            switch (TMP.awayTeam.name) {
+                case "Dortmund": TMP.awayTeam.name = "Borussia Dortmund";
+                    break;
+                case "RB Leipzig": TMP.awayTeam.name = "RasenBallsport Leipzig";
+                    break;
+                case "B. Monchengladbach": TMP.awayTeam.name = "Borussia Mönchengladbach";
+                    break;
+                case "FC Koln": TMP.awayTeam.name = "Köln";
+                    break;
+                case "Greuther Furth": TMP.awayTeam.name = "Greuther Fürth";
+                    break;
+            }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;

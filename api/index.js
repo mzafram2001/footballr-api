@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { cors } from 'hono/cors'
 
 // 2022
 import standingsPremierLeague2022 from "../db/2022/standings/standingsPremierLeague2022Flashcore.json";
@@ -130,14 +131,16 @@ const APP = new Hono();
 const MIN_YEAR = 2020;
 const MAX_YEAR = 2022;
 
+APP.use('/*', cors());
+
 APP.get('/', (ctx) => {
 	const date = new Date();
 	let day = date.getDate();
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
 	let hours = date.getHours() + 1;
-	let minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
-	
+	let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+
 	return ctx.json([
 		{
 			endpoint: '/areas',
@@ -547,7 +550,7 @@ APP.get('/simulation', (ctx) => {
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
 	let hours = date.getHours() + 1;
-	let minutes = (date.getMinutes()<10?'0':'') + date.getMinutes();
+	let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
 
 	// Ejemplo de uso
 	const equipo1 = "Real Madrid";

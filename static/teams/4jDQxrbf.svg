@@ -3,17 +3,13 @@
   <style type="text/css">
 	.st0{fill:#FFFFFF;}
 	.st1{fill:#B82E22;}
-	.st2{fill:#373737;}
-	.st3{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
-	.st4{clip-path:url(#SVGID_4_);fill:#FFFFFF;}
-	.st5{fill:#DF3636;}
-	.st6{fill:#E2E2E2;}
+	.st2{fill:#A82323;}
+	.st3{clip-path:url(#SVGID_2_);}
+	.st4{fill:#4AC5E8;}
+	.st5{fill:#E2E2E2;}
 </style>
-  <circle class="st0" cx="-275" cy="420.9" r="11"/>
   <circle class="st1" cx="-275" cy="420.9" r="8"/>
-  <circle class="st0" cx="-275" cy="420.9" r="11"/>
-  <circle class="st0" cx="-275" cy="420.9" r="8"/>
-  <circle class="st2" cx="-275" cy="420.9" r="8" style="fill: rgb(237, 27, 36);"/>
+  <circle class="st0" cx="-275" cy="420.9" r="8" style="fill: rgb(237, 27, 36);"/>
   <g>
     <g>
       <defs>
@@ -22,23 +18,14 @@
       <clipPath id="SVGID_2_">
         <circle cx="-275" cy="420.9" r="8" transform="matrix(1, 0, 0, 1, 0, 0)" style="overflow: visible;"/>
       </clipPath>
-      <rect x="-279.3" y="409.9" class="st3" width="2.9" height="21.9"/>
-    </g>
-    <g>
-      <defs>
-        <circle id="SVGID_3_" cx="-275" cy="420.9" r="8"/>
-      </defs>
-      <clipPath id="SVGID_4_">
-        <circle cx="-275" cy="420.9" r="8" transform="matrix(1, 0, 0, 1, 0, 0)" style="overflow: visible;"/>
-      </clipPath>
-      <rect x="-273.6" y="409.9" class="st4" width="2.9" height="21.9"/>
+      <g class="st3">
+        <rect x="-286" y="409.9" class="st4" width="6.4" height="22" style="fill: rgb(23, 131, 88);"/>
+        <rect x="-270.4" y="409.9" class="st4" width="6.4" height="22" style="fill: rgb(23, 131, 88);"/>
+      </g>
     </g>
   </g>
-  <rect x="-279.3" y="412" class="st5" width="2.9" height="18.2" style="fill: rgb(255, 247, 4);"/>
-  <rect x="-273.6" y="412" class="st5" width="2.9" height="18.2" style="fill: rgb(255, 247, 4);"/>
-  <rect x="-282" y="414.44" class="st5" width="1.3" height="12.92" style="fill: rgb(23, 131, 88);"/>
-  <rect x="-269.3" y="414.12" class="st5" width="1.3" height="12.92" style="fill: rgb(23, 131, 88);"/>
-  <g>
-    <path class="st6" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: rgb(0, 0, 0);"/>
+  <rect x="-276.45" y="411.8" class="st5" width="2.9" height="18.2" style="fill: rgb(255, 247, 4);"/>
+  <g transform="matrix(1, 0, 0, 1, 0, 0.000006)">
+    <path class="st5" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: rgb(0, 0, 0);"/>
   </g>
 </svg>

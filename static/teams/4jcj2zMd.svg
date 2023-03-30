@@ -8,9 +8,7 @@
 	.st4{fill:#4AC5E8;}
 	.st5{fill:#E2E2E2;}
 </style>
-  <circle class="st0" cx="-275" cy="420.9" r="11"/>
   <circle class="st1" cx="-275" cy="420.9" r="8"/>
-  <circle class="st0" cx="-275" cy="420.9" r="11"/>
   <g>
     <g>
       <defs>
@@ -30,7 +28,7 @@
   <rect x="-268.125" y="921.931" class="st5" width="2.82" height="13.72" style="fill: rgb(243, 229, 0);" transform="matrix(0, 1, -1, 0, 653.791016, 680.61499)"/>
   <rect x="-272.6" y="411.8" class="st5" width="3.2" height="18.2" style="fill: rgb(227, 34, 33);"/>
   <rect x="-280.6" y="411.8" class="st5" width="3.2" height="18.2" style="fill: rgb(227, 34, 33);"/>
-  <g>
+  <g transform="matrix(1, 0, 0, 1, 0, 0.000006)">
     <path class="st5" d="M-275,409.9c-6.1,0-11,4.9-11,11c0,6.1,4.9,11,11,11s11-4.9,11-11C-264,414.8-268.9,409.9-275,409.9z M-275,428.9c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C-267,425.3-270.6,428.9-275,428.9z" style="fill: rgb(0, 0, 0);"/>
   </g>
 </svg>

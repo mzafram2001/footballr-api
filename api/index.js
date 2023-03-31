@@ -181,7 +181,6 @@ APP.get('/', (ctx) => {
 					],
 					status: "Available 🟢."
 				},
-				,
 				{
 					name: "round",
 					endpoint: "/competitions/:id/matches/:year/:round",

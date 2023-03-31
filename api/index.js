@@ -173,7 +173,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2020 - 2021) 🔍.",
+					description: "List the standings, matches or scorers for a league, given by start year (2020 - 2022) 🔍.",
 					example: [
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2020",
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2020",
@@ -247,7 +247,7 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: '0.83a',
+			version: '0.84a',
 			updated: day + "." + month + "." + year + " " + hours + ":" + minutes,
 			message: 'Created with 💙 by Miguel Zafra.'
 		}
@@ -284,8 +284,9 @@ APP.get('/competitions/:id/standings', (ctx) => {
 			case "LI1": return ctx.json(standingsLigue12022);
 			case "SEA": return ctx.json(standingsSerieA2022);
 			case "BUN": return ctx.json(standingsBundesliga2022);
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
@@ -306,9 +307,10 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2019": return ctx.json(standingsPremierLeague2019);
 					case "2020": return ctx.json(standingsPremierLeague2020);
 					case "2021": return ctx.json(standingsPremierLeague2021);
+					case "2022": return ctx.json(standingsPremierLeague2022);
 				}
 			};
-				break;
+			break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
 					case "2015": return ctx.json(standingsLaLiga2015);
@@ -318,6 +320,7 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2019": return ctx.json(standingsLaLiga2019);
 					case "2020": return ctx.json(standingsLaLiga2020);
 					case "2021": return ctx.json(standingsLaLiga2021);
+					case "2022": return ctx.json(standingsLaLiga2022);
 				}
 			};
 				break;
@@ -330,6 +333,7 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2019": return ctx.json(standingsLigue12019);
 					case "2020": return ctx.json(standingsLigue12020);
 					case "2021": return ctx.json(standingsLigue12021);
+					case "2022": return ctx.json(standingsLigue12022);
 				}
 			};
 				break;
@@ -342,6 +346,7 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2019": return ctx.json(standingsSerieA2019);
 					case "2020": return ctx.json(standingsSerieA2020);
 					case "2021": return ctx.json(standingsSerieA2021);
+					case "2022": return ctx.json(standingsSerieA2022);
 				}
 			};
 				break;
@@ -354,11 +359,13 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 					case "2019": return ctx.json(standingsBundesliga2019);
 					case "2020": return ctx.json(standingsBundesliga2020);
 					case "2021": return ctx.json(standingsBundesliga2021);
+					case "2022": return ctx.json(standingsBundesliga2022);
 				}
 			};
 				break;
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
@@ -374,8 +381,9 @@ APP.get('/competitions/:id/matches', (ctx) => {
 			case "LI1": return ctx.json(matchesLigue12022);
 			case "SEA": return ctx.json(matchesSerieA2022);
 			case "BUN": return ctx.json(matchesBundesliga2022);
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
@@ -396,6 +404,7 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 					case "2019": return ctx.json(matchesPremierLeague2019);
 					case "2020": return ctx.json(matchesPremierLeague2020);
 					case "2021": return ctx.json(matchesPremierLeague2021);
+					case "2022": return ctx.json(matchesPremierLeague2022);
 				}
 			};
 				break;
@@ -408,6 +417,7 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 					case "2019": return ctx.json(matchesLaLiga2019);
 					case "2020": return ctx.json(matchesLaLiga2020);
 					case "2021": return ctx.json(matchesLaLiga2021);
+					case "2022": return ctx.json(matchesLaLiga2022);
 				}
 			};
 				break;
@@ -420,6 +430,7 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 					case "2019": return ctx.json(matchesLigue12019);
 					case "2020": return ctx.json(matchesLigue12020);
 					case "2021": return ctx.json(matchesLigue12021);
+					case "2022": return ctx.json(matchesLigue12022);
 				}
 			};
 				break;
@@ -432,6 +443,7 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 					case "2019": return ctx.json(matchesSerieA2019);
 					case "2020": return ctx.json(matchesSerieA2020);
 					case "2021": return ctx.json(matchesSerieA2021);
+					case "2022": return ctx.json(matchesSerieA2022);
 				}
 			};
 				break;
@@ -444,11 +456,13 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 					case "2019": return ctx.json(matchesBundesliga2019);
 					case "2020": return ctx.json(matchesBundesliga2020);
 					case "2021": return ctx.json(matchesBundesliga2021);
+					case "2022": return ctx.json(matchesBundesliga2022);
 				}
 			};
 				break;
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
@@ -464,8 +478,9 @@ APP.get('/competitions/:id/scorers', (ctx) => {
 			case "LI1": return ctx.json(scorersLigue12022);
 			case "SEA": return ctx.json(scorersSerieA2022);
 			case "BUN": return ctx.json(scorersBundesliga2022);
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
@@ -486,6 +501,7 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 					case "2019": return ctx.json(scorersPremierLeague2019);
 					case "2020": return ctx.json(scorersPremierLeague2020);
 					case "2021": return ctx.json(scorersPremierLeague2021);
+					case "2022": return ctx.json(scorersPremierLeague2022);
 				}
 			};
 				break;
@@ -498,6 +514,7 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 					case "2019": return ctx.json(scorersLaLiga2019);
 					case "2020": return ctx.json(scorersLaLiga2020);
 					case "2021": return ctx.json(scorersLaLiga2021);
+					case "2022": return ctx.json(scorersLaLiga2022);
 				}
 			};
 				break;
@@ -510,6 +527,7 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 					case "2019": return ctx.json(scorersLigue12019);
 					case "2020": return ctx.json(scorersLigue12020);
 					case "2021": return ctx.json(scorersLigue12021);
+					case "2022": return ctx.json(scorersLigue12022);
 				}
 			};
 				break;
@@ -522,6 +540,7 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 					case "2019": return ctx.json(scorersSerieA2019);
 					case "2020": return ctx.json(scorersSerieA2020);
 					case "2021": return ctx.json(scorersSerieA2021);
+					case "2022": return ctx.json(scorersSerieA2022);
 				}
 			};
 				break;
@@ -534,11 +553,13 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 					case "2019": return ctx.json(scorersBundesliga2019);
 					case "2020": return ctx.json(scorersBundesliga2020);
 					case "2021": return ctx.json(scorersBundesliga2021);
+					case "2022": return ctx.json(scorersBundesliga2022);
 				}
 			};
 				break;
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
-	} if (!found) {
+	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });

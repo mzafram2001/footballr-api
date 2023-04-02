@@ -204,10 +204,10 @@ async function getAllMatches(url) {
         match.homeGoals = MATCH.homeGoals;
         match.awayGoals = MATCH.awayGoals;
         match.status = MATCH.status;
-        // match.stats = MATCH.stats;
+        match.stats = MATCH.stats;
     }
 
-    /*for (let match of RESULT.matchesIteration) {
+    for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
         const MATCH_STATS = await PAGE.evaluate(() => {
@@ -293,7 +293,7 @@ async function getAllMatches(url) {
             return TMP;
         });
         match.stats = MATCH_STATS;
-    }*/
+    }
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
         var pushIt = false;

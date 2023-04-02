@@ -312,3 +312,5 @@ async function delay(time) {
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getAllMatches(URLS.spain_matches_2022);
+
+// scraping de todas las ligas de arriba (2020 y 2021)

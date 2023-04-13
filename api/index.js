@@ -138,7 +138,7 @@ APP.get('/', (ctx) => {
 	let day = date.getDate();
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
-	let hours = date.getHours() + 1;
+	let hours = date.getHours();
 	let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
 
 	return ctx.json([
@@ -185,9 +185,7 @@ APP.get('/', (ctx) => {
 					name: "round",
 					endpoint: "/competitions/:id/matches/:year/:round",
 					description: "List of matches, filtered by a completed matchday 🔍.",
-					example: [
-						"https://zeus-api.olympus.workers.dev/competitions/SEA/matches/2021/24",
-					],
+					example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/2021/24",
 					status: "Available 🟢."
 				},
 				{
@@ -740,7 +738,7 @@ APP.get('/simulation', (ctx) => {
 	let day = date.getDate();
 	let month = date.getMonth() + 1;
 	let year = date.getFullYear();
-	let hours = date.getHours() + 1;
+	let hours = date.getHours();
 	let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
 
 	// Ejemplo de uso

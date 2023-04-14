@@ -71,6 +71,12 @@ import scorersLigue12019 from "../db/2019/scorers/scorersLigue12019Flashcore.jso
 import scorersSerieA2019 from "../db/2019/scorers/scorersSerieA2019Flashcore.json";
 import scorersBundesliga2019 from "../db/2019/scorers/scorersBundesliga2019Flashcore.json";
 
+import matchesPremierLeague2019 from "../db/2019/matches/matchesPremierLeague2019Flashcore.json";
+import matchesLaLiga2019 from "../db/2019/matches/matchesLaLiga2019Flashcore.json";
+import matchesLigue12019 from "../db/2019/matches/matchesLigue12019Flashcore.json";
+import matchesSerieA2019 from "../db/2019/matches/matchesSerieA2019Flashcore.json";
+import matchesBundesliga2019 from "../db/2019/matches/matchesBundesliga2019Flashcore.json";
+
 // 2018
 import standingsPremierLeague2018 from "../db/2018/standings/standingsPremierLeague2018Flashcore.json";
 import standingsLaLiga2018 from "../db/2018/standings/standingsLaLiga2018Flashcore.json";
@@ -84,6 +90,12 @@ import scorersLigue12018 from "../db/2018/scorers/scorersLigue12018Flashcore.jso
 import scorersSerieA2018 from "../db/2018/scorers/scorersSerieA2018Flashcore.json";
 import scorersBundesliga2018 from "../db/2018/scorers/scorersBundesliga2018Flashcore.json";
 
+import matchesPremierLeague2018 from "../db/2018/matches/matchesPremierLeague2018Flashcore.json";
+import matchesLaLiga2018 from "../db/2018/matches/matchesLaLiga2018Flashcore.json";
+import matchesLigue12018 from "../db/2018/matches/matchesLigue12018Flashcore.json";
+import matchesSerieA2018 from "../db/2018/matches/matchesSerieA2018Flashcore.json";
+import matchesBundesliga2018 from "../db/2018/matches/matchesBundesliga2018Flashcore.json";
+
 // 2017
 import standingsPremierLeague2017 from "../db/2017/standings/standingsPremierLeague2017Flashcore.json";
 import standingsLaLiga2017 from "../db/2017/standings/standingsLaLiga2017Flashcore.json";
@@ -96,6 +108,12 @@ import scorersLaLiga2017 from "../db/2017/scorers/scorersLaLiga2017Flashcore.jso
 import scorersLigue12017 from "../db/2017/scorers/scorersLigue12017Flashcore.json";
 import scorersSerieA2017 from "../db/2017/scorers/scorersSerieA2017Flashcore.json";
 import scorersBundesliga2017 from "../db/2017/scorers/scorersBundesliga2017Flashcore.json";
+
+import matchesPremierLeague2017 from "../db/2017/matches/matchesPremierLeague2017Flashcore.json";
+import matchesLaLiga2017 from "../db/2017/matches/matchesLaLiga2017Flashcore.json";
+import matchesLigue12017 from "../db/2017/matches/matchesLigue12017Flashcore.json";
+import matchesSerieA2017 from "../db/2017/matches/matchesSerieA2017Flashcore.json";
+import matchesBundesliga2017 from "../db/2017/matches/matchesBundesliga2017Flashcore.json";
 
 // 2016
 import standingsPremierLeague2016 from "../db/2016/standings/standingsPremierLeague2016Flashcore.json";

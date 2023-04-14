@@ -116,7 +116,7 @@ import matchesSerieA2017 from "../db/2017/matches/matchesSerieA2017Flashcore.jso
 import matchesBundesliga2017 from "../db/2017/matches/matchesBundesliga2017Flashcore.json";
 
 // 2016
-import standingsPremierLeague2016 from "../db/2016/standings/standingsPremierLeague2016Flashcore.json";
+/*import standingsPremierLeague2016 from "../db/2016/standings/standingsPremierLeague2016Flashcore.json";
 import standingsLaLiga2016 from "../db/2016/standings/standingsLaLiga2016Flashcore.json";
 import standingsLigue12016 from "../db/2016/standings/standingsLigue12016Flashcore.json";
 import standingsSerieA2016 from "../db/2016/standings/standingsSerieA2016Flashcore.json";
@@ -151,14 +151,14 @@ import matchesPremierLeague2015 from "../db/2015/matches/matchesPremierLeague201
 import matchesLaLiga2015 from "../db/2015/matches/matchesLaLiga2015Flashcore.json";
 import matchesLigue12015 from "../db/2015/matches/matchesLigue12015Flashcore.json";
 import matchesSerieA2015 from "../db/2015/matches/matchesSerieA2015Flashcore.json";
-import matchesBundesliga2015 from "../db/2015/matches/matchesBundesliga2015Flashcore.json";
+import matchesBundesliga2015 from "../db/2015/matches/matchesBundesliga2015Flashcore.json";*/
 
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
-const MIN_YEAR = 2015;
+const MIN_YEAR = 2017;
 const MAX_YEAR = 2022;
 
 APP.use('/*', cors());
@@ -203,7 +203,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2022) 🔍.",
+					description: "List the standings, matches or scorers for a league, given by start year (2017 - 2022) 🔍.",
 					example: [
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2020",
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2020",
@@ -276,7 +276,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/simulation/:homeTeamId/:awayTeamId/:year",
-					description: "Returns a simulated match between two teams, given by id's and start year (2015 - 2021) 🌳.",
+					description: "Returns a simulated match between two teams, given by id's and start year (2017 - 2021) 🌳.",
 					example: "https://zeus-api.olympus.workers.dev/simulation/W8mj7MDD/SKbpVP5K",
 					status: "Not available 🔴."
 				}

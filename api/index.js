@@ -110,6 +110,12 @@ import scorersLigue12016 from "../db/2016/scorers/scorersLigue12016Flashcore.jso
 import scorersSerieA2016 from "../db/2016/scorers/scorersSerieA2016Flashcore.json";
 import scorersBundesliga2016 from "../db/2016/scorers/scorersBundesliga2016Flashcore.json";
 
+import matchesPremierLeague2016 from "../db/2016/matches/matchesPremierLeague2016Flashcore.json";
+import matchesLaLiga2016 from "../db/2016/matches/matchesLaLiga2016Flashcore.json";
+import matchesLigue12016 from "../db/2016/matches/matchesLigue12016Flashcore.json";
+import matchesSerieA2016 from "../db/2016/matches/matchesSerieA2016Flashcore.json";
+import matchesBundesliga2016 from "../db/2016/matches/matchesBundesliga2016Flashcore.json";
+
 // 2015
 import standingsPremierLeague2015 from "../db/2015/standings/standingsPremierLeague2015Flashcore.json";
 import standingsLaLiga2015 from "../db/2015/standings/standingsLaLiga2015Flashcore.json";
@@ -122,6 +128,12 @@ import scorersLaLiga2015 from "../db/2015/scorers/scorersLaLiga2015Flashcore.jso
 import scorersLigue12015 from "../db/2015/scorers/scorersLigue12015Flashcore.json";
 import scorersSerieA2015 from "../db/2015/scorers/scorersSerieA2015Flashcore.json";
 import scorersBundesliga2015 from "../db/2015/scorers/scorersBundesliga2015Flashcore.json";
+
+import matchesPremierLeague2015 from "../db/2015/matches/matchesPremierLeague2015Flashcore.json";
+import matchesLaLiga2015 from "../db/2015/matches/matchesLaLiga2015Flashcore.json";
+import matchesLigue12015 from "../db/2015/matches/matchesLigue12015Flashcore.json";
+import matchesSerieA2015 from "../db/2015/matches/matchesSerieA2015Flashcore.json";
+import matchesBundesliga2015 from "../db/2015/matches/matchesBundesliga2015Flashcore.json";
 
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";

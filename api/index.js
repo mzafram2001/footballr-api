@@ -128,7 +128,7 @@ import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
-const MIN_YEAR = 2020;
+const MIN_YEAR = 2015;
 const MAX_YEAR = 2022;
 
 APP.use('/*', cors());
@@ -173,7 +173,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2020 - 2022) 🔍.",
+					description: "List the standings, matches or scorers for a league, given by start year (2015 - 2022) 🔍.",
 					example: [
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2020",
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2020",
@@ -246,7 +246,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/simulation/:homeTeamId/:awayTeamId/:year",
-					description: "Returns a simulated match between two teams, given by id's and start year (2020 - 2021) 🌳.",
+					description: "Returns a simulated match between two teams, given by id's and start year (2015 - 2021) 🌳.",
 					example: "https://zeus-api.olympus.workers.dev/simulation/W8mj7MDD/SKbpVP5K",
 					status: "Not available 🔴."
 				}
@@ -515,19 +515,19 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
 					case "2015":
-						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						foundRound = matchesLaLiga2015.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2016":
-						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						foundRound = matchesLaLiga2016.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2017":
-						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						foundRound = matchesLaLiga2017.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2018":
-						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						foundRound = matchesLaLiga2018.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2019":
-						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						foundRound = matchesLaLiga2019.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);

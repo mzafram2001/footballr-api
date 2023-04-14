@@ -1,1 +1,348 @@
-{"name":"Primera Division","area":"ESP","yearStart":2015,"yearEnd":2016,"standings":[{"position":1,"team":{"id":"SKbpVP5K","name":"Barcelona","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg"},"playedGames":38,"wins":29,"draws":4,"loses":5,"goalsFor":112,"goalsAgainst":29,"goalDifference":83,"points":91,"form":"W,W,W,W,W"},{"position":2,"team":{"id":"W8mj7MDD","name":"Real Madrid","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W8mj7MDD.svg"},"playedGames":38,"wins":28,"draws":6,"loses":4,"goalsFor":110,"goalsAgainst":34,"goalDifference":76,"points":90,"form":"W,W,W,W,W"},{"position":3,"team":{"id":"jaarqpLQ","name":"Atl. Madrid","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jaarqpLQ.svg"},"playedGames":38,"wins":28,"draws":4,"loses":6,"goalsFor":63,"goalsAgainst":18,"goalDifference":45,"points":88,"form":"W,L,W,W,W"},{"position":4,"team":{"id":"lUatW5jE","name":"Villarreal","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/lUatW5jE.svg"},"playedGames":38,"wins":18,"draws":10,"loses":10,"goalsFor":44,"goalsAgainst":35,"goalDifference":9,"points":64,"form":"L,L,W,D,L"},{"position":5,"team":{"id":"IP5zl0cJ","name":"Ath Bilbao","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IP5zl0cJ.svg"},"playedGames":38,"wins":18,"draws":8,"loses":12,"goalsFor":58,"goalsAgainst":45,"goalDifference":13,"points":62,"form":"W,D,W,D,L"},{"position":6,"team":{"id":"8pvUZFhf","name":"Celta Vigo","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8pvUZFhf.svg"},"playedGames":38,"wins":17,"draws":9,"loses":12,"goalsFor":51,"goalsAgainst":59,"goalDifference":-8,"points":60,"form":"L,W,L,W,D"},{"position":7,"team":{"id":"h8oAv4Ts","name":"Sevilla","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/h8oAv4Ts.svg"},"playedGames":38,"wins":14,"draws":10,"loses":14,"goalsFor":51,"goalsAgainst":50,"goalDifference":1,"points":52,"form":"L,L,L,W,L"},{"position":8,"team":{"id":"25tIqYiJ","name":"Malaga","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/25tIqYiJ.svg"},"playedGames":38,"wins":12,"draws":12,"loses":14,"goalsFor":38,"goalsAgainst":35,"goalDifference":3,"points":48,"form":"W,L,W,L,D"},{"position":9,"team":{"id":"jNvak2f3","name":"Real Sociedad","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jNvak2f3.svg"},"playedGames":38,"wins":13,"draws":9,"loses":16,"goalsFor":45,"goalsAgainst":48,"goalDifference":-3,"points":48,"form":"W,W,L,D,L"},{"position":10,"team":{"id":"vJbTeCGP","name":"Betis","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/vJbTeCGP.svg"},"playedGames":38,"wins":11,"draws":12,"loses":15,"goalsFor":34,"goalsAgainst":52,"goalDifference":-18,"points":45,"form":"W,D,L,L,W"},{"position":11,"team":{"id":"IyRQC2vM","name":"Las Palmas","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IyRQC2vM.svg"},"playedGames":38,"wins":12,"draws":8,"loses":18,"goalsFor":45,"goalsAgainst":53,"goalDifference":-8,"points":44,"form":"L,D,L,W,L"},{"position":12,"team":{"id":"CQeaytrD","name":"Valencia","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/CQeaytrD.svg"},"playedGames":38,"wins":11,"draws":11,"loses":16,"goalsFor":46,"goalsAgainst":48,"goalDifference":-2,"points":44,"form":"L,L,L,D,W"},{"position":13,"team":{"id":"QFfPdh1J","name":"Espanyol","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/QFfPdh1J.svg"},"playedGames":38,"wins":12,"draws":7,"loses":19,"goalsFor":40,"goalsAgainst":74,"goalDifference":-34,"points":43,"form":"W,L,W,L,D"},{"position":14,"team":{"id":"OEsEpExD","name":"Eibar","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/OEsEpExD.svg"},"playedGames":38,"wins":11,"draws":10,"loses":17,"goalsFor":49,"goalsAgainst":61,"goalDifference":-12,"points":43,"form":"L,D,L,D,L"},{"position":15,"team":{"id":"Q51ZzMS6","name":"Dep. La Coruna","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/Q51ZzMS6.svg"},"playedGames":38,"wins":8,"draws":18,"loses":12,"goalsFor":45,"goalsAgainst":61,"goalDifference":-16,"points":42,"form":"L,W,L,D,L"},{"position":16,"team":{"id":"EXuxl1xP","name":"Granada CF","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/EXuxl1xP.svg"},"playedGames":38,"wins":10,"draws":9,"loses":19,"goalsFor":46,"goalsAgainst":69,"goalDifference":-23,"points":39,"form":"L,W,W,L,W"},{"position":17,"team":{"id":"69w4Rb2d","name":"Gijon","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/69w4Rb2d.svg"},"playedGames":38,"wins":10,"draws":9,"loses":19,"goalsFor":40,"goalsAgainst":62,"goalDifference":-22,"points":39,"form":"W,D,W,L,W"},{"position":18,"team":{"id":"8bcjFy6O","name":"Rayo Vallecano","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8bcjFy6O.svg"},"playedGames":38,"wins":9,"draws":11,"loses":18,"goalsFor":52,"goalsAgainst":73,"goalDifference":-21,"points":38,"form":"W,L,L,L,D"},{"position":19,"team":{"id":"dboeiWOt","name":"Getafe","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/dboeiWOt.svg"},"playedGames":38,"wins":9,"draws":9,"loses":20,"goalsFor":37,"goalsAgainst":67,"goalDifference":-30,"points":36,"form":"L,D,W,D,W"},{"position":20,"team":{"id":"G8FL0ShI","name":"Levante","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/G8FL0ShI.svg"},"playedGames":38,"wins":8,"draws":8,"loses":22,"goalsFor":37,"goalsAgainst":70,"goalDifference":-33,"points":32,"form":"L,W,L,D,L"}]}
+{
+    "name": "Primera Division",
+    "area": "ESP",
+    "yearStart": 2015,
+    "yearEnd": 2016,
+    "standings": [
+        {
+            "position": 1,
+            "team": {
+                "id": "SKbpVP5K",
+                "name": "Barcelona",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg"
+            },
+            "playedGames": 38,
+            "wins": 29,
+            "draws": 4,
+            "loses": 5,
+            "goalsFor": 112,
+            "goalsAgainst": 29,
+            "goalDifference": 83,
+            "points": 91,
+            "form": "W,W,W,W,W"
+        },
+        {
+            "position": 2,
+            "team": {
+                "id": "W8mj7MDD",
+                "name": "Real Madrid",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W8mj7MDD.svg"
+            },
+            "playedGames": 38,
+            "wins": 28,
+            "draws": 6,
+            "loses": 4,
+            "goalsFor": 110,
+            "goalsAgainst": 34,
+            "goalDifference": 76,
+            "points": 90,
+            "form": "W,W,W,W,W"
+        },
+        {
+            "position": 3,
+            "team": {
+                "id": "jaarqpLQ",
+                "name": "Atlético Madrid",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jaarqpLQ.svg"
+            },
+            "playedGames": 38,
+            "wins": 28,
+            "draws": 4,
+            "loses": 6,
+            "goalsFor": 63,
+            "goalsAgainst": 18,
+            "goalDifference": 45,
+            "points": 88,
+            "form": "W,L,W,W,W"
+        },
+        {
+            "position": 4,
+            "team": {
+                "id": "lUatW5jE",
+                "name": "Villarreal",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/lUatW5jE.svg"
+            },
+            "playedGames": 38,
+            "wins": 18,
+            "draws": 10,
+            "loses": 10,
+            "goalsFor": 44,
+            "goalsAgainst": 35,
+            "goalDifference": 9,
+            "points": 64,
+            "form": "L,L,W,D,L"
+        },
+        {
+            "position": 5,
+            "team": {
+                "id": "IP5zl0cJ",
+                "name": "Athletic Bilbao",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IP5zl0cJ.svg"
+            },
+            "playedGames": 38,
+            "wins": 18,
+            "draws": 8,
+            "loses": 12,
+            "goalsFor": 58,
+            "goalsAgainst": 45,
+            "goalDifference": 13,
+            "points": 62,
+            "form": "W,D,W,D,L"
+        },
+        {
+            "position": 6,
+            "team": {
+                "id": "8pvUZFhf",
+                "name": "Celta Vigo",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8pvUZFhf.svg"
+            },
+            "playedGames": 38,
+            "wins": 17,
+            "draws": 9,
+            "loses": 12,
+            "goalsFor": 51,
+            "goalsAgainst": 59,
+            "goalDifference": -8,
+            "points": 60,
+            "form": "L,W,L,W,D"
+        },
+        {
+            "position": 7,
+            "team": {
+                "id": "h8oAv4Ts",
+                "name": "Sevilla",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/h8oAv4Ts.svg"
+            },
+            "playedGames": 38,
+            "wins": 14,
+            "draws": 10,
+            "loses": 14,
+            "goalsFor": 51,
+            "goalsAgainst": 50,
+            "goalDifference": 1,
+            "points": 52,
+            "form": "L,L,L,W,L"
+        },
+        {
+            "position": 8,
+            "team": {
+                "id": "25tIqYiJ",
+                "name": "Malaga",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/25tIqYiJ.svg"
+            },
+            "playedGames": 38,
+            "wins": 12,
+            "draws": 12,
+            "loses": 14,
+            "goalsFor": 38,
+            "goalsAgainst": 35,
+            "goalDifference": 3,
+            "points": 48,
+            "form": "W,L,W,L,D"
+        },
+        {
+            "position": 9,
+            "team": {
+                "id": "jNvak2f3",
+                "name": "Real Sociedad",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jNvak2f3.svg"
+            },
+            "playedGames": 38,
+            "wins": 13,
+            "draws": 9,
+            "loses": 16,
+            "goalsFor": 45,
+            "goalsAgainst": 48,
+            "goalDifference": -3,
+            "points": 48,
+            "form": "W,W,L,D,L"
+        },
+        {
+            "position": 10,
+            "team": {
+                "id": "vJbTeCGP",
+                "name": "Real Betis",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/vJbTeCGP.svg"
+            },
+            "playedGames": 38,
+            "wins": 11,
+            "draws": 12,
+            "loses": 15,
+            "goalsFor": 34,
+            "goalsAgainst": 52,
+            "goalDifference": -18,
+            "points": 45,
+            "form": "W,D,L,L,W"
+        },
+        {
+            "position": 11,
+            "team": {
+                "id": "IyRQC2vM",
+                "name": "Las Palmas",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IyRQC2vM.svg"
+            },
+            "playedGames": 38,
+            "wins": 12,
+            "draws": 8,
+            "loses": 18,
+            "goalsFor": 45,
+            "goalsAgainst": 53,
+            "goalDifference": -8,
+            "points": 44,
+            "form": "L,D,L,W,L"
+        },
+        {
+            "position": 12,
+            "team": {
+                "id": "CQeaytrD",
+                "name": "Valencia",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/CQeaytrD.svg"
+            },
+            "playedGames": 38,
+            "wins": 11,
+            "draws": 11,
+            "loses": 16,
+            "goalsFor": 46,
+            "goalsAgainst": 48,
+            "goalDifference": -2,
+            "points": 44,
+            "form": "L,L,L,D,W"
+        },
+        {
+            "position": 13,
+            "team": {
+                "id": "QFfPdh1J",
+                "name": "Espanyol",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/QFfPdh1J.svg"
+            },
+            "playedGames": 38,
+            "wins": 12,
+            "draws": 7,
+            "loses": 19,
+            "goalsFor": 40,
+            "goalsAgainst": 74,
+            "goalDifference": -34,
+            "points": 43,
+            "form": "W,L,W,L,D"
+        },
+        {
+            "position": 14,
+            "team": {
+                "id": "OEsEpExD",
+                "name": "Eibar",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/OEsEpExD.svg"
+            },
+            "playedGames": 38,
+            "wins": 11,
+            "draws": 10,
+            "loses": 17,
+            "goalsFor": 49,
+            "goalsAgainst": 61,
+            "goalDifference": -12,
+            "points": 43,
+            "form": "L,D,L,D,L"
+        },
+        {
+            "position": 15,
+            "team": {
+                "id": "Q51ZzMS6",
+                "name": "Dep. La Coruna",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/Q51ZzMS6.svg"
+            },
+            "playedGames": 38,
+            "wins": 8,
+            "draws": 18,
+            "loses": 12,
+            "goalsFor": 45,
+            "goalsAgainst": 61,
+            "goalDifference": -16,
+            "points": 42,
+            "form": "L,W,L,D,L"
+        },
+        {
+            "position": 16,
+            "team": {
+                "id": "EXuxl1xP",
+                "name": "Granada",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/EXuxl1xP.svg"
+            },
+            "playedGames": 38,
+            "wins": 10,
+            "draws": 9,
+            "loses": 19,
+            "goalsFor": 46,
+            "goalsAgainst": 69,
+            "goalDifference": -23,
+            "points": 39,
+            "form": "L,W,W,L,W"
+        },
+        {
+            "position": 17,
+            "team": {
+                "id": "69w4Rb2d",
+                "name": "Gijon",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/69w4Rb2d.svg"
+            },
+            "playedGames": 38,
+            "wins": 10,
+            "draws": 9,
+            "loses": 19,
+            "goalsFor": 40,
+            "goalsAgainst": 62,
+            "goalDifference": -22,
+            "points": 39,
+            "form": "W,D,W,L,W"
+        },
+        {
+            "position": 18,
+            "team": {
+                "id": "8bcjFy6O",
+                "name": "Rayo Vallecano",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8bcjFy6O.svg"
+            },
+            "playedGames": 38,
+            "wins": 9,
+            "draws": 11,
+            "loses": 18,
+            "goalsFor": 52,
+            "goalsAgainst": 73,
+            "goalDifference": -21,
+            "points": 38,
+            "form": "W,L,L,L,D"
+        },
+        {
+            "position": 19,
+            "team": {
+                "id": "dboeiWOt",
+                "name": "Getafe",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/dboeiWOt.svg"
+            },
+            "playedGames": 38,
+            "wins": 9,
+            "draws": 9,
+            "loses": 20,
+            "goalsFor": 37,
+            "goalsAgainst": 67,
+            "goalDifference": -30,
+            "points": 36,
+            "form": "L,D,W,D,W"
+        },
+        {
+            "position": 20,
+            "team": {
+                "id": "G8FL0ShI",
+                "name": "Levante",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/G8FL0ShI.svg"
+            },
+            "playedGames": 38,
+            "wins": 8,
+            "draws": 8,
+            "loses": 22,
+            "goalsFor": 37,
+            "goalsAgainst": 70,
+            "goalDifference": -33,
+            "points": 32,
+            "form": "L,W,L,D,L"
+        }
+    ]
+}

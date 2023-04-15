@@ -369,7 +369,7 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 	if (found) {
 		switch (id) {
 			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
-				switch (year) {				
+				switch (year) {
 					case "2020":
 						foundRound = matchesPremierLeague2020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -444,6 +444,173 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
+
+APP.get('/competitions/:id/matches/:year/:round/:idMatch', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const year = ctx.req.param("year");
+	const round = parseInt(ctx.req.param("round"));
+	const idMatch = ctx.req.param("idMatch");
+	var foundRound;
+	var foundMatch;
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (found) {
+		switch (id) {
+			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2020":
+						foundRound = matchesPremierLeague2020.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2021":
+						foundRound = matchesPremierLeague2021.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2022":
+						foundRound = matchesPremierLeague2022.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+				}
+			};
+				break;
+			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2020":
+						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2021":
+						foundRound = matchesLaLiga2021.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2022":
+						foundRound = matchesLaLiga2022.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+				}
+			};
+				break;
+			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2020":
+						foundRound = matchesLigue12020.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2021":
+						foundRound = matchesLigue12021.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2022":
+						foundRound = matchesLigue12022.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+				}
+			};
+				break;
+			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2020":
+						foundRound = matchesSerieA2020.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2021":
+						foundRound = matchesSerieA2021.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2022":
+						foundRound = matchesSerieA2022.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+				}
+			};
+				break;
+			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
+				switch (year) {
+					case "2020":
+						foundRound = matchesBundesliga2020.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2021":
+						foundRound = matchesBundesliga2021.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+					case "2022":
+						foundRound = matchesBundesliga2022.season.find((match) => match.round === round);
+						if (foundRound) {
+							foundMatch = foundRound.matches.find((match => match.id === idMatch));
+							return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
+						}
+				}
+			};
+				break;
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
+		}
+	} else {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // scorers
 APP.get('/competitions/:id/scorers', (ctx) => {

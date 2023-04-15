@@ -1,6 +1,10 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors'
 
+
+// TODO: MOVER TEMPORADAS PASADAS A https://github.com/mzafram2001/zeus-src
+// SOLO UTILIZAR LA ACTUAL AQUI CON LOS IMPORTS
+
 // 2022
 import standingsPremierLeague2022 from "../db/2022/standings/standingsPremierLeague2022Flashcore.json";
 import standingsLaLiga2022 from "../db/2022/standings/standingsLaLiga2022Flashcore.json";

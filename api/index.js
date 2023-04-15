@@ -124,6 +124,13 @@ APP.get('/', (ctx) => {
 					status: "Available 🟢."
 				},
 				{
+					name: "idMatch",
+					endpoint: "/competitions/:id/matches/:year/:round/:idMatch",
+					description: "List 1 match, given by year, round and id of the match 🔍.",
+					example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/2021/24/QauKTRb6",
+					status: "Available 🟢."
+				},
+				{
 					name: "standings",
 					endpoint: "/competitions/:id/standings",
 					description: "List the current standings for a league 🔝.",
@@ -189,7 +196,7 @@ APP.get('/', (ctx) => {
 		},
 		{
 			name: "Zeus API ⚡",
-			version: 'v1.0',
+			version: 'v1.02',
 			updated: day + "." + month + "." + year + " " + hours + ":" + minutes,
 			message: 'Created with 💙 by Miguel Zafra.'
 		}

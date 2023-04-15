@@ -1,10 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors'
 
-
-// TODO: MOVER TEMPORADAS PASADAS A https://github.com/mzafram2001/zeus-src
-// SOLO UTILIZAR LA ACTUAL AQUI CON LOS IMPORTS
-
 // 2022
 import standingsPremierLeague2022 from "../db/2022/standings/standingsPremierLeague2022Flashcore.json";
 import standingsLaLiga2022 from "../db/2022/standings/standingsLaLiga2022Flashcore.json";
@@ -62,69 +58,12 @@ import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.jso
 import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
 import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
 
-// 2019
-import standingsPremierLeague2019 from "../db/2019/standings/standingsPremierLeague2019Flashcore.json";
-import standingsLaLiga2019 from "../db/2019/standings/standingsLaLiga2019Flashcore.json";
-import standingsLigue12019 from "../db/2019/standings/standingsLigue12019Flashcore.json";
-import standingsSerieA2019 from "../db/2019/standings/standingsSerieA2019Flashcore.json";
-import standingsBundesliga2019 from "../db/2019/standings/standingsBundesliga2019Flashcore.json";
-
-import scorersPremierLeague2019 from "../db/2019/scorers/scorersPremierLeague2019Flashcore.json";
-import scorersLaLiga2019 from "../db/2019/scorers/scorersLaLiga2019Flashcore.json";
-import scorersLigue12019 from "../db/2019/scorers/scorersLigue12019Flashcore.json";
-import scorersSerieA2019 from "../db/2019/scorers/scorersSerieA2019Flashcore.json";
-import scorersBundesliga2019 from "../db/2019/scorers/scorersBundesliga2019Flashcore.json";
-
-import matchesPremierLeague2019 from "../db/2019/matches/matchesPremierLeague2019Flashcore.json";
-import matchesLaLiga2019 from "../db/2019/matches/matchesLaLiga2019Flashcore.json";
-import matchesLigue12019 from "../db/2019/matches/matchesLigue12019Flashcore.json";
-import matchesSerieA2019 from "../db/2019/matches/matchesSerieA2019Flashcore.json";
-import matchesBundesliga2019 from "../db/2019/matches/matchesBundesliga2019Flashcore.json";
-
-// 2018
-import standingsPremierLeague2018 from "../db/2018/standings/standingsPremierLeague2018Flashcore.json";
-import standingsLaLiga2018 from "../db/2018/standings/standingsLaLiga2018Flashcore.json";
-import standingsLigue12018 from "../db/2018/standings/standingsLigue12018Flashcore.json";
-import standingsSerieA2018 from "../db/2018/standings/standingsSerieA2018Flashcore.json";
-import standingsBundesliga2018 from "../db/2018/standings/standingsBundesliga2018Flashcore.json";
-
-import scorersPremierLeague2018 from "../db/2018/scorers/scorersPremierLeague2018Flashcore.json";
-import scorersLaLiga2018 from "../db/2018/scorers/scorersLaLiga2018Flashcore.json";
-import scorersLigue12018 from "../db/2018/scorers/scorersLigue12018Flashcore.json";
-import scorersSerieA2018 from "../db/2018/scorers/scorersSerieA2018Flashcore.json";
-import scorersBundesliga2018 from "../db/2018/scorers/scorersBundesliga2018Flashcore.json";
-
-import matchesPremierLeague2018 from "../db/2018/matches/matchesPremierLeague2018Flashcore.json";
-import matchesLaLiga2018 from "../db/2018/matches/matchesLaLiga2018Flashcore.json";
-import matchesLigue12018 from "../db/2018/matches/matchesLigue12018Flashcore.json";
-import matchesSerieA2018 from "../db/2018/matches/matchesSerieA2018Flashcore.json";
-import matchesBundesliga2018 from "../db/2018/matches/matchesBundesliga2018Flashcore.json";
-
-// 2017
-import standingsPremierLeague2017 from "../db/2017/standings/standingsPremierLeague2017Flashcore.json";
-import standingsLaLiga2017 from "../db/2017/standings/standingsLaLiga2017Flashcore.json";
-import standingsLigue12017 from "../db/2017/standings/standingsLigue12017Flashcore.json";
-import standingsSerieA2017 from "../db/2017/standings/standingsSerieA2017Flashcore.json";
-import standingsBundesliga2017 from "../db/2017/standings/standingsBundesliga2017Flashcore.json";
-
-import scorersPremierLeague2017 from "../db/2017/scorers/scorersPremierLeague2017Flashcore.json";
-import scorersLaLiga2017 from "../db/2017/scorers/scorersLaLiga2017Flashcore.json";
-import scorersLigue12017 from "../db/2017/scorers/scorersLigue12017Flashcore.json";
-import scorersSerieA2017 from "../db/2017/scorers/scorersSerieA2017Flashcore.json";
-import scorersBundesliga2017 from "../db/2017/scorers/scorersBundesliga2017Flashcore.json";
-
-import matchesPremierLeague2017 from "../db/2017/matches/matchesPremierLeague2017Flashcore.json";
-import matchesLaLiga2017 from "../db/2017/matches/matchesLaLiga2017Flashcore.json";
-import matchesLigue12017 from "../db/2017/matches/matchesLigue12017Flashcore.json";
-import matchesSerieA2017 from "../db/2017/matches/matchesSerieA2017Flashcore.json";
-import matchesBundesliga2017 from "../db/2017/matches/matchesBundesliga2017Flashcore.json";
-
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
-const MIN_YEAR = 2017;
+const MIN_YEAR = 2020;
 const MAX_YEAR = 2022;
 
 APP.use('/*', cors());
@@ -169,7 +108,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/competitions/:id/XXXXX/:year",
-					description: "List the standings, matches or scorers for a league, given by start year (2017 - 2022) 🔍.",
+					description: "List the standings, matches or scorers for a league, given by start year (2020 - 2022) 🔍.",
 					example: [
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/standings/2020",
 						"https://zeus-api.olympus.workers.dev/competitions/LAL/matches/2020",
@@ -242,7 +181,7 @@ APP.get('/', (ctx) => {
 				{
 					name: "year",
 					endpoint: "/simulation/:homeTeamId/:awayTeamId/:year",
-					description: "Returns a simulated match between two teams, given by id's and start year (2017 - 2021) 🌳.",
+					description: "Returns a simulated match between two teams, given by id's and start year (2020 - 2021) 🌳.",
 					example: "https://zeus-api.olympus.workers.dev/simulation/W8mj7MDD/SKbpVP5K",
 					status: "Not available 🔴."
 				}

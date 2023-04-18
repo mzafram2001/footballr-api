@@ -214,7 +214,7 @@ async function getAllMatches(url) {
                         break;
                     case "Shots on Goal":
                         TMP.shotsOnGoalHome = parseInt(element.querySelector('.stat__homeValue').innerText);
-                        TMP.shotsOnGoalaway = parseInt(element.querySelector('.stat__awayValue').innerText);
+                        TMP.shotsOnGoalAway = parseInt(element.querySelector('.stat__awayValue').innerText);
                         break;
                     case "Shots off Goal":
                         TMP.shotsOffGoalHome = parseInt(element.querySelector('.stat__homeValue').innerText);

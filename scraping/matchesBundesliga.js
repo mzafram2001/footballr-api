@@ -255,4 +255,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.germany_matches_2018);
+getAllMatches(URLS.germany_matches_2019);

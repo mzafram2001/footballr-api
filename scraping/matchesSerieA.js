@@ -295,4 +295,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.italy_matches_2016);
+getAllMatches(URLS.italy_matches_2017);

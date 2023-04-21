@@ -263,4 +263,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.spain_matches_2017);
+getAllMatches(URLS.spain_matches_2018);

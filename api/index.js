@@ -58,12 +58,89 @@ import matchesLigue12020 from "../db/2020/matches/matchesLigue12020Flashcore.jso
 import matchesSerieA2020 from "../db/2020/matches/matchesSerieA2020Flashcore.json";
 import matchesBundesliga2020 from "../db/2020/matches/matchesBundesliga2020Flashcore.json";
 
+// 2019
+import standingsPremierLeague2019 from "../db/2019/standings/standingsPremierLeague2019Flashcore.json";
+import standingsLaLiga2019 from "../db/2019/standings/standingsLaLiga2019Flashcore.json";
+import standingsLigue12019 from "../db/2019/standings/standingsLigue12019Flashcore.json";
+import standingsSerieA2019 from "../db/2019/standings/standingsSerieA2019Flashcore.json";
+import standingsBundesliga2019 from "../db/2019/standings/standingsBundesliga2019Flashcore.json";
+
+import scorersPremierLeague2019 from "../db/2019/scorers/scorersPremierLeague2019Flashcore.json";
+import scorersLaLiga2019 from "../db/2019/scorers/scorersLaLiga2019Flashcore.json";
+import scorersLigue12019 from "../db/2019/scorers/scorersLigue12019Flashcore.json";
+import scorersSerieA2019 from "../db/2019/scorers/scorersSerieA2019Flashcore.json";
+import scorersBundesliga2019 from "../db/2019/scorers/scorersBundesliga2019Flashcore.json";
+
+// 2018
+import standingsPremierLeague2018 from "../db/2018/standings/standingsPremierLeague2018Flashcore.json";
+import standingsLaLiga2018 from "../db/2018/standings/standingsLaLiga2018Flashcore.json";
+import standingsLigue12018 from "../db/2018/standings/standingsLigue12018Flashcore.json";
+import standingsSerieA2018 from "../db/2018/standings/standingsSerieA2018Flashcore.json";
+import standingsBundesliga2018 from "../db/2018/standings/standingsBundesliga2018Flashcore.json";
+
+import scorersPremierLeague2018 from "../db/2018/scorers/scorersPremierLeague2018Flashcore.json";
+import scorersLaLiga2018 from "../db/2018/scorers/scorersLaLiga2018Flashcore.json";
+import scorersLigue12018 from "../db/2018/scorers/scorersLigue12018Flashcore.json";
+import scorersSerieA2018 from "../db/2018/scorers/scorersSerieA2018Flashcore.json";
+import scorersBundesliga2018 from "../db/2018/scorers/scorersBundesliga2018Flashcore.json";
+
+// 2017
+import standingsPremierLeague2017 from "../db/2017/standings/standingsPremierLeague2017Flashcore.json";
+import standingsLaLiga2017 from "../db/2017/standings/standingsLaLiga2017Flashcore.json";
+import standingsLigue12017 from "../db/2017/standings/standingsLigue12017Flashcore.json";
+import standingsSerieA2017 from "../db/2017/standings/standingsSerieA2017Flashcore.json";
+import standingsBundesliga2017 from "../db/2017/standings/standingsBundesliga2017Flashcore.json";
+
+import scorersPremierLeague2017 from "../db/2017/scorers/scorersPremierLeague2017Flashcore.json";
+import scorersLaLiga2017 from "../db/2017/scorers/scorersLaLiga2017Flashcore.json";
+import scorersLigue12017 from "../db/2017/scorers/scorersLigue12017Flashcore.json";
+import scorersSerieA2017 from "../db/2017/scorers/scorersSerieA2017Flashcore.json";
+import scorersBundesliga2017 from "../db/2017/scorers/scorersBundesliga2017Flashcore.json";
+
+// 2016
+import standingsPremierLeague2016 from "../db/2016/standings/standingsPremierLeague2016Flashcore.json";
+import standingsLaLiga2016 from "../db/2016/standings/standingsLaLiga2016Flashcore.json";
+import standingsLigue12016 from "../db/2016/standings/standingsLigue12016Flashcore.json";
+import standingsSerieA2016 from "../db/2016/standings/standingsSerieA2016Flashcore.json";
+import standingsBundesliga2016 from "../db/2016/standings/standingsBundesliga2016Flashcore.json";
+
+import scorersPremierLeague2016 from "../db/2016/scorers/scorersPremierLeague2016Flashcore.json";
+import scorersLaLiga2016 from "../db/2016/scorers/scorersLaLiga2016Flashcore.json";
+import scorersLigue12016 from "../db/2016/scorers/scorersLigue12016Flashcore.json";
+import scorersSerieA2016 from "../db/2016/scorers/scorersSerieA2016Flashcore.json";
+import scorersBundesliga2016 from "../db/2016/scorers/scorersBundesliga2016Flashcore.json";
+
+import matchesPremierLeague2016 from "../db/2016/matches/matchesPremierLeague2016Flashcore.json";
+import matchesLaLiga2016 from "../db/2016/matches/matchesLaLiga2016Flashcore.json";
+import matchesLigue12016 from "../db/2016/matches/matchesLigue12016Flashcore.json";
+import matchesSerieA2016 from "../db/2016/matches/matchesSerieA2016Flashcore.json";
+import matchesBundesliga2016 from "../db/2016/matches/matchesBundesliga2016Flashcore.json";
+
+// 2015
+import standingsPremierLeague2015 from "../db/2015/standings/standingsPremierLeague2015Flashcore.json";
+import standingsLaLiga2015 from "../db/2015/standings/standingsLaLiga2015Flashcore.json";
+import standingsLigue12015 from "../db/2015/standings/standingsLigue12015Flashcore.json";
+import standingsSerieA2015 from "../db/2015/standings/standingsSerieA2015Flashcore.json";
+import standingsBundesliga2015 from "../db/2015/standings/standingsBundesliga2015Flashcore.json";
+
+import scorersPremierLeague2015 from "../db/2015/scorers/scorersPremierLeague2015Flashcore.json";
+import scorersLaLiga2015 from "../db/2015/scorers/scorersLaLiga2015Flashcore.json";
+import scorersLigue12015 from "../db/2015/scorers/scorersLigue12015Flashcore.json";
+import scorersSerieA2015 from "../db/2015/scorers/scorersSerieA2015Flashcore.json";
+import scorersBundesliga2015 from "../db/2015/scorers/scorersBundesliga2015Flashcore.json";
+
+import matchesPremierLeague2015 from "../db/2015/matches/matchesPremierLeague2015Flashcore.json";
+import matchesLaLiga2015 from "../db/2015/matches/matchesLaLiga2015Flashcore.json";
+import matchesLigue12015 from "../db/2015/matches/matchesLigue12015Flashcore.json";
+import matchesSerieA2015 from "../db/2015/matches/matchesSerieA2015Flashcore.json";
+import matchesBundesliga2015 from "../db/2015/matches/matchesBundesliga2015Flashcore.json";
+
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 
 const APP = new Hono();
 
-const MIN_YEAR = 2020;
+const MIN_YEAR = 2015;
 const MAX_YEAR = 2022;
 
 APP.use('/*', cors());
@@ -249,6 +326,11 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 		switch (id) {
 			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(standingsPremierLeague2015);
+					case "2016": return ctx.json(standingsPremierLeague2016);
+					case "2017": return ctx.json(standingsPremierLeague2017);
+					case "2018": return ctx.json(standingsPremierLeague2018);
+					case "2019": return ctx.json(standingsPremierLeague2019);
 					case "2020": return ctx.json(standingsPremierLeague2020);
 					case "2021": return ctx.json(standingsPremierLeague2021);
 					case "2022": return ctx.json(standingsPremierLeague2022);
@@ -257,6 +339,11 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 				break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(standingsLaLiga2015);
+					case "2016": return ctx.json(standingsLaLiga2016);
+					case "2017": return ctx.json(standingsLaLiga2017);
+					case "2018": return ctx.json(standingsLaLiga2018);
+					case "2019": return ctx.json(standingsLaLiga2019);
 					case "2020": return ctx.json(standingsLaLiga2020);
 					case "2021": return ctx.json(standingsLaLiga2021);
 					case "2022": return ctx.json(standingsLaLiga2022);
@@ -265,6 +352,11 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 				break;
 			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(standingsLigue12015);
+					case "2016": return ctx.json(standingsLigue12016);
+					case "2017": return ctx.json(standingsLigue12017);
+					case "2018": return ctx.json(standingsLigue12018);
+					case "2019": return ctx.json(standingsLigue12019);
 					case "2020": return ctx.json(standingsLigue12020);
 					case "2021": return ctx.json(standingsLigue12021);
 					case "2022": return ctx.json(standingsLigue12022);
@@ -273,6 +365,11 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 				break;
 			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(standingsSerieA2015);
+					case "2016": return ctx.json(standingsSerieA2016);
+					case "2017": return ctx.json(standingsSerieA2017);
+					case "2018": return ctx.json(standingsSerieA2018);
+					case "2019": return ctx.json(standingsSerieA2019);
 					case "2020": return ctx.json(standingsSerieA2020);
 					case "2021": return ctx.json(standingsSerieA2021);
 					case "2022": return ctx.json(standingsSerieA2022);
@@ -281,6 +378,11 @@ APP.get('/competitions/:id/standings/:year', (ctx) => {
 				break;
 			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(standingsBundesliga2015);
+					case "2016": return ctx.json(standingsBundesliga2016);
+					case "2017": return ctx.json(standingsBundesliga2017);
+					case "2018": return ctx.json(standingsBundesliga2018);
+					case "2019": return ctx.json(standingsBundesliga2019);
 					case "2020": return ctx.json(standingsBundesliga2020);
 					case "2021": return ctx.json(standingsBundesliga2021);
 					case "2022": return ctx.json(standingsBundesliga2022);
@@ -321,6 +423,11 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 		switch (id) {
 			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(matchesPremierLeague2015);
+					case "2016": return ctx.json(matchesPremierLeague2016);
+					case "2017": return ctx.json(matchesPremierLeague2017);
+					case "2018": return ctx.json(matchesPremierLeague2018);
+					case "2019": return ctx.json(matchesPremierLeague2019);
 					case "2020": return ctx.json(matchesPremierLeague2020);
 					case "2021": return ctx.json(matchesPremierLeague2021);
 					case "2022": return ctx.json(matchesPremierLeague2022);
@@ -329,6 +436,11 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 				break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(matchesLaLiga2015);
+					case "2016": return ctx.json(matchesLaLiga2016);
+					case "2017": return ctx.json(matchesLaLiga2017);
+					case "2018": return ctx.json(matchesLaLiga2018);
+					case "2019": return ctx.json(matchesLaLiga2019);
 					case "2020": return ctx.json(matchesLaLiga2020);
 					case "2021": return ctx.json(matchesLaLiga2021);
 					case "2022": return ctx.json(matchesLaLiga2022);
@@ -337,6 +449,11 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 				break;
 			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(matchesLigue12015);
+					case "2016": return ctx.json(matchesLigue12016);
+					case "2017": return ctx.json(matchesLigue12017);
+					case "2018": return ctx.json(matchesLigue12018);
+					case "2019": return ctx.json(matchesLigue12019);
 					case "2020": return ctx.json(matchesLigue12020);
 					case "2021": return ctx.json(matchesLigue12021);
 					case "2022": return ctx.json(matchesLigue12022);
@@ -345,6 +462,11 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 				break;
 			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(matchesSerieA2015);
+					case "2016": return ctx.json(matchesSerieA2016);
+					case "2017": return ctx.json(matchesSerieA2017);
+					case "2018": return ctx.json(matchesSerieA2018);
+					case "2019": return ctx.json(matchesSerieA2019);
 					case "2020": return ctx.json(matchesSerieA2020);
 					case "2021": return ctx.json(matchesSerieA2021);
 					case "2022": return ctx.json(matchesSerieA2022);
@@ -353,6 +475,11 @@ APP.get('/competitions/:id/matches/:year', (ctx) => {
 				break;
 			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(matchesBundesliga2015);
+					case "2016": return ctx.json(matchesBundesliga2016);
+					case "2017": return ctx.json(matchesBundesliga2017);
+					case "2018": return ctx.json(matchesBundesliga2018);
+					case "2019": return ctx.json(matchesBundesliga2019);
 					case "2020": return ctx.json(matchesBundesliga2020);
 					case "2021": return ctx.json(matchesBundesliga2021);
 					case "2022": return ctx.json(matchesBundesliga2022);
@@ -377,6 +504,21 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 		switch (id) {
 			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015":
+						foundRound = matchesPremierLeague2015.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2016":
+						foundRound = matchesPremierLeague2016.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2017":
+						foundRound = matchesPremierLeague2017.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2018":
+						foundRound = matchesPremierLeague2018.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2019":
+						foundRound = matchesPremierLeague2019.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesPremierLeague2020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -391,6 +533,21 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 				break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015":
+						foundRound = matchesLaLiga2015.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2016":
+						foundRound = matchesLaLiga2016.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2017":
+						foundRound = matchesLaLiga2017.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2018":
+						foundRound = matchesLaLiga2018.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2019":
+						foundRound = matchesLaLiga2019.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesLaLiga2020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -405,6 +562,21 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 				break;
 			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015":
+						foundRound = matchesLigue12015.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2016":
+						foundRound = matchesLigue12016.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2017":
+						foundRound = matchesLigue12017.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2018":
+						foundRound = matchesLigue12018.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2019":
+						foundRound = matchesLigue12019.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesLigue12020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -419,6 +591,21 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 				break;
 			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015":
+						foundRound = matchesSerieA2015.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2016":
+						foundRound = matchesSerieA2016.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2017":
+						foundRound = matchesSerieA2017.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2018":
+						foundRound = matchesSerieA2018.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2019":
+						foundRound = matchesSerieA2019.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesSerieA2020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -433,6 +620,21 @@ APP.get('/competitions/:id/matches/:year/:round', (ctx) => {
 				break;
 			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015":
+						foundRound = matchesBundesliga2015.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2016":
+						foundRound = matchesBundesliga2016.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2017":
+						foundRound = matchesBundesliga2017.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2018":
+						foundRound = matchesBundesliga2018.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+					case "2019":
+						foundRound = matchesBundesliga2019.season.find((match) => match.round === round);
+						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 					case "2020":
 						foundRound = matchesBundesliga2020.season.find((match) => match.round === round);
 						return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
@@ -646,6 +848,11 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 		switch (id) {
 			case "PRL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(scorersPremierLeague2015);
+					case "2016": return ctx.json(scorersPremierLeague2016);
+					case "2017": return ctx.json(scorersPremierLeague2017);
+					case "2018": return ctx.json(scorersPremierLeague2018);
+					case "2019": return ctx.json(scorersPremierLeague2019);
 					case "2020": return ctx.json(scorersPremierLeague2020);
 					case "2021": return ctx.json(scorersPremierLeague2021);
 					case "2022": return ctx.json(scorersPremierLeague2022);
@@ -654,6 +861,11 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 				break;
 			case "LAL": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(scorersLaLiga2015);
+					case "2016": return ctx.json(scorersLaLiga2016);
+					case "2017": return ctx.json(scorersLaLiga2017);
+					case "2018": return ctx.json(scorersLaLiga2018);
+					case "2019": return ctx.json(scorersLaLiga2019);
 					case "2020": return ctx.json(scorersLaLiga2020);
 					case "2021": return ctx.json(scorersLaLiga2021);
 					case "2022": return ctx.json(scorersLaLiga2022);
@@ -662,6 +874,11 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 				break;
 			case "LI1": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(scorersLigue12015);
+					case "2016": return ctx.json(scorersLigue12016);
+					case "2017": return ctx.json(scorersLigue12017);
+					case "2018": return ctx.json(scorersLigue12018);
+					case "2019": return ctx.json(scorersLigue12019);
 					case "2020": return ctx.json(scorersLigue12020);
 					case "2021": return ctx.json(scorersLigue12021);
 					case "2022": return ctx.json(scorersLigue12022);
@@ -670,6 +887,11 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 				break;
 			case "SEA": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(scorersSerieA2015);
+					case "2016": return ctx.json(scorersSerieA2016);
+					case "2017": return ctx.json(scorersSerieA2017);
+					case "2018": return ctx.json(scorersSerieA2018);
+					case "2019": return ctx.json(scorersSerieA2019);
 					case "2020": return ctx.json(scorersSerieA2020);
 					case "2021": return ctx.json(scorersSerieA2021);
 					case "2022": return ctx.json(scorersSerieA2022);
@@ -678,6 +900,11 @@ APP.get('/competitions/:id/scorers/:year', (ctx) => {
 				break;
 			case "BUN": if (year >= MIN_YEAR && year <= MAX_YEAR) {
 				switch (year) {
+					case "2015": return ctx.json(scorersBundesliga2015);
+					case "2016": return ctx.json(scorersBundesliga2016);
+					case "2017": return ctx.json(scorersBundesliga2017);
+					case "2018": return ctx.json(scorersBundesliga2018);
+					case "2019": return ctx.json(scorersBundesliga2019);
 					case "2020": return ctx.json(scorersBundesliga2020);
 					case "2021": return ctx.json(scorersBundesliga2021);
 					case "2022": return ctx.json(scorersBundesliga2022);

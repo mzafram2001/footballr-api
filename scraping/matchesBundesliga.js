@@ -118,6 +118,16 @@ async function getAllMatches(url) {
                     break;
                 case "Greuther Furth": TMP.homeTeam.name = "Greuther Fürth";
                     break;
+                case "Hamburger SV": TMP.homeTeam.name = "Hamburger Sport-Verein";
+                    break;
+                case "Darmstadt": TMP.homeTeam.name = "Darmstadt Sport-Verein";
+                    break;
+                case "Hannover": TMP.homeTeam.name = "Hannover Sport-Verein";
+                    break;
+                case "Dusseldorf": TMP.homeTeam.name = "Fortuna Düsseldorf";
+                    break;
+                case "Nurnberg": TMP.homeTeam.name = "Nürnberg";
+                    break;
             }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
@@ -136,6 +146,16 @@ async function getAllMatches(url) {
                 case "FC Koln": TMP.awayTeam.name = "Köln";
                     break;
                 case "Greuther Furth": TMP.awayTeam.name = "Greuther Fürth";
+                    break;
+                case "Hamburger SV": TMP.awayTeam.name = "Hamburger Sport-Verein";
+                    break;
+                case "Darmstadt": TMP.awayTeam.name = "Darmstadt Sport-Verein";
+                    break;
+                case "Hannover": TMP.awayTeam.name = "Hannover Sport-Verein";
+                    break;
+                case "Dusseldorf": TMP.awayTeam.name = "Fortuna Düsseldorf";
+                    break;
+                case "Nurnberg": TMP.awayTeam.name = "Nürnberg";
                     break;
             }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);

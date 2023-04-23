@@ -122,6 +122,14 @@ async function getAllMatches(url) {
                     break;
                 case "Almeria": TMP.homeTeam.name = "Almería";
                     break;
+                case "Malaga": TMP.homeTeam.name = "Málaga";
+                    break;
+                case "Dep. La Coruna": TMP.homeTeam.name = "Deportivo La Coruña";
+                    break;
+                case "Gijon": TMP.homeTeam.name = "Gijón";
+                    break;
+                case "Leganes": TMP.homeTeam.name = "Leganés";
+                    break;
             }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
@@ -144,6 +152,14 @@ async function getAllMatches(url) {
                 case "Alaves": TMP.awayTeam.name = "Deportivo Alavés";
                     break;
                 case "Almeria": TMP.awayTeam.name = "Almería";
+                    break;
+                case "Malaga": TMP.awayTeam.name = "Málaga";
+                    break;
+                case "Dep. La Coruna": TMP.awayTeam.name = "Deportivo La Coruña";
+                    break;
+                case "Gijon": TMP.awayTeam.name = "Gijón";
+                    break;
+                case "Leganes": TMP.awayTeam.name = "Leganés";
                     break;
             }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);

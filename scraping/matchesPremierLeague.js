@@ -3,7 +3,7 @@ const FS = require('fs');
 const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
-const URLS = {   
+const URLS = {
     england_matches_2015: "https://www.flashscore.com/football/england/premier-league-2015-2016/results/",
     england_matches_2016: "https://www.flashscore.com/football/england/premier-league-2016-2017/results/",
     england_matches_2017: "https://www.flashscore.com/football/england/premier-league-2017-2018/results/",
@@ -132,6 +132,14 @@ async function getAllMatches(url) {
                     break;
                 case "Norwich": TMP.homeTeam.name = "Norwich City";
                     break;
+                case "Stoke": TMP.homeTeam.name = "Stoke City";
+                    break;
+                case "Hull": TMP.homeTeam.name = "Hull City";
+                    break;
+                case "Cardiff": TMP.homeTeam.name = "Cardiff City";
+                    break;
+                case "Swansea": TMP.homeTeam.name = "Swansea City";
+                    break;
             }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
@@ -164,6 +172,14 @@ async function getAllMatches(url) {
                 case "Sheffield Utd": TMP.awayTeam.name = "Sheffield United";
                     break;
                 case "Norwich": TMP.awayTeam.name = "Norwich City";
+                    break;
+                case "Stoke": TMP.awayTeam.name = "Stoke City";
+                    break;
+                case "Hull": TMP.awayTeam.name = "Hull City";
+                    break;
+                case "Cardiff": TMP.awayTeam.name = "Cardiff City";
+                    break;
+                case "Swansea": TMP.awayTeam.name = "Swansea City";
                     break;
             }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);

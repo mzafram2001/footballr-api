@@ -138,6 +138,16 @@ async function getAllMatches(url) {
                     break;
                 case "Nimes": TMP.homeTeam.name = "Olympique Nîmes";
                     break;
+                case "Caen": TMP.homeTeam.name = "Stade Malherbe Caen";
+                    break;
+                case "Bastia": TMP.homeTeam.name = "Sporting Bastia";
+                    break;
+                case "GFC Ajaccio": TMP.homeTeam.name = "Gazélec Ajaccio";
+                    break;
+                case "Nancy": TMP.homeTeam.name = "Nancy Lorraine";
+                    break;
+                case "Amiens": TMP.homeTeam.name = "Sporting Amiens";
+                    break;
             }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
@@ -176,6 +186,16 @@ async function getAllMatches(url) {
                 case "Bordeaux": TMP.awayTeam.name = "Girondins Bordeaux";
                     break;
                 case "Nimes": TMP.awayTeam.name = "Olympique Nîmes";
+                    break;
+                case "Caen": TMP.awayTeam.name = "Stade Malherbe Caen";
+                    break;
+                case "Bastia": TMP.awayTeam.name = "Sporting Bastia";
+                    break;
+                case "GFC Ajaccio": TMP.awayTeam.name = "Gazélec Ajaccio";
+                    break;
+                case "Nancy": TMP.awayTeam.name = "Nancy Lorraine";
+                    break;
+                case "Amiens": TMP.awayTeam.name = "Sporting Amiens";
                     break;
             }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);

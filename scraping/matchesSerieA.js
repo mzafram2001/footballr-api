@@ -138,6 +138,16 @@ async function getAllMatches(url) {
                     break;
                 case "Parma": TMP.homeTeam.name = "Calcio Parma";
                     break;
+                case "Chievo": TMP.homeTeam.name = "Calcio Chievo";
+                    break;
+                case "AC Carpi": TMP.homeTeam.name = "Calcio Carpi";
+                    break;
+                case "Frosinone": TMP.homeTeam.name = "Calcio Frosinone";
+                    break;
+                case "Pescara": TMP.homeTeam.name = "Delfino Pescara";
+                    break;
+                case "Brescia": TMP.homeTeam.name = "Calcio Brescia";
+                    break;
             }
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
             TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
@@ -176,6 +186,16 @@ async function getAllMatches(url) {
                 case "Benevento": TMP.awayTeam.name = "Calcio Benevento";
                     break;
                 case "Parma": TMP.awayTeam.name = "Calcio Parma";
+                    break;
+                case "Chievo": TMP.awayTeam.name = "Calcio Chievo";
+                    break;
+                case "AC Carpi": TMP.awayTeam.name = "Calcio Carpi";
+                    break;
+                case "Frosinone": TMP.awayTeam.name = "Calcio Frosinone";
+                    break;
+                case "Pescara": TMP.awayTeam.name = "Delfino Pescara";
+                    break;
+                case "Brescia": TMP.awayTeam.name = "Calcio Brescia";
                     break;
             }
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);

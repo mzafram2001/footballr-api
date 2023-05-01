@@ -155,6 +155,7 @@ import matchesBundesliga2015 from "../db/2015/matches/matchesBundesliga2015Flash
 
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
+import teams from "../db/teams.json";
 
 const APP = new Hono();
 
@@ -248,17 +249,16 @@ APP.get('/', (ctx) => {
 				}
 			]
 		},
-		/*
 		{
 			endpoint: '/teams',
 			description: 'List all available teams 🛡️.',
 			example: "https://zeus-api.olympus.workers.dev/teams",
-			status: "Not available 🔴.",
+			status: "Available 🟢.",
 			parameters: [
 
 			]
 		},
-		{
+		/*{
 			endpoint: '/players',
 			description: 'List all available players 🏃.',
 			example: "https://zeus-api.olympus.workers.dev/players",
@@ -305,6 +305,16 @@ APP.get('/areas', (ctx) => {
 APP.get('/areas/:id', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
 	const found = areas.areas.find((area) => area.id === id);
+	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
+});
+
+APP.get('/teams', (ctx) => {
+	return ctx.json(teams);
+});
+
+APP.get('/teams/:id', (ctx) => {
+	const id = ctx.req.param("id");
+	const found = teams.teams.find((team) => team.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 

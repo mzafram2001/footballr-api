@@ -4,7 +4,6 @@
             "id": "W8mj7MDD",
             "name": "Real Madrid",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W8mj7MDD.svg",
-            "stadium": "Santiago Bernabeu",
             "established": 1902,
             "area": {
                 "id": "ESP",
@@ -141,7 +140,6 @@
             "id": "SKbpVP5K",
             "name": "Barcelona",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg",
-            "stadium": "Camp Nou",
             "established": 1899,
             "area": {
                 "id": "ESP",
@@ -278,7 +276,6 @@
             "id": "jaarqpLQ",
             "name": "Atlético Madrid",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jaarqpLQ.svg",
-            "stadium": "Metropolitano",
             "established": 1903,
             "area": {
                 "id": "ESP",
@@ -410,6 +407,142 @@
                 }
             ],
             "elos": "81.8,84.5,84.7,85.5,84.1,83.8,85.3,83.9"
+        },
+        {
+            "id": "jNvak2f3",
+            "name": "Real Sociedad",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jNvak2f3.svg",
+            "established": 1909,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-3-3",
+            "lineup": [
+                {
+                    "id": "QwqgNkTP",
+                    "name": "Alexander Sorloth",
+                    "area": {
+                        "id": "NOR",
+                        "name": "Norway",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8rP6JO0H.svg"
+                    },
+                    "position": "ST",
+                    "elo": 76
+                },
+                {
+                    "id": "dQ1P695O",
+                    "name": "Mikel Oyarzabal",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LW",
+                    "elo": 84
+                },
+                {
+                    "id": "fqdLdpc3",
+                    "name": "Takefusa Kubo",
+                    "area": {
+                        "idArea": "JPN",
+                        "nameArea": "Japan",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ULXPdOUj.svg"
+                    },
+                    "position": "RW",
+                    "elo": 74
+                },
+                {
+                    "id": "fNI6Gsdr",
+                    "name": "Martin Zubimendi",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CDM",
+                    "elo": 79
+                },
+                {
+                    "id": "QFt86bm1",
+                    "name": "Mikel Merino",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 83
+                },
+                {
+                    "id": "AstVKVP2",
+                    "name": "David Silva",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 83
+                },
+                {
+                    "id": "8GVQFgH4",
+                    "name": "Robin Le Normand",
+                    "area": {
+                        "idArea": "FRA",
+                        "nameArea": "France",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg"
+                    },
+                    "position": "CB",
+                    "elo": 81
+                },
+                {
+                    "id": "phTjGNq0",
+                    "name": "Igor Zubeldia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 78
+                },
+                {
+                    "id": "KEaIS3qg",
+                    "name": "Andoni Gorosabel",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RB",
+                    "elo": 77
+                },
+                {
+                    "id": "C8QkouJU",
+                    "name": "Aihen Munoz",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LB",
+                    "elo": 75
+                },
+                {
+                    "id": "UmDjbtRC",
+                    "name": "Alex Remiro",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "GK",
+                    "elo": 82
+                }
+            ],
+            "elos": "78.7,78.9,80.3,78.5,79.1,80.7,81.5,80.3"
         }
     ]
 }

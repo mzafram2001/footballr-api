@@ -951,6 +951,414 @@
                 }
             ],
             "elos": "80.1,81.1,81.0,80.0,80.5,80.3,80.7,80.5"
+        },
+        {
+            "id": "nNNpcUSL",
+            "name": "Girona",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/nNNpcUSL.svg",
+            "established": 1930,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "3-1-4-1",
+            "lineup": [
+                {
+                    "id": "ET4rsqIP",
+                    "name": "Taty Castellanos",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "ST",
+                    "elo": 77
+                },
+                {
+                    "id": "U5yv9YBB",
+                    "name": "Cristhian Stuani",
+                    "area": {
+                        "idArea": "URU",
+                        "nameArea": "Uruguay",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/xMk44orG.svg"
+                    },
+                    "position": "ST",
+                    "elo": 77
+                },
+                {
+                    "id": "OpN8BXQ8",
+                    "name": "Toni Villa",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LM",
+                    "elo": 75
+                },
+                {
+                    "id": "8l99epoQ",
+                    "name": "Viktor Tsygankov",
+                    "area": {
+                        "idArea": "UKR",
+                        "nameArea": "Ukraine",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j1JtDMwo.svg"
+                    },
+                    "position": "CM",
+                    "elo": 80
+                },
+                {
+                    "id": "QD7noPXB",
+                    "name": "Aleix Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 73
+                },
+                {
+                    "id": "250rn438",
+                    "name": "David Lopez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RM",
+                    "elo": 77
+                },
+                {
+                    "id": "WCC5IrWg",
+                    "name": "Oriol Romeu",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CDM",
+                    "elo": 78
+                },
+                {
+                    "id": "GbY2OPWp",
+                    "name": "Juanpe",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 71
+                },
+                {
+                    "id": "zuE3Qoc9",
+                    "name": "Alexander Callens",
+                    "area": {
+                        "idArea": "CAN",
+                        "nameArea": "Canada",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/x4toKORL.svg"
+                    },
+                    "position": "CB",
+                    "elo": 73
+                },
+                {
+                    "id": "4j2lRKqG",
+                    "name": "Bernardo",
+                    "area": {
+                        "idArea": "COL",
+                        "nameArea": "Colombia",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/G02s4PCS.svg"
+                    },
+                    "position": "CB",
+                    "elo": 74
+                },
+                {
+                    "id": "jB3F3wGi",
+                    "name": "Paulo Gazzaniga",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "GK",
+                    "elo": 74
+                }
+            ],
+            "elos": "69.8,71.7,75.4,77.8,74.6,72.0,72.5,75.0"
+        },
+        {
+            "id": "ETdxjU8a",
+            "name": "Osasuna",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/ETdxjU8a.svg",
+            "established": 1920,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-4-2",
+            "lineup": [
+                {
+                    "id": "GfoivbEm",
+                    "name": "Kike Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "ST",
+                    "elo": 75
+                },
+                {
+                    "id": "IeVXGQOi",
+                    "name": "Ante Budimir",
+                    "area": {
+                        "idArea": "CRO",
+                        "nameArea": "Croatia",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/K8aznggo.svg"
+                    },
+                    "position": "ST",
+                    "elo": 76
+                },
+                {
+                    "id": "UchGKR53",
+                    "name": "Chimy Avila",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "LM",
+                    "elo": 79
+                },
+                {
+                    "id": "8b86g1el",
+                    "name": "Moi Gomez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 76
+                },
+                {
+                    "id": "Gpc9AB61",
+                    "name": "Ruben Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 79
+                },
+                {
+                    "id": "KCtH4oIT",
+                    "name": "Jon Moncayola",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RM",
+                    "elo": 75
+                },
+                {
+                    "id": "dln9VIHe",
+                    "name": "Aridane Hernandez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LB",
+                    "elo": 76
+                },
+                {
+                    "id": "h6OUyZ6b",
+                    "name": "David Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 79
+                },
+                {
+                    "id": "tCpvIBRC",
+                    "name": "Nacho Vidal",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 75
+                },
+                {
+                    "id": "hvSbhBpg",
+                    "name": "Ruben Pena",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RB",
+                    "elo": 78
+                },
+                {
+                    "id": "YDyOrTQO",
+                    "name": "Sergio Herrera",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "GK",
+                    "elo": 78
+                }
+            ],
+            "elos": "68.8,74.2,74.0,71.7,74.2,76.9,77.7,76.9"
+        },
+        {
+            "id": "8bcjFy6O",
+            "name": "Rayo Vallecano",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8bcjFy6O.svg",
+            "established": 1924,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-2-1-2",
+            "lineup": [
+                {
+                    "id": "2oMimkAU",
+                    "name": "Radamel Falcao",
+                    "area": {
+                        "idArea": "COL",
+                        "nameArea": "Colombia",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/G02s4PCS.svg"
+                    },
+                    "position": "ST",
+                    "elo": 76
+                },
+                {
+                    "id": "42E71F4r",
+                    "name": "Oscar Trejo",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "ST",
+                    "elo": 79
+                },
+                {
+                    "id": "OMUGUEla",
+                    "name": "Alvaro Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CAM",
+                    "elo": 76
+                },
+                {
+                    "id": "x2AuZhpr",
+                    "name": "Isi Palazon",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LM",
+                    "elo": 77
+                },
+                {
+                    "id": "dYFtDut6",
+                    "name": "Unai Lopez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RM",
+                    "elo": 75
+                },
+                {
+                    "id": "KK4TPIBj",
+                    "name": "Santi Comesana",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CDM",
+                    "elo": 75
+                },
+                {
+                    "id": "hGPnN7fG",
+                    "name": "Pep Chavarria",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LB",
+                    "elo": 71
+                },
+                {
+                    "id": "tURBbW9S",
+                    "name": "Fran Garcia",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 75
+                },
+                {
+                    "id": "vqO0hBvp",
+                    "name": "Alejandro Catena",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 76
+                },
+                {
+                    "id": "fNu1l3xc",
+                    "name": "Florian Lejeune",
+                    "area": {
+                        "idArea": "FRA",
+                        "nameArea": "France",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg"
+                    },
+                    "position": "RB",
+                    "elo": 77
+                },
+                {
+                    "id": "IXppY2Xc",
+                    "name": "Diego Lopez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "GK",
+                    "elo": 79
+                }
+            ],
+            "elos": "76.5,74.6,74.0,75.2,73.5,71.2,75.0,76.1"
         }
     ]
 }

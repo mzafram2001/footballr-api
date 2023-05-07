@@ -1,12 +1,3 @@
-        // MALLORCA
-        // CELTA DE VIGO
-        // ALMERIA
-        // CADIZ
-        // VALLADOLID
-        // VALENCIA
-        // GETAFE
-        // ESPANYOL
-        // ELCHE
         // GRANADA
         // LEVANTE
         // ALAVES

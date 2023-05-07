@@ -1495,6 +1495,240 @@
                 }
             ],
             "elos": "80.5,81.5,81.0,80.5,81.0,81.7,83.0,82.3"
+        },
+        {
+            "id": "4jDQxrbf",
+            "name": "Mallorca",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/4jDQxrbf.svg",
+            "established": 1916,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-3-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "69.7,70.9,70.4,68.0,72.6,73.3,75.3,75.4"
+        },
+        {
+            "id": "8pvUZFhf",
+            "name": "Celta Vigo",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8pvUZFhf.svg",
+            "established": 1923,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-3-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "77.9,79.5,78.9,78.5,78.1,77.2,77.4,79.0"
+        },
+        {
+            "id": "nF2Vy2D0",
+            "name": "Almería",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/nF2Vy2D0.svg",
+            "established": 1989,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-2-1-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "72.5,72.0,71.5,68.9,69.4,71.9,73.7,74.5"
+        },
+        {
+            "id": "hdWjLJUJ",
+            "name": "Cádiz",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/hdWjLJUJ.svg",
+            "established": 1910,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-2-1-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "68.3,69.7,70.9,70.6,72.2,73.3,75.2,76.5"
+        },
+        {
+            "id": "zkpajjvm",
+            "name": "Valladolid",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/zkpajjvm.svg",
+            "established": 1928,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-4-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "73.0,72.3,72.6,73.7,76.5,76.8,75.6,76.0"
+        },
+        {
+            "id": "CQeaytrD",
+            "name": "Valencia",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/CQeaytrD.svg",
+            "established": 1919,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-4-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "80.8,80.5,79.5,82.5,82.1,79.7,79.5,77.5"
+        },
+        {
+            "id": "dboeiWOt",
+            "name": "Getafe",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/dboeiWOt.svg",
+            "established": 1983,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-3-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "75.8,73.8,75.0,77.5,79.5,79.1,77.8,78.5"
+        },
+        {
+            "id": "QFfPdh1J",
+            "name": "Espanyol",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/QFfPdh1J.svg",
+            "established": 1900,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-2-1-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "75.6,78.5,79.1,77.9,78.7,76.6,77.6,76.9"
+        },
+        {
+            "id": "4jl02tPF",
+            "name": "Elche",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/4jl02tPF.svg",
+            "established": 1923,
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "type": "4-1-2-1-2",
+            "lineup": [
+                {
+                    "id": "XXXXX",
+                    "name": "XXXXX",
+                    "area": {
+                        "idArea": "XXXXX",
+                        "nameArea": "XXXXX",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                    },
+                    "position": "XXXXX",
+                    "elo": 99
+                }
+            ],
+            "elos": "68.5,70.4,69.9,68.5,70.1,71.5,75.7,75.2"
         }
     ]
 }

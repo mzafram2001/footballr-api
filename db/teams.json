@@ -1509,15 +1509,125 @@
             "type": "4-1-3-2",
             "lineup": [
                 {
-                    "id": "XXXXX",
-                    "name": "XXXXX",
+                    "id": "MZYiJsf5",
+                    "name": "Angel Rodriguez",
                     "area": {
-                        "idArea": "XXXXX",
-                        "nameArea": "XXXXX",
-                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
                     },
-                    "position": "XXXXX",
-                    "elo": 99
+                    "position": "ST",
+                    "elo": 74
+                },
+                {
+                    "id": "CjwNDgqi",
+                    "name": "Vedat Muriqi",
+                    "area": {
+                        "idArea": "KOS",
+                        "nameArea": "Kosovo",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/v1DTPQwI.svg"
+                    },
+                    "position": "ST",
+                    "elo": 75
+                },
+                {
+                    "id": "n7jmYVFc",
+                    "name": "Daniel Rodriguez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LM",
+                    "elo": 76
+                },
+                {
+                    "id": "zsimAkCm",
+                    "name": "Rodrigo Battaglia",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "CM",
+                    "elo": 74
+                },
+                {
+                    "id": "AqAnv17H",
+                    "name": "Inigo Ruiz de Galarreta",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RM",
+                    "elo": 74
+                },
+                {
+                    "id": "8YnlOgwC",
+                    "name": "Iddrisu Baba Mohammed",
+                    "area": {
+                        "idArea": "GHA",
+                        "nameArea": "Ghana",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg"
+                    },
+                    "position": "CDM",
+                    "elo": 75
+                },
+                {
+                    "id": "nsEvRNJH",
+                    "name": "Jaume Costa",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LB",
+                    "elo": 76
+                },
+                {
+                    "id": "6wK8zVt1",
+                    "name": "Ludwig Augustinsson",
+                    "area": {
+                        "idArea": "SWE",
+                        "nameArea": "Sweden",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/OQyqbHWB.svg"
+                    },
+                    "position": "CB",
+                    "elo": 77
+                },
+                {
+                    "id": "pbb8dhGG",
+                    "name": "Martin Valjent",
+                    "area": {
+                        "idArea": "SLK",
+                        "nameArea": "Slovakia",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/KpLb2q1U.svg"
+                    },
+                    "position": "CB",
+                    "elo": 75
+                },
+                {
+                    "id": "KvHXl88g",
+                    "name": "Pablo Maffeo",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RB",
+                    "elo": 78
+                },
+                {
+                    "id": "tSMzkEdC",
+                    "name": "Predrag Rajkovic",
+                    "area": {
+                        "idArea": "SER",
+                        "nameArea": "Serbia",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8Kl6iq0i.svg"
+                    },
+                    "position": "GK",
+                    "elo": 78
                 }
             ],
             "elos": "69.7,70.9,70.4,68.0,72.6,73.3,75.3,75.4"
@@ -1535,15 +1645,125 @@
             "type": "4-1-3-2",
             "lineup": [
                 {
-                    "id": "XXXXX",
-                    "name": "XXXXX",
+                    "id": "rVBGggAd",
+                    "name": "Iago Aspas",
                     "area": {
-                        "idArea": "XXXXX",
-                        "nameArea": "XXXXX",
-                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
                     },
-                    "position": "XXXXX",
-                    "elo": 99
+                    "position": "ST",
+                    "elo": 85
+                },
+                {
+                    "id": "v1XgteJr",
+                    "name": "Franco Cervi",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "ST",
+                    "elo": 78
+                },
+                {
+                    "id": "0WJHh4Qs",
+                    "name": "Carles Perez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LM",
+                    "elo": 75
+                },
+                {
+                    "id": "WWNny3e7",
+                    "name": "Oscar Rodriguez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CM",
+                    "elo": 76
+                },
+                {
+                    "id": "6qPig05P",
+                    "name": "Renato Tapia",
+                    "area": {
+                        "idArea": "PER",
+                        "nameArea": "Peru",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Uend67D3.svg"
+                    },
+                    "position": "RM",
+                    "elo": 79
+                },
+                {
+                    "id": "zykz5SJb",
+                    "name": "Fran Beltran",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CDM",
+                    "elo": 79
+                },
+                {
+                    "id": "t8GDN709",
+                    "name": "Javi Galan",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "LB",
+                    "elo": 80
+                },
+                {
+                    "id": "AVpwhNL9",
+                    "name": "Joseph Aidoo",
+                    "area": {
+                        "idArea": "GHA",
+                        "nameArea": "Ghana",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg"
+                    },
+                    "position": "CB",
+                    "elo": 78
+                },
+                {
+                    "id": "r3iKl0i3",
+                    "name": "Unai Nunez",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "CB",
+                    "elo": 79
+                },
+                {
+                    "id": "EkcGN4fs",
+                    "name": "Hugo Mallo",
+                    "area": {
+                        "idArea": "ESP",
+                        "nameArea": "Spain",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                    },
+                    "position": "RB",
+                    "elo": 77
+                },
+                {
+                    "id": "lY2ZVTwp",
+                    "name": "Agustin Marchesin",
+                    "area": {
+                        "idArea": "ARG",
+                        "nameArea": "Argentina",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/f9OppQjp.svg"
+                    },
+                    "position": "GK",
+                    "elo": 79
                 }
             ],
             "elos": "77.9,79.5,78.9,78.5,78.1,77.2,77.4,79.0"

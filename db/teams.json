@@ -5,6 +5,7 @@
             "name": "Real Madrid",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W8mj7MDD.svg",
             "established": 1902,
+            "shorthand": "RMA",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -141,6 +142,7 @@
             "name": "Barcelona",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg",
             "established": 1899,
+            "shorthand": "BAR",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -277,6 +279,7 @@
             "name": "Atlético Madrid",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jaarqpLQ.svg",
             "established": 1903,
+            "shorthand": "ATM",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -413,6 +416,7 @@
             "name": "Real Sociedad",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/jNvak2f3.svg",
             "established": 1909,
+            "shorthand": "RSO",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -549,6 +553,7 @@
             "name": "Villarreal",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/lUatW5jE.svg",
             "established": 1923,
+            "shorthand": "VIL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -685,6 +690,7 @@
             "name": "Real Betis",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/vJbTeCGP.svg",
             "established": 1907,
+            "shorthand": "BET",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -821,6 +827,7 @@
             "name": "Athletic Bilbao",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IP5zl0cJ.svg",
             "established": 1898,
+            "shorthand": "BIL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -957,6 +964,7 @@
             "name": "Girona",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/nNNpcUSL.svg",
             "established": 1930,
+            "shorthand": "GIR",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1093,6 +1101,7 @@
             "name": "Osasuna",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/ETdxjU8a.svg",
             "established": 1920,
+            "shorthand": "OSA",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1229,6 +1238,7 @@
             "name": "Rayo Vallecano",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8bcjFy6O.svg",
             "established": 1924,
+            "shorthand": "RAY",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1365,6 +1375,7 @@
             "name": "Sevilla",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/h8oAv4Ts.svg",
             "established": 1890,
+            "shorthand": "SEV",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1501,6 +1512,7 @@
             "name": "Mallorca",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/4jDQxrbf.svg",
             "established": 1916,
+            "shorthand": "MAL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1637,6 +1649,7 @@
             "name": "Celta Vigo",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/8pvUZFhf.svg",
             "established": 1923,
+            "shorthand": "CEL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1773,6 +1786,7 @@
             "name": "Almería",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/nF2Vy2D0.svg",
             "established": 1989,
+            "shorthand": "ALM",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1799,6 +1813,7 @@
             "name": "Cádiz",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/hdWjLJUJ.svg",
             "established": 1910,
+            "shorthand": "CAD",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1825,6 +1840,7 @@
             "name": "Valladolid",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/zkpajjvm.svg",
             "established": 1928,
+            "shorthand": "VLL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1851,6 +1867,7 @@
             "name": "Valencia",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/CQeaytrD.svg",
             "established": 1919,
+            "shorthand": "VAL",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1877,6 +1894,7 @@
             "name": "Getafe",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/dboeiWOt.svg",
             "established": 1983,
+            "shorthand": "GET",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1903,6 +1921,7 @@
             "name": "Espanyol",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/QFfPdh1J.svg",
             "established": 1900,
+            "shorthand": "ESP",
             "area": {
                 "id": "ESP",
                 "name": "Spain",
@@ -1929,6 +1948,7 @@
             "name": "Elche",
             "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/4jl02tPF.svg",
             "established": 1923,
+            "shorthand": "ELC",
             "area": {
                 "id": "ESP",
                 "name": "Spain",

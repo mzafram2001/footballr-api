@@ -1781,15 +1781,15 @@
             "type": "4-1-2-1-2",
             "lineup": [
                 {
-                    "id": "XXXXX",
-                    "name": "XXXXX",
+                    "id": "dILCwx5p",
+                    "name": "Leo Baptistao",
                     "area": {
-                        "idArea": "XXXXX",
-                        "nameArea": "XXXXX",
-                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/XXXXX.svg"
+                        "idArea": "BRA",
+                        "nameArea": "Brazil",
+                        "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/I9l9aqLq.svg"
                     },
-                    "position": "XXXXX",
-                    "elo": 99
+                    "position": "ST",
+                    "elo": 76
                 }
             ],
             "elos": "72.5,72.0,71.5,68.9,69.4,71.9,73.7,74.5"

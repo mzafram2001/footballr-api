@@ -320,8 +320,8 @@ async function getStandings(url) {
                 TMP.points = parseInt(element.querySelector('.table__cell--points').innerText);
             }
             // TEMPORADAS ANTERIORES (FOR (VAR I = 1; I < 6; I++) { IF(I == 1) } //////////// TEMPORADA ACTUAL (FOR (VAR I = 2; I < 7; I++) { IF(I == 2) }
-            for (var i = 2; i < 7; i++) {
-                if (i == 2) {
+            for (var i = 1; i < 6; i++) {
+                if (i == 1) {
                     TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText;
                 } else {
                     TMP.form = TMP.form.concat(",", element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + i + ') > div').innerText);

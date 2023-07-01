@@ -11,7 +11,8 @@ const URLS = {
     england_2019: "https://www.flashscore.com/football/england/premier-league-2019-2020/standings/",
     england_2020: "https://www.flashscore.com/football/england/premier-league-2020-2021/standings/",
     england_2021: "https://www.flashscore.com/football/england/premier-league-2021-2022/standings/",
-    england_2022: "https://www.flashscore.com/football/england/premier-league/standings/",
+    england_2022: "https://www.flashscore.com/football/england/premier-league-2022-2023/standings/",
+    england_2023: "https://www.flashscore.com/football/england/premier-league/standings/",
 
     spain_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/standings",
     spain_2016: "https://www.flashscore.com/football/spain/laliga-2016-2017/standings",
@@ -20,7 +21,8 @@ const URLS = {
     spain_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/standings",
     spain_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/standings",
     spain_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/standings",
-    spain_2022: "https://www.flashscore.com/football/spain/laliga/standings/",
+    spain_2022: "https://www.flashscore.com/football/spain/laliga-2022-2023/standings",
+    spain_2023: "https://www.flashscore.com/football/spain/laliga/standings/",
 
     france_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/standings",
     france_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/standings",
@@ -29,7 +31,8 @@ const URLS = {
     france_2019: "https://www.flashscore.com/football/france/ligue-1-2019-2020/standings",
     france_2020: "https://www.flashscore.com/football/france/ligue-1-2020-2021/standings",
     france_2021: "https://www.flashscore.com/football/france/ligue-1-2021-2022/standings",
-    france_2022: "https://www.flashscore.com/football/france/ligue-1/standings/",
+    france_2022: "https://www.flashscore.com/football/france/ligue-1-2022-2023/standings",
+    france_2023: "https://www.flashscore.com/football/france/ligue-1/standings/",
 
     italy_2015: "https://www.flashscore.com/football/italy/serie-a-2015-2016/standings",
     italy_2016: "https://www.flashscore.com/football/italy/serie-a-2016-2017/standings",
@@ -38,7 +41,8 @@ const URLS = {
     italy_2019: "https://www.flashscore.com/football/italy/serie-a-2019-2020/standings",
     italy_2020: "https://www.flashscore.com/football/italy/serie-a-2020-2021/standings",
     italy_2021: "https://www.flashscore.com/football/italy/serie-a-2021-2022/standings",
-    italy_2022: "https://www.flashscore.com/football/italy/serie-a/standings/",
+    italy_2022: "https://www.flashscore.com/football/italy/serie-a-2022-2023/standings",
+    italy_2023: "https://www.flashscore.com/football/italy/serie-a/standings/",
 
     germany_2015: "https://www.flashscore.com/football/germany/bundesliga-2015-2016/standings",
     germany_2016: "https://www.flashscore.com/football/germany/bundesliga-2016-2017/standings",
@@ -47,7 +51,8 @@ const URLS = {
     germany_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/standings",
     germany_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/standings",
     germany_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/standings",
-    germany_2022: "https://www.flashscore.com/football/germany/bundesliga/standings/",
+    germany_2022: "https://www.flashscore.com/football/germany/bundesliga-2022-2023/standings",
+    germany_2023: "https://www.flashscore.com/football/germany/bundesliga/standings/",
 };
 
 // // // // // // // // // // CODE STANDINGS // // // // // // // // // //

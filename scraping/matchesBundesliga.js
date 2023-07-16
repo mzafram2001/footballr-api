@@ -4,14 +4,7 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    germany_matches_2015: "https://www.flashscore.com/football/germany/bundesliga-2015-2016/results/",
-    germany_matches_2016: "https://www.flashscore.com/football/germany/bundesliga-2016-2017/results/",
-    germany_matches_2017: "https://www.flashscore.com/football/germany/bundesliga-2017-2018/results/",
-    germany_matches_2018: "https://www.flashscore.com/football/germany/bundesliga-2018-2019/results/",
-    germany_matches_2019: "https://www.flashscore.com/football/germany/bundesliga-2019-2020/results/",
-    germany_matches_2020: "https://www.flashscore.com/football/germany/bundesliga-2020-2021/results/",
-    germany_matches_2021: "https://www.flashscore.com/football/germany/bundesliga-2021-2022/results/",
-    germany_matches_2022: "https://www.flashscore.com/football/germany/bundesliga/results/",
+    germany_matches_2023: "https://www.flashscore.com/football/germany/bundesliga/results/",
 }
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
@@ -275,4 +268,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.germany_matches_2022);
+getAllMatches(URLS.germany_matches_2023);

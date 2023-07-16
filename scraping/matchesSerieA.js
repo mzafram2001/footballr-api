@@ -4,14 +4,7 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    italy_matches_2015: "https://www.flashscore.com/football/italy/serie-a-2015-2016/results/",
-    italy_matches_2016: "https://www.flashscore.com/football/italy/serie-a-2016-2017/results/",
-    italy_matches_2017: "https://www.flashscore.com/football/italy/serie-a-2017-2018/results/",
-    italy_matches_2018: "https://www.flashscore.com/football/italy/serie-a-2018-2019/results/",
-    italy_matches_2019: "https://www.flashscore.com/football/italy/serie-a-2019-2020/results/",
-    italy_matches_2020: "https://www.flashscore.com/football/italy/serie-a-2020-2021/results/",
-    italy_matches_2021: "https://www.flashscore.com/football/italy/serie-a-2021-2022/results/",
-    italy_matches_2022: "https://www.flashscore.com/football/italy/serie-a/results/",
+    italy_matches_2023: "https://www.flashscore.com/football/italy/serie-a/results/",
 }
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
@@ -315,4 +308,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.italy_matches_2022);
+getAllMatches(URLS.italy_matches_2023);

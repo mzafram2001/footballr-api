@@ -4,14 +4,7 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    spain_matches_2015: "https://www.flashscore.com/football/spain/laliga-2015-2016/results/",
-    spain_matches_2016: "https://www.flashscore.com/football/spain/laliga-2016-2017/results/",
-    spain_matches_2017: "https://www.flashscore.com/football/spain/laliga-2017-2018/results/",
-    spain_matches_2018: "https://www.flashscore.com/football/spain/laliga-2018-2019/results/",
-    spain_matches_2019: "https://www.flashscore.com/football/spain/laliga-2019-2020/results/",
-    spain_matches_2020: "https://www.flashscore.com/football/spain/laliga-2020-2021/results/",
-    spain_matches_2021: "https://www.flashscore.com/football/spain/laliga-2021-2022/results/",
-    spain_matches_2022: "https://www.flashscore.com/football/spain/laliga/results/",
+    spain_matches_2023: "https://www.flashscore.com/football/spain/laliga/results/",
 }
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
@@ -279,4 +272,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.spain_matches_2022);
+getAllMatches(URLS.spain_matches_2023);

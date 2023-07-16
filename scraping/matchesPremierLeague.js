@@ -4,14 +4,7 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england_matches_2015: "https://www.flashscore.com/football/england/premier-league-2015-2016/results/",
-    england_matches_2016: "https://www.flashscore.com/football/england/premier-league-2016-2017/results/",
-    england_matches_2017: "https://www.flashscore.com/football/england/premier-league-2017-2018/results/",
-    england_matches_2018: "https://www.flashscore.com/football/england/premier-league-2018-2019/results/",
-    england_matches_2019: "https://www.flashscore.com/football/england/premier-league-2019-2020/results/",
-    england_matches_2020: "https://www.flashscore.com/football/england/premier-league-2020-2021/results/",
-    england_matches_2021: "https://www.flashscore.com/football/england/premier-league-2021-2022/results/",
-    england_matches_2022: "https://www.flashscore.com/football/england/premier-league/results/",
+    england_matches_2023: "https://www.flashscore.com/football/england/premier-league/results/",
 }
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
@@ -299,4 +292,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.england_matches_2022);
+getAllMatches(URLS.england_matches_2023);

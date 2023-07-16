@@ -4,14 +4,7 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    france_matches_2015: "https://www.flashscore.com/football/france/ligue-1-2015-2016/results/",
-    france_matches_2016: "https://www.flashscore.com/football/france/ligue-1-2016-2017/results/",
-    france_matches_2017: "https://www.flashscore.com/football/france/ligue-1-2017-2018/results/",
-    france_matches_2018: "https://www.flashscore.com/football/france/ligue-1-2018-2019/results/",
-    france_matches_2019: "https://www.flashscore.com/football/france/ligue-1-2019-2020/results/",
-    france_matches_2020: "https://www.flashscore.com/football/france/ligue-1-2020-2021/results/",
-    france_matches_2021: "https://www.flashscore.com/football/france/ligue-1-2021-2022/results/",
-    france_matches_2022: "https://www.flashscore.com/football/france/ligue-1/results/",
+    france_matches_2023: "https://www.flashscore.com/football/france/ligue-1/results/",
 }
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
@@ -315,4 +308,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.france_matches_2022);
+getAllMatches(URLS.france_matches_2023);

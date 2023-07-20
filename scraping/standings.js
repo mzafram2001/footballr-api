@@ -261,13 +261,6 @@ async function getStandings2023(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // DELAY STANDINGS // // // // // // // // // //
-async function delay(time) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, time)
-    });
-}
-
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getStandings2023(URLS.england_2023);
 getStandings2023(URLS.spain_2023);

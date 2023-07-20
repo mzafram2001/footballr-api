@@ -23,8 +23,6 @@ async function getStandings2023(url) {
         switch (JSON.name) {
             case "LaLiga": JSON.area = "ESP";
                 break;
-            case "Primera Division": JSON.area = "ESP";
-                break;
             case "Bundesliga": JSON.area = "GER";
                 break;
             case "Serie A": JSON.area = "ITA";
@@ -243,8 +241,6 @@ async function getStandings2023(url) {
 
     switch (RESULT.name) {
         case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
             break;
         case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsBundesliga" + RESULT.yearStart + "Flashcore.json");
             break;

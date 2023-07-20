@@ -2,11 +2,11 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors'
 
 // 2022
-import standingsPremierLeague2022 from "../db/2022/standings/standingsPremierLeague2022Flashcore.json";
-import standingsLaLiga2022 from "../db/2022/standings/standingsLaLiga2022Flashcore.json";
-import standingsLigue12022 from "../db/2022/standings/standingsLigue12022Flashcore.json";
-import standingsSerieA2022 from "../db/2022/standings/standingsSerieA2022Flashcore.json";
-import standingsBundesliga2022 from "../db/2022/standings/standingsBundesliga2022Flashcore.json";
+import standingsPremierLeague2023 from "../db/2023/standings/standingsPremierLeague2023Flashcore.json";
+import standingsLaLiga2023 from "../db/2023/standings/standingsLaLiga2023Flashcore.json";
+import standingsLigue12023 from "../db/2023/standings/standingsLigue12023Flashcore.json";
+import standingsSerieA2023 from "../db/2023/standings/standingsSerieA2023Flashcore.json";
+import standingsBundesliga2023 from "../db/2023/standings/standingsBundesliga2023Flashcore.json";
 
 import scorersPremierLeague2022 from "../db/2022/scorers/scorersPremierLeague2022Flashcore.json";
 import scorersLaLiga2022 from "../db/2022/scorers/scorersLaLiga2022Flashcore.json";
@@ -148,11 +148,11 @@ APP.get('/competitions/:id/standings', (ctx) => {
 	const found = competitions.competitions.find((competition) => competition.id === id);
 	if (found) {
 		switch (id) {
-			case "PRL": return ctx.json(standingsPremierLeague2022);
-			case "LAL": return ctx.json(standingsLaLiga2022);
-			case "LI1": return ctx.json(standingsLigue12022);
-			case "SEA": return ctx.json(standingsSerieA2022);
-			case "BUN": return ctx.json(standingsBundesliga2022);
+			case "PRL": return ctx.json(standingsPremierLeague2023);
+			case "LAL": return ctx.json(standingsLaLiga2023);
+			case "LI1": return ctx.json(standingsLigue12023);
+			case "SEA": return ctx.json(standingsSerieA2023);
+			case "BUN": return ctx.json(standingsBundesliga2023);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
 	} else {

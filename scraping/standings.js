@@ -4,13 +4,14 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england_2023: "https://www.flashscore.com/football/england/premier-league/standings/",
-    spain_2023: "https://www.flashscore.com/football/spain/laliga/standings/",
-    france_2023: "https://www.flashscore.com/football/france/ligue-1/standings/",
-    italy_2023: "https://www.flashscore.com/football/italy/serie-a/standings/",
-    germany_2023: "https://www.flashscore.com/football/germany/bundesliga/standings/",
+    england_standings_2023: "https://www.flashscore.com/football/england/premier-league/standings/",
+    spain_standings_2023: "https://www.flashscore.com/football/spain/laliga/standings/",
+    france_standings_2023: "https://www.flashscore.com/football/france/ligue-1/standings/",
+    italy_standings_2023: "https://www.flashscore.com/football/italy/serie-a/standings/",
+    germany_standings_2023: "https://www.flashscore.com/football/germany/bundesliga/standings/",
 };
 
+// // // // // // // // // // CODE STANDINGS // // // // // // // // // //
 async function getStandings2023(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -262,8 +263,8 @@ async function getStandings2023(url) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings2023(URLS.england_2023);
-getStandings2023(URLS.spain_2023);
-getStandings2023(URLS.france_2023);
-getStandings2023(URLS.italy_2023);
-getStandings2023(URLS.germany_2023);
+getStandings2023(URLS.england_standings_2023);
+getStandings2023(URLS.spain_standings_2023);
+getStandings2023(URLS.france_standings_2023);
+getStandings2023(URLS.italy_standings_2023);
+getStandings2023(URLS.germany_standings_2023);

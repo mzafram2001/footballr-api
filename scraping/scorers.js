@@ -4,7 +4,6 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    
     england_scorers_2023: "https://www.flashscore.com/football/england/premier-league/standings/#/nunhS7Vn/top_scorers",
     spain_scorers_2023: "https://www.flashscore.com/football/spain/laliga/standings/#/COQ6iu30/top_scorers",
     france_scorers_2023: "https://www.flashscore.com/football/france/ligue-1/standings/#/zmkW5aIi/top_scorers",
@@ -19,16 +18,11 @@ async function getScorers(url) {
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
-
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
         JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
         switch (JSON.name) {
             case "LaLiga": JSON.area = "ESP";
-                break;
-            case "Primera Division":
-                JSON.name = "LaLiga";
-                JSON.area = "ESP";
                 break;
             case "Bundesliga": JSON.area = "GER";
                 break;
@@ -497,13 +491,6 @@ async function getScorers(url) {
         console.log('JSON file has been saved.');
     });
     await BROWSER.close();
-}
-
-// // // // // // // // // // DELAY STANDINGS // // // // // // // // // //
-async function delay(time) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, time)
-    });
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //

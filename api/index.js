@@ -8,17 +8,17 @@ import standingsLigue12023 from "../db/2023/standings/standingsLigue12023Flashco
 import standingsSerieA2023 from "../db/2023/standings/standingsSerieA2023Flashcore.json";
 import standingsBundesliga2023 from "../db/2023/standings/standingsBundesliga2023Flashcore.json";
 
-import scorersPremierLeague2022 from "../db/2022/scorers/scorersPremierLeague2022Flashcore.json";
-import scorersLaLiga2022 from "../db/2022/scorers/scorersLaLiga2022Flashcore.json";
-import scorersLigue12022 from "../db/2022/scorers/scorersLigue12022Flashcore.json";
-import scorersSerieA2022 from "../db/2022/scorers/scorersSerieA2022Flashcore.json";
-import scorersBundesliga2022 from "../db/2022/scorers/scorersBundesliga2022Flashcore.json";
+import scorersPremierLeague2023 from "../db/2023/scorers/scorersPremierLeague2023Flashcore.json";
+import scorersLaLiga2023 from "../db/2023/scorers/scorersLaLiga2023Flashcore.json";
+import scorersLigue12023 from "../db/2023/scorers/scorersLigue12023Flashcore.json";
+import scorersSerieA2023 from "../db/2023/scorers/scorersSerieA2023Flashcore.json";
+import scorersBundesliga2023 from "../db/2023/scorers/scorersBundesliga2023Flashcore.json";
 
-import matchesPremierLeague2022 from "../db/2022/matches/matchesPremierLeague2022Flashcore.json";
-import matchesLaLiga2022 from "../db/2022/matches/matchesLaLiga2022Flashcore.json";
-import matchesLigue12022 from "../db/2022/matches/matchesLigue12022Flashcore.json";
-import matchesSerieA2022 from "../db/2022/matches/matchesSerieA2022Flashcore.json";
-import matchesBundesliga2022 from "../db/2022/matches/matchesBundesliga2022Flashcore.json";
+import matchesPremierLeague2023 from "../db/2023/matches/matchesPremierLeague2023Flashcore.json";
+import matchesLaLiga2023 from "../db/2023/matches/matchesLaLiga2023Flashcore.json";
+import matchesLigue12023 from "../db/2023/matches/matchesLigue12023Flashcore.json";
+import matchesSerieA2023 from "../db/2023/matches/matchesSerieA2023Flashcore.json";
+import matchesBundesliga2023 from "../db/2023/matches/matchesBundesliga2023Flashcore.json";
 
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
@@ -166,11 +166,11 @@ APP.get('/competitions/:id/matches', (ctx) => {
 	const found = competitions.competitions.find((competition) => competition.id === id);
 	if (found) {
 		switch (id) {
-			case "PRL": return ctx.json(matchesPremierLeague2022);
-			case "LAL": return ctx.json(matchesLaLiga2022);
-			case "LI1": return ctx.json(matchesLigue12022);
-			case "SEA": return ctx.json(matchesSerieA2022);
-			case "BUN": return ctx.json(matchesBundesliga2022);
+			case "PRL": return ctx.json(matchesPremierLeague2023);
+			case "LAL": return ctx.json(matchesLaLiga2023);
+			case "LI1": return ctx.json(matchesLigue12023);
+			case "SEA": return ctx.json(matchesSerieA2023);
+			case "BUN": return ctx.json(matchesBundesliga2023);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
 	} else {
@@ -264,11 +264,11 @@ APP.get('/competitions/:id/scorers', (ctx) => {
 	const found = competitions.competitions.find((competition) => competition.id === id);
 	if (found) {
 		switch (id) {
-			case "PRL": return ctx.json(scorersPremierLeague2022);
-			case "LAL": return ctx.json(scorersLaLiga2022);
-			case "LI1": return ctx.json(scorersLigue12022);
-			case "SEA": return ctx.json(scorersSerieA2022);
-			case "BUN": return ctx.json(scorersBundesliga2022);
+			case "PRL": return ctx.json(scorersPremierLeague2023);
+			case "LAL": return ctx.json(scorersLaLiga2023);
+			case "LI1": return ctx.json(scorersLigue12023);
+			case "SEA": return ctx.json(scorersSerieA2023);
+			case "BUN": return ctx.json(scorersBundesliga2023);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
 	} else {

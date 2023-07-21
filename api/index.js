@@ -1,7 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors'
 
-// 2022
 import standingsPremierLeague2023 from "../db/2023/standings/standingsPremierLeague2023Flashcore.json";
 import standingsLaLiga2023 from "../db/2023/standings/standingsLaLiga2023Flashcore.json";
 import standingsLigue12023 from "../db/2023/standings/standingsLigue12023Flashcore.json";
@@ -25,8 +24,6 @@ import competitions from "../db/competitions.json";
 import teams from "../db/teams.json";
 
 const APP = new Hono();
-
-const CURRENT_YEAR = 2022;
 
 APP.use('/*', cors());
 

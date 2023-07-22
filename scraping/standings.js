@@ -10,11 +10,13 @@ const URLS = {
     germany: "https://www.flashscore.com/football/germany/bundesliga/standings/",
 };
 
-const ENGLAND_STANDINGS_URL = URLS.england;
-const SPAIN_STANDINGS_URL = URLS.spain;
-const FRANCE_STANDINGS_URL = URLS.france;
-const ITALY_STANDINGS_URL = URLS.italy;
-const GERMANY_STANDINGS_URL = URLS.germany;
+const STANDINGS_URLS = {
+    ENGLAND: URLS.england,
+    SPAIN: URLS.spain,
+    FRANCE: URLS.france,
+    ITALY: URLS.italy,
+    GERMANY: URLS.germany
+};
 
 async function getStandings(url) {
     const BROWSER = await PUPPETER.launch({
@@ -176,8 +178,8 @@ async function getStandings(url) {
     await BROWSER.close();
 }
 
-getStandings(ENGLAND_STANDINGS_URL);
-getStandings(SPAIN_STANDINGS_URL);
-getStandings(FRANCE_STANDINGS_URL);
-getStandings(ITALY_STANDINGS_URL);
-getStandings(GERMANY_STANDINGS_URL);
+getStandings(STANDINGS_URLS.ENGLAND);
+getStandings(STANDINGS_URLS.SPAIN);
+getStandings(STANDINGS_URLS.FRANCE);
+getStandings(STANDINGS_URLS.ITALY);
+getStandings(STANDINGS_URLS.GERMANY);

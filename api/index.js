@@ -65,6 +65,27 @@ APP.get('/', (ctx) => {
 					status: "Available 🟢."
 				},
 				{
+					name: "standings",
+					endpoint: "/competitions/:id/standings",
+					description: "List the current standings for a league 🔝.",
+					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
+					status: "Available 🟢."
+				},
+				{
+					name: "scorers",
+					endpoint: '/competitions/:id/scorers/',
+					description: 'List the current scorers for a league ⚽.',
+					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
+					status: "Available 🟢.",
+				},
+				{
+					name: "matches",
+					endpoint: '/competitions/:id/matches/',
+					description: 'List the current matches for a league 🆚.',
+					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
+					status: "Available 🟢.",
+				},
+				{
 					name: "round",
 					endpoint: "/competitions/:id/matches/:round",
 					description: "List of matches, filtered by a completed matchday 🔍.",
@@ -77,33 +98,12 @@ APP.get('/', (ctx) => {
 					description: "List 1 match, given by round and id of the match 🔍.",
 					example: "https://zeus-api.olympus.workers.dev/competitions/BUN/matches/24/vyLD5nYN",
 					status: "Available 🟢."
-				},
-				{
-					name: "standings",
-					endpoint: "/competitions/:id/standings",
-					description: "List the current standings for a league 🔝.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
-					status: "Available 🟢."
-				},
-				{
-					name: "matches",
-					endpoint: '/competitions/:id/matches/',
-					description: 'List the current matches for a league 🆚.',
-					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
-					status: "Available 🟢.",
-				},
-				{
-					name: "scorers",
-					endpoint: '/competitions/:id/scorers/',
-					description: 'List the current scorers for a league ⚽.',
-					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
-					status: "Available 🟢.",
 				}
 			]
 		},
 		{
 			name: "Zeus API ⚡",
-			version: 'v1.13',
+			version: 'v1.14',
 			updated: day + "." + month + "." + year + " " + hours + ":" + minutes,
 			message: 'Created with 💙 by Miguel Zafra.'
 		}

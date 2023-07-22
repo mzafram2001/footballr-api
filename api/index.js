@@ -29,85 +29,89 @@ APP.use('/*', cors());
 
 APP.get('/', (ctx) => {
 	const date = new Date();
-	let day = date.getDate();
-	let month = date.getMonth() + 1;
-	let year = date.getFullYear();
-	let hours = date.getHours();
-	let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
+	const hours = date.getHours();
+	const minutes = date.getMinutes().toString().padStart(2, '0');
+	
+	const areasEndpoint = {
+		endpoint: '/areas',
+		description: 'List all available areas 🌍.',
+		example: "https://zeus-api.olympus.workers.dev/areas",
+		status: "Available 🟢.",
+		parameters: [
+			{
+				name: "id",
+				endpoint: "/areas/:id",
+				description: "List one area given by id 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/areas/ITA",
+				status: "Available 🟢."
+			}
+		]
+	};
 
-	return ctx.json([
-		{
-			endpoint: '/areas',
-			description: 'List all available areas 🌍.',
-			example: "https://zeus-api.olympus.workers.dev/areas",
-			status: "Available 🟢.",
-			parameters: [
-				{
-					name: "id",
-					endpoint: "/areas/:id",
-					description: "List one area given by id 🔍.",
-					example: "https://zeus-api.olympus.workers.dev/areas/ITA",
-					status: "Available 🟢."
-				}
-			]
-		},
-		{
-			endpoint: '/competitions',
-			description: 'List all available competitions 🏆.',
-			example: "https://zeus-api.olympus.workers.dev/competitions",
-			status: "Available 🟢.",
-			parameters: [
-				{
-					name: "id",
-					endpoint: "/competitions/:id",
-					description: "List one competition given by id 🔍.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL",
-					status: "Available 🟢."
-				},
-				{
-					name: "standings",
-					endpoint: "/competitions/:id/standings",
-					description: "List the current standings for a league 🔝.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
-					status: "Available 🟢."
-				},
-				{
-					name: "scorers",
-					endpoint: '/competitions/:id/scorers/',
-					description: 'List the current scorers for a league ⚽.',
-					example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
-					status: "Available 🟢.",
-				},
-				{
-					name: "matches",
-					endpoint: '/competitions/:id/matches/',
-					description: 'List the current matches for a league 🆚.',
-					example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
-					status: "Available 🟢.",
-				},
-				{
-					name: "round",
-					endpoint: "/competitions/:id/matches/:round",
-					description: "List of matches, filtered by a completed matchday 🔍.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/24",
-					status: "Available 🟢."
-				},
-				{
-					name: "idMatch",
-					endpoint: "/competitions/:id/matches/:round/:idMatch",
-					description: "List 1 match, given by round and id of the match 🔍.",
-					example: "https://zeus-api.olympus.workers.dev/competitions/BUN/matches/24/vyLD5nYN",
-					status: "Available 🟢."
-				}
-			]
-		},
-		{
-			name: "Zeus API ⚡",
-			version: 'v1.14',
-			updated: day + "." + month + "." + year + " " + hours + ":" + minutes,
-			message: 'Created with 💙 by Miguel Zafra.'
-		}
-	]);
+	const competitionsEndpoint = {
+		endpoint: '/competitions',
+		description: 'List all available competitions 🏆.',
+		example: "https://zeus-api.olympus.workers.dev/competitions",
+		status: "Available 🟢.",
+		parameters: [
+			{
+				name: "id",
+				endpoint: "/competitions/:id",
+				description: "List one competition given by id 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/competitions/LAL",
+				status: "Available 🟢."
+			},
+			{
+				name: "standings",
+				endpoint: "/competitions/:id/standings",
+				description: "List the current standings for a league 🔝.",
+				example: "https://zeus-api.olympus.workers.dev/competitions/LAL/standings",
+				status: "Available 🟢."
+			},
+			{
+				name: "scorers",
+				endpoint: '/competitions/:id/scorers/',
+				description: 'List the current scorers for a league ⚽.',
+				example: "https://zeus-api.olympus.workers.dev/competitions/LI1/scorers",
+				status: "Available 🟢.",
+			},
+			{
+				name: "matches",
+				endpoint: '/competitions/:id/matches/',
+				description: 'List the current matches for a league 🆚.',
+				example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
+				status: "Available 🟢.",
+			},
+			{
+				name: "round",
+				endpoint: "/competitions/:id/matches/:round",
+				description: "List of matches, filtered by a completed matchday 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/24",
+				status: "Available 🟢."
+			},
+			{
+				name: "idMatch",
+				endpoint: "/competitions/:id/matches/:round/:idMatch",
+				description: "List 1 match, given by round and id of the match 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/competitions/BUN/matches/24/vyLD5nYN",
+				status: "Available 🟢."
+			}
+		]
+	};
+
+	const zeusAPI = {
+		name: "Zeus API ⚡",
+		version: 'v1.14',
+		updated: `${day}.${month}.${year} ${hours}:${minutes}`,
+		message: 'Created with 💙 by Miguel Zafra.'
+	};
+
+	const data = [areasEndpoint, competitionsEndpoint, zeusAPI];
+
+	return ctx.json(data);
 })
 
 APP.get('/areas', (ctx) => {

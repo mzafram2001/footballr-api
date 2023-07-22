@@ -2,47 +2,127 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england_standings_2023: "https://www.flashscore.com/football/england/premier-league/standings/",
-    spain_standings_2023: "https://www.flashscore.com/football/spain/laliga/standings/",
-    france_standings_2023: "https://www.flashscore.com/football/france/ligue-1/standings/",
-    italy_standings_2023: "https://www.flashscore.com/football/italy/serie-a/standings/",
-    germany_standings_2023: "https://www.flashscore.com/football/germany/bundesliga/standings/",
+    england: "https://www.flashscore.com/football/england/premier-league/standings/",
+    spain: "https://www.flashscore.com/football/spain/laliga/standings/",
+    france: "https://www.flashscore.com/football/france/ligue-1/standings/",
+    italy: "https://www.flashscore.com/football/italy/serie-a/standings/",
+    germany: "https://www.flashscore.com/football/germany/bundesliga/standings/",
 };
 
-// // // // // // // // // // CODE STANDINGS // // // // // // // // // //
-async function getStandings2023(url) {
+const ENGLAND_STANDINGS_URL = URLS.england;
+const SPAIN_STANDINGS_URL = URLS.spain;
+const FRANCE_STANDINGS_URL = URLS.france;
+const ITALY_STANDINGS_URL = URLS.italy;
+const GERMANY_STANDINGS_URL = URLS.germany;
+
+async function getStandings(url) {
     const BROWSER = await PUPPETER.launch({
-        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true,
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
-        JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
-        switch (JSON.name) {
-            case "LaLiga": JSON.area = "ESP";
-                break;
-            case "Bundesliga": JSON.area = "GER";
-                break;
-            case "Serie A": JSON.area = "ITA";
-                break;
-            case "Ligue 1": JSON.area = "FRA";
-                break;
-            case "Premier League": JSON.area = "ENG";
-                break;
-        }
-        JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
-        JSON.yearStart = parseInt(JSON.yearStart.substring(0, 4));
-        JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
-        JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
+        const LEAGUES = {
+            "LaLiga": "ESP",
+            "Bundesliga": "GER",
+            "Serie A": "ITA",
+            "Ligue 1": "FRA",
+            "Premier League": "ENG"
+        };
+        const HEADING = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading');
+        JSON.name = HEADING.querySelector('div.heading__title > div.heading__name').innerText;
+        JSON.area = LEAGUES[JSON.name];
+        const HEADING_INFO = HEADING.querySelector('div.heading__info').innerText;
+        JSON.yearStart = parseInt(HEADING_INFO.substring(0, 4));
+        JSON.yearEnd = parseInt(HEADING_INFO.substring(5, JSON.yearStart - 1));
         JSON.standings = [];
         var numRow = 0;
         var dumpString;
         var dumpStringArray;
         const ROWS = document.querySelectorAll('.ui-table__row  ');
         ROWS.forEach(element => {
+            const TEAM_NAME = {
+                "Napoli": "Calcio Napoli",
+                "Inter": "Inter Milán",
+                "AC Milan": "Calcio Milán",
+                "AS Roma": "Roma",
+                "Atalanta": "Calcio Atalanta",
+                "Udinese": "Calcio Udinese",
+                "Fiorentina": "Calcio Fiorentina",
+                "Monza": "Calcio Monza",
+                "Sassuolo": "Calcio Sassuolo",
+                "Spezia": "Calcio Spezia",
+                "Verona": "Hellas Verona",
+                "Sampdoria": "Calcio Cagliari",
+                "Cagliari": "Calcio Cagliari",
+                "Benevento": "Calcio Benevento",
+                "Parma": "Calcio Parma",
+                "Chievo": "Calcio Chievo",
+                "AC Carpi": "Calcio Carpi",
+                "Frosinone": "Calcio Frosinone",
+                "Pescara": "Delfino Pescara",
+                "Brescia": "Calcio Brescia",
+                "Dortmund": "Borussia Dortmund",
+                "RB Leipzig": "RasenBallsport Leipzig",
+                "B. Monchengladbach": "Borussia Mönchengladbach",
+                "FC Koln": "Köln",
+                "Greuther Furth": "Greuther Fürth",
+                "Hamburger SV": "Hamburger Sport-Verein",
+                "Darmstadt": "Darmstadt Sport-Verein",
+                "Hannover": "Hannover Sport-Verein",
+                "Dusseldorf": "Fortuna Düsseldorf",
+                "Nurnberg": "Nürnberg",
+                "Atl. Madrid": "Atlético Madrid",
+                "Betis": "Real Betis",
+                "Granada CF": "Granada",
+                "Ath Bilbao": "Athletic Bilbao",
+                "Cadiz CF": "Cádiz",
+                "Alaves": "Deportivo Alavés",
+                "Almeria": "Almería",
+                "Malaga": "Málaga",
+                "Dep. La Coruna": "Deportivo La Coruña",
+                "Gijon": "Gijón",
+                "Leganes": "Leganés",
+                "Paris SG": "Paris Saint-Germain",
+                "Marseille": "Olympique Marseille",
+                "Lens": "Racing Lens",
+                "Rennes": "Stade Rennais",
+                "Lille": "Olympique Lille",
+                "Nice": "Olympique Nice",
+                "Reims": "Stade Reims",
+                "Lyon": "Olympique Lyonnais",
+                "Strasbourg": "Racing Strasbourg",
+                "Brest": "Stade Brestois",
+                "AC Ajaccio": "Athletic Ajaccien",
+                "Angers": "Sporting Angers",
+                "St Etienne": "Saint-Étienne Loire",
+                "Bordeaux": "Girondins Bordeaux",
+                "Nimes": "Olympique Nîmes",
+                "Caen": "Stade Malherbe Caen",
+                "Bastia": "Sporting Bastia",
+                "GFC Ajaccio": "Gazélec Ajaccio",
+                "Nancy": "Nancy Lorraine",
+                "Amiens": "Sporting Amiens",
+                "Manchester Utd": "Manchester United",
+                "Tottenham": "Tottenham Hotspur",
+                "Newcastle": "Newcastle United",
+                "Wolves": "Wolverhampton Wanderers",
+                "Leeds": "Leeds United",
+                "Nottingham": "Nottingham Forest",
+                "Leicester": "Leicester City",
+                "West Ham": "West Ham United",
+                "Bournemouth": "Athletic Bournemouth",
+                "West Brom": "West Bromwich",
+                "Sheffield Utd": "Sheffield United",
+                "Norwich": "Norwich City",
+                "Stoke": "Stoke City",
+                "Hull": "Hull City",
+                "Cardiff": "Cardiff City",
+                "Swansea": "Swansea City"
+            };
             numRow++;
             const TMP = {};
             element.querySelectorAll('.table__cell--value   ').innerText;
@@ -56,162 +136,7 @@ async function getStandings2023(url) {
             dumpStringArray = dumpString.split('/');
             TMP.team.id = dumpStringArray[3];
             TMP.team.name = element.querySelector('.tableCellParticipant__name').innerText;
-            switch (TMP.team.name) {
-                case "Napoli": TMP.team.name = "Calcio Napoli";
-                    break;
-                case "Inter": TMP.team.name = "Inter Milán";
-                    break;
-                case "AC Milan": TMP.team.name = "Calcio Milán";
-                    break;
-                case "AS Roma": TMP.team.name = "Roma";
-                    break;
-                case "Atalanta": TMP.team.name = "Calcio Atalanta";
-                    break;
-                case "Udinese": TMP.team.name = "Calcio Udinese";
-                    break;
-                case "Fiorentina": TMP.team.name = "Calcio Fiorentina";
-                    break;
-                case "Sassuolo": TMP.team.name = "Calcio Sassuolo";
-                    break;
-                case "Monza": TMP.team.name = "Calcio Monza";
-                    break;
-                case "Spezia": TMP.team.name = "Calcio Spezia";
-                    break;
-                case "Verona": TMP.team.name = "Hellas Verona";
-                    break;
-                case "Sampdoria": TMP.team.name = "Calcio Cagliari";
-                    break;
-                case "Cagliari": TMP.team.name = "Calcio Cagliari";
-                    break;
-                case "Benevento": TMP.team.name = "Calcio Benevento";
-                    break;
-                case "Parma": TMP.team.name = "Calcio Parma";
-                    break;
-                case "Chievo": TMP.team.name = "Calcio Chievo";
-                    break;
-                case "AC Carpi": TMP.team.name = "Calcio Carpi";
-                    break;
-                case "Frosinone": TMP.team.name = "Calcio Frosinone";
-                    break;
-                case "Pescara": TMP.team.name = "Delfino Pescara";
-                    break;
-                case "Brescia": TMP.team.name = "Calcio Brescia";
-                    break;
-                case "Dortmund": TMP.team.name = "Borussia Dortmund";
-                    break;
-                case "RB Leipzig": TMP.team.name = "RasenBallsport Leipzig";
-                    break;
-                case "B. Monchengladbach": TMP.team.name = "Borussia Mönchengladbach";
-                    break;
-                case "FC Koln": TMP.team.name = "Köln";
-                    break;
-                case "Greuther Furth": TMP.team.name = "Greuther Fürth";
-                    break;
-                case "Hamburger SV": TMP.team.name = "Hamburger Sport-Verein";
-                    break;
-                case "Darmstadt": TMP.team.name = "Darmstadt Sport-Verein";
-                    break;
-                case "Hannover": TMP.team.name = "Hannover Sport-Verein";
-                    break;
-                case "Dusseldorf": TMP.team.name = "Fortuna Düsseldorf";
-                    break;
-                case "Nurnberg": TMP.team.name = "Nürnberg";
-                    break;
-                case "Atl. Madrid": TMP.team.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.team.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.team.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.team.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.team.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.team.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.team.name = "Almería";
-                    break;
-                case "Malaga": TMP.team.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.team.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.team.name = "Gijón";
-                    break;
-                case "Leganes": TMP.team.name = "Leganés";
-                    break;
-                case "Paris SG": TMP.team.name = "Paris Saint-Germain";
-                    break;
-                case "Marseille": TMP.team.name = "Olympique Marseille";
-                    break;
-                case "Lens": TMP.team.name = "Racing Lens";
-                    break;
-                case "Rennes": TMP.team.name = "Stade Rennais";
-                    break;
-                case "Lille": TMP.team.name = "Olympique Lille";
-                    break;
-                case "Nice": TMP.team.name = "Olympique Nice";
-                    break;
-                case "Reims": TMP.team.name = "Stade Reims";
-                    break;
-                case "Lyon": TMP.team.name = "Olympique Lyonnais";
-                    break;
-                case "Strasbourg": TMP.team.name = "Racing Strasbourg";
-                    break;
-                case "Brest": TMP.team.name = "Stade Brestois";
-                    break;
-                case "AC Ajaccio": TMP.team.name = "Athletic Ajaccien";
-                    break;
-                case "Angers": TMP.team.name = "Sporting Angers";
-                    break;
-                case "St Etienne": TMP.team.name = "Saint-Étienne Loire";
-                    break;
-                case "Bordeaux": TMP.team.name = "Girondins Bordeaux";
-                    break;
-                case "Nimes": TMP.team.name = "Olympique Nîmes";
-                    break;
-                case "Caen": TMP.team.name = "Stade Malherbe Caen";
-                    break;
-                case "Bastia": TMP.team.name = "Sporting Bastia";
-                    break;
-                case "GFC Ajaccio": TMP.team.name = "Gazélec Ajaccio";
-                    break;
-                case "Nancy": TMP.team.name = "Nancy Lorraine";
-                    break;
-                case "Amiens": TMP.team.name = "Sporting Amiens";
-                    break;
-                case "Manchester Utd": TMP.team.name = "Manchester United";
-                    break;
-                case "Tottenham": TMP.team.name = "Tottenham Hotspur";
-                    break;
-                case "Newcastle": TMP.team.name = "Newcastle United";
-                    break;
-                case "Wolves": TMP.team.name = "Wolverhampton Wanderers";
-                    break;
-                case "Leeds": TMP.team.name = "Leeds United";
-                    break;
-                case "Nottingham": TMP.team.name = "Nottingham Forest";
-                    break;
-                case "Leicester": TMP.team.name = "Leicester City";
-                    break;
-                case "West Ham": TMP.team.name = "West Ham United";
-                    break;
-                case "Bournemouth": TMP.team.name = "Athletic Bournemouth";
-                    break;
-                case "West Brom": TMP.team.name = "West Bromwich";
-                    break;
-                case "Sheffield Utd": TMP.team.name = "Sheffield United";
-                    break;
-                case "Norwich": TMP.team.name = "Norwich City";
-                    break;
-                case "Stoke": TMP.team.name = "Stoke City";
-                    break;
-                case "Hull": TMP.team.name = "Hull City";
-                    break;
-                case "Cardiff": TMP.team.name = "Cardiff City";
-                    break;
-                case "Swansea": TMP.team.name = "Swansea City";
-                    break;
-            }
+            TMP.team.name = TEAM_NAME[TMP.team.name] || TMP.team.name;
             TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.team.id + ".svg";
             TMP.playedGames = parseInt(element.querySelector('.table__cell--value').innerText);
             TMP.wins = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span:nth-child(4)').innerText);
@@ -239,19 +164,8 @@ async function getStandings2023(url) {
         });
         return JSON;
     });
-
-    switch (RESULT.name) {
-        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsBundesliga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsSerieA" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsLigue1" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standingsPremierLeague" + RESULT.yearStart + "Flashcore.json");
-            break;
-    }
+    var leagueName = RESULT.name;
+    var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standings" + leagueName.replace(" ", "") + RESULT.yearStart + "Flashcore.json");
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');
@@ -262,9 +176,8 @@ async function getStandings2023(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getStandings2023(URLS.england_standings_2023);
-getStandings2023(URLS.spain_standings_2023);
-getStandings2023(URLS.france_standings_2023);
-getStandings2023(URLS.italy_standings_2023);
-getStandings2023(URLS.germany_standings_2023);
+getStandings(ENGLAND_STANDINGS_URL);
+getStandings(SPAIN_STANDINGS_URL);
+getStandings(FRANCE_STANDINGS_URL);
+getStandings(ITALY_STANDINGS_URL);
+getStandings(GERMANY_STANDINGS_URL);

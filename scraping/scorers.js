@@ -2,41 +2,44 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england_scorers_2023: "https://www.flashscore.com/football/england/premier-league/standings/#/nunhS7Vn/top_scorers",
-    spain_scorers_2023: "https://www.flashscore.com/football/spain/laliga/standings/#/COQ6iu30/top_scorers",
-    france_scorers_2023: "https://www.flashscore.com/football/france/ligue-1/standings/#/zmkW5aIi/top_scorers",
-    italy_scorers_2023: "https://www.flashscore.com/football/italy/serie-a/standings/#/UcnjEEGS/top_scorers",
-    germany_scorers_2023: "https://www.flashscore.com/football/germany/bundesliga/standings/#/OIbxfZZI/top_scorers",
+    england: "https://www.flashscore.com/football/england/premier-league/standings/#/nunhS7Vn/top_scorers",
+    spain: "https://www.flashscore.com/football/spain/laliga/standings/#/COQ6iu30/top_scorers",
+    france: "https://www.flashscore.com/football/france/ligue-1/standings/#/zmkW5aIi/top_scorers",
+    italy: "https://www.flashscore.com/football/italy/serie-a/standings/#/UcnjEEGS/top_scorers",
+    germany: "https://www.flashscore.com/football/germany/bundesliga/standings/#/OIbxfZZI/top_scorers",
 }
 
-// // // // // // // // // // CODE SCORERS // // // // // // // // // //
+const SCORERS_URLS = {
+    ENGLAND: URLS.england,
+    SPAIN: URLS.spain,
+    FRANCE: URLS.france,
+    ITALY: URLS.italy,
+    GERMANY: URLS.germany
+};
+
 async function getScorers(url) {
     const BROWSER = await PUPPETER.launch({
-        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true,
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
-        JSON.name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
-        switch (JSON.name) {
-            case "LaLiga": JSON.area = "ESP";
-                break;
-            case "Bundesliga": JSON.area = "GER";
-                break;
-            case "Serie A": JSON.area = "ITA";
-                break;
-            case "Ligue 1": JSON.area = "FRA";
-                break;
-            case "Premier League": JSON.area = "ENG";
-                break;
+        const LEAGUES = {
+            "LaLiga": "ESP",
+            "Bundesliga": "GER",
+            "Serie A": "ITA",
+            "Ligue 1": "FRA",
+            "Premier League": "ENG"
         };
-        JSON.yearStart = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
-        JSON.yearStart = parseInt(JSON.yearStart.substring(0, 4));
-        JSON.yearEnd = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__info').innerText;
-        JSON.yearEnd = parseInt(JSON.yearEnd.substring(5, JSON.yearStart - 1));
+        const HEADING = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading');
+        JSON.name = HEADING.querySelector('div.heading__title > div.heading__name').innerText;
+        JSON.area = LEAGUES[JSON.name];
+        const HEADING_INFO = HEADING.querySelector('div.heading__info').innerText;
+        JSON.yearStart = parseInt(HEADING_INFO.substring(0, 4));
+        JSON.yearEnd = parseInt(HEADING_INFO.substring(5, JSON.yearStart - 1));
         JSON.scorers = [];
         var numRow = 0;
         var dumpString;
@@ -493,11 +496,8 @@ async function getScorers(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getScorers(URLS.spain_scorers_2023);
-getScorers(URLS.france_scorers_2023);
-getScorers(URLS.england_scorers_2023);
-getScorers(URLS.germany_scorers_2023);
-getScorers(URLS.italy_scorers_2023);
-
-// MIRAR PORQUE HAY JUGADORES COMO FRENKIE DE JONG QUE TIENEN 2 APELLIDOS!!!!
+getScorers(SCORERS_URLS.ENGLAND);
+getScorers(SCORERS_URLS.SPAIN);
+getScorers(SCORERS_URLS.FRANCE);
+getScorers(SCORERS_URLS.ITALY);
+getScorers(SCORERS_URLS.GERMANY);

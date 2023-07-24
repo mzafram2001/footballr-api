@@ -34,7 +34,7 @@ APP.get('/', (ctx) => {
 	const year = date.getFullYear();
 	const hours = date.getHours();
 	const minutes = date.getMinutes().toString().padStart(2, '0');
-	
+
 	const areasEndpoint = {
 		endpoint: '/areas',
 		description: 'List all available areas 🌍.',
@@ -188,19 +188,19 @@ APP.get('/competitions/:id/matches/:round', (ctx) => {
 	if (found) {
 		switch (id) {
 			case "PRL":
-				foundRound = matchesPremierLeague2022.season.find((match) => match.round === round);
+				foundRound = matchesPremierLeague2023.season.find((match) => match.round === round);
 				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 			case "LAL":
-				foundRound = matchesLaLiga2022.season.find((match) => match.round === round);
+				foundRound = matchesLaLiga2023.season.find((match) => match.round === round);
 				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 			case "LI1":
-				foundRound = matchesLigue12022.season.find((match) => match.round === round);
+				foundRound = matchesLigue12023.season.find((match) => match.round === round);
 				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 			case "SEA":
-				foundRound = matchesSerieA2022.season.find((match) => match.round === round);
+				foundRound = matchesSerieA2023.season.find((match) => match.round === round);
 				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 			case "BUN":
-				foundRound = matchesBundesliga2022.season.find((match) => match.round === round);
+				foundRound = matchesBundesliga2023.season.find((match) => match.round === round);
 				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		};
@@ -210,52 +210,41 @@ APP.get('/competitions/:id/matches/:round', (ctx) => {
 APP.get('/competitions/:id/matches/:round/:idMatch', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
 	const round = parseInt(ctx.req.param("round"));
-	const idMatch = ctx.req.param("idMatch");
-	var foundRound;
-	var foundMatch;
+	const idMatch = ctx.req.param("idMatch")
+	let foundRound;
+	let foundMatch;
 	const found = competitions.competitions.find((competition) => competition.id === id);
-	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
-	if (found) {
-		switch (id) {
-			case "PRL":
-				foundRound = matchesPremierLeague2022.season.find((match) => match.round === round);
-				if (foundRound) {
-					foundMatch = foundRound.matches.find((match => match.id === idMatch));
-					return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
-				}
-				break;
-			case "LAL":
-				foundRound = matchesLaLiga2022.season.find((match) => match.round === round);
-				if (foundRound) {
-					foundMatch = foundRound.matches.find((match => match.id === idMatch));
-					return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
-				}
-				break;
-			case "LI1":
-				foundRound = matchesLigue12022.season.find((match) => match.round === round);
-				if (foundRound) {
-					foundMatch = foundRound.matches.find((match => match.id === idMatch));
-					return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
-				}
-				break;
-			case "SEA":
-				foundRound = matchesSerieA2022.season.find((match) => match.round === round);
-				if (foundRound) {
-					foundMatch = foundRound.matches.find((match => match.id === idMatch));
-					return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
-				}
-				break;
-			case "BUN":
-				foundRound = matchesBundesliga2022.season.find((match) => match.round === round);
-				if (foundRound) {
-					foundMatch = foundRound.matches.find((match => match.id === idMatch));
-					return foundMatch ? ctx.json(foundMatch) : ctx.json({ message: 'Not Found. 😔' }, 404);
-				}
-				break;
-			default: ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (!found) {
+		return ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+	switch (id) {
+		case "PRL":
+			foundRound = matchesPremierLeague2023.season.find((match) => match.round === round);
+			break;
+		case "LAL":
+			foundRound = matchesLaLiga2023.season.find((match) => match.round === round);
+			break;
+		case "LI1":
+			foundRound = matchesLigue12023.season.find((match) => match.round === round);
+			break;
+		case "SEA":
+			foundRound = matchesSerieA2023.season.find((match) => match.round === round);
+			break;
+		case "BUN":
+			foundRound = matchesBundesliga2023.season.find((match) => match.round === round);
+			break;
+		default:
+			return ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+	if (foundRound) {
+		foundMatch = foundRound.matches.find((match) => match.id === idMatch);
+		if (foundMatch) {
+			return ctx.json(foundMatch);
+		} else {
+			return ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
 	} else {
-		ctx.json({ message: 'Not Found. 😔' }, 404);
+		return ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
 

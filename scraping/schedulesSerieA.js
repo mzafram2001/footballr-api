@@ -3,19 +3,11 @@ const FS = require('fs');
 const PATH = require('path');
 
 const URLS = {
-    england: "https://www.flashscore.com/football/england/premier-league/fixtures",
-    spain: "https://www.flashscore.com/football/spain/laliga/fixtures",
-    france: "https://www.flashscore.com/football/france/ligue-1/fixtures",
     italy: "https://www.flashscore.com/football/italy/serie-a/fixtures",
-    germany: "https://www.flashscore.com/football/germany/bundesliga/fixtures",
 }
 
 const SCHEDULED_URLS = {
-    ENGLAND: URLS.england,
-    SPAIN: URLS.spain,
-    FRANCE: URLS.france,
     ITALY: URLS.italy,
-    GERMANY: URLS.germany
 };
 
 async function getSchedules(url) {
@@ -24,7 +16,22 @@ async function getSchedules(url) {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "networkidle0" });
+    await PAGE.goto(url, { waitUntil: "networkidle0" });   
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
         const LEAGUES = {
@@ -41,6 +48,24 @@ async function getSchedules(url) {
         JSON.yearStart = parseInt(HEADING_INFO.substring(0, 4));
         JSON.yearEnd = parseInt(HEADING_INFO.substring(5, JSON.yearStart - 1));
         JSON.season = [];
+        const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
+        var round = 0;
+        for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
+            const TMP = {};
+            var found = false;
+            TMP.round = parseInt(ROUNDS_SELECTOR[i].innerText.substring(6));
+            round = parseInt(TMP.round);
+            TMP.matches = [];
+            for (index in JSON.season) {
+                if (JSON.season[index].round == TMP.round) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                JSON.season.push(TMP);
+            }
+        }
         return JSON;
     });
 
@@ -71,8 +96,10 @@ async function getSchedules(url) {
     await BROWSER.close();
 }
 
-getSchedules(SCHEDULED_URLS.ENGLAND);
-getSchedules(SCHEDULED_URLS.SPAIN);
-getSchedules(SCHEDULED_URLS.FRANCE);
+async function delay(time) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+    });
+}
+
 getSchedules(SCHEDULED_URLS.ITALY);
-getSchedules(SCHEDULED_URLS.GERMANY);

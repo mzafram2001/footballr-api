@@ -19,6 +19,12 @@ import matchesLigue12023 from "../db/2023/matches/matchesLigue12023Flashcore.jso
 import matchesSerieA2023 from "../db/2023/matches/matchesSerieA2023Flashcore.json";
 import matchesBundesliga2023 from "../db/2023/matches/matchesBundesliga2023Flashcore.json";
 
+import schedulesPremierLeague2023 from "../db/2023/schedules/schedulesPremierLeague2023Flashcore.json";
+import schedulesLaLiga2023 from "../db/2023/schedules/schedulesLaLiga2023Flashcore.json";
+import schedulesLigue12023 from "../db/2023/schedules/schedulesLigue12023Flashcore.json";
+import schedulesSerieA2023 from "../db/2023/schedules/schedulesSerieA2023Flashcore.json";
+import schedulesBundesliga2023 from "../db/2023/schedules/schedulesBundesliga2023Flashcore.json";
+
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 import teams from "../db/teams.json";
@@ -81,8 +87,15 @@ APP.get('/', (ctx) => {
 			{
 				name: "matches",
 				endpoint: '/competitions/:id/matches/',
-				description: 'List the current matches for a league 🆚.',
+				description: 'List the current matches results for a league 🆚.',
 				example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches",
+				status: "Available 🟢.",
+			},
+			{
+				name: "schedules",
+				endpoint: '/competitions/:id/schedules/',
+				description: 'List the next scheduled matches for a league 🔜.',
+				example: "https://zeus-api.olympus.workers.dev/competitions/BUN/schedules",
 				status: "Available 🟢.",
 			},
 			{
@@ -161,7 +174,6 @@ APP.get('/competitions/:id/standings', (ctx) => {
 	}
 });
 
-// matches
 APP.get('/competitions/:id/matches', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
 	const found = competitions.competitions.find((competition) => competition.id === id);
@@ -248,7 +260,6 @@ APP.get('/competitions/:id/matches/:round/:idMatch', (ctx) => {
 	}
 });
 
-// scorers
 APP.get('/competitions/:id/scorers', (ctx) => {
 	const id = ctx.req.param("id").toUpperCase();
 	const found = competitions.competitions.find((competition) => competition.id === id);
@@ -265,6 +276,23 @@ APP.get('/competitions/:id/scorers', (ctx) => {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
 });
+
+APP.get('/competitions/:id/schedules', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (found) {
+		switch (id) {
+			case "PRL": return ctx.json(schedulesPremierLeague2023);
+			case "LAL": return ctx.json(schedulesLaLiga2023);
+			case "LI1": return ctx.json(schedulesLigue12023);
+			case "SEA": return ctx.json(schedulesSerieA2023);
+			case "BUN": return ctx.json(schedulesBundesliga2023);
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
+		}
+	} else {
+		ctx.json({ message: 'Not Found. 😔' }, 404);
+	}
+})
 
 APP.notFound((ctx) => {
 	const { pathname } = new URL(ctx.req.url);

@@ -2,12 +2,14 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    italy_matches_2023: "https://www.flashscore.com/football/italy/serie-a/results/",
+    italy: "https://www.flashscore.com/football/italy/serie-a/results/",
 }
 
-// // // // // // // // // // CODE MATCHES // // // // // // // // // //
+const MATCHES_URLS = {
+    ITALY: URLS.italy,
+};
+
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -300,12 +302,10 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // DELAY // // // // // // // // // //
 async function delay(time) {
     return new Promise(function (resolve) {
         setTimeout(resolve, time)
     });
 }
 
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.italy_matches_2023);
+getAllMatches(MATCHES_URLS.ITALY);

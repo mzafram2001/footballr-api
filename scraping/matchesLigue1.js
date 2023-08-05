@@ -2,12 +2,14 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    france_matches_2023: "https://www.flashscore.com/football/france/ligue-1/results/",
+    france: "https://www.flashscore.com/football/france/ligue-1/results/",
 }
 
-// // // // // // // // // // CODE MATCHES // // // // // // // // // //
+const MATCHES_URLS = {
+    FRANCE: URLS.france,
+};
+
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -300,12 +302,10 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // DELAY // // // // // // // // // //
 async function delay(time) {
     return new Promise(function (resolve) {
         setTimeout(resolve, time)
     });
 }
 
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.france_matches_2023);
+getAllMatches(MATCHES_URLS.FRANCE);

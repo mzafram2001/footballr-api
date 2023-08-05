@@ -3,7 +3,7 @@ const FS = require('fs');
 const PATH = require('path');
 
 const URLS = {
-    spain_matches_2023: "https://www.flashscore.com/football/spain/laliga/results/",
+    spain: "https://www.flashscore.com/football/spain/laliga/results/",
 }
 
 const MATCHES_URLS = {

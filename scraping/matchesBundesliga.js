@@ -4,8 +4,12 @@ const PATH = require('path');
 
 // // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    germany_matches_2023: "https://www.flashscore.com/football/germany/bundesliga/results/",
+    germany: "https://www.flashscore.com/football/germany/bundesliga/results/",
 }
+
+const MATCHES_URLS = {
+    GERMANY: URLS.germany,
+};
 
 // // // // // // // // // // CODE MATCHES // // // // // // // // // //
 async function getAllMatches(url) {
@@ -268,4 +272,4 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.germany_matches_2023);
+getAllMatches(MATCHES_URLS.GERMANY);

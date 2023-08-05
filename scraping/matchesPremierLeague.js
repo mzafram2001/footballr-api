@@ -2,12 +2,14 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
-    england_matches_2023: "https://www.flashscore.com/football/england/premier-league/results/",
+    england: "https://www.flashscore.com/football/england/premier-league/results/",
 }
 
-// // // // // // // // // // CODE MATCHES // // // // // // // // // //
+const MATCHES_URLS = {
+    ENGLAND: URLS.england,
+};
+
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -284,12 +286,10 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // DELAY // // // // // // // // // //
 async function delay(time) {
     return new Promise(function (resolve) {
         setTimeout(resolve, time)
     });
 }
 
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.england_matches_2023);
+getAllMatches(MATCHES_URLS.ENGLAND);

@@ -117,7 +117,7 @@ APP.get('/', (ctx) => {
 
 	const zeusAPI = {
 		name: "Zeus API ⚡",
-		version: 'v1.14',
+		version: 'v1.20',
 		updated: `${day}.${month}.${year} ${hours}:${minutes}`,
 		message: 'Created with 💙 by Miguel Zafra.'
 	};

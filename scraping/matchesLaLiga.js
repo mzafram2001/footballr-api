@@ -2,12 +2,14 @@ const PUPPETER = require('puppeteer');
 const FS = require('fs');
 const PATH = require('path');
 
-// // // // // // // // // // URLs // // // // // // // // // //
 const URLS = {
     spain_matches_2023: "https://www.flashscore.com/football/spain/laliga/results/",
 }
 
-// // // // // // // // // // CODE MATCHES // // // // // // // // // //
+const MATCHES_URLS = {
+    SPAIN: URLS.spain,
+};
+
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -15,21 +17,11 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    await PAGE.waitForSelector('.event__more', { visible: true });
+    /*await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.evaluate(() => {
-        document.querySelector('.event__more').click();
-    });
-    await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.evaluate(() => {
-        document.querySelector('.event__more').click();
-    });
-    await delay(4000);
+    await delay(4000);*/
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -264,12 +256,4 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-// // // // // // // // // // DELAY // // // // // // // // // //
-async function delay(time) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, time)
-    });
-}
-
-// // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getAllMatches(URLS.spain_matches_2023);
+getAllMatches(MATCHES_URLS.SPAIN);

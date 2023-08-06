@@ -1,7 +1,1 @@
-{
-    "name": "Serie A",
-    "area": "ITA",
-    "yearStart": 2023,
-    "yearEnd": 2024,
-    "season": []
-}
+{"name":"Serie A","area":"ITA","yearStart":2023,"yearEnd":2024,"season":[]}

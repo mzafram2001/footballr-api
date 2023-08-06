@@ -10,6 +10,55 @@ const MATCHES_URLS = {
     SPAIN: URLS.spain,
 };
 
+async function getLast10Matches(url) {
+    const BROWSER = await PUPPETER.launch({
+        headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const PAGE = await BROWSER.newPage();
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
+    const RESULT = await PAGE.evaluate(() => {
+        const JSON = {};
+        JSON.matchesIteration = [];
+        const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
+        var ok = Array.prototype.slice.call(MATCHES_SELECTOR);
+        const LAST_10 = ok.slice(0,10);
+        for (var i = LAST_10.length - 1; i >= 0; i--) {
+            const TMP = {};
+            TMP.id = LAST_10[i].id.substring(4);
+            TMP.link = "https://www.flashscore.com/match/" + TMP.id;
+            JSON.matchesIteration.push(TMP);
+        }
+        return JSON;
+    });
+    console.log(RESULT);
+
+
+    /*FS.readFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', 'utf-8', (err, jsonString) => {
+        if (err) {
+            console.log("File read failed:", err);
+            return;
+        }
+        console.log("File data:", jsonString);
+        JSON = jsonString;
+    });
+    
+    for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
+        var pushIt = false;
+        var j = 0;
+        while (j <= RESULT.season.length - 1 && pushIt == false) {
+            if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
+                RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
+                delete RESULT.matchesIteration[i].link;
+                pushIt = true;
+            }
+            j++;
+        }
+    }
+
+    delete RESULT.matchesIteration;*/
+    await BROWSER.close();
+}
+
 async function getAllMatches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -256,4 +305,5 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
+// getLast10Matches(MATCHES_URLS.SPAIN);
 getAllMatches(MATCHES_URLS.SPAIN);

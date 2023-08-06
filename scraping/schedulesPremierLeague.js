@@ -165,7 +165,7 @@ async function getSchedules(url) {
                 case "Swansea": TMP.awayTeam.name = "Swansea City";
                     break;
             }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
+            TMP.awayTeam.shorthand = title.innerText.substring(6, 9);
             TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");

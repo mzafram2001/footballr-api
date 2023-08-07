@@ -21,7 +21,7 @@ async function getLast10Matches(url) {
         JSON.matchesIteration = [];
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
         var ok = Array.prototype.slice.call(MATCHES_SELECTOR);
-        const LAST_10 = ok.slice(0,10);
+        const LAST_10 = ok.slice(0, 10);
         for (var i = LAST_10.length - 1; i >= 0; i--) {
             const TMP = {};
             TMP.id = LAST_10[i].id.substring(4);
@@ -30,32 +30,45 @@ async function getLast10Matches(url) {
         }
         return JSON;
     });
-    console.log(RESULT);
-
-
-    /*FS.readFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', 'utf-8', (err, jsonString) => {
+    // console.log(RESULT);
+    var original = require('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json');
+    original.matchesIteration = RESULT.matchesIteration;
+    FS.writeFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', JSON.stringify(original), function (err) {
         if (err) {
-            console.log("File read failed:", err);
-            return;
+            console.log('An error occured while writing JSON Object to File.');
+            return console.log(err);
         }
-        console.log("File data:", jsonString);
-        JSON = jsonString;
+        console.log('JSON file has been saved.');
     });
-    
-    for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
+    /*for (var i = 0; i <= original.matchesIteration.length - 1; i++) {
         var pushIt = false;
         var j = 0;
-        while (j <= RESULT.season.length - 1 && pushIt == false) {
-            if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
-                RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
-                delete RESULT.matchesIteration[i].link;
+        while (j <= original.season.length - 1 && pushIt == false) {
+            if (original.matchesIteration[i].round == original.season[j].round) {
+                original.season[j].matches.push(original.matchesIteration[i]);
+                delete original.matchesIteration[i].link;
                 pushIt = true;
             }
             j++;
         }
-    }
+    }*/
+    delete original.matchesIteration;
+    console.log(original);
+    FS.unlink('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', (err) => {
+        if (err) {
+            console.error(err)
+            return
+        }
 
-    delete RESULT.matchesIteration;*/
+        console.log('JSON file has been removed.');
+    })
+    FS.writeFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', JSON.stringify(original), 'utf8', function (err) {
+        if (err) {
+            console.log('An error occured while writing JSON Object to File.');
+            return console.log(err);
+        }
+        console.log('JSON file has been saved.');
+    });
     await BROWSER.close();
 }
 
@@ -305,5 +318,5 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-// getLast10Matches(MATCHES_URLS.SPAIN);
-getAllMatches(MATCHES_URLS.SPAIN);
+getLast10Matches(MATCHES_URLS.SPAIN);
+// getAllMatches(MATCHES_URLS.SPAIN);

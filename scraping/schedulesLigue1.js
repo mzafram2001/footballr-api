@@ -16,7 +16,7 @@ async function getSchedules(url) {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "networkidle0" });   
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
     await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
@@ -46,17 +46,19 @@ async function getSchedules(url) {
         JSON.matchesIteration = [];
         const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
+        const REVERSE_ROUNDS_SELECTOR = Array.prototype.slice.call(ROUNDS_SELECTOR).reverse();
+        var REVERSE_MATCHES_SELECTOR = Array.prototype.slice.call(MATCHES_SELECTOR).reverse();
         var round = 0;
-        for (var i = MATCHES_SELECTOR.length - 1; i >= 0; i--) {
+        for (var i = REVERSE_MATCHES_SELECTOR.length - 1; i >= 0; i--) {
             const TMP2 = {};
-            TMP2.id = MATCHES_SELECTOR[i].id.substring(4);
+            TMP2.id = REVERSE_MATCHES_SELECTOR[i].id.substring(4);
             TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
             JSON.matchesIteration.push(TMP2);
         }
-        for (var i = ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
+        for (var i = REVERSE_ROUNDS_SELECTOR.length - 1; i >= 0; i--) {
             const TMP = {};
             var found = false;
-            TMP.round = parseInt(ROUNDS_SELECTOR[i].innerText.substring(6));
+            TMP.round = parseInt(REVERSE_ROUNDS_SELECTOR[i].innerText.substring(6));
             round = parseInt(TMP.round);
             TMP.matches = [];
             for (index in JSON.season) {

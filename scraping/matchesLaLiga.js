@@ -54,14 +54,7 @@ async function getLast10Matches(url) {
     }*/
     delete original.matchesIteration;
     console.log(original);
-    FS.unlink('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', (err) => {
-        if (err) {
-            console.error(err)
-            return
-        }
-
-        console.log('JSON file has been removed.');
-    })
+    // REVISAR
     FS.writeFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', JSON.stringify(original), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

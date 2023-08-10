@@ -11,7 +11,11 @@ const URLS = {
 }
 
 const ELOS_URLS = {
+    ELOS_ENGLAND: URLS.england,
     ELOS_SPAIN: URLS.spain,
+    ELOS_ITALY: URLS.italy,
+    ELOS_FRANCE: URLS.france,
+    ELOS_GERMANY: URLS.germany,
 };
 
 async function getElos(url) {
@@ -41,7 +45,6 @@ async function getElos(url) {
     });
 
     var fileLocation = PATH.join(process.cwd(), "./db/2023/elos/elos.json");
-
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

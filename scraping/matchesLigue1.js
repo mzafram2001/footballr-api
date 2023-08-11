@@ -17,21 +17,11 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    await PAGE.waitForSelector('.event__more', { visible: true });
+    /*await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.evaluate(() => {
-        document.querySelector('.event__more').click();
-    });
-    await delay(4000);
-    await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.evaluate(() => {
-        document.querySelector('.event__more').click();
-    });
-    await delay(4000);
+    await delay(4000);*/
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -225,6 +215,7 @@ async function getAllMatches(url) {
     for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
+        await delay(1000);
         const MATCH_STATS = await PAGE.evaluate(() => {
             const TMP = {};
             const STAT_ROWS = document.querySelectorAll('.stat__row');

@@ -233,6 +233,7 @@ async function getAllMatches(url) {
     for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
+        await delay(1000);
         const MATCH_STATS = await PAGE.evaluate(() => {
             const TMP = {};
             const STAT_ROWS = document.querySelectorAll('.stat__row');
@@ -310,5 +311,11 @@ async function getAllMatches(url) {
     await BROWSER.close();
 }
 
-getLast10Matches(MATCHES_URLS.SPAIN);
-// getAllMatches(MATCHES_URLS.SPAIN);
+async function delay(time) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+    });
+}
+
+// getLast10Matches(MATCHES_URLS.SPAIN);
+getAllMatches(MATCHES_URLS.SPAIN);

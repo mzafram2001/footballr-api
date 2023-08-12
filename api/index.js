@@ -102,14 +102,14 @@ APP.get('/', (ctx) => {
 				name: "round",
 				endpoint: "/competitions/:id/matches/:round",
 				description: "List of matches, filtered by a completed matchday 🔍.",
-				example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/24",
+				example: "https://zeus-api.olympus.workers.dev/competitions/SEA/matches/1",
 				status: "Available 🟢."
 			},
 			{
 				name: "idMatch",
 				endpoint: "/competitions/:id/matches/:round/:idMatch",
 				description: "List 1 match, given by round and id of the match 🔍.",
-				example: "https://zeus-api.olympus.workers.dev/competitions/BUN/matches/24/vyLD5nYN",
+				example: "https://zeus-api.olympus.workers.dev/competitions/PRL/matches/1/EkT4QbqS",
 				status: "Available 🟢."
 			}
 		]
@@ -117,7 +117,7 @@ APP.get('/', (ctx) => {
 
 	const zeusAPI = {
 		name: "Zeus API ⚡",
-		version: 'v1.23',
+		version: 'v1.24',
 		updated: `${day}.${month}.${year} ${hours}:${minutes}`,
 		message: 'Created with 💙 by Miguel Zafra.'
 	};

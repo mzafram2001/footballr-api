@@ -921,5 +921,5 @@ async function getScorers(url) {
 getScorers(SCORERS_URLS.ENGLAND);
 getScorers(SCORERS_URLS.SPAIN);
 getScorers(SCORERS_URLS.FRANCE);
-// getScorers(SCORERS_URLS.ITALY);
-// getScorers(SCORERS_URLS.GERMANY);
+getScorers(SCORERS_URLS.ITALY);
+getScorers(SCORERS_URLS.GERMANY);

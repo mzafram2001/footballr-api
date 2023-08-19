@@ -489,4 +489,4 @@ async function delay(time) {
 }
 
 getLast10Matches(MATCHES_URLS.SPAIN);
-//getAllMatches(MATCHES_URLS.SPAIN);
+// getAllMatches(MATCHES_URLS.SPAIN);

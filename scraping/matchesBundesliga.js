@@ -398,6 +398,7 @@ async function getAllMatches(url) {
     for (let match of RESULT.matchesIteration) {
         await PAGE.goto(match.link + "/#/match-summary/match-statistics/0", { 'waitUntil': 'networkidle0' });
         console.log(match.link + "/#/match-summary/match-statistics/0");
+        await delay(1000);
         const MATCH_STATS = await PAGE.evaluate(() => {
             const TMP = {};
             const STAT_ROWS = document.querySelectorAll('.stat__row');
@@ -483,5 +484,5 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-getLast10Matches(MATCHES_URLS.GERMANY);
-// getAllMatches(MATCHES_URLS.GERMANY);
+// getLast10Matches(MATCHES_URLS.GERMANY);
+getAllMatches(MATCHES_URLS.GERMANY);

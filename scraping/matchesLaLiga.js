@@ -201,18 +201,29 @@ async function getLast10Matches(url) {
         }
         console.log('JSON has been cleared.');
     });
-    for (var i = 0; i <= original.matchesIteration.length - 1; i++) {
-        var pushIt = false;
-        var j = 0;
-        while (j <= original.season.length - 1 && pushIt == false) {
-            if (original.matchesIteration[i].round == original.season[j].round) {
-                original.season[j].matches.push(original.matchesIteration[i]);
-                delete original.matchesIteration[i].link;
-                pushIt = true;
+    for (var i = 0; i < original.matchesIteration.length; i++) {
+        var pushIt = true; // Suponemos que podemos agregar el partido por defecto
+        var matchToInsert = original.matchesIteration[i];
+        
+        for (var j = 0; j < original.season.length; j++) {
+            if (matchToInsert.round === original.season[j].round) {
+                // Comprobar si ya existe un partido con el mismo identificador
+                var existingMatch = original.season[j].matches.find(
+                    match => match.id === matchToInsert.id
+                );
+                
+                if (existingMatch) {
+                    pushIt = false; // Ya existe un partido con el mismo identificador en esta ronda
+                    break; // No es necesario seguir buscando en esta ronda
+                } else {
+                    original.season[j].matches.push(matchToInsert);
+                    delete matchToInsert.link;
+                    break; // Hemos agregado el partido, no es necesario seguir buscando en esta ronda
+                }
             }
-            j++;
         }
     }
+    
     delete original.matchesIteration;
     FS.writeFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', JSON.stringify(original), function (err) {
         if (err) {
@@ -477,5 +488,5 @@ async function delay(time) {
     });
 }
 
-//getLast10Matches(MATCHES_URLS.SPAIN);
-getAllMatches(MATCHES_URLS.SPAIN);
+getLast10Matches(MATCHES_URLS.SPAIN);
+//getAllMatches(MATCHES_URLS.SPAIN);

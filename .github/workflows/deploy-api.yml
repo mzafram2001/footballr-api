@@ -2,6 +2,9 @@ name: Deploy API
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'main'
   
   repository_dispatch:
     types:
@@ -28,4 +31,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: api
-      

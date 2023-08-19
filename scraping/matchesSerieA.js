@@ -16,7 +16,8 @@ async function getLast10Matches(url) {
     });
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
-    var original = require('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesSerieA2023Flashcore.json');
+    var fileLocation = PATH.join(process.cwd(), "./db/2023/matches/matchesSerieA2023Flashcore.json");
+    var original = require(fileLocation);
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};
         JSON.season = [];
@@ -230,7 +231,7 @@ async function getLast10Matches(url) {
     //original.season = RESULT.season;
     original.matchesIteration = RESULT.matchesIteration;
     console.log(original);
-    FS.truncate('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesSerieA2023Flashcore.json', 0, function (err) {
+    FS.truncate(fileLocation, 0, function (err) {
         if (err) {
             console.log('An error occurred while truncating the file.');
             return console.log(err);
@@ -261,7 +262,7 @@ async function getLast10Matches(url) {
     }
     
     delete original.matchesIteration;
-    FS.writeFile('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesSerieA2023Flashcore.json', JSON.stringify(original), function (err) {
+    FS.writeFile(fileLocation, JSON.stringify(original), function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');
             return console.log(err);

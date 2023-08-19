@@ -191,7 +191,7 @@ async function getLast10Matches(url) {
         });
         match.stats = MATCH_STATS;
     }
-    original.season = RESULT.season;
+    //original.season = RESULT.season;
     original.matchesIteration = RESULT.matchesIteration;
     console.log(original);
     FS.truncate('D:/Proyectos/olympus/zeus-api/db/2023/matches/matchesLaLiga2023Flashcore.json', 0, function (err) {
@@ -477,5 +477,5 @@ async function delay(time) {
     });
 }
 
-// getLast10Matches(MATCHES_URLS.SPAIN);
+//getLast10Matches(MATCHES_URLS.SPAIN);
 getAllMatches(MATCHES_URLS.SPAIN);

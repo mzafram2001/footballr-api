@@ -11,7 +11,7 @@ const MATCHES_URLS = {
     GERMANY: URLS.germany,
 };
 
-async function getLast10Matches(url) {
+async function getLast8Matches(url) {
     const BROWSER = await PUPPETER.launch({
         headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
@@ -27,12 +27,12 @@ async function getLast10Matches(url) {
         const MATCHES_SELECTOR = document.querySelectorAll('.event__match');
         var round = 0;
         var ok = Array.prototype.slice.call(MATCHES_SELECTOR);
-        const LAST_10 = ok.slice(0, 10);
+        const LAST_8 = ok.slice(0, 8);
         ok = Array.prototype.slice.call(ROUNDS_SELECTOR);
         const ROUNDS_ARRAY = ok;
-        for (var i = LAST_10.length - 1; i >= 0; i--) {
+        for (var i = LAST_8.length - 1; i >= 0; i--) {
             const TMP = {};
-            TMP.id = LAST_10[i].id.substring(4);
+            TMP.id = LAST_8[i].id.substring(4);
             TMP.link = "https://www.flashscore.com/match/" + TMP.id;
             JSON.matchesIteration.push(TMP);
         }
@@ -485,5 +485,5 @@ async function delay(time) {
 }
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
-// getLast10Matches(MATCHES_URLS.GERMANY);
-getAllMatches(MATCHES_URLS.GERMANY);
+getLast8Matches(MATCHES_URLS.GERMANY);
+// getAllMatches(MATCHES_URLS.GERMANY);

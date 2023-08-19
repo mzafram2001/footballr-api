@@ -1,1 +1,1 @@
-{"name":"Serie A","area":"ITA","yearStart":2023,"yearEnd":2024,"scorers":[]}
+{"name":"Serie A","area":"ITA","yearStart":2023,"yearEnd":2024,"scorers":[{"position":1,"player":{"id":"nJ2Rd9i9","name":"Abdou Harroui"},"team":{"id":"pfo9H1Wp","name":"Frosinone","logo":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/pfo9H1Wp.svg"},"area":{"id":"MOR","name":"Morocco","flag":"https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/IDKYO3R8.svg"},"goals":1,"assists":0}]}

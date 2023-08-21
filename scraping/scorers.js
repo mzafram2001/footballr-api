@@ -755,6 +755,21 @@ async function getScorers(url) {
                         TMP.area.name = "Czech Republic";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/6LHwBDGU.svg";
                         break;
+                    case "Japan":
+                        TMP.area.id = "JPN";
+                        TMP.area.name = "Japan";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/ULXPdOUj.svg";
+                        break;
+                    case "Ukraine":
+                        TMP.area.id = "UKR";
+                        TMP.area.name = "Ukraine";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j1JtDMwo.svg";
+                        break;
+                    case "Jordan":
+                        TMP.area.id = "JOR";
+                        TMP.area.name = "Jordan";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vNcmJoU2.svg";
+                        break;
 
                     default:
                         TMP.area.id = "-";

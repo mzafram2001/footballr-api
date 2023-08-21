@@ -770,6 +770,11 @@ async function getScorers(url) {
                         TMP.area.name = "Jordan";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/vNcmJoU2.svg";
                         break;
+                    case "Ecuador":
+                        TMP.area.id = "ECU";
+                        TMP.area.name = "Ecuador";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8tbm8Tri.svg";
+                        break;
 
                     default:
                         TMP.area.id = "-";

@@ -554,15 +554,28 @@ async function getLast10Matches(url) {
                         var dumpString = player.querySelector('a').getAttribute('href');
                         var dumpStringArray = dumpString.split('/');
                         var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                        var lastName = dumpStringArraySecondary[0];
-                        var firstName = dumpStringArraySecondary[1];
+                        var lastName = undefined;
+                        var firstName = undefined;
+                        var middleName = undefined;
                         TMP2.id = dumpStringArray[3];
+                        if (dumpStringArraySecondary.length == 2) {
+                            lastName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[1];
+                        } else if (dumpStringArraySecondary.length == 3) {
+                            lastName = dumpStringArraySecondary[1];
+                            middleName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[2];
+                        } else {
+                            firstName = dumpStringArraySecondary[0];
+                        }
                         if (firstName == undefined) {
                             TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                         } else if (lastName == undefined) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                        } else {
+                        } else if (middleName == undefined) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        } else {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                         }
                         TMP.homeTeam.players.push(TMP2);
                     });
@@ -1206,15 +1219,28 @@ async function getAllMatches(url) {
                         var dumpString = player.querySelector('a').getAttribute('href');
                         var dumpStringArray = dumpString.split('/');
                         var dumpStringArraySecondary = dumpStringArray[2].split('-');
-                        var lastName = dumpStringArraySecondary[0];
-                        var firstName = dumpStringArraySecondary[1];
+                        var lastName = undefined;
+                        var firstName = undefined;
+                        var middleName = undefined;
                         TMP2.id = dumpStringArray[3];
+                        if (dumpStringArraySecondary.length == 2) {
+                            lastName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[1];
+                        } else if (dumpStringArraySecondary.length == 3) {
+                            lastName = dumpStringArraySecondary[1];
+                            middleName = dumpStringArraySecondary[0];
+                            firstName = dumpStringArraySecondary[2];
+                        } else {
+                            firstName = dumpStringArraySecondary[0];
+                        }
                         if (firstName == undefined) {
                             TMP2.player = String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                         } else if (lastName == undefined) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1);
-                        } else {
+                        } else if (middleName == undefined) {
                             TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
+                        } else {
+                            TMP2.player = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                         }
                         TMP.homeTeam.players.push(TMP2);
                     });

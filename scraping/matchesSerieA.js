@@ -71,7 +71,7 @@ async function getLast10Matches(url) {
             switch (TMP.homeTeam.name) {
                 case "Napoli": TMP.homeTeam.name = "Calcio Napoli";
                     break;
-                case "Inter": TMP.homeTeam.name = "Inter Milán";
+                case "Inter": TMP.homeTeam.name = "Inter Milan";
                     break;
                 case "AC Milan": TMP.homeTeam.name = "Calcio Milan";
                     break;
@@ -121,7 +121,7 @@ async function getLast10Matches(url) {
             switch (TMP.awayTeam.name) {
                 case "Napoli": TMP.awayTeam.name = "Calcio Napoli";
                     break;
-                case "Inter": TMP.awayTeam.name = "Inter Milán";
+                case "Inter": TMP.awayTeam.name = "Inter Milan";
                     break;
                 case "AC Milan": TMP.awayTeam.name = "Calcio Milan";
                     break;
@@ -737,7 +737,7 @@ async function getAllMatches(url) {
             switch (TMP.homeTeam.name) {
                 case "Napoli": TMP.homeTeam.name = "Calcio Napoli";
                     break;
-                case "Inter": TMP.homeTeam.name = "Inter Milán";
+                case "Inter": TMP.homeTeam.name = "Inter Milan";
                     break;
                 case "AC Milan": TMP.homeTeam.name = "Calcio Milan";
                     break;
@@ -787,7 +787,7 @@ async function getAllMatches(url) {
             switch (TMP.awayTeam.name) {
                 case "Napoli": TMP.awayTeam.name = "Calcio Napoli";
                     break;
-                case "Inter": TMP.awayTeam.name = "Inter Milán";
+                case "Inter": TMP.awayTeam.name = "Inter Milan";
                     break;
                 case "AC Milan": TMP.awayTeam.name = "Calcio Milan";
                     break;

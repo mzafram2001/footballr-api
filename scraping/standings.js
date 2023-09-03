@@ -48,7 +48,7 @@ async function getStandings(url) {
         ROWS.forEach(element => {
             const TEAM_NAME = {
                 "Napoli": "Calcio Napoli",
-                "Inter": "Inter Milán",
+                "Inter": "Inter Milan",
                 "AC Milan": "Calcio Milan",
                 "AS Roma": "Roma",
                 "Atalanta": "Calcio Atalanta",

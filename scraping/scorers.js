@@ -376,7 +376,7 @@ async function getScorers(url) {
                         break;
                     case "Inter": TMP.team.name = "Inter Milán";
                         break;
-                    case "AC Milan": TMP.team.name = "Calcio Milán";
+                    case "AC Milan": TMP.team.name = "Calcio Milan";
                         break;
                     case "AS Roma": TMP.team.name = "Roma";
                         break;
@@ -816,7 +816,7 @@ async function getScorers(url) {
                         break;
                     case "Inter": TMP.team.name = "Inter Milán";
                         break;
-                    case "AC Milan": TMP.team.name = "Calcio Milán";
+                    case "AC Milan": TMP.team.name = "Calcio Milan";
                         break;
                     case "AS Roma": TMP.team.name = "Roma";
                         break;

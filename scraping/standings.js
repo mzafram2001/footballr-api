@@ -49,7 +49,7 @@ async function getStandings(url) {
             const TEAM_NAME = {
                 "Napoli": "Calcio Napoli",
                 "Inter": "Inter Milán",
-                "AC Milan": "Calcio Milán",
+                "AC Milan": "Calcio Milan",
                 "AS Roma": "Roma",
                 "Atalanta": "Calcio Atalanta",
                 "Udinese": "Calcio Udinese",

@@ -281,18 +281,284 @@
             "value": "49M"
         },
         {
-            "id": "IyRQC2vM",
-            "name": "Las Palmas",
-            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IyRQC2vM.svg",
-            "established": 1949,
-            "shorthand": "PAL",
+            "id": "Wtn9Stg0",
+            "name": "Manchester City",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/Wtn9Stg0.svg",
+            "established": 1880,
+            "shorthand": "MCI",
             "area": {
-                "id": "ESP",
-                "name": "Spain",
-                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 91,
+            "value": "1180M"
+        },
+        {
+            "id": "UDg08Ohm",
+            "name": "Tottenham Hotspur",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/UDg08Ohm.svg",
+            "established": 1882,
+            "shorthand": "TOT",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 81,
+            "value": "689M"
+        },
+        {
+            "id": "lId4TMwf",
+            "name": "Liverpool",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/lId4TMwf.svg",
+            "established": 1892,
+            "shorthand": "LIV",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 90,
+            "value": "831M"
+        },
+        {
+            "id": "hA1Zm19f",
+            "name": "Arsenal",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/hA1Zm19f.svg",
+            "established": 1886,
+            "shorthand": "ARS",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 81,
+            "value": "1090M"
+        },
+        {
+            "id": "2XrRecc3",
+            "name": "Brighton",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/2XrRecc3.svg",
+            "established": 1901,
+            "shorthand": "BHA",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 66,
+            "value": "376M"
+        },
+        {
+            "id": "Cxq57r8g",
+            "name": "West Ham United",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/Cxq57r8g.svg",
+            "established": 1895,
+            "shorthand": "WHU",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 70,
+            "value": "443M"
+        },
+        {
+            "id": "W00wmLO0",
+            "name": "Aston Villa",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/W00wmLO0.svg",
+            "established": 1874,
+            "shorthand": "AST",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 69,
+            "value": "598M"
+        },
+        {
+            "id": "ppjDR086",
+            "name": "Manchester United",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/ppjDR086.svg",
+            "established": 1878,
+            "shorthand": "MNU",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 84,
+            "value": "882M"
+        },
+        {
+            "id": "AovF1Mia",
+            "name": "Crystal Palace",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/AovF1Mia.svg",
+            "established": 1861,
+            "shorthand": "CRY",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 66,
+            "value": "333M"
+        },
+        {
+            "id": "69ZiU2Om",
+            "name": "Fulham",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/69ZiU2Om.svg",
+            "established": 1879,
+            "shorthand": "FUL",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 64,
+            "value": "296M"
+        },
+        {
+            "id": "UsushcZr",
+            "name": "Nottingham Forest",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/UsushcZr.svg",
+            "established": 1865,
+            "shorthand": "NOT",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 62,
+            "value": "382M"
+        },
+        {
+            "id": "p6ahwuwJ",
+            "name": "Newcastle United",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/p6ahwuwJ.svg",
+            "established": 1892,
+            "shorthand": "NEW",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 74,
+            "value": "598M"
+        },
+        {
+            "id": "xYe7DwID",
+            "name": "Brentford",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/xYe7DwID.svg",
+            "established": 1889,
+            "shorthand": "BRE",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
             },
             "elo": 63,
-            "value": "49M"
+            "value": "365M"
+        },
+        {
+            "id": "4fGZN2oK",
+            "name": "Chelsea",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/4fGZN2oK.svg",
+            "established": 1905,
+            "shorthand": "CHE",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 88,
+            "value": "926M"
+        },
+        {
+            "id": "KluSTr9s",
+            "name": "Everton",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/KluSTr9s.svg",
+            "established": 1878,
+            "shorthand": "EVE",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 67,
+            "value": "340M"
+        },
+        {
+            "id": "j3Azpf5d",
+            "name": "Wolverhampton Wanderers",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/j3Azpf5d.svg",
+            "established": 1877,
+            "shorthand": "WOL",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 66,
+            "value": "289M"
+        },
+        {
+            "id": "OtpNdwrc",
+            "name": "Athletic Bournemouth",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/OtpNdwrc.svg",
+            "established": 1899,
+            "shorthand": "BOU",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 63,
+            "value": "337M"
+        },
+        {
+            "id": "MeKPSerA",
+            "name": "Sheffield United",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/MeKPSerA.svg",
+            "established": 1889,
+            "shorthand": "SHU",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 63,
+            "value": "136M"
+        },
+        {
+            "id": "SlybbadF",
+            "name": "Luton",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SlybbadF.svg",
+            "established": 1885,
+            "shorthand": "LUT",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 61,
+            "value": "85M"
+        },
+        {
+            "id": "z3dmTMMO",
+            "name": "Luton",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/z3dmTMMO.svg",
+            "established": 1882,
+            "shorthand": "BUR",
+            "area": {
+                "id": "ENG",
+                "name": "England",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/j9N9ZNFA.svg"
+            },
+            "elo": 64,
+            "value": "228M"
         }
     ]
 }

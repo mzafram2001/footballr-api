@@ -279,6 +279,20 @@
             },
             "elo": 63,
             "value": "49M"
+        },
+        {
+            "id": "IyRQC2vM",
+            "name": "Las Palmas",
+            "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/IyRQC2vM.svg",
+            "established": 1949,
+            "shorthand": "PAL",
+            "area": {
+                "id": "ESP",
+                "name": "Spain",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/bLyo6mco.svg"
+            },
+            "elo": 63,
+            "value": "49M"
         }
     ]
 }

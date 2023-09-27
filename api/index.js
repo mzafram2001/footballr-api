@@ -115,6 +115,22 @@ APP.get('/', (ctx) => {
 		]
 	};
 
+	const teamsEndpoint = {
+		endpoint: '/teams',
+		description: 'List all available teams 🛡️.',
+		example: "https://zeus-api.olympus.workers.dev/teams",
+		status: "Available 🟢.",
+		parameters: [
+			{
+				name: "id",
+				endpoint: "/teams/:id",
+				description: "List one team given by id 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/teams/W8mj7MDD",
+				status: "Available 🟢."
+			}
+		]
+	};
+
 	const zeusAPI = {
 		name: "Zeus API ⚡",
 		version: 'v1.26',
@@ -122,7 +138,7 @@ APP.get('/', (ctx) => {
 		message: 'Created with 💙 by Miguel Zafra.'
 	};
 
-	const data = [areasEndpoint, competitionsEndpoint, zeusAPI];
+	const data = [areasEndpoint, competitionsEndpoint, teamsEndpoint, zeusAPI];
 
 	return ctx.json(data);
 })
@@ -292,7 +308,17 @@ APP.get('/competitions/:id/schedules', (ctx) => {
 	} else {
 		ctx.json({ message: 'Not Found. 😔' }, 404);
 	}
-})
+});
+
+APP.get('/teams', (ctx) => {
+	return ctx.json(teams);
+});
+
+APP.get('/teams/:id', (ctx) => {
+	const id = ctx.req.param("id");
+	const found = teams.teams.find((team) => team.id === id);
+	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
+});
 
 APP.notFound((ctx) => {
 	const { pathname } = new URL(ctx.req.url);

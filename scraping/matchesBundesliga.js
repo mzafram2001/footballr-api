@@ -452,33 +452,33 @@ async function getLast8Matches(url) {
         await delay(2000);
         const MATCH_STATS = await PAGE.evaluate(() => {
             const TMP = {};
-            const STAT_ROWS = document.querySelectorAll('._row_hf6ag_7');
+            const STAT_ROWS = document.querySelectorAll('._row_1gfjz_9');
             STAT_ROWS.forEach(element => {
-                categoryName = element.querySelector('._categoryName_gomgt_3').innerText;
+                categoryName = element.querySelector('._categoryName_11si3_5').innerText;
                 switch (categoryName) {
                     case "Ball Possession":
-                        TMP.ballPossessionHome = element.querySelector('._homeValue_um3q5_8').innerText;
-                        TMP.ballPossessionAway = element.querySelector('._awayValue_um3q5_12').innerText;
+                        TMP.ballPossessionHome = element.querySelector('._homeValue_v26p1_10').innerText;
+                        TMP.ballPossessionAway = element.querySelector('._awayValue_v26p1_14').innerText;
                         break;
                     case "Goal Attempts":
-                        TMP.goalAttemptsHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.goalAttemptsAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.goalAttemptsHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.goalAttemptsAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Offsides":
-                        TMP.offsidesHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.offsidesAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.offsidesHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.offsidesAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Fouls":
-                        TMP.foulsHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.foulsAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.foulsHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.foulsAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Total Passes":
-                        TMP.totalPassesHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.totalPassesAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.totalPassesHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.totalPassesAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Attacks":
-                        TMP.attacksHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.attacksAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.attacksHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.attacksAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                 }
             });
@@ -1078,33 +1078,33 @@ async function getAllMatches(url) {
         await delay(2000);
         const MATCH_STATS = await PAGE.evaluate(() => {
             const TMP = {};
-            const STAT_ROWS = document.querySelectorAll('._row_hf6ag_7');
+            const STAT_ROWS = document.querySelectorAll('._row_1gfjz_9');
             STAT_ROWS.forEach(element => {
-                categoryName = element.querySelector('._categoryName_gomgt_3').innerText;
+                categoryName = element.querySelector('._row__categoryName_11si3_5').innerText;
                 switch (categoryName) {
                     case "Ball Possession":
-                        TMP.ballPossessionHome = element.querySelector('._homeValue_um3q5_8').innerText;
-                        TMP.ballPossessionAway = element.querySelector('._awayValue_um3q5_12').innerText;
+                        TMP.ballPossessionHome = element.querySelector('._homeValue_v26p1_10').innerText;
+                        TMP.ballPossessionAway = element.querySelector('._awayValue_v26p1_14').innerText;
                         break;
                     case "Goal Attempts":
-                        TMP.goalAttemptsHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.goalAttemptsAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.goalAttemptsHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.goalAttemptsAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Offsides":
-                        TMP.offsidesHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.offsidesAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.offsidesHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.offsidesAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Fouls":
-                        TMP.foulsHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.foulsAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.foulsHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.foulsAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Total Passes":
-                        TMP.totalPassesHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.totalPassesAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.totalPassesHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.totalPassesAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                     case "Attacks":
-                        TMP.attacksHome = parseInt(element.querySelector('._homeValue_um3q5_8').innerText);
-                        TMP.attacksAway = parseInt(element.querySelector('._awayValue_um3q5_12').innerText);
+                        TMP.attacksHome = parseInt(element.querySelector('._homeValue_v26p1_10').innerText);
+                        TMP.attacksAway = parseInt(element.querySelector('._awayValue_v26p1_14').innerText);
                         break;
                 }
             });

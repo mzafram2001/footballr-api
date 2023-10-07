@@ -331,7 +331,7 @@ APP.get('/players', (ctx) => {
 	return ctx.json(players);
 });
 
-APP.get('/teams/:id', (ctx) => {
+APP.get('/players/:id', (ctx) => {
 	const id = ctx.req.param("id");
 	const found = players.players.find((player) => player.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);

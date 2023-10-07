@@ -28,6 +28,7 @@ import schedulesBundesliga2023 from "../db/2023/schedules/schedulesBundesliga202
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 import teams from "../db/teams.json";
+import players from "../db/players.json";
 
 const APP = new Hono();
 
@@ -131,6 +132,22 @@ APP.get('/', (ctx) => {
 		]
 	};
 
+	const playersEndpoint = {
+		endpoint: '/players',
+		description: 'List all available players 🏃.',
+		example: "https://zeus-api.olympus.workers.dev/players",
+		status: "Available 🟡.",
+		parameters: [
+			{
+				name: "id",
+				endpoint: "/players/:id",
+				description: "List one player given by id 🔍.",
+				example: "https://zeus-api.olympus.workers.dev/players/UmV9iQmE",
+				status: "Developing 🟡."
+			}
+		]
+	};
+
 	const zeusAPI = {
 		name: "Zeus API ⚡",
 		version: 'v1.26',
@@ -138,7 +155,7 @@ APP.get('/', (ctx) => {
 		message: 'Created with 💙 by Miguel Zafra.'
 	};
 
-	const data = [areasEndpoint, competitionsEndpoint, teamsEndpoint, zeusAPI];
+	const data = [areasEndpoint, competitionsEndpoint, teamsEndpoint, playersEndpoint, zeusAPI];
 
 	return ctx.json(data);
 })
@@ -152,16 +169,6 @@ APP.get('/areas/:id', (ctx) => {
 	const found = areas.areas.find((area) => area.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
-
-/*APP.get('/teams', (ctx) => {
-	return ctx.json(teams);
-});
-
-APP.get('/teams/:id', (ctx) => {
-	const id = ctx.req.param("id");
-	const found = teams.teams.find((team) => team.id === id);
-	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
-});*/
 
 APP.get('/competitions', (ctx) => {
 	return ctx.json(competitions);
@@ -317,6 +324,16 @@ APP.get('/teams', (ctx) => {
 APP.get('/teams/:id', (ctx) => {
 	const id = ctx.req.param("id");
 	const found = teams.teams.find((team) => team.id === id);
+	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
+});
+
+APP.get('/players', (ctx) => {
+	return ctx.json(players);
+});
+
+APP.get('/teams/:id', (ctx) => {
+	const id = ctx.req.param("id");
+	const found = players.players.find((player) => player.id === id);
 	return found ? ctx.json(found) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 

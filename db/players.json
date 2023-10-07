@@ -1,0 +1,40 @@
+{
+    "players": [
+        {
+            "id": "Wn6E2SED",
+            "name": "Kylian Mbappé",
+            "photo": "https://img.fminside.net/facesfm23/85139014.png", 
+            "area": {
+                "id": "FRA",
+                "name": "France",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/QkGeVG1n.svg"
+            },
+            "position": "ST",
+            "elo": 91,
+            "value": "180M",
+            "team": {
+                "id": "CjhkPw0k",
+                "name": "Paris Saint-Germain",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/CjhkPw0k.svg"
+            }
+        },
+        {
+            "id": "UmV9iQmE",
+            "name": "Erling Haaland",
+            "photo": "https://img.fminside.net/facesfm23/29179241.png", 
+            "area": {
+                "id": "NOR",
+                "name": "Norway",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8rP6JO0H.svg"
+            },
+            "position": "ST",
+            "elo": 91,
+            "value": "180M",
+            "team": {
+                "id": "Wtn9Stg0",
+                "name": "Manchester City",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/Wtn9Stg0.svg"
+            }
+        }
+    ]
+}

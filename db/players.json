@@ -485,6 +485,24 @@
             "position": "MF",
             "elo": 77,
             "value": "15M"
+        },
+        {
+            "id": "MVC8zHZD",
+            "name": "Robert Lewandowski",
+            "photo": "https://img.fminside.net/facesfm23/719601.png",
+            "area": {
+                "id": "POL",
+                "name": "Poland",
+                "flag": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/2HzmcynI.svg"
+            },
+            "team": {
+                "id": "SKbpVP5K",
+                "name": "Barcelona",
+                "logo": "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/SKbpVP5K.svg"
+            },
+            "position": "ST",
+            "elo": 90,
+            "value": "30M"
         }
     ]
 }

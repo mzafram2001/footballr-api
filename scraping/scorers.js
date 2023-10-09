@@ -365,7 +365,7 @@ async function getScorers(url) {
                         TMP.area.name = "Malta";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YHpMYsVG.svg";
                         break;
-                    case "United States of America":
+                    case "USA":
                         TMP.area.id = "USA";
                         TMP.area.name = "United States of America";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fuitL4CF.svg";
@@ -825,7 +825,7 @@ async function getScorers(url) {
                         TMP.area.name = "Malta";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YHpMYsVG.svg";
                         break;
-                    case "United States of America":
+                    case "USA":
                         TMP.area.id = "USA";
                         TMP.area.name = "United States of America";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fuitL4CF.svg";

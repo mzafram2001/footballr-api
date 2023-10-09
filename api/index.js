@@ -132,7 +132,7 @@ APP.get('/', (ctx) => {
 		]
 	};
 
-	const playersEndpoint = {
+	/*const playersEndpoint = {
 		endpoint: '/players',
 		description: 'List all available players 🏃.',
 		example: "https://zeus-api.olympus.workers.dev/players",
@@ -146,7 +146,7 @@ APP.get('/', (ctx) => {
 				status: "Developing 🟡."
 			}
 		]
-	};
+	};*/
 
 	const zeusAPI = {
 		name: "Zeus API ⚡",
@@ -155,7 +155,7 @@ APP.get('/', (ctx) => {
 		message: 'Created with 💙 by Miguel Zafra.'
 	};
 
-	const data = [areasEndpoint, competitionsEndpoint, teamsEndpoint, playersEndpoint, zeusAPI];
+	const data = [areasEndpoint, competitionsEndpoint, teamsEndpoint, zeusAPI];
 
 	return ctx.json(data);
 })

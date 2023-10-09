@@ -355,6 +355,26 @@ async function getScorers(url) {
                         TMP.area.name = "Ecuador";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8tbm8Tri.svg";
                         break;
+                    case "Ireland":
+                        TMP.area.id = "IRE";
+                        TMP.area.name = "Ireland";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Gfyqk1aG.svg";
+                        break;
+                    case "Malta":
+                        TMP.area.id = "MTA";
+                        TMP.area.name = "Malta";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YHpMYsVG.svg";
+                        break;
+                    case "United States of America":
+                        TMP.area.id = "USA";
+                        TMP.area.name = "United States of America";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fuitL4CF.svg";
+                        break;
+                    case "Ghana":
+                        TMP.area.id = "GHA";
+                        TMP.area.name = "Ghana";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg";
+                        break;
 
                     default:
                         TMP.area.id = "-";
@@ -794,6 +814,26 @@ async function getScorers(url) {
                         TMP.area.id = "ECU";
                         TMP.area.name = "Ecuador";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/8tbm8Tri.svg";
+                        break;
+                    case "Ireland":
+                        TMP.area.id = "IRE";
+                        TMP.area.name = "Ireland";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/Gfyqk1aG.svg";
+                        break;
+                    case "Malta":
+                        TMP.area.id = "MTA";
+                        TMP.area.name = "Malta";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/YHpMYsVG.svg";
+                        break;
+                    case "United States of America":
+                        TMP.area.id = "USA";
+                        TMP.area.name = "United States of America";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/fuitL4CF.svg";
+                        break;
+                    case "Ghana":
+                        TMP.area.id = "GHA";
+                        TMP.area.name = "Ghana";
+                        TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg";
                         break;
 
                     default:

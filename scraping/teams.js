@@ -78,9 +78,6 @@ async function getElos(url, startIndex, endIndex) {
                 break;
             case "Paris SG": resultTeam.name = "Paris Saint-Germain";
                 break;
-
-
-
             case "Lens": resultTeam.name = "Racing Lens";
                 break;
             case "Rennes": resultTeam.name = "Stade Rennais";
@@ -99,9 +96,6 @@ async function getElos(url, startIndex, endIndex) {
                 break;
             case "Strasbourg": resultTeam.name = "Racing Strasbourg";
                 break;
-
-
-
             case "Inter": resultTeam.name = "Inter Milan";
                 break;
             case "Napoli": resultTeam.name = "Calcio Napoli";
@@ -124,22 +118,21 @@ async function getElos(url, startIndex, endIndex) {
                 break;
             case "Cagliari": resultTeam.name = "Calcio Cagliari";
                 break;
-
-                case "Bayern": resultTeam.name = "Bayern Munich";
+            case "Bayern": resultTeam.name = "Bayern Munich";
                 break;
-                case "Dortmund": resultTeam.name = "Borussia Dortmund";
+            case "Dortmund": resultTeam.name = "Borussia Dortmund";
                 break;
-                case "RB Leipzig": resultTeam.name = "RasenBallsport Leipzig";
+            case "RB Leipzig": resultTeam.name = "RasenBallsport Leipzig";
                 break;
-                case "Leverkusen": resultTeam.name = "Bayer Leverkusen";
+            case "Leverkusen": resultTeam.name = "Bayer Leverkusen";
                 break;
-                case "Frankfurt": resultTeam.name = "Eintracht Frankfurt";
+            case "Frankfurt": resultTeam.name = "Eintracht Frankfurt";
                 break;
-                case "Gladbach": resultTeam.name = "Borussia Mönchengladbach";
+            case "Gladbach": resultTeam.name = "Borussia Mönchengladbach";
                 break;
-                case "Werder": resultTeam.name = "Werder Bremen";
+            case "Werder": resultTeam.name = "Werder Bremen";
                 break;
-                case "Darmstadt": resultTeam.name = "Darmstadt Sport-Verein";
+            case "Darmstadt": resultTeam.name = "Darmstadt Sport-Verein";
                 break;
         }
         const teamToUpdate = original.teams.find((team) => team.name === resultTeam.name);
@@ -151,10 +144,8 @@ async function getElos(url, startIndex, endIndex) {
         }
     });
 
-    // Ordenar el arreglo por "currentElo" de mayor a menor
     original.teams.sort((a, b) => b.currentElo - a.currentElo);
 
-    // Asignar la posición basada en el orden
     original.teams.forEach((team, index) => {
         team.currentPosition = index + 1;
     });

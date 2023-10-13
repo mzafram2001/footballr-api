@@ -157,6 +157,7 @@ async function getSchedules(url) {
         match.hour = MATCH.hour;
         match.homeTeam = MATCH.homeTeam;
         match.awayTeam = MATCH.awayTeam;
+        match.status = "SCHEDULED";
     }
 
     for (var i = 0; i <= RESULT.matchesIteration.length - 1; i++) {

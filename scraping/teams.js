@@ -142,8 +142,14 @@ async function getElos(url, startIndex, endIndex) {
                 teamToUpdate.lastElo = teamToUpdate.currentElo;
                 teamToUpdate.lastPosition = teamToUpdate.currentPosition;
                 teamToUpdate.currentElo = newElo;
-                console.log(teamToUpdate.name);
             }
+            if (typeof teamToUpdate.bestElo === 'undefined' || newElo > teamToUpdate.bestElo) {
+                teamToUpdate.bestElo = newElo;
+            }
+            if (typeof teamToUpdate.bestPosition === 'undefined' || teamToUpdate.currentPosition < teamToUpdate.bestPosition) {
+                teamToUpdate.bestPosition = teamToUpdate.currentPosition;
+            }
+            // console.log(teamToUpdate.name);
         }
     });
 

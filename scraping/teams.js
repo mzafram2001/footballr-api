@@ -137,10 +137,13 @@ async function getElos(url, startIndex, endIndex) {
         }
         const teamToUpdate = original.teams.find((team) => team.name === resultTeam.name);
         if (teamToUpdate) {
-            teamToUpdate.lastElo = teamToUpdate.currentElo;
-            teamToUpdate.lastPosition = teamToUpdate.currentPosition;
-            teamToUpdate.currentElo = parseInt(resultTeam.elo);
-            console.log(teamToUpdate.name);
+            const newElo = parseInt(resultTeam.elo);
+            if (newElo !== teamToUpdate.currentElo) {
+                teamToUpdate.lastElo = teamToUpdate.currentElo;
+                teamToUpdate.lastPosition = teamToUpdate.currentPosition;
+                teamToUpdate.currentElo = newElo;
+                console.log(teamToUpdate.name);
+            }
         }
     });
 

@@ -157,7 +157,7 @@ async function getStandings(url) {
                 try {
                     TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(9) > span').innerText);
                 } catch (error) {
-                    TMP.points = 0; // Por ejemplo, establecer un valor predeterminado de 0
+                    TMP.points = 0;
                 }
             }
 

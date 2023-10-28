@@ -149,7 +149,19 @@ async function getStandings(url) {
             TMP.goalsFor = parseInt(dumpStringArray[0]);
             TMP.goalsAgainst = parseInt(dumpStringArray[1]);
             TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
-            TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.table__cell.table__cell--value.table__cell--points').innerText);
+
+
+            try {
+                TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.table__cell.table__cell--value.table__cell--points').innerText);
+            } catch (error) {
+                try {
+                    TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(9) > span').innerText);
+                } catch (error) {
+                    TMP.points = 0; // Por ejemplo, establecer un valor predeterminado de 0
+                }
+            }
+
+
             var form = element.querySelectorAll('.tableCellFormIcon');
             var dump = 0;
             form.forEach(element => {

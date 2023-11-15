@@ -317,6 +317,34 @@ APP.get('/competitions/:id/schedules', (ctx) => {
 	}
 });
 
+APP.get('/competitions/:id/schedules/:round', (ctx) => {
+	const id = ctx.req.param("id").toUpperCase();
+	const round = parseInt(ctx.req.param("round"));
+	var foundRound;
+	const found = competitions.competitions.find((competition) => competition.id === id);
+	if (!found) return ctx.json({ message: 'Not Found. 😔' }, 404);
+	if (found) {
+		switch (id) {
+			case "PRL":
+				foundRound = schedulesPremierLeague2023.season.find((match) => match.round === round);
+				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+			case "LAL":
+				foundRound = schedulesLaLiga2023.season.find((match) => match.round === round);
+				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+			case "LI1":
+				foundRound = schedulesLigue12023.season.find((match) => match.round === round);
+				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+			case "SEA":
+				foundRound = schedulesSerieA2023.season.find((match) => match.round === round);
+				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+			case "BUN":
+				foundRound = schedulesBundesliga2023.season.find((match) => match.round === round);
+				return foundRound ? ctx.json(foundRound) : ctx.json({ message: 'Not Found. 😔' }, 404);
+			default: ctx.json({ message: 'Not Found. 😔' }, 404);
+		};
+	}
+});
+
 APP.get('/teams', (ctx) => {
 	return ctx.json(teams);
 });

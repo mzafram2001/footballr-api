@@ -88,7 +88,7 @@ async function getStandings(url) {
                 "Dep. La Coruna": "Deportivo La Coruña",
                 "Gijon": "Gijón",
                 "Leganes": "Leganés",
-                "Paris SG": "Paris Saint-Germain",
+                "PSG": "Paris Saint-Germain",
                 "Marseille": "Olympique Marseille",
                 "Lens": "Racing Lens",
                 "Rennes": "Stade Rennais",

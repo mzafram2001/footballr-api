@@ -83,7 +83,7 @@ async function getSchedules(url) {
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             switch (TMP.homeTeam.name) {
-                case "Paris SG": TMP.homeTeam.name = "Paris Saint-Germain";
+                case "PSG": TMP.homeTeam.name = "Paris Saint-Germain";
                     break;
                 case "Marseille": TMP.homeTeam.name = "Olympique Marseille";
                     break;
@@ -132,7 +132,7 @@ async function getSchedules(url) {
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
             switch (TMP.awayTeam.name) {
-                case "Paris SG": TMP.awayTeam.name = "Paris Saint-Germain";
+                case "PSG": TMP.awayTeam.name = "Paris Saint-Germain";
                     break;
                 case "Marseille": TMP.awayTeam.name = "Olympique Marseille";
                     break;

@@ -446,7 +446,7 @@ async function getScorers(url) {
                         break;
                     case "Almeria": TMP.team.name = "Almería";
                         break;
-                    case "Paris SG": TMP.team.name = "Paris Saint-Germain";
+                    case "PSG": TMP.team.name = "Paris Saint-Germain";
                         break;
                     case "Marseille": TMP.team.name = "Olympique Marseille";
                         break;
@@ -906,7 +906,7 @@ async function getScorers(url) {
                         break;
                     case "Almeria": TMP.team.name = "Almería";
                         break;
-                    case "Paris SG": TMP.team.name = "Paris Saint-Germain";
+                    case "PSG": TMP.team.name = "Paris Saint-Germain";
                         break;
                     case "Marseille": TMP.team.name = "Olympique Marseille";
                         break;

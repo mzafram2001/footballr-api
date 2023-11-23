@@ -99,7 +99,7 @@ async function updateTeamsData() {
                 break;
             case "Bournemouth": resultTeam.name = "Athletic Bournemouth";
                 break;
-            case "Paris SG": resultTeam.name = "Paris Saint-Germain";
+            case "PSG": resultTeam.name = "Paris Saint-Germain";
                 break;
             case "Lens": resultTeam.name = "Racing Lens";
                 break;

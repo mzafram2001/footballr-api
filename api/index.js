@@ -27,6 +27,8 @@ import schedulesBundesliga2023 from "../db/2023/schedules/schedulesBundesliga202
 
 import mvpsPremierLeague2023 from "../db/2023/mvps/mvpsPremierLeague2023Flashscore.json";
 import mvpsLaLiga2023 from "../db/2023/mvps/mvpsLaLiga2023Flashcore.json";
+import mvpsLigue12023 from "../db/2023/mvps/mvpsLigue12023Flashscore.json";
+import mvpsSerieA2023 from "../db/2023/mvps/mvpsSerieA2023Flashscore.json";
 import mvpsBundesliga2023 from "../db/2023/mvps/mvpsBundesliga2023Flashscore.json";
 
 import areas from "../db/areas.json";
@@ -318,8 +320,8 @@ APP.get('/competitions/:id/mvps', (ctx) => {
 		switch (id) {
 			case "PRL": return ctx.json(mvpsPremierLeague2023);
 			case "LAL": return ctx.json(mvpsLaLiga2023);
-			case "LI1": return ctx.json(mvpsLaLiga2023);
-			case "SEA": return ctx.json(mvpsLaLiga2023);
+			case "LI1": return ctx.json(mvpsLigue12023);
+			case "SEA": return ctx.json(mvpsSerieA2023);
 			case "BUN": return ctx.json(mvpsBundesliga2023);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}

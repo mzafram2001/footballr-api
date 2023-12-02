@@ -26,9 +26,9 @@ jobs:
           version: 7.18.2
           run_install: true
       - run: |
-          node scraping/schedulesSerieA.js
+          node scraping/matchesSerieA.js
+          git config --global user.email bot@zeus.com
           git config --global user.name zeus-api-bot
-          git config user.name 
           git add -A
           git commit -am "[bot] update Zeus database"
           git pull --rebase origin main

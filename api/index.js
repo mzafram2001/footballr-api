@@ -25,12 +25,6 @@ import schedulesLigue12023 from "../db/2023/schedules/schedulesLigue12023Flashco
 import schedulesSerieA2023 from "../db/2023/schedules/schedulesSerieA2023Flashcore.json";
 import schedulesBundesliga2023 from "../db/2023/schedules/schedulesBundesliga2023Flashcore.json";
 
-import mvpsPremierLeague2023 from "../db/2023/mvps/mvpsPremierLeague2023Flashscore.json";
-import mvpsLaLiga2023 from "../db/2023/mvps/mvpsLaLiga2023Flashcore.json";
-import mvpsLigue12023 from "../db/2023/mvps/mvpsLigue12023Flashscore.json";
-import mvpsSerieA2023 from "../db/2023/mvps/mvpsSerieA2023Flashscore.json";
-import mvpsBundesliga2023 from "../db/2023/mvps/mvpsBundesliga2023Flashscore.json";
-
 import areas from "../db/areas.json";
 import competitions from "../db/competitions.json";
 import teams from "../db/teams.json";
@@ -103,13 +97,6 @@ APP.get('/', (ctx) => {
 				endpoint: '/competitions/:id/schedules/',
 				description: 'List the next scheduled matches for a league 🔜.',
 				example: "https://zeus-api.olympus.workers.dev/competitions/BUN/schedules",
-				status: "Available 🟢.",
-			},
-			{
-				name: "mvps",
-				endpoint: '/competitions/:id/mvps/',
-				description: 'List the MVP list for a league 💎.',
-				example: "https://zeus-api.olympus.workers.dev/competitions/LAL/mvps",
 				status: "Available 🟢.",
 			},
 			{
@@ -306,23 +293,6 @@ APP.get('/competitions/:id/scorers', (ctx) => {
 			case "LI1": return ctx.json(scorersLigue12023);
 			case "SEA": return ctx.json(scorersSerieA2023);
 			case "BUN": return ctx.json(scorersBundesliga2023);
-			default: ctx.json({ message: 'Not Found. 😔' }, 404);
-		}
-	} else {
-		ctx.json({ message: 'Not Found. 😔' }, 404);
-	}
-});
-
-APP.get('/competitions/:id/mvps', (ctx) => {
-	const id = ctx.req.param("id").toUpperCase();
-	const found = competitions.competitions.find((competition) => competition.id === id);
-	if (found) {
-		switch (id) {
-			case "PRL": return ctx.json(mvpsPremierLeague2023);
-			case "LAL": return ctx.json(mvpsLaLiga2023);
-			case "LI1": return ctx.json(mvpsLigue12023);
-			case "SEA": return ctx.json(mvpsSerieA2023);
-			case "BUN": return ctx.json(mvpsBundesliga2023);
 			default: ctx.json({ message: 'Not Found. 😔' }, 404);
 		}
 	} else {

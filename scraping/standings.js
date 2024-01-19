@@ -40,7 +40,7 @@ async function getStandings(url) {
         const HEADING_INFO = HEADING.querySelector('div.heading__info').innerText;
         JSON.yearStart = parseInt(HEADING_INFO.substring(0, 4));
         JSON.yearEnd = parseInt(HEADING_INFO.substring(5, JSON.yearStart - 1));
-        JSON.standsings = [];
+        JSON.standings = [];
         var numRow = 0;
         var dumpString;
         var dumpStringArray;

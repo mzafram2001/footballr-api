@@ -162,14 +162,14 @@ async function getStandings(url) {
             }
 
 
-            var form = element.querySelectorAll('.tableCellFormIcon');
+            var form = element.querySelectorAll('.tableCellFormIcon > button');
             var dump = 0;
             form.forEach(element => {
                 dump++;
                 if (dump == 2) {
-                    TMP.form = element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + dump + ') > div').innerText;
+                    TMP.form = element.innerText;                                
                 } else if (dump > 2) {
-                    TMP.form = TMP.form.concat(",", element.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div.table__cell.table__cell--form > div:nth-child(' + dump + ') > div').innerText);
+                    TMP.form = TMP.form.concat(",", element.innerText);
                 } else {
                     TMP.form = "-";
                 }

@@ -174,7 +174,7 @@ async function getStandings(url) {
                     TMP.form = "-";
                 }
             });
-            JSON.tandings.push(TMP);
+            JSON.standings.push(TMP);
         });
         return JSON;
     });

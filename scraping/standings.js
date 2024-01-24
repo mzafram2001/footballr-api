@@ -171,7 +171,7 @@ async function getStandings(url) {
                 } else if (dump > 2) {
                     TMP.form = TMP.form.concat(",", element.innerText);
                 } else {
-                    TMP.form = "-";
+                    TMP.orm = "-";
                 }
             });
             JSON.standings.push(TMP);

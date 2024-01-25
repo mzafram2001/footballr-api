@@ -166,7 +166,7 @@ async function getStandings(url) {
             var dump = 0;
             form.forEach(element => {
                 dump++;
-                if (dump == 2) {
+                if (d == 2) {
                     TMP.form = element.innerText;                                
                 } else if (dump > 2) {
                     TMP.form = TMP.form.concat(",", element.innerText);

@@ -152,7 +152,7 @@ async function getStandings(url) {
 
 
             try {
-                TM.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.table__cell.table__cell--value.table__cell--points').innerText);
+                TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.table__cell.table__cell--value.table__cell--points').innerText);
             } catch (error) {
                 try {
                     TMP.points = parseInt(document.querySelector('#tournament-table-tabs-and-content > div:nth-child(3) > div:nth-child(1) > div > div > div.ui-table__body > div:nth-child(' + numRow + ') > div:nth-child(9) > span').innerText);

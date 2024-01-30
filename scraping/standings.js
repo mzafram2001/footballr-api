@@ -148,7 +148,7 @@ async function getStandings(url) {
             dumpStringArray = dumpString.split(':');
             TMP.goalsFor = parseInt(dumpStringArray[0]);
             TMP.goalsAgainst = parseInt(dumpStringArray[1]);
-            TMP.goalDiference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
+            TMP.goalDifference = parseInt(TMP.goalsFor) - parseInt(TMP.goalsAgainst);
 
 
             try {

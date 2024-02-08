@@ -131,7 +131,7 @@ async function getStandings(url) {
             if (numRow < 10) {
                 TMP.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 1));
             } else {
-                TMP.positio = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 2));
+                TMP.position = parseInt(element.querySelector('.tableCellRank').innerText.substring(0, 2));
             }
             TMP.team = {};
             dumpString = element.querySelector('.tableCellParticipant__image').getAttribute('href');

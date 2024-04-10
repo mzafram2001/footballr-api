@@ -16,11 +16,7 @@ async function getSchedules(url) {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "networkidle0" });   
-    await PAGE.waitForSelector('.event__more', { visible: true });
-    await PAGE.evaluate(() => {
-        document.querySelector('.event__more').click();
-    });
+    await PAGE.goto(url, { waitUntil: "networkidle0" });
     await delay(4000);
     const RESULT = await PAGE.evaluate(() => {
         const JSON = {};

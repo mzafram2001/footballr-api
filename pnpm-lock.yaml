@@ -3408,7 +3408,7 @@ packages:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.5.2(@types/node@20.11.19)
+      vite: 4.5.3(@types/node@20.11.19)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3420,8 +3420,8 @@ packages:
       - terser
     dev: true
 
-  /vite@4.5.2(@types/node@20.11.19):
-    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
+  /vite@4.5.3(@types/node@20.11.19):
+    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3499,7 +3499,7 @@ packages:
       tinybench: 2.6.0
       tinypool: 0.3.1
       tinyspy: 1.1.1
-      vite: 4.5.2(@types/node@20.11.19)
+      vite: 4.5.3(@types/node@20.11.19)
       vite-node: 0.28.5(@types/node@20.11.19)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:

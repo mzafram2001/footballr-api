@@ -18,7 +18,7 @@
 </div>
 <br>
 
-![Banner](#)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_1.png)
 
 ## ⚽️ Easy integration / Fácil integración
 
@@ -31,7 +31,7 @@
 </div>
 <br>
 
-![Banner](#)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_2.png)
 
 ## ⚽️ User-friendly interface / Interfaz Amigable
 
@@ -44,7 +44,7 @@
 </div>
 <br>
 
-![Banner](#)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_3.png)
 
 ## ⚽️ Endpoints list / Lista de puntos finales
 
@@ -103,7 +103,7 @@
 </div>
 <br>
 
-![Banner](#)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_4.png)
 
 ## ⚽️ Roadmap / Hoja de ruta
 <div>

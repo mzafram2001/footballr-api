@@ -24,7 +24,7 @@ jobs:
         with:
           version: 7.18.2
           run_install: true
-      - uses: cloudflare/wrangler-action@2.0.0
+      - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: api

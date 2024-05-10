@@ -106,8 +106,8 @@
 ![Banner](#)
 
 ## ⚽️ Roadmap / Hoja de ruta
-
-🇬🇧 Here is the roadmap for this project:
+<div>
+   🇬🇧 Here is the roadmap for this project:
 - ✅ Create api and deploy successfully.
 - ✅ Create endpoints with successful results.
 - ✅ Automate updates.
@@ -116,8 +116,10 @@
 - ❌ Optimise files to improve response time.
 - ❌ Fix bugs.
 - ❌ Create demo web app.
-
-🇪🇸 Aquí tienes la hoja de ruta para este proyecto:
+</div>
+<br>
+<div>
+   🇪🇸 Aquí tienes la hoja de ruta para este proyecto:
 - ✅ Crear api y realizar el deploy con éxito.
 - ✅ Creación de puntos finales con resultados correctos.
 - ✅ Automatizar actualizaciones.
@@ -126,6 +128,7 @@
 - ❌ Optimizar archivos para mejorar el tiempo de rspuesta.
 - ❌ Corregir bugs.
 - ❌ Crear web app de demostración.
+</div>
 <br>
 
 ![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_banner_1.png)

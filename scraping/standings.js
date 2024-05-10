@@ -57,7 +57,7 @@ async function getStandings(url) {
                 "Monza": "Calcio Monza",
                 "Sassuolo": "Calcio Sassuolo",
                 "Spezia": "Calcio Spezia",
-                "Vrona": "Hellas Verona",
+                "Verona": "Hellas Verona",
                 "Sampdoria": "Calcio Cagliari",
                 "Cagliari": "Calcio Cagliari",
                 "Benevento": "Calcio Benevento",

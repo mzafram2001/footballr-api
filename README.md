@@ -51,16 +51,16 @@
 <div>
   🇬🇧 Below is a list of endpoints and examples of use:
   <ul>
-    <li>GET <b>/areas/:id</b>: List all available areas 🌍. (filters available)</li>
-    <li>GET <b>/competitions/:id/</b>: List all available competitions 🏆. (filters available)</li>
-    <li>GET /competitions<b>/:id/standings</b>: List the current standings for a league 🔝. (filters available)</li>
-    <li>GET /competitions<b>/:id/scorers</b>: List the current scorers for a league ⚽. (filters available)</li>
-    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: List the current matches results for a league 🆚. (filters available)</li>
-    <li>GET /competitions<b>/:id/schedules</b>: List the next scheduled matches for a league 🔜. (filters available)</li>
-    <li>GET <b>/teams/:id</b>: List all available teams 🛡️. (filters available)</li>
-    <li>GET <b>/players/:id</b>: List all available players 🏃. (not implemented yet)</li>
-    <li>GET <b>/stadiums/:id</b>: List all available stadiums 🏟️.  (not implemented yet)</li>
-    <li>GET <b>/simulator/:idTeamHome/:idTeamAway</b>: Returns a simulation match between 2 teams ♻️.  (not implemented yet)</li>
+    <li>GET <b>/areas/:id</b>: List all available areas 🌍. (filters available).</li>
+    <li>GET <b>/competitions/:id/</b>: List all available competitions 🏆. (filters available).</li>
+    <li>GET /competitions<b>/:id/standings</b>: List the current standings for a league 🔝. (filters available).</li>
+    <li>GET /competitions<b>/:id/scorers</b>: List the current scorers for a league ⚽. (filters available).</li>
+    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: List the current matches results for a league 🆚. (filters available).</li>
+    <li>GET /competitions<b>/:id/schedules</b>: List the next scheduled matches for a league 🔜. (filters available).</li>
+    <li>GET <b>/teams/:id</b>: List all available teams 🛡️. (filters available).</li>
+    <li>GET <b>/players/:id</b>: List all available players 🏃. (not implemented yet).</li>
+    <li>GET <b>/stadiums/:id</b>: List all available stadiums 🏟️.  (not implemented yet).</li>
+    <li>GET <b>/simulator/:idTeamHome/:idTeamAway</b>: Returns a simulation match between 2 teams ♻️.  (not implemented yet).</li>
   </ul>
   <p>Some URL examples:</p>
   <ul>
@@ -78,16 +78,16 @@
 <div>
   🇪🇸 A continuación tienes un listado con los puntos finales y ejemplos de uso:
   <ul>
-    <li>GET <b>/areas/:id</b>: Lista todas las zonas disponibles 🌍. (filtros disponibles)</li>
-    <li>GET <b>/competitions/:id/</b>: Lista de todas las competiciones disponibles 🏆. (filtros disponibles)</li>
-    <li>GET /competitions<b>/:id/standings</b>: Lista la clasificación actual de una liga 🔝. (filtros disponibles)</li>
-    <li>GET /competitions<b>/:id/scorers</b>: Lista los goleadores actuales de una liga ⚽. (filtros disponibles)</li>
-    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: Lista los resultados de los partidos actuales de una liga 🆚. (filtros disponibles)</li>
-    <li>GET /competitions<b>/:id/schedules</b>: Lista los próximos partidos programados para una liga 🔜. (filtros disponibles)</li>
-    <li>GET <b>/teams/:id</b>: Lista de todos los equipos disponibles 🛡️. (filtros disponibles)</li>
-    <li>GET <b>/players/:id</b>: Lista de todos los jugadores disponibles 🏃. (aún no implementado)</li>
-    <li>GET <b>/stadiums/:id</b>: Lista de todos los estadios disponibles 🏟️.  (aún no implementado)</li>
-    <li>GET <b>/simulator/:idTeamHome/:idTeamAway</b>: Devuelve un partido de simulación entre 2 equipos ♻️.  (aún no implementado)</li>
+    <li>GET <b>/areas/:id</b>: Lista todas las zonas disponibles 🌍. (filtros disponibles).</li>
+    <li>GET <b>/competitions/:id/</b>: Lista de todas las competiciones disponibles 🏆. (filtros disponibles).</li>
+    <li>GET /competitions<b>/:id/standings</b>: Lista la clasificación actual de una liga 🔝. (filtros disponibles).</li>
+    <li>GET /competitions<b>/:id/scorers</b>: Lista los goleadores actuales de una liga ⚽. (filtros disponibles).</li>
+    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: Lista los resultados de los partidos actuales de una liga 🆚. (filtros disponibles).</li>
+    <li>GET /competitions<b>/:id/schedules</b>: Lista los próximos partidos programados para una liga 🔜. (filtros disponibles).</li>
+    <li>GET <b>/teams/:id</b>: Lista de todos los equipos disponibles 🛡️. (filtros disponibles).</li>
+    <li>GET <b>/players/:id</b>: Lista de todos los jugadores disponibles 🏃. (aún no implementado).</li>
+    <li>GET <b>/stadiums/:id</b>: Lista de todos los estadios disponibles 🏟️.  (aún no implementado).</li>
+    <li>GET <b>/simulator/:idTeamHome/:idTeamAway</b>: Devuelve un partido de simulación entre 2 equipos ♻️.  (aún no implementado).</li>
   </ul>
   <p>Algunas URL de ejemplo:</p>
   <ul>
@@ -108,26 +108,30 @@
 ## ⚽️ Roadmap / Hoja de ruta
 <div>
    🇬🇧 Here is the roadmap for this project:
-- ✅ Create api and deploy successfully.
-- ✅ Create endpoints with successful results.
-- ✅ Automate updates.
-- ❌ More data on current endpoints.
-- ❌ More endpoints (stadiums, players and simulation).
-- ❌ Optimise files to improve response time.
-- ❌ Fix bugs.
-- ❌ Create demo web app.
+   <ul>
+      <li>✅ Create api and deploy successfully.</li>
+      <li>✅ Create endpoints with successful results.</li>
+      <li>✅ Automate updates.</li>
+      <li>❌ More data on current endpoints.</li>
+      <li>❌ More endpoints (stadiums, players and simulation).</li>
+      <li>❌ Optimise files to improve response time.</li>
+      <li>❌ Fix bugs.</li>
+      <li>❌ Create demo web app.</li>
+   </ul>
 </div>
 <br>
 <div>
    🇪🇸 Aquí tienes la hoja de ruta para este proyecto:
-- ✅ Crear api y realizar el deploy con éxito.
-- ✅ Creación de puntos finales con resultados correctos.
-- ✅ Automatizar actualizaciones.
-- ❌ Más datos en los puntos finales actuales.
-- ❌ Más puntos finales (estadios, jugadores y simulación).
-- ❌ Optimizar archivos para mejorar el tiempo de rspuesta.
-- ❌ Corregir bugs.
-- ❌ Crear web app de demostración.
+   <ul>
+      <li>✅ Crear api y realizar el deploy con éxito.</li>
+      <li>✅ Creación de puntos finales con resultados correctos.</li>
+      <li>✅ Automatizar actualizaciones.</li>
+      <li>❌ Más datos en los puntos finales actuales.</li>
+      <li>❌ Más puntos finales (estadios, jugadores y simulación).</li>
+      <li>❌ Optimizar archivos para mejorar el tiempo de rspuesta.</li>
+      <li>❌ Corregir bugs.</li>
+      <li>❌ Crear web app de demostración.</li>
+   </ul>
 </div>
 <br>
 

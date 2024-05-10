@@ -236,11 +236,16 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -476,4 +481,4 @@ async function delay(time) {
 }
 
 getLast10Matches(MATCHES_URLS.FRANCE);
-//getAllMatches(MATCHES_URLS.FRANCE);
+// getAllMatches(MATCHES_URLS.FRANCE);

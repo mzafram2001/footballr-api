@@ -116,7 +116,7 @@
 - ❌ Optimise files to improve response time.
 - ❌ Fix bugs.
 - ❌ Create demo web app.
-<br>
+
 🇪🇸 Aquí tienes la hoja de ruta para este proyecto:
 - ✅ Crear api y realizar el deploy con éxito.
 - ✅ Creación de puntos finales con resultados correctos.

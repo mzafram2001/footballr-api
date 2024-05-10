@@ -20,8 +20,13 @@
   "homepage": "https://github.com/mzafram2001/zeus-api#readme",
   "dependencies": {
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "hono": "^4.3.4",
     "puppeteer": "^22.8.0",
+=======
+    "hono": "^4.2.7",
+    "puppeteer": "^19.6.3",
+>>>>>>> 38a230db438d04509f6306cdba96f6bfa2601162
     "puppeteer-cmp-clicker": "^1.0.3"
   },
   "devDependencies": {

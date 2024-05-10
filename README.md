@@ -27,7 +27,7 @@
 </div>
 <br>
 <div>
-  🇪🇸 Muy fácil de intregar en tus proyectos, a partir de una sola petición y distintos filtros, puedes tener la información actualizada. Mantente al día con los últimos eventos y resultados con datos actualizados constantemente.
+  🇪🇸 Muy fácil de integrar en tus proyectos, a partir de una sola petición y distintos filtros, puedes tener la información actualizada. Mantente al día con los últimos eventos y resultados con datos actualizados constantemente.
 </div>
 <br>
 

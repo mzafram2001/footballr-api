@@ -83,9 +83,112 @@ async function updateTeamsData() {
         "Almeria": "Almeria",
 
         "PSG": "Paris Saint-Germain",
-        
+
         "Manchester Utd": "Manchester United",
         "Sheffield Utd": "Sheffield United",
+    };
+
+    const TEAM_COLOR = {
+        "Inter": "#010E80",
+        "Milan": "#B52E2B",
+        "Juventus": "#000000",
+        "Bologna": "#9F1F33",
+        "Atalanta": "#2D5CAE",
+        "Roma": "#FBBA00",
+        "Lazio": "#85D8F8",
+        "Napoli": "#12A0D7",
+        "Fiorentina": "#502D7F",
+        "Torino": "#881F19",
+        "Monza": "#E4022E",
+        "Genoa": "#AE1919",
+        "Lecce": "#005B81",
+        "Verona": "#002F6C",
+        "Cagliari": "#B01028",
+        "Frosinone": "#004393",
+        "Empoli": "#4280C2",
+        "Udinese": "#7F7F7F",
+        "Sassuolo": "#0FA653",
+        "Salernitana": "#681A12",
+
+        "Bayer Leverkusen": "#E22726",
+        "Bayern Munich": "#DC052D",
+        "Stuttgart": "#D40723",
+        "Leipzig": "#DD0741",
+        "Dortmund": "#FDE100",
+        "Eintracht Frankfurt": "#E00914",
+        "Freiburg": "#5b5b5b",
+        "Hoffenheim": "#1961B5",
+        "Augsburg": "#BA3733",
+        "Heidenheim": "#003B79",
+        "Werder Bremen": "#009655",
+        "Wolfsburg": "#65B32E",
+        "Monchengladbach": "#000000",
+        "Bochum": "#005BA4",
+        "Union Berlin": "#EB1923",
+        "Mainz": "#C3141E",
+        "Koln": "#000000",
+        "Darmstadt": "#004C99",
+
+        "Real Madrid": "#E2E2E2",
+        "Girona": "#CD2534",
+        "Barcelona": "#A50044",
+        "Atletico Madrid": "#CE3524",
+        "Athletic Bilbao": "#EE2523",
+        "Real Sociedad": "#143C8B",
+        "Real Betis": "#00954C",
+        "Valencia": "#EE3524",
+        "Villarreal": "#FFE667",
+        "Getafe": "#005999",
+        "Alaves": "#009AD7",
+        "Sevilla": "#F43333",
+        "Osasuna": "#D91A21",
+        "Las Palmas": "#FFE400",
+        "Celta Vigo": "#8AC3EE",
+        "Rayo Vallecano": "#E53027",
+        "Mallorca": "#E20613",
+        "Cadiz": "#F2A40C",
+        "Granada": "#C31632",
+        "Almeria": "#EE1119",
+
+        "Paris Saint-Germain": "#004170",
+        "Monaco": "#E63031",
+        "Brest": "#ED1C24",
+        "Lille": "#24216A",
+        "Nice": "#B59A54",
+        "Lens": "#FFF200",
+        "Lyon": "#1112AA",
+        "Rennes": "#E13327",
+        "Marseille": "#2FAEE0",
+        "Montpellier": "#344575",
+        "Toulouse": "#3E2C56",
+        "Reims": "#EE2223",
+        "Strasbourg": "#009FE3",
+        "Nantes": "#FCD405",
+        "Le Havre": "#003259",
+        "Metz": "#6E0F12",
+        "Lorient": "#F58113",
+        "Clermont": "#C50C46",
+
+        "Arsenal": "#EF0107",
+        "Manchester City": "#6CABDD",
+        "Liverpool": "#C8102E",
+        "Aston Villa": "#95BFE5",
+        "Tottenham": "#132257",
+        "Newcastle": "#241F20",
+        "Chelsea": "#034694",
+        "Manchester United": "#DA291C",
+        "West Ham": "#7A263A",
+        "Bournemouth": "#DA291C",
+        "Brighton": "#0057B8",
+        "Wolves": "#FDB913",
+        "Fulham": "#000000",
+        "Crystal Palace": "#1B458F",
+        "Everton": "#003399",
+        "Brentford": "#D20000",
+        "Nottingham": "#DD0000",
+        "Luton": "#F78F1E",
+        "Burnley": "#6C1D45",
+        "Sheffield United": "#EE2737",
     };
 
     allResults.forEach((resultTeam) => {
@@ -94,7 +197,7 @@ async function updateTeamsData() {
         if (updatedName) {
             resultTeam.name = updatedName;
         }
-    
+
         // Find the corresponding team in the original data
         const teamToUpdate = original.teams.find((team) => team.name === resultTeam.name);
         if (teamToUpdate) {
@@ -106,6 +209,12 @@ async function updateTeamsData() {
             }
             if (typeof teamToUpdate.bestElo === 'undefined' || newElo > teamToUpdate.bestElo) {
                 teamToUpdate.bestElo = newElo;
+            }
+
+            // Assign team color
+            const teamColor = TEAM_COLOR[resultTeam.name];
+            if (teamColor) {
+                teamToUpdate.color = teamColor;
             }
         }
     });

@@ -32,7 +32,7 @@ import PLAYERS from "../db/players.json";
 
 const APP = new Hono();
 const BASE_URL = "https://api.footballr.workers.dev";
-const API_VERSION = "v10052024";
+const API_VERSION = "v11052024";
 APP.use('/*', cors());
 
 function formatDate(API_VERSION) {

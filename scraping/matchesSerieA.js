@@ -68,99 +68,43 @@ async function getLast10Matches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Napoli": TMP.homeTeam.name = "Calcio Napoli";
-                    break;
-                case "Inter": TMP.homeTeam.name = "Inter Milan";
-                    break;
-                case "AC Milan": TMP.homeTeam.name = "Calcio Milan";
-                    break;
-                case "AS Roma": TMP.homeTeam.name = "Roma";
-                    break;
-                case "Atalanta": TMP.homeTeam.name = "Calcio Atalanta";
-                    break;
-                case "Udinese": TMP.homeTeam.name = "Calcio Udinese";
-                    break;
-                case "Fiorentina": TMP.homeTeam.name = "Calcio Fiorentina";
-                    break;
-                case "Sassuolo": TMP.homeTeam.name = "Calcio Sassuolo";
-                    break;
-                case "Monza": TMP.homeTeam.name = "Calcio Monza";
-                    break;
-                case "Spezia": TMP.homeTeam.name = "Calcio Spezia";
-                    break;
-                case "Verona": TMP.homeTeam.name = "Hellas Verona";
-                    break;
-                case "Sampdoria": TMP.homeTeam.name = "Calcio Cagliari";
-                    break;
-                case "Cagliari": TMP.homeTeam.name = "Calcio Cagliari";
-                    break;
-                case "Benevento": TMP.homeTeam.name = "Calcio Benevento";
-                    break;
-                case "Parma": TMP.homeTeam.name = "Calcio Parma";
-                    break;
-                case "Chievo": TMP.homeTeam.name = "Calcio Chievo";
-                    break;
-                case "AC Carpi": TMP.homeTeam.name = "Calcio Carpi";
-                    break;
-                case "Frosinone": TMP.homeTeam.name = "Calcio Frosinone";
-                    break;
-                case "Pescara": TMP.homeTeam.name = "Delfino Pescara";
-                    break;
-                case "Brescia": TMP.homeTeam.name = "Calcio Brescia";
-                    break;
+            const TEAM_NAME = {
+                "AC Milan": "Milan",
+                "AS Roma": "Roma",
             }
+            const TEAM_COLOR = {
+                "Inter": "#010E80",
+                "Milan": "#B52E2B",
+                "Juventus": "#000000",
+                "Bologna": "#9F1F33",
+                "Atalanta": "#2D5CAE",
+                "Roma": "#FBBA00",
+                "Lazio": "#85D8F8",
+                "Napoli": "#12A0D7",
+                "Fiorentina": "#502D7F",
+                "Torino": "#881F19",
+                "Monza": "#E4022E",
+                "Genoa": "#AE1919",
+                "Lecce": "#005B81",
+                "Verona": "#002F6C",
+                "Cagliari": "#B01028",
+                "Frosinone": "#004393",
+                "Empoli": "#4280C2",
+                "Udinese": "#7F7F7F",
+                "Sassuolo": "#0FA653",
+                "Salernitana": "#681A12",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Napoli": TMP.awayTeam.name = "Calcio Napoli";
-                    break;
-                case "Inter": TMP.awayTeam.name = "Inter Milan";
-                    break;
-                case "AC Milan": TMP.awayTeam.name = "Calcio Milan";
-                    break;
-                case "AS Roma": TMP.awayTeam.name = "Roma";
-                    break;
-                case "Atalanta": TMP.awayTeam.name = "Calcio Atalanta";
-                    break;
-                case "Udinese": TMP.awayTeam.name = "Calcio Udinese";
-                    break;
-                case "Fiorentina": TMP.awayTeam.name = "Calcio Fiorentina";
-                    break;
-                case "Sassuolo": TMP.awayTeam.name = "Calcio Sassuolo";
-                    break;
-                case "Monza": TMP.awayTeam.name = "Calcio Monza";
-                    break;
-                case "Spezia": TMP.awayTeam.name = "Calcio Spezia";
-                    break;
-                case "Verona": TMP.awayTeam.name = "Hellas Verona";
-                    break;
-                case "Sampdoria": TMP.awayTeam.name = "Calcio Cagliari";
-                    break;
-                case "Cagliari": TMP.awayTeam.name = "Calcio Cagliari";
-                    break;
-                case "Benevento": TMP.awayTeam.name = "Calcio Benevento";
-                    break;
-                case "Parma": TMP.awayTeam.name = "Calcio Parma";
-                    break;
-                case "Chievo": TMP.awayTeam.name = "Calcio Chievo";
-                    break;
-                case "AC Carpi": TMP.awayTeam.name = "Calcio Carpi";
-                    break;
-                case "Frosinone": TMP.awayTeam.name = "Calcio Frosinone";
-                    break;
-                case "Pescara": TMP.awayTeam.name = "Delfino Pescara";
-                    break;
-                case "Brescia": TMP.awayTeam.name = "Calcio Brescia";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
+            TMP.awayTeam.shorthand = title.innerText.substring(0, 3);
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -236,11 +180,21 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -311,99 +265,43 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Napoli": TMP.homeTeam.name = "Calcio Napoli";
-                    break;
-                case "Inter": TMP.homeTeam.name = "Inter Milan";
-                    break;
-                case "AC Milan": TMP.homeTeam.name = "Calcio Milan";
-                    break;
-                case "AS Roma": TMP.homeTeam.name = "Roma";
-                    break;
-                case "Atalanta": TMP.homeTeam.name = "Calcio Atalanta";
-                    break;
-                case "Udinese": TMP.homeTeam.name = "Calcio Udinese";
-                    break;
-                case "Fiorentina": TMP.homeTeam.name = "Calcio Fiorentina";
-                    break;
-                case "Sassuolo": TMP.homeTeam.name = "Calcio Sassuolo";
-                    break;
-                case "Monza": TMP.homeTeam.name = "Calcio Monza";
-                    break;
-                case "Spezia": TMP.homeTeam.name = "Calcio Spezia";
-                    break;
-                case "Verona": TMP.homeTeam.name = "Hellas Verona";
-                    break;
-                case "Sampdoria": TMP.homeTeam.name = "Calcio Cagliari";
-                    break;
-                case "Cagliari": TMP.homeTeam.name = "Calcio Cagliari";
-                    break;
-                case "Benevento": TMP.homeTeam.name = "Calcio Benevento";
-                    break;
-                case "Parma": TMP.homeTeam.name = "Calcio Parma";
-                    break;
-                case "Chievo": TMP.homeTeam.name = "Calcio Chievo";
-                    break;
-                case "AC Carpi": TMP.homeTeam.name = "Calcio Carpi";
-                    break;
-                case "Frosinone": TMP.homeTeam.name = "Calcio Frosinone";
-                    break;
-                case "Pescara": TMP.homeTeam.name = "Delfino Pescara";
-                    break;
-                case "Brescia": TMP.homeTeam.name = "Calcio Brescia";
-                    break;
+            const TEAM_NAME = {
+                "AC Milan": "Milan",
+                "AS Roma": "Roma",
             }
+            const TEAM_COLOR = {
+                "Inter": "#010E80",
+                "Milan": "#B52E2B",
+                "Juventus": "#000000",
+                "Bologna": "#9F1F33",
+                "Atalanta": "#2D5CAE",
+                "Roma": "#FBBA00",
+                "Lazio": "#85D8F8",
+                "Napoli": "#12A0D7",
+                "Fiorentina": "#502D7F",
+                "Torino": "#881F19",
+                "Monza": "#E4022E",
+                "Genoa": "#AE1919",
+                "Lecce": "#005B81",
+                "Verona": "#002F6C",
+                "Cagliari": "#B01028",
+                "Frosinone": "#004393",
+                "Empoli": "#4280C2",
+                "Udinese": "#7F7F7F",
+                "Sassuolo": "#0FA653",
+                "Salernitana": "#681A12",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Napoli": TMP.awayTeam.name = "Calcio Napoli";
-                    break;
-                case "Inter": TMP.awayTeam.name = "Inter Milan";
-                    break;
-                case "AC Milan": TMP.awayTeam.name = "Calcio Milan";
-                    break;
-                case "AS Roma": TMP.awayTeam.name = "Roma";
-                    break;
-                case "Atalanta": TMP.awayTeam.name = "Calcio Atalanta";
-                    break;
-                case "Udinese": TMP.awayTeam.name = "Calcio Udinese";
-                    break;
-                case "Fiorentina": TMP.awayTeam.name = "Calcio Fiorentina";
-                    break;
-                case "Sassuolo": TMP.awayTeam.name = "Calcio Sassuolo";
-                    break;
-                case "Monza": TMP.awayTeam.name = "Calcio Monza";
-                    break;
-                case "Spezia": TMP.awayTeam.name = "Calcio Spezia";
-                    break;
-                case "Verona": TMP.awayTeam.name = "Hellas Verona";
-                    break;
-                case "Sampdoria": TMP.awayTeam.name = "Calcio Cagliari";
-                    break;
-                case "Cagliari": TMP.awayTeam.name = "Calcio Cagliari";
-                    break;
-                case "Benevento": TMP.awayTeam.name = "Calcio Benevento";
-                    break;
-                case "Parma": TMP.awayTeam.name = "Calcio Parma";
-                    break;
-                case "Chievo": TMP.awayTeam.name = "Calcio Chievo";
-                    break;
-                case "AC Carpi": TMP.awayTeam.name = "Calcio Carpi";
-                    break;
-                case "Frosinone": TMP.awayTeam.name = "Calcio Frosinone";
-                    break;
-                case "Pescara": TMP.awayTeam.name = "Delfino Pescara";
-                    break;
-                case "Brescia": TMP.awayTeam.name = "Calcio Brescia";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
+            TMP.awayTeam.shorthand = title.innerText.substring(0, 3);
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -475,5 +373,5 @@ async function delay(time) {
     });
 }
 
-getLast10Matches(MATCHES_URLS.ITALY);
-//getAllMatches(MATCHES_URLS.ITALY);
+// getLast10Matches(MATCHES_URLS.ITALY);
+getAllMatches(MATCHES_URLS.ITALY);

@@ -69,59 +69,42 @@ async function getLast8Matches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Dortmund": TMP.homeTeam.name = "Borussia Dortmund";
-                    break;
-                case "RB Leipzig": TMP.homeTeam.name = "RasenBallsport Leipzig";
-                    break;
-                case "B. Monchengladbach": TMP.homeTeam.name = "Borussia Mönchengladbach";
-                    break;
-                case "FC Koln": TMP.homeTeam.name = "Köln";
-                    break;
-                case "Greuther Furth": TMP.homeTeam.name = "Greuther Fürth";
-                    break;
-                case "Hamburger SV": TMP.homeTeam.name = "Hamburger Sport-Verein";
-                    break;
-                case "Darmstadt": TMP.homeTeam.name = "Darmstadt Sport-Verein";
-                    break;
-                case "Hannover": TMP.homeTeam.name = "Hannover Sport-Verein";
-                    break;
-                case "Dusseldorf": TMP.homeTeam.name = "Fortuna Düsseldorf";
-                    break;
-                case "Nurnberg": TMP.homeTeam.name = "Nürnberg";
-                    break;
-            }
+            const TEAM_NAME = {
+                "RB Leipzig": "Leipzig",
+                "B. Monchengladbach": "Monchengladbach",
+                "FC Koln": "Koln",
+            };
+            const TEAM_COLOR = {
+                "Bayer Leverkusen": "#E22726",
+                "Bayern Munich": "#DC052D",
+                "Stuttgart": "#D40723",
+                "Leipzig": "#DD0741",
+                "Dortmund": "#FDE100",
+                "Eintracht Frankfurt": "#E00914",
+                "Freiburg": "#5b5b5b",
+                "Hoffenheim": "#1961B5",
+                "Augsburg": "#BA3733",
+                "Heidenheim": "#003B79",
+                "Werder Bremen": "#009655",
+                "Wolfsburg": "#65Bº32E",
+                "Monchengladbach": "#000000",
+                "Bochum": "#005BA4",
+                "Union Berlin": "#EB1923",
+                "Mainz": "#C3141E",
+                "Koln": "#000000",
+                "Darmstadt": "#004C99",
+            };
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Dortmund": TMP.awayTeam.name = "Borussia Dortmund";
-                    break;
-                case "RB Leipzig": TMP.awayTeam.name = "RasenBallsport Leipzig";
-                    break;
-                case "B. Monchengladbach": TMP.awayTeam.name = "Borussia Mönchengladbach";
-                    break;
-                case "FC Koln": TMP.awayTeam.name = "Köln";
-                    break;
-                case "Greuther Furth": TMP.awayTeam.name = "Greuther Fürth";
-                    break;
-                case "Hamburger SV": TMP.awayTeam.name = "Hamburger Sport-Verein";
-                    break;
-                case "Darmstadt": TMP.awayTeam.name = "Darmstadt Sport-Verein";
-                    break;
-                case "Hannover": TMP.awayTeam.name = "Hannover Sport-Verein";
-                    break;
-                case "Dusseldorf": TMP.awayTeam.name = "Fortuna Düsseldorf";
-                    break;
-                case "Nurnberg": TMP.awayTeam.name = "Nürnberg";
-                    break;
-            }
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -198,11 +181,16 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -273,59 +261,42 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Dortmund": TMP.homeTeam.name = "Borussia Dortmund";
-                    break;
-                case "RB Leipzig": TMP.homeTeam.name = "RasenBallsport Leipzig";
-                    break;
-                case "B. Monchengladbach": TMP.homeTeam.name = "Borussia Mönchengladbach";
-                    break;
-                case "FC Koln": TMP.homeTeam.name = "Köln";
-                    break;
-                case "Greuther Furth": TMP.homeTeam.name = "Greuther Fürth";
-                    break;
-                case "Hamburger SV": TMP.homeTeam.name = "Hamburger Sport-Verein";
-                    break;
-                case "Darmstadt": TMP.homeTeam.name = "Darmstadt Sport-Verein";
-                    break;
-                case "Hannover": TMP.homeTeam.name = "Hannover Sport-Verein";
-                    break;
-                case "Dusseldorf": TMP.homeTeam.name = "Fortuna Düsseldorf";
-                    break;
-                case "Nurnberg": TMP.homeTeam.name = "Nürnberg";
-                    break;
-            }
+            const TEAM_NAME = {
+                "RB Leipzig": "Leipzig",
+                "B. Monchengladbach": "Monchengladbach",
+                "FC Koln": "Koln",
+            };
+            const TEAM_COLOR = {
+                "Bayer Leverkusen": "#E22726",
+                "Bayern Munich": "#DC052D",
+                "Stuttgart": "#D40723",
+                "Leipzig": "#DD0741",
+                "Dortmund": "#FDE100",
+                "Eintracht Frankfurt": "#E00914",
+                "Freiburg": "#5b5b5b",
+                "Hoffenheim": "#1961B5",
+                "Augsburg": "#BA3733",
+                "Heidenheim": "#003B79",
+                "Werder Bremen": "#009655",
+                "Wolfsburg": "#65Bº32E",
+                "Monchengladbach": "#000000",
+                "Bochum": "#005BA4",
+                "Union Berlin": "#EB1923",
+                "Mainz": "#C3141E",
+                "Koln": "#000000",
+                "Darmstadt": "#004C99",
+            };
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Dortmund": TMP.awayTeam.name = "Borussia Dortmund";
-                    break;
-                case "RB Leipzig": TMP.awayTeam.name = "RasenBallsport Leipzig";
-                    break;
-                case "B. Monchengladbach": TMP.awayTeam.name = "Borussia Mönchengladbach";
-                    break;
-                case "FC Koln": TMP.awayTeam.name = "Köln";
-                    break;
-                case "Greuther Furth": TMP.awayTeam.name = "Greuther Fürth";
-                    break;
-                case "Hamburger SV": TMP.awayTeam.name = "Hamburger Sport-Verein";
-                    break;
-                case "Darmstadt": TMP.awayTeam.name = "Darmstadt Sport-Verein";
-                    break;
-                case "Hannover": TMP.awayTeam.name = "Hannover Sport-Verein";
-                    break;
-                case "Dusseldorf": TMP.awayTeam.name = "Fortuna Düsseldorf";
-                    break;
-                case "Nurnberg": TMP.awayTeam.name = "Nürnberg";
-                    break;
-            }
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -400,4 +371,4 @@ async function delay(time) {
 
 // // // // // // // // // // FUNCTION CALL // // // // // // // // // //
 getLast8Matches(MATCHES_URLS.GERMANY);
-//getAllMatches(MATCHES_URLS.GERMANY);
+// getAllMatches(MATCHES_URLS.GERMANY);

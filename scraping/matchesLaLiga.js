@@ -68,63 +68,47 @@ async function getLast10Matches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Atl. Madrid": TMP.homeTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.homeTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.homeTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.homeTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.homeTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.homeTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.homeTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.homeTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.homeTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.homeTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.homeTeam.name = "Leganés";
-                    break;
+            const TEAM_NAME = {
+                "Atl. Madrid": "Atletico Madrid",
+                "Betis": "Real Betis",
+                "Granada CF": "Granada",
+                "Ath Bilbao": "Athletic Bilbao",
+                "Cadiz CF": "Cadiz",
+                "Almeria": "Almeria",
             }
+            const TEAM_COLOR = {
+                "Real Madrid": "#E2E2E2",
+                "Girona": "#CD2534",
+                "Barcelona": "#A50044",
+                "Atletico Madrid": "#CE3524",
+                "Athletic Bilbao": "#EE2523",
+                "Real Sociedad": "#143C8B",
+                "Real Betis": "#00954C",
+                "Valencia": "#EE3524",
+                "Villarreal": "#FFE667",
+                "Getafe": "#005999",
+                "Alaves": "#009AD7",
+                "Sevilla": "#F43333",
+                "Osasuna": "#D91A21",
+                "Las Palmas": "#FFE400",
+                "Celta Vigo": "#8AC3EE",
+                "Rayo Vallecano": "#E53027",
+                "Mallorca": "#E20613",
+                "Cadiz": "#F2A40C",
+                "Granada": "#C31632",
+                "Almeria": "#EE1119",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Atl. Madrid": TMP.awayTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.awayTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.awayTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.awayTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.awayTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.awayTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.awayTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.awayTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.awayTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.awayTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.awayTeam.name = "Leganés";
-                    break;
-            }
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -200,11 +184,21 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -275,64 +269,48 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Atl. Madrid": TMP.homeTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.homeTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.homeTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.homeTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.homeTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.homeTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.homeTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.homeTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.homeTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.homeTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.homeTeam.name = "Leganés";
-                    break;
+            const TEAM_NAME = {
+                "Atl. Madrid": "Atletico Madrid",
+                "Betis": "Real Betis",
+                "Granada CF": "Granada",
+                "Ath Bilbao": "Athletic Bilbao",
+                "Cadiz CF": "Cadiz",
+                "Almeria": "Almeria",
             }
+            const TEAM_COLOR = {
+                "Real Madrid": "#E2E2E2",
+                "Girona": "#CD2534",
+                "Barcelona": "#A50044",
+                "Atletico Madrid": "#CE3524",
+                "Athletic Bilbao": "#EE2523",
+                "Real Sociedad": "#143C8B",
+                "Real Betis": "#00954C",
+                "Valencia": "#EE3524",
+                "Villarreal": "#FFE667",
+                "Getafe": "#005999",
+                "Alaves": "#009AD7",
+                "Sevilla": "#F43333",
+                "Osasuna": "#D91A21",
+                "Las Palmas": "#FFE400",
+                "Celta Vigo": "#8AC3EE",
+                "Rayo Vallecano": "#E53027",
+                "Mallorca": "#E20613",
+                "Cadiz": "#F2A40C",
+                "Granada": "#C31632",
+                "Almeria": "#EE1119",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Atl. Madrid": TMP.awayTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.awayTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.awayTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.awayTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.awayTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.awayTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.awayTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.awayTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.awayTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.awayTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.awayTeam.name = "Leganés";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
-            dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
+            TMP.awayTeam.shorthand = title.innerText.substring(0, 3);
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
+                dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
             if (TMP.round == null) {
@@ -404,4 +382,4 @@ async function delay(time) {
 }
 
 getLast10Matches(MATCHES_URLS.SPAIN);
-//getAllMatches(MATCHES_URLS.SPAIN);
+// getAllMatches(MATCHES_URLS.SPAIN);

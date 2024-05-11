@@ -68,99 +68,40 @@ async function getLast10Matches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "PSG": TMP.homeTeam.name = "Paris Saint-Germain";
-                    break;
-                case "Marseille": TMP.homeTeam.name = "Olympique Marseille";
-                    break;
-                case "Lens": TMP.homeTeam.name = "Racing Lens";
-                    break;
-                case "Rennes": TMP.homeTeam.name = "Stade Rennais";
-                    break;
-                case "Lille": TMP.homeTeam.name = "Olympique Lille";
-                    break;
-                case "Nice": TMP.homeTeam.name = "Olympique Nice";
-                    break;
-                case "Reims": TMP.homeTeam.name = "Stade Reims";
-                    break;
-                case "Lyon": TMP.homeTeam.name = "Olympique Lyonnais";
-                    break;
-                case "Strasbourg": TMP.homeTeam.name = "Racing Strasbourg";
-                    break;
-                case "Brest": TMP.homeTeam.name = "Stade Brestois";
-                    break;
-                case "AC Ajaccio": TMP.homeTeam.name = "Athletic Ajaccien";
-                    break;
-                case "Angers": TMP.homeTeam.name = "Sporting Angers";
-                    break;
-                case "St Etienne": TMP.homeTeam.name = "Saint-Étienne Loire";
-                    break;
-                case "Bordeaux": TMP.homeTeam.name = "Girondins Bordeaux";
-                    break;
-                case "Nimes": TMP.homeTeam.name = "Olympique Nîmes";
-                    break;
-                case "Caen": TMP.homeTeam.name = "Stade Malherbe Caen";
-                    break;
-                case "Bastia": TMP.homeTeam.name = "Sporting Bastia";
-                    break;
-                case "GFC Ajaccio": TMP.homeTeam.name = "Gazélec Ajaccio";
-                    break;
-                case "Nancy": TMP.homeTeam.name = "Nancy Lorraine";
-                    break;
-                case "Amiens": TMP.homeTeam.name = "Sporting Amiens";
-                    break;
+            const TEAM_NAME = {
+                "PSG": "Paris Saint-Germain",
             }
+            const TEAM_COLOR = {
+                "Paris Saint-Germain": "#004170",
+                "Monaco": "#E63031",
+                "Brest": "#ED1C24",
+                "Lille": "#24216A",
+                "Nice": "#B59A54",
+                "Lens": "#FFF200",
+                "Lyon": "#1112AA",
+                "Rennes": "#E13327",
+                "Marseille": "#2FAEE0",
+                "Montpellier": "#344575",
+                "Toulouse": "#3E2C56",
+                "Reims": "#EE2223",
+                "Strasbourg": "#009FE3",
+                "Nantes": "#FCD405",
+                "Le Havre": "#003259",
+                "Metz": "#6E0F12",
+                "Lorient": "#F58113",
+                "Clermont": "#C50C46",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "PSG": TMP.awayTeam.name = "Paris Saint-Germain";
-                    break;
-                case "Marseille": TMP.awayTeam.name = "Olympique Marseille";
-                    break;
-                case "Lens": TMP.awayTeam.name = "Racing Lens";
-                    break;
-                case "Rennes": TMP.awayTeam.name = "Stade Rennais";
-                    break;
-                case "Lille": TMP.awayTeam.name = "Olympique Lille";
-                    break;
-                case "Nice": TMP.awayTeam.name = "Olympique Nice";
-                    break;
-                case "Reims": TMP.awayTeam.name = "Stade Reims";
-                    break;
-                case "Lyon": TMP.awayTeam.name = "Olympique Lyonnais";
-                    break;
-                case "Strasbourg": TMP.awayTeam.name = "Racing Strasbourg";
-                    break;
-                case "Brest": TMP.awayTeam.name = "Stade Brestois";
-                    break;
-                case "AC Ajaccio": TMP.awayTeam.name = "Athletic Ajaccien";
-                    break;
-                case "Angers": TMP.awayTeam.name = "Sporting Angers";
-                    break;
-                case "St Etienne": TMP.awayTeam.name = "Saint-Étienne Loire";
-                    break;
-                case "Bordeaux": TMP.awayTeam.name = "Girondins Bordeaux";
-                    break;
-                case "Nimes": TMP.awayTeam.name = "Olympique Nîmes";
-                    break;
-                case "Caen": TMP.awayTeam.name = "Stade Malherbe Caen";
-                    break;
-                case "Bastia": TMP.awayTeam.name = "Sporting Bastia";
-                    break;
-                case "GFC Ajaccio": TMP.awayTeam.name = "Gazélec Ajaccio";
-                    break;
-                case "Nancy": TMP.awayTeam.name = "Nancy Lorraine";
-                    break;
-                case "Amiens": TMP.awayTeam.name = "Sporting Amiens";
-                    break;
-            }
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -198,14 +139,14 @@ async function getLast10Matches(url) {
     for (var i = 0; i < original.matchesIteration.length; i++) {
         var pushIt = true; // Suponemos que podemos agregar el partido por defecto
         var matchToInsert = original.matchesIteration[i];
-        
+
         for (var j = 0; j < original.season.length; j++) {
             if (matchToInsert.round === original.season[j].round) {
                 // Comprobar si ya existe un partido con el mismo identificador
                 var existingMatch = original.season[j].matches.find(
                     match => match.id === matchToInsert.id
                 );
-                
+
                 if (existingMatch) {
                     pushIt = false; // Ya existe un partido con el mismo identificador en esta ronda
                     break; // No es necesario seguir buscando en esta ronda
@@ -217,7 +158,7 @@ async function getLast10Matches(url) {
             }
         }
     }
-    
+
     delete original.matchesIteration;
     FS.writeFile(fileLocation, JSON.stringify(original), function (err) {
         if (err) {
@@ -316,99 +257,40 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "PSG": TMP.homeTeam.name = "Paris Saint-Germain";
-                    break;
-                case "Marseille": TMP.homeTeam.name = "Olympique Marseille";
-                    break;
-                case "Lens": TMP.homeTeam.name = "Racing Lens";
-                    break;
-                case "Rennes": TMP.homeTeam.name = "Stade Rennais";
-                    break;
-                case "Lille": TMP.homeTeam.name = "Olympique Lille";
-                    break;
-                case "Nice": TMP.homeTeam.name = "Olympique Nice";
-                    break;
-                case "Reims": TMP.homeTeam.name = "Stade Reims";
-                    break;
-                case "Lyon": TMP.homeTeam.name = "Olympique Lyonnais";
-                    break;
-                case "Strasbourg": TMP.homeTeam.name = "Racing Strasbourg";
-                    break;
-                case "Brest": TMP.homeTeam.name = "Stade Brestois";
-                    break;
-                case "AC Ajaccio": TMP.homeTeam.name = "Athletic Ajaccien";
-                    break;
-                case "Angers": TMP.homeTeam.name = "Sporting Angers";
-                    break;
-                case "St Etienne": TMP.homeTeam.name = "Saint-Étienne Loire";
-                    break;
-                case "Bordeaux": TMP.homeTeam.name = "Girondins Bordeaux";
-                    break;
-                case "Nimes": TMP.homeTeam.name = "Olympique Nîmes";
-                    break;
-                case "Caen": TMP.homeTeam.name = "Stade Malherbe Caen";
-                    break;
-                case "Bastia": TMP.homeTeam.name = "Sporting Bastia";
-                    break;
-                case "GFC Ajaccio": TMP.homeTeam.name = "Gazélec Ajaccio";
-                    break;
-                case "Nancy": TMP.homeTeam.name = "Nancy Lorraine";
-                    break;
-                case "Amiens": TMP.homeTeam.name = "Sporting Amiens";
-                    break;
+            const TEAM_NAME = {
+                "PSG": "Paris Saint-Germain",
             }
+            const TEAM_COLOR = {
+                "Paris Saint-Germain": "#004170",
+                "Monaco": "#E63031",
+                "Brest": "#ED1C24",
+                "Lille": "#24216A",
+                "Nice": "#B59A54",
+                "Lens": "#FFF200",
+                "Lyon": "#1112AA",
+                "Rennes": "#E13327",
+                "Marseille": "#2FAEE0",
+                "Montpellier": "#344575",
+                "Toulouse": "#3E2C56",
+                "Reims": "#EE2223",
+                "Strasbourg": "#009FE3",
+                "Nantes": "#FCD405",
+                "Le Havre": "#003259",
+                "Metz": "#6E0F12",
+                "Lorient": "#F58113",
+                "Clermont": "#C50C46",
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "PSG": TMP.awayTeam.name = "Paris Saint-Germain";
-                    break;
-                case "Marseille": TMP.awayTeam.name = "Olympique Marseille";
-                    break;
-                case "Lens": TMP.awayTeam.name = "Racing Lens";
-                    break;
-                case "Rennes": TMP.awayTeam.name = "Stade Rennais";
-                    break;
-                case "Lille": TMP.awayTeam.name = "Olympique Lille";
-                    break;
-                case "Nice": TMP.awayTeam.name = "Olympique Nice";
-                    break;
-                case "Reims": TMP.awayTeam.name = "Stade Reims";
-                    break;
-                case "Lyon": TMP.awayTeam.name = "Olympique Lyonnais";
-                    break;
-                case "Strasbourg": TMP.awayTeam.name = "Racing Strasbourg";
-                    break;
-                case "Brest": TMP.awayTeam.name = "Stade Brestois";
-                    break;
-                case "AC Ajaccio": TMP.awayTeam.name = "Athletic Ajaccien";
-                    break;
-                case "Angers": TMP.awayTeam.name = "Sporting Angers";
-                    break;
-                case "St Etienne": TMP.awayTeam.name = "Saint-Étienne Loire";
-                    break;
-                case "Bordeaux": TMP.awayTeam.name = "Girondins Bordeaux";
-                    break;
-                case "Nimes": TMP.awayTeam.name = "Olympique Nîmes";
-                    break;
-                case "Caen": TMP.awayTeam.name = "Stade Malherbe Caen";
-                    break;
-                case "Bastia": TMP.awayTeam.name = "Sporting Bastia";
-                    break;
-                case "GFC Ajaccio": TMP.awayTeam.name = "Gazélec Ajaccio";
-                    break;
-                case "Nancy": TMP.awayTeam.name = "Nancy Lorraine";
-                    break;
-                case "Amiens": TMP.awayTeam.name = "Sporting Amiens";
-                    break;
-            }
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
             TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);

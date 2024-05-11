@@ -68,83 +68,45 @@ async function getLast10Matches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Manchester Utd": TMP.homeTeam.name = "Manchester United";
-                    break;
-                case "Tottenham": TMP.homeTeam.name = "Tottenham Hotspur";
-                    break;
-                case "Newcastle": TMP.homeTeam.name = "Newcastle United";
-                    break;
-                case "Wolves": TMP.homeTeam.name = "Wolverhampton Wanderers";
-                    break;
-                case "Leeds": TMP.homeTeam.name = "Leeds United";
-                    break;
-                case "Nottingham": TMP.homeTeam.name = "Nottingham Forest";
-                    break;
-                case "Leicester": TMP.homeTeam.name = "Leicester City";
-                    break;
-                case "West Ham": TMP.homeTeam.name = "West Ham United";
-                    break;
-                case "Bournemouth": TMP.homeTeam.name = "Athletic Bournemouth";
-                    break;
-                case "West Brom": TMP.homeTeam.name = "West Bromwich";
-                    break;
-                case "Sheffield Utd": TMP.homeTeam.name = "Sheffield United";
-                    break;
-                case "Norwich": TMP.homeTeam.name = "Norwich City";
-                    break;
-                case "Stoke": TMP.homeTeam.name = "Stoke City";
-                    break;
-                case "Hull": TMP.homeTeam.name = "Hull City";
-                    break;
-                case "Cardiff": TMP.homeTeam.name = "Cardiff City";
-                    break;
-                case "Swansea": TMP.homeTeam.name = "Swansea City";
-                    break;
+            const TEAM_NAME = {
+                "Manchester Utd": "Manchester United",
+                "Sheffield Utd": "Sheffield United",
             }
+            const TEAM_COLOR = {
+                "Arsenal": "#EF0107",
+                "Manchester City": "#6CABDD",
+                "Liverpool": "#C8102E",
+                "Aston Villa": "#95BFE5",
+                "Tottenham": "#132257",
+                "Newcastle": "#241F20",
+                "Chelsea": "#034694",
+                "Manchester United": "#DA291C",
+                "West Ham": "#7A263A",
+                "Bournemouth": "#DA291C",
+                "Brighton": "#0057B8",
+                "Wolves": "#FDB913",
+                "Fulham": "#000000",
+                "Crystal Palace": "#1B458F",
+                "Everton": "#003399",
+                "Brentford": "#D20000",
+                "Nottingham": "#DD0000",
+                "Luton": "#F78F1E",
+                "Burnley": "#6C1D45",
+                "Sheffield United": "#EE2737"
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Manchester Utd": TMP.awayTeam.name = "Manchester United";
-                    break;
-                case "Tottenham": TMP.awayTeam.name = "Tottenham Hotspur";
-                    break;
-                case "Newcastle": TMP.awayTeam.name = "Newcastle United";
-                    break;
-                case "Wolves": TMP.awayTeam.name = "Wolverhampton Wanderers";
-                    break;
-                case "Leeds": TMP.awayTeam.name = "Leeds United";
-                    break;
-                case "Nottingham": TMP.awayTeam.name = "Nottingham Forest";
-                    break;
-                case "Leicester": TMP.awayTeam.name = "Leicester City";
-                    break;
-                case "West Ham": TMP.awayTeam.name = "West Ham United";
-                    break;
-                case "Bournemouth": TMP.awayTeam.name = "Athletic Bournemouth";
-                    break;
-                case "West Brom": TMP.awayTeam.name = "West Bromwich";
-                    break;
-                case "Sheffield Utd": TMP.awayTeam.name = "Sheffield United";
-                    break;
-                case "Norwich": TMP.awayTeam.name = "Norwich City";
-                    break;
-                case "Stoke": TMP.awayTeam.name = "Stoke City";
-                    break;
-                case "Hull": TMP.awayTeam.name = "Hull City";
-                    break;
-                case "Cardiff": TMP.awayTeam.name = "Cardiff City";
-                    break;
-                case "Swansea": TMP.awayTeam.name = "Swansea City";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.id = dumpStringArray[3];
+            TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
+            TMP.awayTeam.shorthand = title.innerText.substring(0, 3);
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -182,14 +144,14 @@ async function getLast10Matches(url) {
     for (var i = 0; i < original.matchesIteration.length; i++) {
         var pushIt = true; // Suponemos que podemos agregar el partido por defecto
         var matchToInsert = original.matchesIteration[i];
-        
+
         for (var j = 0; j < original.season.length; j++) {
             if (matchToInsert.round === original.season[j].round) {
                 // Comprobar si ya existe un partido con el mismo identificador
                 var existingMatch = original.season[j].matches.find(
                     match => match.id === matchToInsert.id
                 );
-                
+
                 if (existingMatch) {
                     pushIt = false; // Ya existe un partido con el mismo identificador en esta ronda
                     break; // No es necesario seguir buscando en esta ronda
@@ -201,7 +163,7 @@ async function getLast10Matches(url) {
             }
         }
     }
-    
+
     delete original.matchesIteration;
     FS.writeFile(fileLocation, JSON.stringify(original), function (err) {
         if (err) {
@@ -220,11 +182,21 @@ async function getAllMatches(url) {
     const PAGE = await BROWSER.newPage();
     await PAGE.goto(url, { waitUntil: "networkidle0" });
     // // // // // REPETIR EL SIGUIENTE CODIGO TANTAS VECES COMO BOTON DE MOSTRAR MÁS PARTIDOS HAYA
-    /*await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.waitForSelector('.event__more', { visible: true });
     await PAGE.evaluate(() => {
         document.querySelector('.event__more').click();
     });
-    await delay(4000);*/
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
+    await PAGE.waitForSelector('.event__more', { visible: true });
+    await PAGE.evaluate(() => {
+        document.querySelector('.event__more').click();
+    });
+    await delay(4000);
     /////////////////////////////////////////////////////////////////////////////////////
 
     const RESULT = await PAGE.evaluate(() => {
@@ -295,83 +267,43 @@ async function getAllMatches(url) {
             dumpStringArray = dumpString.split('/');
             TMP.homeTeam.id = dumpStringArray[3];
             TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Manchester Utd": TMP.homeTeam.name = "Manchester United";
-                    break;
-                case "Tottenham": TMP.homeTeam.name = "Tottenham Hotspur";
-                    break;
-                case "Newcastle": TMP.homeTeam.name = "Newcastle United";
-                    break;
-                case "Wolves": TMP.homeTeam.name = "Wolverhampton Wanderers";
-                    break;
-                case "Leeds": TMP.homeTeam.name = "Leeds United";
-                    break;
-                case "Nottingham": TMP.homeTeam.name = "Nottingham Forest";
-                    break;
-                case "Leicester": TMP.homeTeam.name = "Leicester City";
-                    break;
-                case "West Ham": TMP.homeTeam.name = "West Ham United";
-                    break;
-                case "Bournemouth": TMP.homeTeam.name = "Athletic Bournemouth";
-                    break;
-                case "West Brom": TMP.homeTeam.name = "West Bromwich";
-                    break;
-                case "Sheffield Utd": TMP.homeTeam.name = "Sheffield United";
-                    break;
-                case "Norwich": TMP.homeTeam.name = "Norwich City";
-                    break;
-                case "Stoke": TMP.homeTeam.name = "Stoke City";
-                    break;
-                case "Hull": TMP.homeTeam.name = "Hull City";
-                    break;
-                case "Cardiff": TMP.homeTeam.name = "Cardiff City";
-                    break;
-                case "Swansea": TMP.homeTeam.name = "Swansea City";
-                    break;
+            const TEAM_NAME = {
+                "Manchester Utd": "Manchester United",
+                "Sheffield Utd": "Sheffield United",
             }
+            const TEAM_COLOR = {
+                "Arsenal": "#EF0107",
+                "Manchester City": "#6CABDD",
+                "Liverpool": "#C8102E",
+                "Aston Villa": "#95BFE5",
+                "Tottenham": "#132257",
+                "Newcastle": "#241F20",
+                "Chelsea": "#034694",
+                "Manchester United": "#DA291C",
+                "West Ham": "#7A263A",
+                "Bournemouth": "#DA291C",
+                "Brighton": "#0057B8",
+                "Wolves": "#FDB913",
+                "Fulham": "#000000",
+                "Crystal Palace": "#1B458F",
+                "Everton": "#003399",
+                "Brentford": "#D20000",
+                "Nottingham": "#DD0000",
+                "Luton": "#F78F1E",
+                "Burnley": "#6C1D45",
+                "Sheffield United": "#EE2737"
+            }
+            TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
             TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
+            TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
             TMP.awayTeam = {};
             dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
             dumpStringArray = dumpString.split('/');
             TMP.awayTeam.id = dumpStringArray[3];
             TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Manchester Utd": TMP.awayTeam.name = "Manchester United";
-                    break;
-                case "Tottenham": TMP.awayTeam.name = "Tottenham Hotspur";
-                    break;
-                case "Newcastle": TMP.awayTeam.name = "Newcastle United";
-                    break;
-                case "Wolves": TMP.awayTeam.name = "Wolverhampton Wanderers";
-                    break;
-                case "Leeds": TMP.awayTeam.name = "Leeds United";
-                    break;
-                case "Nottingham": TMP.awayTeam.name = "Nottingham Forest";
-                    break;
-                case "Leicester": TMP.awayTeam.name = "Leicester City";
-                    break;
-                case "West Ham": TMP.awayTeam.name = "West Ham United";
-                    break;
-                case "Bournemouth": TMP.awayTeam.name = "Athletic Bournemouth";
-                    break;
-                case "West Brom": TMP.awayTeam.name = "West Bromwich";
-                    break;
-                case "Sheffield Utd": TMP.awayTeam.name = "Sheffield United";
-                    break;
-                case "Norwich": TMP.awayTeam.name = "Norwich City";
-                    break;
-                case "Stoke": TMP.awayTeam.name = "Stoke City";
-                    break;
-                case "Hull": TMP.awayTeam.name = "Hull City";
-                    break;
-                case "Cardiff": TMP.awayTeam.name = "Cardiff City";
-                    break;
-                case "Swansea": TMP.awayTeam.name = "Swansea City";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
+            TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
+            TMP.awayTeam.shorthand = title.innerText.substring(0, 3);
+            TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
             dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
             dumpStringArray = dumpString.split(" ");
             TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
@@ -444,4 +376,4 @@ async function delay(time) {
 }
 
 getLast10Matches(MATCHES_URLS.ENGLAND);
-//getAllMatches(MATCHES_URLS.ENGLAND);
+// getAllMatches(MATCHES_URLS.ENGLAND);

@@ -391,119 +391,129 @@ async function getScorers(url) {
                     TMP.team.name = "-";
                 }
                 TMP.team.name = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').innerText;
-                switch (TMP.team.name) {
-                    case "Napoli": TMP.team.name = "Calcio Napoli";
-                        break;
-                    case "Inter": TMP.team.name = "Inter Milan";
-                        break;
-                    case "AC Milan": TMP.team.name = "Calcio Milan";
-                        break;
-                    case "AS Roma": TMP.team.name = "Roma";
-                        break;
-                    case "Atalanta": TMP.team.name = "Calcio Atalanta";
-                        break;
-                    case "Udinese": TMP.team.name = "Calcio Udinese";
-                        break;
-                    case "Fiorentina": TMP.team.name = "Calcio Fiorentina";
-                        break;
-                    case "Sassuolo": TMP.team.name = "Calcio Sassuolo";
-                        break;
-                    case "Monza": TMP.team.name = "Calcio Monza";
-                        break;
-                    case "Spezia": TMP.team.name = "Calcio Spezia";
-                        break;
-                    case "Verona": TMP.team.name = "Hellas Verona";
-                        break;
-                    case "Sampdoria": TMP.team.name = "Calcio Cagliari";
-                        break;
-                    case "Cagliari": TMP.team.name = "Calcio Cagliari";
-                        break;
-                    case "Benevento": TMP.team.name = "Calcio Benevento";
-                        break;
-                    case "Parma": TMP.team.name = "Calcio Parma";
-                        break;
-                    case "Dortmund": TMP.team.name = "Borussia Dortmund";
-                        break;
-                    case "RB Leipzig": TMP.team.name = "RasenBallsport Leipzig";
-                        break;
-                    case "B. Monchengladbach": TMP.team.name = "Borussia Mönchengladbach";
-                        break;
-                    case "FC Koln": TMP.team.name = "Köln";
-                        break;
-                    case "Greuther Furth": TMP.team.name = "Greuther Fürth";
-                        break;
-                    case "Atl. Madrid": TMP.team.name = "Atlético Madrid";
-                        break;
-                    case "Betis": TMP.team.name = "Real Betis";
-                        break;
-                    case "Granada CF": TMP.team.name = "Granada";
-                        break;
-                    case "Ath Bilbao": TMP.team.name = "Athletic Bilbao";
-                        break;
-                    case "Cadiz CF": TMP.team.name = "Cádiz";
-                        break;
-                    case "Alaves": TMP.team.name = "Deportivo Alavés";
-                        break;
-                    case "Almeria": TMP.team.name = "Almería";
-                        break;
-                    case "PSG": TMP.team.name = "Paris Saint-Germain";
-                        break;
-                    case "Marseille": TMP.team.name = "Olympique Marseille";
-                        break;
-                    case "Lens": TMP.team.name = "Racing Lens";
-                        break;
-                    case "Rennes": TMP.team.name = "Stade Rennais";
-                        break;
-                    case "Lille": TMP.team.name = "Olympique Lille";
-                        break;
-                    case "Nice": TMP.team.name = "Olympique Nice";
-                        break;
-                    case "Reims": TMP.team.name = "Stade Reims";
-                        break;
-                    case "Lyon": TMP.team.name = "Olympique Lyonnais";
-                        break;
-                    case "Strasbourg": TMP.team.name = "Racing Strasbourg";
-                        break;
-                    case "Brest": TMP.team.name = "Stade Brestois";
-                        break;
-                    case "AC Ajaccio": TMP.team.name = "Athletic Ajaccien";
-                        break;
-                    case "Angers": TMP.team.name = "Sporting Angers";
-                        break;
-                    case "St Etienne": TMP.team.name = "Saint-Étienne Loire";
-                        break;
-                    case "Bordeaux": TMP.team.name = "Girondins Bordeaux";
-                        break;
-                    case "Nimes": TMP.team.name = "Olympique Nîmes";
-                        break;
-                    case "Manchester Utd": TMP.team.name = "Manchester United";
-                        break;
-                    case "Tottenham": TMP.team.name = "Tottenham Hotspur";
-                        break;
-                    case "Newcastle": TMP.team.name = "Newcastle United";
-                        break;
-                    case "Wolves": TMP.team.name = "Wolverhampton Wanderers";
-                        break;
-                    case "Leeds": TMP.team.name = "Leeds United";
-                        break;
-                    case "Nottingham": TMP.team.name = "Nottingham Forest";
-                        break;
-                    case "Leicester": TMP.team.name = "Leicester City";
-                        break;
-                    case "West Ham": TMP.team.name = "West Ham United";
-                        break;
-                    case "Bournemouth": TMP.team.name = "Athletic Bournemouth";
-                        break;
-                    case "West Brom": TMP.team.name = "West Bromwich";
-                        break;
-                    case "Sheffield Utd": TMP.team.name = "Sheffield United";
-                        break;
-                    case "Norwich": TMP.team.name = "Norwich City";
-                        break;
-                }
+                const TEAM_NAME = {
+                    "AC Milan": "Milan",
+                    "AS Roma": "Roma",
+                    "RB Leipzig": "Leipzig",
+                    "B. Monchengladbach": "Monchengladbach",
+                    "FC Koln": "Koln",
+                    "Atl. Madrid": "Atletico Madrid",
+                    "Betis": "Real Betis",
+                    "Granada CF": "Granada",
+                    "Ath Bilbao": "Athletic Bilbao",
+                    "Cadiz CF": "Cadiz",
+                    "Almeria": "Almeria",
+                    "PSG": "Paris Saint-Germain",
+                    "Manchester Utd": "Manchester United",
+                    "Sheffield Utd": "Sheffield United",
+                };
 
+                const TEAM_COLOR = {
+                    "Inter": "#010E80",
+                    "Milan": "#B52E2B",
+                    "Juventus": "#000000",
+                    "Bologna": "#9F1F33",
+                    "Atalanta": "#2D5CAE",
+                    "Roma": "#FBBA00",
+                    "Lazio": "#85D8F8",
+                    "Napoli": "#12A0D7",
+                    "Fiorentina": "#502D7F",
+                    "Torino": "#881F19",
+                    "Monza": "#E4022E",
+                    "Genoa": "#AE1919",
+                    "Lecce": "#005B81",
+                    "Verona": "#002F6C",
+                    "Cagliari": "#B01028",
+                    "Frosinone": "#004393",
+                    "Empoli": "#4280C2",
+                    "Udinese": "#7F7F7F",
+                    "Sassuolo": "#0FA653",
+                    "Salernitana": "#681A12",
 
-                TMP.team.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.team.id + ".svg";
+                    "Bayer Leverkusen": "#E22726",
+                    "Bayern Munich": "#DC052D",
+                    "Stuttgart": "#D40723",
+                    "Leipzig": "#DD0741",
+                    "Dortmund": "#FDE100",
+                    "Eintracht Frankfurt": "#E00914",
+                    "Freiburg": "#5b5b5b",
+                    "Hoffenheim": "#1961B5",
+                    "Augsburg": "#BA3733",
+                    "Heidenheim": "#003B79",
+                    "Werder Bremen": "#009655",
+                    "Wolfsburg": "#65B32E",
+                    "Monchengladbach": "#000000",
+                    "Bochum": "#005BA4",
+                    "Union Berlin": "#EB1923",
+                    "Mainz": "#C3141E",
+                    "Koln": "#000000",
+                    "Darmstadt": "#004C99",
+
+                    "Real Madrid": "#E2E2E2",
+                    "Girona": "#CD2534",
+                    "Barcelona": "#A50044",
+                    "Atletico Madrid": "#CE3524",
+                    "Athletic Bilbao": "#EE2523",
+                    "Real Sociedad": "#143C8B",
+                    "Real Betis": "#00954C",
+                    "Valencia": "#EE3524",
+                    "Villarreal": "#FFE667",
+                    "Getafe": "#005999",
+                    "Alaves": "#009AD7",
+                    "Sevilla": "#F43333",
+                    "Osasuna": "#D91A21",
+                    "Las Palmas": "#FFE400",
+                    "Celta Vigo": "#8AC3EE",
+                    "Rayo Vallecano": "#E53027",
+                    "Mallorca": "#E20613",
+                    "Cadiz": "#F2A40C",
+                    "Granada": "#C31632",
+                    "Almeria": "#EE1119",
+
+                    "Paris Saint-Germain": "#004170",
+                    "Monaco": "#E63031",
+                    "Brest": "#ED1C24",
+                    "Lille": "#24216A",
+                    "Nice": "#B59A54",
+                    "Lens": "#FFF200",
+                    "Lyon": "#1112AA",
+                    "Rennes": "#E13327",
+                    "Marseille": "#2FAEE0",
+                    "Montpellier": "#344575",
+                    "Toulouse": "#3E2C56",
+                    "Reims": "#EE2223",
+                    "Strasbourg": "#009FE3",
+                    "Nantes": "#FCD405",
+                    "Le Havre": "#003259",
+                    "Metz": "#6E0F12",
+                    "Lorient": "#F58113",
+                    "Clermont": "#C50C46",
+
+                    "Arsenal": "#EF0107",
+                    "Manchester City": "#6CABDD",
+                    "Liverpool": "#C8102E",
+                    "Aston Villa": "#95BFE5",
+                    "Tottenham": "#132257",
+                    "Newcastle": "#241F20",
+                    "Chelsea": "#034694",
+                    "Manchester United": "#DA291C",
+                    "West Ham": "#7A263A",
+                    "Bournemouth": "#DA291C",
+                    "Brighton": "#0057B8",
+                    "Wolves": "#FDB913",
+                    "Fulham": "#000000",
+                    "Crystal Palace": "#1B458F",
+                    "Everton": "#003399",
+                    "Brentford": "#D20000",
+                    "Nottingham": "#DD0000",
+                    "Luton": "#F78F1E",
+                    "Burnley": "#6C1D45",
+                    "Sheffield United": "#EE2737",
+                };
+
+                TMP.team.name = TEAM_NAME[TMP.team.name] || TMP.team.name;
+
+                TMP.team.color = TEAM_COLOR[TMP.team.name];
 
                 TMP.goals = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--goals.topScorers__cell').innerText);
                 TMP.assists = parseInt(document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > span.topScorers__cell.topScorers__cell--gray.topScorers__cell').innerText);

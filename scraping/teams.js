@@ -67,7 +67,7 @@ async function updateTeamsData() {
     );
 
     // Update the teams data and calculate lastPosition
-    const TEAM_NAM = {
+    const TEAM_NAME = {
         "AC Milan": "Milan",
         "AS Roma": "Roma",
 

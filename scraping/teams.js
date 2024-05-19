@@ -85,7 +85,7 @@ async function updateTeamsData() {
         "PSG": "Paris Saint-Germain",
 
         "Manchester Utd": "Manchester United",
-        "Sheffield Utd": "Sheffield United",
+        "Sheffield Utd": "Sheffied United",
     };
 
     const TEAM_COLOR = {

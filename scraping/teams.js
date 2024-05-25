@@ -82,7 +82,7 @@ async function updateTeamsData() {
         "Cadiz CF": "Cadiz",
         "Almeria": "Almeria",
 
-        "PSG": "Paris Saint-Germain",
+        "PSG": "Pari Saint-Germain",
 
         "Manchester Utd": "Manchester United",
         "Sheffield Utd": "Sheffield United",

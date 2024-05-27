@@ -62,7 +62,7 @@ async function getStandings(url) {
                 "Almeria": "Almeria",
 
                 "PSG": "Paris Saint-Germain",
-                
+
                 "Manchester Utd": "Manchester United",
                 "Sheffield Utd": "Sheffield United",
             };
@@ -210,7 +210,7 @@ async function getStandings(url) {
             form.forEach(element => {
                 dump++;
                 if (dump == 2) {
-                    TMP.form = element.innerText;                                
+                    TMP.form = element.innerText;
                 } else if (dump > 2) {
                     TMP.form = TMP.form.concat(",", element.innerText);
                 } else {
@@ -222,7 +222,7 @@ async function getStandings(url) {
         return JSON;
     });
     var leagueName = RESULT.name;
-    var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/standings/standings" + leagueName.replace(" ", "") + RESULT.yearStart + "Flashcore.json");
+    var fileLocation = PATH.join(process.cwd(), "../db/" + RESULT.yearStart + "/standings/standings" + leagueName.replace(" ", "") + RESULT.yearStart + "Flashcore.json");
     FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
         if (err) {
             console.log('An error occured while writing JSON Object to File.');

@@ -20,16 +20,16 @@
   "homepage": "https://github.com/mzafram2001/fotballr-api#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "hono": "^4.3.4",
-    "puppeteer": "^22.8.0",
+    "hono": "^4.4.0",
+    "puppeteer": "^22.10.0",
     "puppeteer-cmp-clicker": "^1.0.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240502.0",
+    "@cloudflare/workers-types": "^4.20240512.0",
     "standard": "^17.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0",
-    "wrangler": "^3.55.0"
+    "wrangler": "^3.57.1"
   },
   "eslintConfig": {
     "extends": "standard"

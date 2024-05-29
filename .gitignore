@@ -4,3 +4,6 @@ package-lock.json
 roadmap
 .tmp/
 .vscode/
+.DS_Store
+Thumbs.db
+ehthumbs.db

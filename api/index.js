@@ -7,7 +7,7 @@ import STANDINGS_LIGUE_ONE_2023 from "../db/2023/standings/standingsLigue12023Fl
 import STANDINGS_SERIE_A_2023 from "../db/2023/standings/standingsSerieA2023Flashcore.json";
 import STANDINGS_BUNDESLIGA_2023 from "../db/2023/standings/standingsBundesliga2023Flashcore.json";
 
-import SCORERS_PREMIER_LEAGUE_2023 from "../db/2023/scorers/scorersPremierLeague2023Flashcore.json";
+/*import SCORERS_PREMIER_LEAGUE_2023 from "../db/2023/scorers/scorersPremierLeague2023Flashcore.json";
 import SCORERS_LA_LIGA_2023 from "../db/2023/scorers/scorersLaLiga2023Flashcore.json";
 import SCORERS_LIGUE_ONE_2023 from "../db/2023/scorers/scorersLigue12023Flashcore.json";
 import SCORERS_SERIE_A_2023 from "../db/2023/scorers/scorersSerieA2023Flashcore.json";
@@ -23,7 +23,7 @@ import SCHEDULES_PREMIER_LEAGUE_2023 from "../db/2023/schedules/schedulesPremier
 import SCHEDULES_LA_LIGA_2023 from "../db/2023/schedules/schedulesLaLiga2023Flashcore.json";
 import SCHEDULES_LIGUE_ONE_2023 from "../db/2023/schedules/schedulesLigue12023Flashcore.json";
 import SCHEDULES_SERIE_A_2023 from "../db/2023/schedules/schedulesSerieA2023Flashcore.json";
-import SCHEDULES_BUNDESLIGA_2023 from "../db/2023/schedules/schedulesBundesliga2023Flashcore.json";
+import SCHEDULES_BUNDESLIGA_2023 from "../db/2023/schedules/schedulesBundesliga2023Flashcore.json";*/
 
 import AREAS from "../db/areas.json";
 import COMPETITIONS from "../db/competitions.json";
@@ -53,13 +53,13 @@ function generateParameters(name, endpoint, description, example, status) {
 }
 
 const AREAS_ENDPOINT = {
-	endpoint: '/areas',
+	/*endpoint: '/areas',
 	description: 'List all available areas 🌍.',
 	example: `${BASE_URL}/areas`,
 	status: "Available 🟢.",
 	parameters: [
 		generateParameters("id", "/areas/:id", "List one area given by id 🔍.", `${BASE_URL}/areas/ITA`, "Available 🟢.")
-	]
+	]*/
 };
 
 const COMPETITIONS_ENDPOINT = {
@@ -70,22 +70,22 @@ const COMPETITIONS_ENDPOINT = {
 	parameters: [
 		generateParameters("id", "/competitions/:id", "List one competition given by id 🔍.", `${BASE_URL}/competitions/LAL`, "Available 🟢."),
 		generateParameters("standings", "/competitions/:id/standings", "List the current standings for a league 🔝.", `${BASE_URL}/competitions/LAL/standings`, "Available 🟢."),
-		generateParameters("scorers", "/competitions/:id/scorers/", "List the current scorers for a league ⚽.", `${BASE_URL}/competitions/LI1/scorers`, "Available 🟢."),
+		/*generateParameters("scorers", "/competitions/:id/scorers/", "List the current scorers for a league ⚽.", `${BASE_URL}/competitions/LI1/scorers`, "Available 🟢."),
 		generateParameters("matches", "/competitions/:id/matches/", "List the current matches results for a league 🆚.", `${BASE_URL}/competitions/PRL/matches`, "Available 🟢."),
 		generateParameters("schedules", "/competitions/:id/schedules/", "List the next scheduled matches for a league 🔜.", `${BASE_URL}/competitions/BUN/schedules`, "Available 🟢."),
 		generateParameters("round", "/competitions/:id/matches/:round", "List of matches, filtered by a completed matchday 🔍.", `${BASE_URL}/competitions/SEA/matches/1`, "Available 🟢."),
-		generateParameters("idMatch", "/competitions/:id/matches/:round/:idMatch", "List 1 match, given by round and id of the match 🔍.", `${BASE_URL}/competitions/PRL/matches/1/EkT4QbqS`, "Available 🟢.")
+		generateParameters("idMatch", "/competitions/:id/matches/:round/:idMatch", "List 1 match, given by round and id of the match 🔍.", `${BASE_URL}/competitions/PRL/matches/1/EkT4QbqS`, "Available 🟢.")*/
 	]
 };
 
 const TEAMS_ENDPOINT = {
-	endpoint: '/teams',
+	/*endpoint: '/teams',
 	description: 'List all available teams 🛡️.',
 	example: `${BASE_URL}/teams`,
 	status: "Available 🟢.",
 	parameters: [
 		generateParameters("id", "/teams/:id", "List one team given by id 🔍.", `${BASE_URL}/teams/W8mj7MDD`, "Available 🟢.")
-	]
+	]*/
 };
 
 const FOOTBALLR_ENDPOINT = {
@@ -96,7 +96,7 @@ const FOOTBALLR_ENDPOINT = {
 };
 
 APP.get('/', (ctx) => {
-	const DATA = [AREAS_ENDPOINT, COMPETITIONS_ENDPOINT, TEAMS_ENDPOINT, FOOTBALLR_ENDPOINT];
+	const DATA = [/*AREAS_ENDPOINT,*/ COMPETITIONS_ENDPOINT, /*TEAMS_ENDPOINT,*/ FOOTBALLR_ENDPOINT];
 	return ctx.json(DATA);
 });
 

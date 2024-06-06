@@ -11,26 +11,26 @@ const standingsURLs = {
 };
 
 const teamsData = {
-    "Atl. Madrid": { name: "Atletico Madrid", color: "#CE3524" },
-    "Betis": { name: "Real Betis", color: "#00954C" },
-    "Granada CF": { name: "Granada", color: "#C31632" },
-    "Ath Bilbao": { name: "Athletic Bilbao", color: "#EE2523" },
-    "Cadiz CF": { name: "Cadiz", color: "#F2A40C" },
-    "Almeria": { name: "Almeria", color: "#EE1119" },
-    "Real Madrid": { name: "Real Madrid", color: "#E2E2E2" },
-    "Girona": { name: "Girona", color: "#CD2534" },
-    "Barcelona": { name: "Barcelona", color: "#A50044" },
-    "Real Sociedad": { name: "Real Sociedad", color: "#143C8B" },
-    "Valencia": { name: "Valencia", color: "#EE3524" },
-    "Villarreal": { name: "Villarreal", color: "#FFE667" },
-    "Getafe": { name: "Getafe", color: "#005999" },
-    "Alaves": { name: "Alaves", color: "#009AD7" },
-    "Sevilla": { name: "Sevilla", color: "#F43333" },
-    "Osasuna": { name: "Osasuna", color: "#D91A21" },
-    "Las Palmas": { name: "Las Palmas", color: "#FFE400" },
-    "Celta Vigo": { name: "Celta Vigo", color: "#8AC3EE" },
-    "Rayo Vallecano": { name: "Rayo Vallecano", color: "#E53027" },
-    "Mallorca": { name: "Mallorca", color: "#E20613" },
+    "Atl. Madrid": { short: "ATM", name: "Atletico Madrid", color: "#CE3524" },
+    "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
+    "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
+    "Ath Bilbao": { short: "ATH", name: "Athletic Bilbao", color: "#EE2523" },
+    "Cadiz CF": { short: "CAD", name: "Cadiz", color: "#F2A40C" },
+    "Almeria": { short: "ALM", name: "Almeria", color: "#EE1119" },
+    "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
+    "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
+    "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
+    "Real Sociedad": { short: "RSO", name: "Real Sociedad", color: "#143C8B" },
+    "Valencia": { short: "VAL", name: "Valencia", color: "#EE3524" },
+    "Villarreal": { short: "VIL", name: "Villarreal", color: "#FFE667" },
+    "Getafe": { short: "GET", name: "Getafe", color: "#005999" },
+    "Alaves": { short: "ALA", name: "Alaves", color: "#009AD7" },
+    "Sevilla": { short: "SEV", name: "Sevilla", color: "#F43333" },
+    "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
+    "Las Palmas": { short: "LPA", name: "Las Palmas", color: "#FFE400" },
+    "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8AC3EE" },
+    "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#E53027" },
+    "Mallorca": { short: "MLL", name: "Mallorca", color: "#E20613" },
 };
 
 async function getStandings(url, teamsData) {
@@ -59,7 +59,7 @@ async function getStandings(url, teamsData) {
 
         const headingInfo = heading.querySelector('div.heading__info').innerText;
         json.yearStart = parseInt(headingInfo.substring(0, 4));
-        json.yearEnd = parseInt(headingInfo.substring(5, headingInfo.substring(5).indexOf('-')));
+        json.yearEnd = parseInt(headingInfo.substring(5, json.yearStart - 1));
 
         json.standings = [];
         const rows = document.querySelectorAll('.ui-table__row');
@@ -72,7 +72,8 @@ async function getStandings(url, teamsData) {
             const href = element.querySelector('.tableCellParticipant__image').getAttribute('href');
             tmp.team.id = href.split('/')[3];
             tmp.team.name = element.querySelector('.tableCellParticipant__name').innerText.trim();
-            const teamData = teamsData[tmp.team.name] || { name: tmp.team.name, color: "#000000" };
+            const teamData = teamsData[tmp.team.name] || { short: tmp.team.short, name: tmp.team.name, color: "#000000" };
+            tmp.team.short = teamData.short;
             tmp.team.name = teamData.name;
             tmp.team.color = teamData.color;
             tmp.playedGames = parseInt(element.querySelector('.table__cell--value').innerText.trim());

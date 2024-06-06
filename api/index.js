@@ -6,8 +6,8 @@ import standingsLaLiga from '../db/2023/standings/standingsLaLiga2023Flashscore.
 
 // Initialize the Hono application
 const app = new Hono();
-const BASE_URL = 'https://api.footballr.workers.dev';
-const API_VERSION = 'v06062024';
+const baseURL = 'https://api.footballr.workers.dev';
+const apiVersion = 'v06062024';
 
 // Apply CORS middleware to all routes
 app.use('/*', cors());
@@ -18,22 +18,22 @@ function generateParameter(name, endpoint, description, example, status) {
 }
 
 // Define the competitions endpoint metadata
-const COMPETITIONS_ENDPOINT = {
+const competitionsEndpoint = {
     endpoint: '/competitions',
     description: 'List all available competitions 🏆.',
-    example: `${BASE_URL}/competitions`,
+    example: `${baseURL}/competitions`,
     status: 'Available 🟢.',
     parameters: [
-        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍.', `${BASE_URL}/competitions/LAL`, 'Available 🟢.'),
-        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝.', `${BASE_URL}/competitions/LAL/standings`, 'Available 🟢.'),
+        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍.', `${baseURL}/competitions/LAL`, 'Available 🟢.'),
+        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝.', `${baseURL}/competitions/LAL/standings`, 'Available 🟢.'),
     ],
 };
 
 // Define the base API information
-const FOOTBALLR_ENDPOINT = {
+const footballrEndpoint = {
     name: 'FootballR Api ⚽',
-    version: API_VERSION,
-    updated: formatDate(API_VERSION),
+    version: apiVersion,
+    updated: formatDate(apiVersion),
     message: 'Created with 💙 by Miguel Zafra.',
 };
 
@@ -47,7 +47,7 @@ function formatDate(apiVersion) {
 
 // Root endpoint: returns API documentation
 app.get('/', (ctx) => {
-    const data = [COMPETITIONS_ENDPOINT, FOOTBALLR_ENDPOINT];
+    const data = [competitionsEndpoint, footballrEndpoint];
     return ctx.json(data);
 });
 

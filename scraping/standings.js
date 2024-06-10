@@ -1,15 +1,19 @@
+// Import dependencies.
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
+// Define URLs object.
 const URLs = {
     spain: "https://www.flashscore.com/football/spain/laliga/standings/",
 };
 
+// Define the properties of standingsURLs.
 const standingsURLs = {
     SPAIN: URLs.spain,
 };
 
+// Define the properties of teamsData.
 const teamsData = {
     "Atl. Madrid": { short: "ATM", name: "Atletico Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
@@ -33,6 +37,7 @@ const teamsData = {
     "Mallorca": { short: "MLL", name: "Mallorca", color: "#E20613" },
 };
 
+// Main function.
 async function getStandings(url, teamsData) {
     // Launch the Puppeteer browser in headless mode.
     const browser = await puppeteer.launch({

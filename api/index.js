@@ -1,13 +1,15 @@
+// Import dependencies.
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
+// Import all files.
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2023/standings/standingsLaLiga2023Flashscore.json';
 
 // Initialize the Hono application
 const app = new Hono();
 const baseURL = 'https://api.footballr.workers.dev';
-const apiVersion = 'v06062024';
+const apiVersion = 'v10062024';
 
 // Apply CORS middleware to all routes
 app.use('/*', cors());
@@ -19,22 +21,15 @@ function generateParameter(name, endpoint, description, example, status) {
 
 // Define the competitions endpoint metadata
 const competitionsEndpoint = {
+    name: 'competitions',
     endpoint: '/competitions',
     description: 'List all available competitions 🏆.',
     example: `${baseURL}/competitions`,
-    status: 'Available 🟢.',
+    status: 'Available 🟢',
     parameters: [
-        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍.', `${baseURL}/competitions/LAL`, 'Available 🟢.'),
-        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝.', `${baseURL}/competitions/LAL/standings`, 'Available 🟢.'),
+        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍.', `${baseURL}/competitions/LAL`, 'Available 🟢'),
+        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝.', `${baseURL}/competitions/LAL/standings`, 'Available 🟢'),
     ],
-};
-
-// Define the base API information
-const footballrEndpoint = {
-    name: 'FootballR Api ⚽',
-    version: apiVersion,
-    updated: formatDate(apiVersion),
-    message: 'Created with 💙 by Miguel Zafra.',
 };
 
 // Helper function to format the API version date
@@ -45,9 +40,23 @@ function formatDate(apiVersion) {
     return `${day}.${month}.${year}`;
 }
 
+// Define the base API information
+const footballrEndpoint = {
+    name: 'FootballR Api ⚽',
+    version: apiVersion,
+    updated: formatDate(apiVersion),
+    message: 'Created with 💙 by Miguel Zafra',
+};
+
 // Root endpoint: returns API documentation
 app.get('/', (ctx) => {
-    const data = [competitionsEndpoint, footballrEndpoint];
+    const data = {
+        name: footballrEndpoint.name,
+        version: footballrEndpoint.version,
+        updated: footballrEndpoint.updated,
+        message: footballrEndpoint.message,
+        endpoints: [competitionsEndpoint]
+    };
     return ctx.json(data);
 });
 
@@ -88,4 +97,5 @@ app.notFound((ctx) => {
     return ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
+// Export the application.
 export default app;

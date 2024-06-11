@@ -6,20 +6,20 @@ import { cors } from 'hono/cors';
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2023/standings/standingsLaLiga2023Flashscore.json';
 
-// Initialize the Hono application
+// Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api.footballr.workers.dev';
 const apiVersion = 'v10062024';
 
-// Apply CORS middleware to all routes
+// Apply CORS middleware to all routes.
 app.use('/*', cors());
 
-// Helper function to generate API parameter objects
+// Helper function to generate API parameter objects.
 function generateParameter(name, endpoint, description, example, status) {
     return { name, endpoint, description, example, status };
 }
 
-// Define the competitions endpoint metadata
+// Define the competitions endpoint metadata.
 const competitionsEndpoint = {
     name: 'competitions',
     endpoint: '/competitions',
@@ -32,7 +32,7 @@ const competitionsEndpoint = {
     ],
 };
 
-// Helper function to format the API version date
+// Helper function to format the API version date.
 function formatDate(apiVersion) {
     const day = apiVersion.substring(1, 3);
     const month = apiVersion.substring(3, 5);
@@ -40,7 +40,7 @@ function formatDate(apiVersion) {
     return `${day}.${month}.${year}`;
 }
 
-// Define the base API information
+// Define the base API information.
 const footballrEndpoint = {
     name: 'FootballR Api ⚽',
     version: apiVersion,
@@ -48,7 +48,7 @@ const footballrEndpoint = {
     message: 'Created with 💙 by Miguel Zafra',
 };
 
-// Root endpoint: returns API documentation
+// Root endpoint: returns API documentation.
 app.get('/', (ctx) => {
     const data = {
         name: footballrEndpoint.name,
@@ -60,19 +60,19 @@ app.get('/', (ctx) => {
     return ctx.json(data);
 });
 
-// Endpoint to list all competitions
+// Endpoint to list all competitions.
 app.get('/competitions', (ctx) => {
     return ctx.json(competitions);
 });
 
-// Endpoint to get a specific competition by ID
+// Endpoint to get a specific competition by ID.
 app.get('/competitions/:id', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
     const competition = competitions.competitions.find((comp) => comp.id === id);
     return competition ? ctx.json(competition) : ctx.json({ message: 'Not Found. 😔' }, 404);
 });
 
-// Endpoint to get standings for a specific competition by ID
+// Endpoint to get standings for a specific competition by ID.
 app.get('/competitions/:id/standings', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
     const competition = competitions.competitions.find((comp) => comp.id === id);
@@ -88,11 +88,11 @@ app.get('/competitions/:id/standings', (ctx) => {
     }
 });
 
-// Handle 404 Not Found errors
+// Handle 404 Not Found errors.
 app.notFound((ctx) => {
     const { pathname } = new URL(ctx.req.url);
     if (ctx.req.url.endsWith('/')) {
-        return ctx.redirect(pathname.slice(0, -1)); // Redirect if URL ends with a slash
+        return ctx.redirect(pathname.slice(0, -1)); // Redirect if URL ends with a slash.
     }
     return ctx.json({ message: 'Not Found. 😔' }, 404);
 });

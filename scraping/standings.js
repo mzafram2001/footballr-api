@@ -15,12 +15,12 @@ const standingsURLs = {
 
 // Define the properties of teamsData.
 const teamsData = {
-    "Atl. Madrid": { short: "ATM", name: "Atletico Madrid", color: "#CE3524" },
+    "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
     "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
     "Ath Bilbao": { short: "ATH", name: "Athletic Bilbao", color: "#EE2523" },
-    "Cadiz CF": { short: "CAD", name: "Cadiz", color: "#F2A40C" },
-    "Almeria": { short: "ALM", name: "Almeria", color: "#EE1119" },
+    "Cadiz CF": { short: "CAD", name: "Cádiz", color: "#F2A40C" },
+    "Almeria": { short: "ALM", name: "Almería", color: "#EE1119" },
     "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
     "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
     "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
@@ -28,7 +28,7 @@ const teamsData = {
     "Valencia": { short: "VAL", name: "Valencia", color: "#EE3524" },
     "Villarreal": { short: "VIL", name: "Villarreal", color: "#FFE667" },
     "Getafe": { short: "GET", name: "Getafe", color: "#005999" },
-    "Alaves": { short: "ALA", name: "Alaves", color: "#009AD7" },
+    "Alaves": { short: "ALA", name: "Alavés", color: "#009AD7" },
     "Sevilla": { short: "SEV", name: "Sevilla", color: "#F43333" },
     "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
     "Las Palmas": { short: "LPA", name: "Las Palmas", color: "#FFE400" },
@@ -106,10 +106,10 @@ async function getStandings(url, teamsData) {
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify(result), 'utf8', (err) => {
         if (err) {
-            console.log('An error occurred while writing JSON object to file.');
+            console.log(`[${result.name}] - An error occurred while writing JSON object to file.`);
             console.log(err);
         } else {
-            console.log('JSON file has been saved.');
+            console.log(`[${result.name}] - JSON file has been saved.`);
         }
     });
 

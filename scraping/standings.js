@@ -13,6 +13,17 @@ const standingsURLs = {
     SPAIN: URLs.spain,
 };
 
+// Suponiendo que el objeto principal se llama footballRAPIObject
+const footballRAPIObject = {
+    "name": "FootballR API",
+    "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
+    "repoUrl": "https://github.com/mzafram2001/footballr-api",
+    "version": "v10062024",
+    "updated": "10.06.2024",
+    "message": "Created with love by Miguel Zafra.",
+    "competitions": []
+};
+
 // Define the properties of teamsData.
 const teamsData = {
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
@@ -38,7 +49,7 @@ const teamsData = {
 };
 
 // Main function.
-async function getStandings(url, teamsData) {
+async function getStandings(url, teamsData, footballRAPIObject) {
     // Launch the Puppeteer browser in headless mode.
     const browser = await puppeteer.launch({
         headless: true,
@@ -100,11 +111,14 @@ async function getStandings(url, teamsData) {
         return json;
     }, teamsData);
 
+    // Push to the original object.
+    footballRAPIObject.competitions.push(result);
+
     // Define the file location for saving the data.
     const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${result.name}${result.yearStart}Flashscore.json`);
 
     // Write the data to a JSON file.
-    fs.writeFile(fileLocation, JSON.stringify(result), 'utf8', (err) => {
+    fs.writeFile(fileLocation, JSON.stringify(footballRAPIObject), 'utf8', (err) => {
         if (err) {
             console.log(`[${result.name}] - An error occurred while writing JSON object to file.`);
             console.log(err);
@@ -118,4 +132,4 @@ async function getStandings(url, teamsData) {
 }
 
 // Fetch standings for the specified URL and teams data.
-getStandings(standingsURLs.SPAIN, teamsData);
+getStandings(standingsURLs.SPAIN, teamsData, footballRAPIObject);

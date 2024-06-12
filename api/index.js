@@ -15,20 +15,20 @@ const apiVersion = 'v10062024';
 app.use('/*', cors());
 
 // Helper function to generate API parameter objects.
-function generateParameter(name, endpoint, description, example, status) {
-    return { name, endpoint, description, example, status };
+function generateParameter(name, description, endpoint, example, status) {
+    return { name, description, endpoint, example, status };
 }
 
 // Define the competitions endpoint metadata.
 const competitionsEndpoint = {
     name: 'competitions',
+    description: 'List all available competitions.',
     endpoint: '/competitions',
-    description: 'List all available competitions 🏆',
     example: `${baseURL}/competitions`,
-    status: 'Available 🟢',
+    status: 'Available',
     parameters: [
-        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍', `${baseURL}/competitions/LAL`, 'Available 🟢'),
-        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝', `${baseURL}/competitions/LAL/standings`, 'Available 🟢'),
+        generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'Available'),
+        generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'Available'),
     ],
 };
 
@@ -42,16 +42,20 @@ function formatDate(apiVersion) {
 
 // Define the base API information.
 const footballrEndpoint = {
-    name: 'FootballR Api ⚽',
+    name: 'FootballR API',
+    description: 'Advanced API designed to provide accurate, real-time data on the world of football.',
+    repoURL: 'https://github.com/mzafram2001/footballr-api',
     version: apiVersion,
     updated: formatDate(apiVersion),
-    message: 'Created with 💙 by Miguel Zafra',
+    message: 'Created with love by Miguel Zafra.',
 };
 
 // Root endpoint: returns API documentation.
 app.get('/', (ctx) => {
     const data = {
         name: footballrEndpoint.name,
+        description: footballrEndpoint.description,
+        repoUrl: footballrEndpoint.repoURL,
         version: footballrEndpoint.version,
         updated: footballrEndpoint.updated,
         message: footballrEndpoint.message,
@@ -69,7 +73,21 @@ app.get('/competitions', (ctx) => {
 app.get('/competitions/:id', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
     const competition = competitions.competitions.find((comp) => comp.id === id);
-    return competition ? ctx.json(competition) : ctx.json({ message: 'Not Found. 😔' }, 404);
+    
+    if (competition) {
+        const response = {
+            name: "FootballR API",
+            description: "Advanced API designed to provide accurate, real-time data on the world of football.",
+            repoUrl: "https://github.com/mzafram2001/footballr-api",
+            version: "v10062024",
+            updated: "10.06.2024",
+            message: "Created with love by Miguel Zafra.",
+            competitions: [competition]
+        };
+        return ctx.json(response);
+    } else {
+        return ctx.json({ errorCode: '404' }, 404);
+    }
 });
 
 // Endpoint to get standings for a specific competition by ID.
@@ -81,10 +99,10 @@ app.get('/competitions/:id/standings', (ctx) => {
             case 'LAL':
                 return ctx.json(standingsLaLiga);
             default:
-                return ctx.json({ message: 'Not Found. 😔' }, 404);
+                return ctx.json({ errorCode: '404' }, 404);
         }
     } else {
-        return ctx.json({ message: 'Not Found. 😔' }, 404);
+        return ctx.json({ errorCode: '404' }, 404);
     }
 });
 
@@ -94,7 +112,7 @@ app.notFound((ctx) => {
     if (ctx.req.url.endsWith('/')) {
         return ctx.redirect(pathname.slice(0, -1)); // Redirect if URL ends with a slash.
     }
-    return ctx.json({ message: 'Not Found. 😔' }, 404);
+    return ctx.json({ errorCode: '404' }, 404);
 });
 
 // Export the application.

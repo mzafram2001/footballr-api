@@ -23,12 +23,12 @@ function generateParameter(name, endpoint, description, example, status) {
 const competitionsEndpoint = {
     name: 'competitions',
     endpoint: '/competitions',
-    description: 'List all available competitions 🏆.',
+    description: 'List all available competitions 🏆',
     example: `${baseURL}/competitions`,
     status: 'Available 🟢',
     parameters: [
-        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍.', `${baseURL}/competitions/LAL`, 'Available 🟢'),
-        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝.', `${baseURL}/competitions/LAL/standings`, 'Available 🟢'),
+        generateParameter('id', '/competitions/:id', 'List one competition given by id 🔍', `${baseURL}/competitions/LAL`, 'Available 🟢'),
+        generateParameter('standings', '/competitions/:id/standings', 'List the current standings for a league 🔝', `${baseURL}/competitions/LAL/standings`, 'Available 🟢'),
     ],
 };
 

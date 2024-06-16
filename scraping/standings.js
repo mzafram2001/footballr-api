@@ -13,7 +13,7 @@ const standingsURLs = {
     SPAIN: URLs.spain,
 };
 
-// Suponiendo que el objeto principal se llama footballRAPIObject
+// Create the base object.
 const footballRAPIObject = {
     "name": "FootballR API",
     "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
@@ -69,7 +69,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
             "LaLiga": { id: "LAL", area: "ESP" },
         };
 
-        let leagueName
+        let leagueName;
         const heading = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading');
         leagueName = heading.querySelector('div.heading__title > div.heading__name').innerText;
         json.id = leagues[leagueName].id;

@@ -1,56 +1,99 @@
-const PUPPETER = require('puppeteer');
-const FS = require('fs');
-const PATH = require('path');
+// Import dependencies.
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
 
-const URLS = {
-    england: "https://www.flashscore.com/football/england/premier-league/standings/#/I3O5jpB2/top_scorers",
+// Define URLs object.
+const URLs = {
     spain: "https://www.flashscore.com/football/spain/laliga/standings/#/SbZJTabs/top_scorers",
-    france: "https://www.flashscore.com/football/france/ligue-1/standings/#/Q1sSPOn5/top_scorers",
-    italy: "https://www.flashscore.com/football/italy/serie-a/standings/#/GK3TOCxh/top_scorers",
-    germany: "https://www.flashscore.com/football/germany/bundesliga/standings/#/OWq2ju22/top_scorers",
-}
-
-const SCORERS_URLS = {
-    ENGLAND: URLS.england,
-    SPAIN: URLS.spain,
-    FRANCE: URLS.france,
-    ITALY: URLS.italy,
-    GERMANY: URLS.germany
 };
 
-async function getScorers(url) {
-    const BROWSER = await PUPPETER.launch({
+// Define the properties of scorersURLs.
+const scorersURLs = {
+    SPAIN: URLs.spain,
+};
+
+// Create the base object.
+const footballRAPIObject = {
+    "name": "FootballR API",
+    "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
+    "repoUrl": "https://github.com/mzafram2001/footballr-api",
+    "version": "v10062024",
+    "updated": "10.06.2024",
+    "message": "Created with love by Miguel Zafra.",
+    "competitions": []
+};
+
+// Define the properties of teamsData.
+const teamsData = {
+    "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
+    "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
+    "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
+    "Ath Bilbao": { short: "ATH", name: "Athletic Bilbao", color: "#EE2523" },
+    "Cadiz CF": { short: "CAD", name: "Cádiz", color: "#F2A40C" },
+    "Almeria": { short: "ALM", name: "Almería", color: "#EE1119" },
+    "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
+    "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
+    "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
+    "Real Sociedad": { short: "RSO", name: "Real Sociedad", color: "#143C8B" },
+    "Valencia": { short: "VAL", name: "Valencia", color: "#EE3524" },
+    "Villarreal": { short: "VIL", name: "Villarreal", color: "#FFE667" },
+    "Getafe": { short: "GET", name: "Getafe", color: "#005999" },
+    "Alaves": { short: "ALA", name: "Alavés", color: "#009AD7" },
+    "Sevilla": { short: "SEV", name: "Sevilla", color: "#F43333" },
+    "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
+    "Las Palmas": { short: "LPA", name: "Las Palmas", color: "#FFE400" },
+    "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8AC3EE" },
+    "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#E53027" },
+    "Mallorca": { short: "MLL", name: "Mallorca", color: "#E20613" },
+};
+
+// Main function.
+async function getScorers(url, teamsData, footballRAPIObject) {
+    // Launch the Puppeteer browser in headless mode.
+    const browser = await puppeteer.launch({
         headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
-    const PAGE = await BROWSER.newPage();
-    await PAGE.goto(url, { waitUntil: "networkidle0" });
-    const RESULT = await PAGE.evaluate(() => {
-        const JSON = {};
-        const LEAGUES = {
-            "LaLiga": "ESP",
-            "Bundesliga": "GER",
-            "Serie A": "ITA",
-            "Ligue 1": "FRA",
-            "Premier League": "ENG"
+
+    
+    // Open a new page.
+    const page = await browser.newPage();
+
+    // Navigate to the specified URL and wait until the network is idle.
+    await page.goto(url, { waitUntil: "networkidle0" });
+
+    // Evaluate the page to extract the necessary data.
+    const result = await page.evaluate((teamsData) => {
+        const json = {};
+        const leagues = {
+            "LaLiga": { id: "LAL", area: "ESP" },
         };
-        const HEADING = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading');
-        JSON.name = HEADING.querySelector('div.heading__title > div.heading__name').innerText;
-        JSON.area = LEAGUES[JSON.name];
-        const HEADING_INFO = HEADING.querySelector('div.heading__info').innerText;
-        JSON.yearStart = parseInt(HEADING_INFO.substring(0, 4));
-        JSON.yearEnd = parseInt(HEADING_INFO.substring(5, JSON.yearStart - 1));
-        JSON.scorers = [];
-        var numRow = 0;
-        var dumpString;
-        var dumpStringArray;
-        var dumpStringArraySecondary;
-        var lastName;
-        var middleName;
-        var firstName;
+
+        let leagueName;
+        const heading = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading');
+        leagueName = heading.querySelector('div.heading__title > div.heading__name').innerText;
+        json.id = leagues[leagueName].id;
+        json.name = leagueName;
+        json.area = leagues[leagueName].area;
+
+        const headingInfo = heading.querySelector('div.heading__info').innerText;
+        json.yearStart = parseInt(headingInfo.substring(0, 4));
+        json.yearEnd = parseInt(headingInfo.substring(5, json.yearStart - 1));
+
+
+        /////// CONTINUAR AQUI
+        json.scorers = [];
+        let numRow = 0;
+        let dumpString;
+        let dumpStringArray;
+        let dumpStringArraySecondary;
+        let lastName;
+        let middleName;
+        let firstName;
         const ROWS = document.querySelectorAll('.ui-table__body > .ui-table__row');
         if (ROWS.length >= 10) {
-            for (var i = 0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) {
                 const TMP = {};
                 lastName = undefined;
                 middleName = undefined;
@@ -82,7 +125,7 @@ async function getScorers(url) {
                 } else {
                     TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                 }
-                var nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
+                let nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
                 TMP.area = {};
                 switch (nationality) {
                     case "England":
@@ -375,7 +418,6 @@ async function getScorers(url) {
                         TMP.area.name = "Ghana";
                         TMP.area.flag = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/flags/nNBjHale.svg";
                         break;
-
                     default:
                         TMP.area.id = "-";
                         TMP.area.name = "-";
@@ -385,7 +427,7 @@ async function getScorers(url) {
                 dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').getAttribute('href');
                 dumpStringArray = dumpString.split('/');
                 dumpStringArraySecondary = dumpStringArray[2].split('-');
-                var teamName = dumpStringArraySecondary[0];
+                let teamName = dumpStringArraySecondary[0];
                 TMP.team.id = dumpStringArray[3];
                 if (teamName == undefined) {
                     TMP.team.name = "-";
@@ -520,7 +562,7 @@ async function getScorers(url) {
                 JSON.scorers.push(TMP);
             }
         } else if (ROWS.length < 10) {
-            for (var i = 0; i < ROWS.length; i++) {
+            for (let i = 0; i < ROWS.length; i++) {
                 const TMP = {};
                 lastName = undefined;
                 middleName = undefined;
@@ -552,7 +594,7 @@ async function getScorers(url) {
                 } else {
                     TMP.player.name = String(firstName).charAt(0).toUpperCase() + String(firstName).slice(1) + " " + String(middleName).charAt(0).toUpperCase() + String(middleName).slice(1) + " " + String(lastName).charAt(0).toUpperCase() + String(lastName).slice(1);
                 }
-                var nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
+                let nationality = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > div > a > span').getAttribute('title');
                 TMP.area = {};
                 switch (nationality) {
                     case "England":
@@ -855,7 +897,7 @@ async function getScorers(url) {
                 dumpString = document.querySelector('#tournament-table-tabs-and-content > div.topScorers__tableWrapper > div > div.ui-table__body > div:nth-child(' + numRow + ') > a').getAttribute('href');
                 dumpStringArray = dumpString.split('/');
                 dumpStringArraySecondary = dumpStringArray[2].split('-');
-                var teamName = dumpStringArraySecondary[0];
+                let teamName = dumpStringArraySecondary[0];
                 TMP.team.id = dumpStringArray[3];
                 if (teamName == undefined) {
                     TMP.team.name = "-";
@@ -983,33 +1025,25 @@ async function getScorers(url) {
         return JSON;
     });
 
-    switch (RESULT.name) {
-        case "LaLiga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Primera Division": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Bundesliga": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersBundesliga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Serie A": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersSerieA" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Ligue 1": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersLigue1" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Premier League": var fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/scorers/scorersPremierLeague" + RESULT.yearStart + "Flashcore.json");
-            break;
-    }
+    // Push to the original object.
+    footballRAPIObject.competitions.push(result);
 
-    FS.writeFile(fileLocation, JSON.stringify(RESULT), 'utf8', function (err) {
+    // Define the file location for saving the data.
+    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${result.name}${result.yearStart}Flashscore.json`);
+
+    // Write the data to a JSON file.
+    fs.writeFile(fileLocation, JSON.stringify(footballRAPIObject), 'utf8', (err) => {
         if (err) {
-            console.log('An error occured while writing JSON Object to File.');
-            return console.log(err);
+            console.log(`[${result.name}] - An error occurred while writing JSON object to file.`);
+            console.log(err);
+        } else {
+            console.log(`[${result.name}] - JSON file has been saved.`);
         }
-        console.log('JSON file has been saved.');
     });
-    await BROWSER.close();
+
+    // Close the browser.
+    await browser.close();
 }
 
-getScorers(SCORERS_URLS.ENGLAND);
-getScorers(SCORERS_URLS.SPAIN);
-getScorers(SCORERS_URLS.FRANCE);
-getScorers(SCORERS_URLS.ITALY);
-getScorers(SCORERS_URLS.GERMANY);
+// Fetch scorers for the specified URL and teams data.
+getScorers(scorersURLs.SPAIN);

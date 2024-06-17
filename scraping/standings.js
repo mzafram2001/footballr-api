@@ -66,7 +66,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     const result = await page.evaluate((teamsData) => {
         const json = {};
         const leagues = {
-            "LaLiga": { id: "LAL", area: "ESP" },
+            "LaLiga": { id: "LAL", area: { id: "bLyo6mco", name: "Spain", short: "ESP", color: "#AA151B" }, description: "LaLiga standings." },
         };
 
         let leagueName;
@@ -74,7 +74,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
         leagueName = heading.querySelector('div.heading__title > div.heading__name').innerText;
         json.id = leagues[leagueName].id;
         json.name = leagueName;
-        json.area = leagues[leagueName].area;
+        json.area = { ...leagues[leagueName].area };
 
         const headingInfo = heading.querySelector('div.heading__info').innerText;
         json.yearStart = parseInt(headingInfo.substring(0, 4));

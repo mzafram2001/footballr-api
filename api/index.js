@@ -4,7 +4,11 @@ import { cors } from 'hono/cors';
 
 // Import all files.
 import competitions from '../db/competitions.json';
-import standingsLaLiga from '../db/2023/standings/standingsLaLiga2023Flashscore.json';
+// import standingsBundesliga from '../db/2024/standings/standingsBundesliga2024Flashscore.json';
+// import standingsLigue1 from '../db/2024/standings/standingsLigue12024Flashscore.json';
+import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.json';
+import standingsPremierLeague from '../db/2024/standings/standingsPremierLeague2024Flashscore.json';
+// import standingsSerieA from '../db/2024/standings/standingsSerieA2024Flashscore.json';
 
 // Initialize the Hono application.
 const app = new Hono();
@@ -28,7 +32,7 @@ const competitionsEndpoint = {
     status: 'Available',
     parameters: [
         generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'Available'),
-        generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'Available'),
+        generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/PRL/standings`, 'Available'),
     ],
 };
 
@@ -73,7 +77,7 @@ app.get('/competitions', (ctx) => {
 app.get('/competitions/:id', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
     const competition = competitions.competitions.find((comp) => comp.id === id);
-    
+
     if (competition) {
         const response = {
             name: "FootballR API",
@@ -98,6 +102,8 @@ app.get('/competitions/:id/standings', (ctx) => {
         switch (id) {
             case 'LAL':
                 return ctx.json(standingsLaLiga);
+            case 'PRL':
+                return ctx.json(standingsPremierLeague);
             default:
                 return ctx.json({ errorCode: '404' }, 404);
         }

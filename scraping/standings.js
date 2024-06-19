@@ -34,10 +34,11 @@ const footballRAPIObject = {
 
 // Define the properties of teamsData.
 const teamsData = {
+    // Current
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
     "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
-    "Ath Bilbao": { short: "ATH", name: "Athletic Bilbao", color: "#EE2523" },
+    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#EE2523" },
     "Cadiz CF": { short: "CAD", name: "Cádiz", color: "#F2A40C" },
     "Almeria": { short: "ALM", name: "Almería", color: "#EE1119" },
     "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
@@ -50,10 +51,38 @@ const teamsData = {
     "Alaves": { short: "ALA", name: "Alavés", color: "#009AD7" },
     "Sevilla": { short: "SEV", name: "Sevilla", color: "#F43333" },
     "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
-    "Las Palmas": { short: "LPA", name: "Las Palmas", color: "#FFE400" },
+    "Las Palmas": { short: "PAL", name: "Las Palmas", color: "#FFE400" },
     "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8AC3EE" },
     "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#E53027" },
-    "Mallorca": { short: "MLL", name: "Mallorca", color: "#E20613" },
+    "Mallorca": { short: "MAL", name: "Mallorca", color: "#E20613" },
+
+    // Pending
+    "Valladolid": { short: "VLL", name: "Valladolid", color: "#921B88" },
+    "Leganes": { short: "LEG", name: "Leganés", color: "#0C1F6E" },
+    "Espanyol": { short: "ESP", name: "Espanyol", color: "#007FC8" },
+
+    "Arsenal": { short: "ARS", name: "Arsenal", color: "#DB0007" },
+    "Aston Villa": { short: "AST", name: "Aston Villa", color: "#95BFE5" },
+    "Chelsea": { short: "CHE", name: "Chelsea", color: "#034694" },
+    "Everton": { short: "EVE", name: "Everton", color: "#003399" },
+    "Fulham": { short: "FUL", name: "Fulham", color: "#000000" },
+    "Liverpool": { short: "LIV", name: "Liverpool", color: "#C8102E" },
+    "Manchester City": { short: "MCI", name: "Manchester City", color: "#6CABDD" },
+    "Manchester Utd": { short: "MNU", name: "Manchester United", color: "#DA291C" },
+    "Newcastle": { short: "NEW", name: "Newcastle", color: "#241F20" },
+    "Tottenham": { short: "TOT", name: "Tottenham", color: "#132257" },
+    "West Ham": { short: "WHU", name: "West Ham", color: "#7A263A" },
+    "Crystal Palace": { short: "CRY", name: "Crystal Palace", color: "#1B458F" },
+    "Wolves": { short: "WOL", name: "Wolves", color: "#FDB913" },
+    "Bournemouth": { short: "BOU", name: "Bournemouth", color: "#DA291C" },
+    "Brighton": { short: "BHA", name: "Brighton", color: "#0057B8" },
+    "Nottingham": { short: "NOT", name: "Nottingham", color: "#DD0000" },
+    "Brentford": { short: "BRE", name: "Brentford", color: "#D20000" },
+
+    "Luton": { short: "LUT", name: "Luton", color: "#F78F1E" },
+    "Ipswich": { short: "IPS", name: "Ipswich", color: "#DE2C37" },
+    "Leicester": { short: "LEI", name: "Leicester", color: "#003090" },
+    "Southampton": { short: "SOU", name: "Southampton", color: "#D71920" },
 };
 
 // Main function.
@@ -87,11 +116,11 @@ async function getStandings(url, teamsData, footballRAPIObject) {
         json.id = leagues[leagueName].id;
         json.name = leagueName;
         json.description = leagues[leagueName].description;
-        
+
         const headingInfo = heading.querySelector('div.heading__info').innerText;
         json.yearStart = parseInt(headingInfo.substring(0, 4));
         json.yearEnd = parseInt(headingInfo.substring(5, json.yearStart - 1));
-        
+
         json.area = { ...leagues[leagueName].area };
 
         json.standings = [];
@@ -150,9 +179,14 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     await browser.close();
 }
 
+// Clone the base object for each function call.
+function cloneBaseObject(baseObject) {
+    return JSON.parse(JSON.stringify(baseObject));
+}
+
 // Fetch standings for the specified URL and teams data.
-getStandings(standingsURLs.GERMANY, teamsData, footballRAPIObject);
-getStandings(standingsURLs.FRANCE, teamsData, footballRAPIObject);
-getStandings(standingsURLs.SPAIN, teamsData, footballRAPIObject);
-getStandings(standingsURLs.ENGLAND, teamsData, footballRAPIObject);
-getStandings(standingsURLs.ITALY, teamsData, footballRAPIObject);
+getStandings(standingsURLs.GERMANY, teamsData, cloneBaseObject(footballRAPIObject));
+getStandings(standingsURLs.FRANCE, teamsData, cloneBaseObject(footballRAPIObject));
+getStandings(standingsURLs.SPAIN, teamsData, cloneBaseObject(footballRAPIObject));
+getStandings(standingsURLs.ENGLAND, teamsData, cloneBaseObject(footballRAPIObject));
+getStandings(standingsURLs.ITALY, teamsData, cloneBaseObject(footballRAPIObject));

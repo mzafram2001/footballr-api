@@ -5,12 +5,20 @@ const path = require('path');
 
 // Define URLs object.
 const URLs = {
+    germany: "https://www.flashscore.com/football/germany/bundesliga/standings",
+    france: "https://www.flashscore.com/football/france/ligue-1/standings/#/Q1sSPOn5/",
     spain: "https://www.flashscore.com/football/spain/laliga/standings/",
+    england: "https://www.flashscore.com/football/england/premier-league/standings",
+    italy: "https://www.flashscore.com/football/italy/serie-a/standings/",
 };
 
 // Define the properties of standingsURLs.
 const standingsURLs = {
+    GERMANY: URLs.germany,
+    FRANCE: URLs.france,
     SPAIN: URLs.spain,
+    ENGLAND: URLs.england,
+    ITALY: URLs.italy,
 };
 
 // Create the base object.
@@ -66,7 +74,11 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     const result = await page.evaluate((teamsData) => {
         const json = {};
         const leagues = {
+            "Bundesliga": { id: "BUN", area: { id: "ptQide1O", name: "Germany", short: "GER", color: "#FACC34" }, description: "Bundesliga standings table, with detailed information." },
+            "Ligue 1": { id: "LI1", area: { id: "8A4vPr2B", name: "France", short: "FRA", color: "#0055A4" }, description: "Ligue 1 standings table, with detailed information." },
             "LaLiga": { id: "LAL", area: { id: "bLyo6mco", name: "Spain", short: "ESP", color: "#AA151B" }, description: "LaLiga standings table, with detailed information." },
+            "Premier League": { id: "PRL", area: { id: "j9N9ZNFA", name: "England", short: "ENG", color: "#DBDBDB" }, description: "Premier League standings table, with detailed information." },
+            "Serie A": { id: "SEA", area: { id: "GK3TOCxh", name: "Italy", short: "ITA", color: "#008C45" }, description: "Serie A standings table, with detailed information." },
         };
 
         let leagueName;
@@ -119,16 +131,18 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     // Push to the original object.
     footballRAPIObject.competitions.push(result);
 
+    let leagueNameTrim = result.name.replace(/ /g, "");
+
     // Define the file location for saving the data.
-    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${result.name}${result.yearStart}Flashscore.json`);
+    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${leagueNameTrim}${result.yearStart}Flashscore.json`);
 
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify(footballRAPIObject), 'utf8', (err) => {
         if (err) {
-            console.log(`[${result.name}] - An error occurred while writing JSON object to file.`);
+            console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
             console.log(err);
         } else {
-            console.log(`[${result.name}] - JSON file has been saved.`);
+            console.log(`[${result.name} | ${result.yearStart}] - JSON file has been saved.`);
         }
     });
 
@@ -137,4 +151,8 @@ async function getStandings(url, teamsData, footballRAPIObject) {
 }
 
 // Fetch standings for the specified URL and teams data.
+getStandings(standingsURLs.GERMANY, teamsData, footballRAPIObject);
+getStandings(standingsURLs.FRANCE, teamsData, footballRAPIObject);
 getStandings(standingsURLs.SPAIN, teamsData, footballRAPIObject);
+getStandings(standingsURLs.ENGLAND, teamsData, footballRAPIObject);
+getStandings(standingsURLs.ITALY, teamsData, footballRAPIObject);

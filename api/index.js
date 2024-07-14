@@ -13,7 +13,7 @@ import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api.footballr.workers.dev';
-const apiVersion = 'v07072024';
+const apiVersion = 'v14072024';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -83,7 +83,7 @@ app.get('/competitions/:id', (ctx) => {
             name: "FootballR API",
             description: "Advanced API designed to provide accurate, real-time data on the world of football.",
             repoUrl: "https://github.com/mzafram2001/footballr-api",
-            version: "v07072024",
+            version: "v14072024",
             updated: "07.07.2024",
             message: "Created with love by Miguel Zafra.",
             competitions: [competition]

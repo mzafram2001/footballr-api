@@ -37,10 +37,7 @@ const teamsData = {
     // Current
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
-    "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
     "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#EE2523" },
-    "Cadiz CF": { short: "CAD", name: "Cádiz", color: "#F2A40C" },
-    "Almeria": { short: "ALM", name: "Almería", color: "#EE1119" },
     "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
     "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
     "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
@@ -55,13 +52,11 @@ const teamsData = {
     "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8AC3EE" },
     "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#E53027" },
     "Mallorca": { short: "MAL", name: "Mallorca", color: "#E20613" },
-
-    // Pending
     "Valladolid": { short: "VLL", name: "Valladolid", color: "#921B88" },
     "Leganes": { short: "LEG", name: "Leganés", color: "#0C1F6E" },
     "Espanyol": { short: "ESP", name: "Espanyol", color: "#007FC8" },
 
-    "Arsenal": { short: "ARS", name: "Arsenal", color: "#DB0007" },
+    /*"Arsenal": { short: "ARS", name: "Arsenal", color: "#DB0007" },
     "Aston Villa": { short: "AST", name: "Aston Villa", color: "#95BFE5" },
     "Chelsea": { short: "CHE", name: "Chelsea", color: "#034694" },
     "Everton": { short: "EVE", name: "Everton", color: "#003399" },
@@ -82,7 +77,9 @@ const teamsData = {
     "Luton": { short: "LUT", name: "Luton", color: "#F78F1E" },
     "Ipswich": { short: "IPS", name: "Ipswich", color: "#DE2C37" },
     "Leicester": { short: "LEI", name: "Leicester", color: "#003090" },
-    "Southampton": { short: "SOU", name: "Southampton", color: "#D71920" },
+    "Southampton": { short: "SOU", name: "Southampton", color: "#D71920" },*/
+
+    // PENDIENTE.....
 };
 
 // Main function.
@@ -185,8 +182,8 @@ function cloneBaseObject(baseObject) {
 }
 
 // Fetch standings for the specified URL and teams data.
-getStandings(standingsURLs.GERMANY, teamsData, cloneBaseObject(footballRAPIObject));
-getStandings(standingsURLs.FRANCE, teamsData, cloneBaseObject(footballRAPIObject));
+// getStandings(standingsURLs.GERMANY, teamsData, cloneBaseObject(footballRAPIObject));
+// getStandings(standingsURLs.FRANCE, teamsData, cloneBaseObject(footballRAPIObject));
 getStandings(standingsURLs.SPAIN, teamsData, cloneBaseObject(footballRAPIObject));
-getStandings(standingsURLs.ENGLAND, teamsData, cloneBaseObject(footballRAPIObject));
-getStandings(standingsURLs.ITALY, teamsData, cloneBaseObject(footballRAPIObject));
+// getStandings(standingsURLs.ENGLAND, teamsData, cloneBaseObject(footballRAPIObject));
+// getStandings(standingsURLs.ITALY, teamsData, cloneBaseObject(footballRAPIObject));

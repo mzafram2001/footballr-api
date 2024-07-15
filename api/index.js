@@ -4,11 +4,7 @@ import { cors } from 'hono/cors';
 
 // Import all files.
 import competitions from '../db/competitions.json';
-// import standingsBundesliga from '../db/2024/standings/standingsBundesliga2024Flashscore.json';
-// import standingsLigue1 from '../db/2024/standings/standingsLigue12024Flashscore.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.json';
-// import standingsPremierLeague from '../db/2024/standings/standingsPremierLeague2024Flashscore.json';
-// import standingsSerieA from '../db/2024/standings/standingsSerieA2024Flashscore.json';
 
 // Initialize the Hono application.
 const app = new Hono();
@@ -80,12 +76,7 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            name: "FootballR API",
-            description: "Advanced API designed to provide accurate, real-time data on the world of football.",
-            repoUrl: "https://github.com/mzafram2001/footballr-api",
-            version: "v14072024",
-            updated: "07.07.2024",
-            message: "Created with love by Miguel Zafra.",
+            updated: "14.07.2024",
             competitions: [competition]
         };
         return ctx.json(response);
@@ -102,14 +93,6 @@ app.get('/competitions/:id/standings', (ctx) => {
         switch (id) {
             case 'LAL':
                 return ctx.json(standingsLaLiga);
-            /*case 'PRL':
-                return ctx.json(standingsPremierLeague);
-            case 'SEA':
-                return ctx.json(standingsSerieA);
-            case 'LI1':
-                return ctx.json(standingsLigue1);
-            case 'BUN':
-                return ctx.json(standingsBundesliga);*/
             default:
                 return ctx.json({ errorCode: '404' }, 404);
         }

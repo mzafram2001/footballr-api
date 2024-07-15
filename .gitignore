@@ -5,5 +5,5 @@ roadmap
 .tmp/
 .vscode/
 .DS_Store
-Thumbs.db
+thumbs.db
 ehthumbs.db

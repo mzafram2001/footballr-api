@@ -15,7 +15,7 @@ const standingsURLs = {
 
 // Create the base object.
 const footballRAPIObject = {
-    "updated": "14.07.2024",
+    "updated": "15.07.2024",
     "competitions": []
 };
 

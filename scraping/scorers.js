@@ -18,8 +18,8 @@ const footballRAPIObject = {
     "name": "FootballR API",
     "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
     "repoUrl": "https://github.com/mzafram2001/footballr-api",
-    "version": "v14072024",
-    "updated": "14.07.2024",
+    "version": "v15072024",
+    "updated": "15.07.2024",
     "message": "Created with love by Miguel Zafra.",
     "competitions": []
 };

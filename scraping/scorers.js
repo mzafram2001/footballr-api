@@ -5,7 +5,7 @@ const path = require('path');
 
 // Define URLs object.
 const URLs = {
-    spain: "https://www.flashscore.com/football/spain/laliga/standings/#/SbZJTabs/top_scorers",
+    spain: " https://www.flashscore.com/football/spain/laliga/standings/#/dINOZk9Q/top_scorers",
 };
 
 // Define the properties of scorersURLs.
@@ -19,19 +19,17 @@ const footballRAPIObject = {
     "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
     "repoUrl": "https://github.com/mzafram2001/footballr-api",
     "version": "v14072024",
-    "updated": "07.07.2024",
+    "updated": "14.07.2024",
     "message": "Created with love by Miguel Zafra.",
     "competitions": []
 };
 
 // Define the properties of teamsData.
 const teamsData = {
+    // Current
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
-    "Granada CF": { short: "GRA", name: "Granada", color: "#C31632" },
-    "Ath Bilbao": { short: "ATH", name: "Athletic Bilbao", color: "#EE2523" },
-    "Cadiz CF": { short: "CAD", name: "Cádiz", color: "#F2A40C" },
-    "Almeria": { short: "ALM", name: "Almería", color: "#EE1119" },
+    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#EE2523" },
     "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#E2E2E2" },
     "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
     "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
@@ -42,10 +40,13 @@ const teamsData = {
     "Alaves": { short: "ALA", name: "Alavés", color: "#009AD7" },
     "Sevilla": { short: "SEV", name: "Sevilla", color: "#F43333" },
     "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
-    "Las Palmas": { short: "LPA", name: "Las Palmas", color: "#FFE400" },
+    "Las Palmas": { short: "PAL", name: "Las Palmas", color: "#FFE400" },
     "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8AC3EE" },
     "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#E53027" },
-    "Mallorca": { short: "MLL", name: "Mallorca", color: "#E20613" },
+    "Mallorca": { short: "MAL", name: "Mallorca", color: "#E20613" },
+    "Valladolid": { short: "VLL", name: "Valladolid", color: "#921B88" },
+    "Leganes": { short: "LEG", name: "Leganés", color: "#0C1F6E" },
+    "Espanyol": { short: "ESP", name: "Espanyol", color: "#007FC8" },
 };
 
 // Main function.
@@ -56,7 +57,7 @@ async function getScorers(url, teamsData, footballRAPIObject) {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
-    
+
     // Open a new page.
     const page = await browser.newPage();
 
@@ -67,7 +68,7 @@ async function getScorers(url, teamsData, footballRAPIObject) {
     const result = await page.evaluate((teamsData) => {
         const json = {};
         const leagues = {
-            "LaLiga": { id: "LAL", area: "ESP" },
+            "LaLiga": { id: "LAL", area: { id: "bLyo6mco", name: "Spain", short: "ESP", color: "#AA151B" }, description: "LaLiga scorers table, with detailed information." },
         };
 
         let leagueName;
@@ -1029,15 +1030,15 @@ async function getScorers(url, teamsData, footballRAPIObject) {
     footballRAPIObject.competitions.push(result);
 
     // Define the file location for saving the data.
-    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${result.name}${result.yearStart}Flashscore.json`);
+    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/scorers/scorers${result.name}${result.yearStart}Flashscore.json`);
 
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify(footballRAPIObject), 'utf8', (err) => {
         if (err) {
-            console.log(`[${result.name}] - An error occurred while writing JSON object to file.`);
+            console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
             console.log(err);
         } else {
-            console.log(`[${result.name}] - JSON file has been saved.`);
+            console.log(`[${result.name} | ${result.yearStart}] - JSON file has been saved.`);
         }
     });
 
@@ -1046,4 +1047,4 @@ async function getScorers(url, teamsData, footballRAPIObject) {
 }
 
 // Fetch scorers for the specified URL and teams data.
-getScorers(scorersURLs.SPAIN);
+getScorers(scorersURLs.SPAIN, teamsData, cloneBaseObject(footballRAPIObject));

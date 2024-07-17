@@ -15,7 +15,7 @@ const standingsURLs = {
 
 // Create the base object.
 const footballRAPIObject = {
-    "updated": "15.07.2024",
+    "updated": "17.07.2024",
     "competitions": []
 };
 
@@ -93,6 +93,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
             tmp.team.short = teamData.short;
             tmp.team.name = teamData.name;
             tmp.team.color = teamData.color;
+            tmp.team.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + tmp.team.id + ".svg";
             tmp.playedGames = parseInt(element.querySelector('.table__cell--value').innerText.trim());
             tmp.wins = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(4)`).innerText.trim());
             tmp.draws = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(5)`).innerText.trim());

@@ -34,10 +34,10 @@ const competitionsEndpoint = {
 
 // Helper function to format the API version date.
 function formatDate(apiVersion) {
-    const day = apiVersion.substring(1, 3);
-    const month = apiVersion.substring(3, 5);
-    const year = apiVersion.substring(5);
-    return `${day}.${month}.${year}`;
+    const year = apiVersion.substring(1, 5);
+    const month = apiVersion.substring(5, 7);
+    const day = apiVersion.substring(7, 9);
+    return `${year}-${month}-${day}`;
 }
 
 // Define the base API information.

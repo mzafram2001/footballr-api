@@ -1,6 +1,6 @@
-## ⚽️ FootballR API [v17072024]
+## ⚽️ FootballR API [v22072024]
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_banner_2.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/readme/footballr_banner_2.png)
 
 <p align='center'>
    <a href='#'><img align='center' alt='GitHub repo size' src='https://img.shields.io/github/repo-size/mzafram2001/footballr-api?color=C1C1C1&style=for-the-badge&logo=github'></a>
@@ -18,7 +18,7 @@
 </div>
 <br>
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_1.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_shoot_1.png)
 
 ## ⚽️ Easy integration / Fácil integración
 
@@ -31,7 +31,7 @@
 </div>
 <br>
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_2.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_shoot_2.png)
 
 ## ⚽️ User-friendly interface / Interfaz Amigable
 
@@ -44,7 +44,7 @@
 </div>
 <br>
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_3.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_shoot_3.png)
 
 ## ⚽️ Endpoints list / Lista de puntos finales
 
@@ -103,7 +103,7 @@
 </div>
 <br>
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_shoot_4.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_shoot_4.png)
 
 ## ⚽️ Roadmap / Hoja de ruta
 <div>
@@ -135,4 +135,4 @@
 </div>
 <br>
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/footballr_banner_1.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_banner_1.png)

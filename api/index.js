@@ -9,7 +9,7 @@ import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v22072024';
+const apiVersion = 'v20240722';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());

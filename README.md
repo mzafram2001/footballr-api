@@ -1,6 +1,6 @@
 ## ⚽️ FootballR API [v22072024]
 
-![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/readme/footballr_banner_2.png)
+![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_banner_2.png)
 
 <p align='center'>
    <a href='#'><img align='center' alt='GitHub repo size' src='https://img.shields.io/github/repo-size/mzafram2001/footballr-api?color=C1C1C1&style=for-the-badge&logo=github'></a>

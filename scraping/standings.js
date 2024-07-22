@@ -15,13 +15,12 @@ const standingsURLs = {
 
 // Create the base object.
 const footballRAPIObject = {
-    "updated": "17.07.2024",
+    "updated": new Date().toISOString().slice(0, 10),
     "competitions": []
 };
 
 // Define the properties of teamsData.
 const teamsData = {
-    // Current
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#FA0000" },
     "Betis": { short: "BET", name: "Real Betis", color: "#25961D" },
     "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#FF0A0A" },

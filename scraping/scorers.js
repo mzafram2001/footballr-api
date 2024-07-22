@@ -18,15 +18,14 @@ const footballRAPIObject = {
     "name": "FootballR API",
     "description": "Advanced API designed to provide accurate, real-time data on the world of football.",
     "repoUrl": "https://github.com/mzafram2001/footballr-api",
-    "version": "v17072024",
-    "updated": "17.07.2024",
+    "version": "v22072024",
+    "updated": "2024-07-22",
     "message": "Created with love by Miguel Zafra.",
     "competitions": []
 };
 
 // Define the properties of teamsData.
 const teamsData = {
-    // Current
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CE3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#00954C" },
     "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#EE2523" },

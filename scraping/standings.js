@@ -57,6 +57,10 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     // Navigate to the specified URL and wait until the network is idle.
     await page.goto(url, { waitUntil: "networkidle0" });
 
+    // Click consent cookies banner.
+    await page.waitForSelector('#onetrust-accept-btn-handler', { visible: true, timeout: 3000 });
+    await page.click('#onetrust-accept-btn-handler');
+
     // Evaluate the page to extract the necessary data.
     const result = await page.evaluate((teamsData) => {
         const json = {};

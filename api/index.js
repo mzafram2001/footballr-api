@@ -5,11 +5,12 @@ import { cors } from 'hono/cors';
 // Import all files.
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.json';
+import schedulesLaLiga from '../db/2024/schedules/schedulesLaLiga2024Flashscore.json';
 
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240722';
+const apiVersion = 'v20240728';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -29,6 +30,7 @@ const competitionsEndpoint = {
     parameters: [
         generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'Available'),
         generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'Available'),
+        generateParameter('schedules', 'List the schedules for a league.', '/competitions/:id/schedules', `${baseURL}/competitions/LAL/schedules`, 'Available'),
     ],
 };
 
@@ -93,6 +95,22 @@ app.get('/competitions/:id/standings', (ctx) => {
         switch (id) {
             case 'LAL':
                 return ctx.json(standingsLaLiga);
+            default:
+                return ctx.json({ errorCode: '404' }, 404);
+        }
+    } else {
+        return ctx.json({ errorCode: '404' }, 404);
+    }
+});
+
+// Endpoint to get schedules for a specific competition by ID.
+app.get('/competitions/:id/schedules', (ctx) => {
+    const id = ctx.req.param('id').toUpperCase();
+    const competition = competitions.competitions.find((comp) => comp.id === id);
+    if (competition) {
+        switch (id) {
+            case 'LAL':
+                return ctx.json(schedulesLaLiga);
             default:
                 return ctx.json({ errorCode: '404' }, 404);
         }

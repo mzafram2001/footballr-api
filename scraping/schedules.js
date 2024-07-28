@@ -72,7 +72,7 @@ async function getSchedules(url) {
     const result = await page.evaluate((teamsData) => {
         const json = {};
         const leagues = {
-            "LaLiga": { id: "LAL", area: { id: "bLyo6mco", name: "Spain", short: "ESP", color: "#AA151B" }, description: "LaLiga standings table, with detailed information." },
+            "LaLiga": { id: "LAL", area: { id: "bLyo6mco", name: "Spain", short: "ESP", color: "#AA151B" }, description: "View LaLiga scheduled matches, with detailed information." },
         };
 
         let leagueName;
@@ -98,151 +98,84 @@ async function getSchedules(url) {
         let reverseMatchesSelector = Array.prototype.slice.call(matchesSelector).reverse();
         let round = 0;
         for (let i = reverseMatchesSelector.length - 1; i >= 0; i--) {
-            const TMP2 = {};
-            TMP2.id = reverseMatchesSelector[i].id.substring(4);
-            TMP2.link = "https://www.flashscore.com/match/" + TMP2.id;
-            json.matchesIteration.push(TMP2);
+            const temp2 = {};
+            temp2.id = reverseMatchesSelector[i].id.substring(4);
+            temp2.link = "https://www.flashscore.com/match/" + temp2.id;
+            json.matchesIteration.push(temp2);
         }
         for (let i = reverseRoundsSelector.length - 1; i >= 0; i--) {
-            const TMP = {};
+            const temp = {};
             let found = false;
-            TMP.round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
-            round = parseInt(TMP.round);
-            TMP.matches = [];
+            temp.round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
+            round = parseInt(temp.round);
+            temp.matches = [];
             for (index in json.season) {
-                if (json.season[index].round == TMP.round) {
+                if (json.season[index].round == temp.round) {
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                json.season.push(TMP);
+                json.season.push(temp);
             }
         }
         return json;
     });
 
-    console.log(result);
-
-    /*for (let match of RESULT.matchesIteration) {
-        await PAGE.goto(match.link, { 'waitUntil': 'networkidle0' });
+    for (let match of result.matchesIteration) {
+        await page.goto(match.link, { waitUntil: 'networkidle0' });
         console.log(match.link);
-        const MATCH = await PAGE.evaluate(() => {
-            const TMP = {};
-            let dumpString;
-            let dumpStringArray;
+        const matchInfo = await page.evaluate((teamsData) => {
+            const temp = {};
             let title = document.evaluate("/html/head/title", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            TMP.homeTeam = {};
-            dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
-            dumpStringArray = dumpString.split('/');
-            TMP.homeTeam.id = dumpStringArray[3];
-            TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.homeTeam.name) {
-                case "Atl. Madrid": TMP.homeTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.homeTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.homeTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.homeTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.homeTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.homeTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.homeTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.homeTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.homeTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.homeTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.homeTeam.name = "Leganés";
-                    break;
-            }
-            TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-            TMP.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.homeTeam.id + ".svg";
-            TMP.awayTeam = {};
-            dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
-            dumpStringArray = dumpString.split('/');
-            TMP.awayTeam.id = dumpStringArray[3];
-            TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-            switch (TMP.awayTeam.name) {
-                case "Atl. Madrid": TMP.awayTeam.name = "Atlético Madrid";
-                    break;
-                case "Betis": TMP.awayTeam.name = "Real Betis";
-                    break;
-                case "Granada CF": TMP.awayTeam.name = "Granada";
-                    break;
-                case "Ath Bilbao": TMP.awayTeam.name = "Athletic Bilbao";
-                    break;
-                case "Cadiz CF": TMP.awayTeam.name = "Cádiz";
-                    break;
-                case "Alaves": TMP.awayTeam.name = "Deportivo Alavés";
-                    break;
-                case "Almeria": TMP.awayTeam.name = "Almería";
-                    break;
-                case "Malaga": TMP.awayTeam.name = "Málaga";
-                    break;
-                case "Dep. La Coruna": TMP.awayTeam.name = "Deportivo La Coruña";
-                    break;
-                case "Gijon": TMP.awayTeam.name = "Gijón";
-                    break;
-                case "Leganes": TMP.awayTeam.name = "Leganés";
-                    break;
-            }
-            TMP.awayTeam.shorthand = title.innerText.substring(6, 9);
-            TMP.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/zeus-src/main/static/teams/" + TMP.awayTeam.id + ".svg";
-            dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
-            dumpStringArray = dumpString.split(" ");
-            TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
-            if (TMP.round == null) {
-                TMP.round = "Relegation Play-Offs";
-            }
-            TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
-            TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
-            TMP.home = document.querySelector('.duelParticipant__home').innerText;
-            TMP.away = document.querySelector('.duelParticipant__away').innerText;
-            return TMP;
-        });
-        match.round = MATCH.round;
-        match.date = MATCH.date;
-        match.hour = MATCH.hour;
-        match.homeTeam = MATCH.homeTeam;
-        match.awayTeam = MATCH.awayTeam;
-        match.status = "SCHEDULED"
-    }*/
 
-    /*for (let i = 0; i <= RESULT.matchesIteration.length - 1; i++) {
+            temp.homeTeam = {};
+            let homeTeamName = document.querySelector('#detail .duelParticipant__home .participant__overflow').innerText;
+            let homeTeamData = teamsData[homeTeamName] || {};
+            temp.homeTeam.id = document.querySelector('#detail .duelParticipant__home a').getAttribute('href').split('/')[3];
+            temp.homeTeam.name = homeTeamData.name || homeTeamName;
+            temp.homeTeam.shorthand = homeTeamData.short || title.innerText.substring(0, 3);
+            temp.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + temp.homeTeam.id + ".svg";
+
+            temp.awayTeam = {};
+            let awayTeamName = document.querySelector('#detail .duelParticipant__away .participant__overflow').innerText;
+            let awayTeamData = teamsData[awayTeamName] || {};
+            temp.awayTeam.id = document.querySelector('#detail .duelParticipant__away a').getAttribute('href').split('/')[3];
+            temp.awayTeam.name = awayTeamData.name || awayTeamName;
+            temp.awayTeam.shorthand = awayTeamData.short || title.innerText.substring(6, 9);
+            temp.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + temp.awayTeam.id + ".svg";
+
+            temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
+            temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
+            temp.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
+            temp.home = document.querySelector('.duelParticipant__home').innerText;
+            temp.away = document.querySelector('.duelParticipant__away').innerText;
+            return temp;
+        }, teamsData);
+
+        match.round = matchInfo.round;
+        match.date = matchInfo.date;
+        match.hour = matchInfo.hour;
+        match.homeTeam = matchInfo.homeTeam;
+        match.awayTeam = matchInfo.awayTeam;
+        match.status = "SCHEDULED";
+    }
+
+    for (let i = 0; i <= result.matchesIteration.length - 1; i++) {
         let pushIt = false;
         let j = 0;
-        while (j <= RESULT.season.length - 1 && pushIt == false) {
-            if (RESULT.matchesIteration[i].round == RESULT.season[j].round) {
-                RESULT.season[j].matches.push(RESULT.matchesIteration[i]);
-                delete RESULT.matchesIteration[i].link;
+        while (j <= result.season.length - 1 && pushIt == false) {
+            if (result.matchesIteration[i].round == result.season[j].round) {
+                result.season[j].matches.push(result.matchesIteration[i]);
+                delete result.matchesIteration[i].link;
                 pushIt = true;
             }
             j++;
         }
     }
 
-    delete RESULT.matchesIteration;
-
-    switch (RESULT.name) {
-        case "LaLiga": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Primera Division": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesLaLiga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Bundesliga": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesBundesliga" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Serie A": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesSerieA" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Ligue 1": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesLigue1" + RESULT.yearStart + "Flashcore.json");
-            break;
-        case "Premier League": let fileLocation = PATH.join(process.cwd(), "./db/" + RESULT.yearStart + "/schedules/schedulesPremierLeague" + RESULT.yearStart + "Flashcore.json");
-            break;
-    }
+    // Delete matchesIteration object.
+    delete result.matchesIteration;
 
     let leagueNameTrim = result.name.replace(/ /g, "");
 
@@ -250,7 +183,7 @@ async function getSchedules(url) {
     const fileLocation = path.join(__dirname, `../db/${result.yearStart}/schedules/schedules${leagueNameTrim}${result.yearStart}Flashscore.json`);
 
     // Write the data to a JSON file.
-    fs.writeFile(fileLocation, result.stringify({ updated: footballRAPIObject.updated, season: result.season }), 'utf8', (err) => {
+    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, schedules: result.season }), 'utf8', (err) => {
         if (err) {
             console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
             console.log(err);
@@ -259,7 +192,7 @@ async function getSchedules(url) {
         }
     });
 
-    // Close the browser.*/
+    // Close the browser.
     await browser.close();
 }
 

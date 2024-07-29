@@ -96,18 +96,16 @@ async function getStandings(url, teamsData, footballRAPIObject) {
             tmp.team.short = teamData.short;
             tmp.team.name = teamData.name;
             tmp.team.color = teamData.color;
-            tmp.team.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + tmp.team.id + ".svg";
             tmp.playedGames = parseInt(element.querySelector('.table__cell--value').innerText.trim());
             tmp.wins = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(4)`).innerText.trim());
             tmp.draws = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(5)`).innerText.trim());
-            tmp.loses = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(6)`).innerText.trim());
+            tmp.losses = parseInt(element.querySelector(`.ui-table__body > div:nth-child(${index + 1}) > span:nth-child(6)`).innerText.trim());
             const score = element.querySelector('.table__cell--score').innerText.trim();
             const scoreArray = score.split(':');
             tmp.goalsFor = parseInt(scoreArray[0]);
             tmp.goalsAgainst = parseInt(scoreArray[1]);
             tmp.goalDifference = tmp.goalsFor - tmp.goalsAgainst;
             tmp.points = parseInt(element.querySelector('.table__cell--points').innerText.trim()) || 0;
-
             const formElements = element.querySelectorAll('.tableCellFormIcon > button');
             tmp.form = Array.from(formElements).map(btn => btn.innerText).join(',') || "-";
             json.standings.push(tmp);

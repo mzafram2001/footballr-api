@@ -135,7 +135,6 @@ async function getSchedules(url) {
             temp.homeTeam.id = document.querySelector('#detail .duelParticipant__home a').getAttribute('href').split('/')[3];
             temp.homeTeam.name = homeTeamData.name || homeTeamName;
             temp.homeTeam.shorthand = homeTeamData.short || title.innerText.substring(0, 3);
-            temp.homeTeam.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + temp.homeTeam.id + ".svg";
 
             temp.awayTeam = {};
             let awayTeamName = document.querySelector('#detail .duelParticipant__away .participant__overflow').innerText;
@@ -143,7 +142,6 @@ async function getSchedules(url) {
             temp.awayTeam.id = document.querySelector('#detail .duelParticipant__away a').getAttribute('href').split('/')[3];
             temp.awayTeam.name = awayTeamData.name || awayTeamName;
             temp.awayTeam.shorthand = awayTeamData.short || title.innerText.substring(6, 9);
-            temp.awayTeam.logo = "https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/logos/" + temp.awayTeam.id + ".svg";
 
             temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
             temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);

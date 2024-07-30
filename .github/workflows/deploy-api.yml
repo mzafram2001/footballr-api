@@ -1,0 +1,41 @@
+name: Deploy API
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  
+  repository_dispatch:
+    types:
+      - webhook
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+          run_install: true
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: api
+      - run: |
+          # Crea la carpeta logs si no existe
+          mkdir -p logs
+          # Crea o actualiza un archivo para forzar un cambio
+          echo "Run on $(date)" > logs/last_workflow_run_deploy_api.txt
+          git config --global user.email bot@footballr.com
+          git config --global user.name footballr-api-bot
+          git add -A
+          git commit -am "[bot] update FootballR database"
+          git pull --rebase origin main
+          git push -f origin main

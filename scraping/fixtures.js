@@ -145,8 +145,11 @@ async function getSchedules(url) {
             temp.awayTeam.shorthand = awayTeamData.short || title.innerText.substring(6, 9);
             temp.awayTeam.color = awayTeamData.color;
 
+            
             temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
             temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
+            let dateParts = date.split('.');
+            temp.date = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
             temp.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             temp.home = document.querySelector('.duelParticipant__home').innerText;
             temp.away = document.querySelector('.duelParticipant__away').innerText;

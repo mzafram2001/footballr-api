@@ -8,5 +8,7 @@ roadmap
 thumbs.db
 ehthumbs.db
 db/old
+scraping/old
+.github/workflows/old
 src/logos_with_fonts
 src/logos

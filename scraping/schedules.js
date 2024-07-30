@@ -8,8 +8,8 @@ const URLs = {
     spain: "https://www.flashscore.com/football/spain/laliga/fixtures",
 }
 
-// Define the properties of schedulesURLs.
-const schedulesURLs = {
+// Define the properties of fixturesURLs.
+const fixturesURLs = {
     SPAIN: URLs.spain,
 };
 
@@ -180,10 +180,10 @@ async function getSchedules(url) {
     let leagueNameTrim = result.name.replace(/ /g, "");
 
     // Define the file location for saving the data.
-    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/schedules/schedules${leagueNameTrim}${result.yearStart}Flashscore.json`);
+    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/fixtures/fixtures${leagueNameTrim}${result.yearStart}Flashscore.json`);
 
     // Write the data to a JSON file.
-    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, schedules: result.season }), 'utf8', (err) => {
+    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, fixtures: result.season }), 'utf8', (err) => {
         if (err) {
             console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
             console.log(err);
@@ -202,4 +202,4 @@ async function delay(time) {
     });
 }
 
-getSchedules(schedulesURLs.SPAIN, teamsData);
+getSchedules(fixturesURLs.SPAIN, teamsData);

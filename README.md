@@ -56,7 +56,7 @@
     <li>GET /competitions<b>/:id/standings</b>: List the current standings for a league 🔝. (filters available).</li>
     <li>GET /competitions<b>/:id/scorers</b>: List the current scorers for a league ⚽. (filters available).</li>
     <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: List the current matches results for a league 🆚. (filters available).</li>
-    <li>GET /competitions<b>/:id/schedules</b>: List the next scheduled matches for a league 🔜. (filters available).</li>
+    <li>GET /competitions<b>/:id/fixtures</b>: List the next scheduled matches for a league 🔜. (filters available).</li>
     <li>GET <b>/teams/:id</b>: List all available teams 🛡️. (filters available).</li>
     <li>GET <b>/players/:id</b>: List all available players 🏃. (not implemented yet).</li>
     <li>GET <b>/stadiums/:id</b>: List all available stadiums 🏟️.  (not implemented yet).</li>
@@ -68,7 +68,7 @@
     <li>https://api-footballr.arkeos.workers.dev/competitions/LAL/standings</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/LI1/scorers</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/schedules</li>
+    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/fixtures</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/SEA/matches/14</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
     <li>https://api-footballr.arkeos.workers.dev/teams/W8mj7MDD</li>
@@ -83,7 +83,7 @@
     <li>GET /competitions<b>/:id/standings</b>: Lista la clasificación actual de una liga 🔝. (filtros disponibles).</li>
     <li>GET /competitions<b>/:id/scorers</b>: Lista los goleadores actuales de una liga ⚽. (filtros disponibles).</li>
     <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: Lista los resultados de los partidos actuales de una liga 🆚. (filtros disponibles).</li>
-    <li>GET /competitions<b>/:id/schedules</b>: Lista los próximos partidos programados para una liga 🔜. (filtros disponibles).</li>
+    <li>GET /competitions<b>/:id/fixtures</b>: Lista los próximos partidos programados para una liga 🔜. (filtros disponibles).</li>
     <li>GET <b>/teams/:id</b>: Lista de todos los equipos disponibles 🛡️. (filtros disponibles).</li>
     <li>GET <b>/players/:id</b>: Lista de todos los jugadores disponibles 🏃. (aún no implementado).</li>
     <li>GET <b>/stadiums/:id</b>: Lista de todos los estadios disponibles 🏟️.  (aún no implementado).</li>
@@ -95,7 +95,7 @@
     <li>https://api-footballr.arkeos.workers.dev/competitions/LAL/standings</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/LI1/scorers</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/schedules</li>
+    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/fixtures</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/SEA/matches/14</li>
     <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
     <li>https://api-footballr.arkeos.workers.dev/teams/W8mj7MDD</li>

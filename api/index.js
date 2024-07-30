@@ -5,7 +5,7 @@ import { cors } from 'hono/cors';
 // Import all files.
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.json';
-import schedulesLaLiga from '../db/2024/schedules/schedulesLaLiga2024Flashscore.json';
+import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024Flashscore.json';
 
 // Initialize the Hono application.
 const app = new Hono();
@@ -30,7 +30,7 @@ const competitionsEndpoint = {
     parameters: [
         generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'Available'),
         generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'Available'),
-        generateParameter('schedules', 'List the schedules for a league.', '/competitions/:id/schedules', `${baseURL}/competitions/LAL/schedules`, 'Available'),
+        generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'Available'),
     ],
 };
 
@@ -103,14 +103,14 @@ app.get('/competitions/:id/standings', (ctx) => {
     }
 });
 
-// Endpoint to get schedules for a specific competition by ID.
-app.get('/competitions/:id/schedules', (ctx) => {
+// Endpoint to get fixtures for a specific competition by ID.
+app.get('/competitions/:id/fixtures', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
     const competition = competitions.competitions.find((comp) => comp.id === id);
     if (competition) {
         switch (id) {
             case 'LAL':
-                return ctx.json(schedulesLaLiga);
+                return ctx.json(fixturesLaLiga);
             default:
                 return ctx.json({ errorCode: '404' }, 404);
         }

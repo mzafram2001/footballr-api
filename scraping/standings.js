@@ -120,7 +120,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
     let leagueNameTrim = result.name.replace(/ /g, "");
 
     // Define the file location for saving the data.
-    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${leagueNameTrim}${result.yearStart}Flashscore.json`);
+    const fileLocation = path.join(__dirname, `../db/${result.yearStart}/standings/standings${leagueNameTrim}${result.yearStart}.json`);
 
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, standings: result.standings }), 'utf8', (err) => {

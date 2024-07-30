@@ -7,5 +7,6 @@ roadmap
 .DS_Store
 thumbs.db
 ehthumbs.db
+db/old
 src/logos_with_fonts
 src/logos

@@ -4,8 +4,8 @@ import { cors } from 'hono/cors';
 
 // Import all files.
 import competitions from '../db/competitions.json';
-import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024Flashscore.json';
-import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024Flashscore.json';
+import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024.json';
+import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
 
 // Initialize the Hono application.
 const app = new Hono();

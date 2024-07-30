@@ -26,9 +26,9 @@ jobs:
           run_install: true
       - run: |
           node scraping/standings.js
-          git config --global user.email bot@zeus.com
-          git config --global user.name zeus-api-bot
+          git config --global user.email bot@footballr.com
+          git config --global user.name footballr-api-bot
           git add -A
-          git commit -am "[bot] update Zeus database"
+          git commit -am "[bot] update FootballR database"
           git pull --rebase origin main
           git push -f origin main

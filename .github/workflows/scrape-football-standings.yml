@@ -26,6 +26,8 @@ jobs:
           run_install: true
       - run: |
           node scraping/standings.js
+          # Crea o actualiza un archivo para forzar un cambio
+          echo "Run on $(date)" > last_workflow_run_standings.txt
           git config --global user.email bot@footballr.com
           git config --global user.name footballr-api-bot
           git add -A

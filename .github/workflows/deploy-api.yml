@@ -29,5 +29,7 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: api
       - run: |
+          # Crea la carpeta logs si no existe
+          mkdir -p logs
           # Crea o actualiza un archivo para forzar un cambio
           echo "Run on $(date)" > logs/last_workflow_run_deploy_api.txt

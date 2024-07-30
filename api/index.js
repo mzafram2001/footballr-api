@@ -78,7 +78,7 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            updated: "2024-07-22",
+            updated: "2024-07-30",
             competitions: [competition]
         };
         return ctx.json(response);

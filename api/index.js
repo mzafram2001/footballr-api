@@ -10,7 +10,7 @@ import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024Flashscore.jso
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240728';
+const apiVersion = 'v20240730';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());

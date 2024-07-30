@@ -33,3 +33,9 @@ jobs:
           mkdir -p logs
           # Crea o actualiza un archivo para forzar un cambio
           echo "Run on $(date)" > logs/last_workflow_run_deploy_api.txt
+          git config --global user.email bot@footballr.com
+          git config --global user.name footballr-api-bot
+          git add -A
+          git commit -am "[bot] update FootballR database"
+          git pull --rebase origin main
+          git push -f origin main

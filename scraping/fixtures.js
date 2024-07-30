@@ -148,7 +148,7 @@ async function getSchedules(url) {
             
             temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
             temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
-            let dateParts = date.split('.');
+            let dateParts = temp.date.split('.');
             temp.date = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
             temp.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
             temp.home = document.querySelector('.duelParticipant__home').innerText;

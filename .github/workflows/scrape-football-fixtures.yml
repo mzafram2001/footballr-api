@@ -26,6 +26,8 @@ jobs:
           run_install: true
       - run: |
           node scraping/fixtures.js
+          # Crea la carpeta logs si no existe
+          mkdir -p logs
           # Crea o actualiza un archivo para forzar un cambio
           echo "Run on $(date)" > logs/last_workflow_run_fixtures.txt
           git config --global user.email bot@footballr.com

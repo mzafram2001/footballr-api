@@ -1,14 +1,16 @@
 name: Deploy API
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'main'
-  
   repository_dispatch:
     types:
       - webhook
+  workflow_run:
+    workflows: ["Scrape Football Standings", "Scrape Football Fixtures"]
+    types:
+      - completed
       
 jobs:
   build:

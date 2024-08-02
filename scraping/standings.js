@@ -8,7 +8,7 @@ const URLs = {
     spain: "https://www.flashscore.com/football/spain/laliga/standings/",
 };
 
-// Define the properties of standingsURL.
+// Define the properties of standingsURLs.
 const standingsURLs = {
     SPAIN: URLs.spain,
 };

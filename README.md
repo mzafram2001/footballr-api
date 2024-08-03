@@ -1,4 +1,4 @@
-## ⚽️ FootballR API [v20240730]
+## ⚽️ FootballR API [v20240803]
 
 ![Banner](https://raw.githubusercontent.com/mzafram2001/footballr-api/main/src/readme/footballr_banner_2.png)
 

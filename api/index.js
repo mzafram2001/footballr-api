@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
 // Import all files.
+import countries from '../db/countries.json';
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024.json';
 import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
@@ -10,7 +11,7 @@ import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240730';
+const apiVersion = 'v20240803';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -18,6 +19,18 @@ app.use('/*', cors());
 // Helper function to generate API parameter objects.
 function generateParameter(name, description, endpoint, example, status) {
     return { name, description, endpoint, example, status };
+}
+
+// Define the countries endpoint metadata.
+const countriesEndpoint = {
+    name: 'countries',
+    description: 'List all countries.',
+    endpoint: '/countries',
+    example: `${baseURL}/countries`,
+    status: 'Available',
+    parameters: [
+        generateParameter('id', 'List one country given by id.', '/countries/:id', `${baseURL}/countries/ES`, 'Available'),
+    ],
 }
 
 // Define the competitions endpoint metadata.
@@ -61,9 +74,30 @@ app.get('/', (ctx) => {
         version: footballrEndpoint.version,
         updated: footballrEndpoint.updated,
         message: footballrEndpoint.message,
-        endpoints: [competitionsEndpoint]
+        endpoints: [countriesEndpoint, competitionsEndpoint]
     };
     return ctx.json(data);
+});
+
+// Endpoint to list all countries.
+app.get('/countries', (ctx) => {
+    return ctx.json(countries);
+});
+
+// Endpoint to get a specific country by ID.
+app.get('/countries/:id', (ctx) => {
+    const id = ctx.req.param('id').toUpperCase();
+    const country = countries.countries.find((comp) => comp.id === id);
+
+    if (country) {
+        const response = {
+            updated: "2024-08-03",
+            countries: [country]
+        };
+        return ctx.json(response);
+    } else {
+        return ctx.json({ errorCode: '404' }, 404);
+    }
 });
 
 // Endpoint to list all competitions.
@@ -78,7 +112,7 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            updated: "2024-07-30",
+            updated: "2024-08-03",
             competitions: [competition]
         };
         return ctx.json(response);

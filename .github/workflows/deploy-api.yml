@@ -35,7 +35,7 @@ jobs:
           # Crea la carpeta logs si no existe
           mkdir -p logs
           # Crea o actualiza un archivo para forzar un cambio
-          echo "Run on $(date)" > logs/last_workflow_run_deploy.txt
+          echo "Run on$(date)" > logs/last_workflow_run_deploy.txt
           git config --global user.email bot@footballr.com
           git config --global user.name footballr-api-bot
           git add -A

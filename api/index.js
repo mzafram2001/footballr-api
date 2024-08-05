@@ -11,7 +11,7 @@ import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240803';
+const apiVersion = 'v20240805';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -91,7 +91,7 @@ app.get('/countries/:id', (ctx) => {
 
     if (country) {
         const response = {
-            updated: "2024-08-03",
+            updated: "2024-08-05",
             countries: [country]
         };
         return ctx.json(response);
@@ -112,7 +112,7 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            updated: "2024-08-03",
+            updated: "2024-08-05",
             competitions: [competition]
         };
         return ctx.json(response);

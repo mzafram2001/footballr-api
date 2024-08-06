@@ -99,8 +99,8 @@ app.get('/teams', (ctx) => {
 
 // Endpoint to get a specific team by ID.
 app.get('/teams/:id', (ctx) => {
-    const id = ctx.req.param('id').toUpperCase();
-    const team = teams.teams.find((team) => team.id === id);
+    const id = ctx.req.param('id');
+    const team = teams.teams.find((team) => team.id == id);
 
     if (team) {
         const response = {

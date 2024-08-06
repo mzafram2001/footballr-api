@@ -87,7 +87,7 @@ app.get('/', (ctx) => {
         version: footballrEndpoint.version,
         updated: footballrEndpoint.updated,
         message: footballrEndpoint.message,
-        endpoints: [countriesEndpoint, competitionsEndpoint]
+        endpoints: [countriesEndpoint, competitionsEndpoint, teamsEndpoint]
     };
     return ctx.json(data);
 });

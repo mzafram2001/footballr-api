@@ -28,9 +28,9 @@ const countriesEndpoint = {
     description: 'List all countries.',
     endpoint: '/countries',
     example: `${baseURL}/countries`,
-    status: 'Available',
+    status: 'AVAILABLE',
     parameters: [
-        generateParameter('id', 'List one country given by id.', '/countries/:id', `${baseURL}/countries/ES`, 'Available'),
+        generateParameter('id', 'List one country given by id.', '/countries/:id', `${baseURL}/countries/ES`, 'AVAILABLE'),
     ],
 }
 
@@ -40,23 +40,23 @@ const teamsEndpoint = {
     description: 'List all teams.',
     endpoint: '/teams',
     example: `${baseURL}/teams`,
-    status: 'Available',
+    status: 'AVAILABLE',
     parameters: [
-        generateParameter('id', 'List one country given by id.', '/teams/:id', `${baseURL}/teams/SKbpVP5K`, 'Available'),
+        generateParameter('id', 'List one country given by id.', '/teams/:id', `${baseURL}/teams/SKbpVP5K`, 'AVAILABLE'),
     ],
 }
 
 // Define the competitions endpoint metadata.
 const competitionsEndpoint = {
     name: 'competitions',
-    description: 'List all available competitions.',
+    description: 'List all AVAILABLE competitions.',
     endpoint: '/competitions',
     example: `${baseURL}/competitions`,
-    status: 'Available',
+    status: 'AVAILABLE',
     parameters: [
-        generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'Available'),
-        generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'Available'),
-        generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'Available'),
+        generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'AVAILABLE'),
+        generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'AVAILABLE'),
+        generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'AVAILABLE'),
     ],
 };
 

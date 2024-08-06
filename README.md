@@ -51,15 +51,15 @@
 <div>
   🇬🇧 Below is a list of endpoints and examples of use:
   <ul>
-    <li>GET <b>/areas/:id</b>: List all available areas 🌍. (filters available).</li>
-    <li>GET <b>/competitions/:id/</b>: List all available competitions 🏆. (filters available).</li>
-    <li>GET /competitions<b>/:id/standings</b>: List the current standings for a league 🔝. (filters available).</li>
-    <li>GET /competitions<b>/:id/scorers</b>: List the current scorers for a league ⚽. (filters available).</li>
-    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: List the current matches results for a league 🆚. (filters available).</li>
-    <li>GET /competitions<b>/:id/fixtures</b>: List the next scheduled matches for a league 🔜. (filters available).</li>
-    <li>GET <b>/teams/:id</b>: List all available teams 🛡️. (filters available).</li>
-    <li>GET <b>/players/:id</b>: List all available players 🏃. (not implemented yet).</li>
-    <li>GET <b>/stadiums/:id</b>: List all available stadiums 🏟️.  (not implemented yet).</li>
+    <li>GET <b>/areas/:id</b>: List all AVAILABLE areas 🌍. (filters AVAILABLE).</li>
+    <li>GET <b>/competitions/:id/</b>: List all AVAILABLE competitions 🏆. (filters AVAILABLE).</li>
+    <li>GET /competitions<b>/:id/standings</b>: List the current standings for a league 🔝. (filters AVAILABLE).</li>
+    <li>GET /competitions<b>/:id/scorers</b>: List the current scorers for a league ⚽. (filters AVAILABLE).</li>
+    <li>GET /competitions<b>/:id/matches/:round/:idMatch</b>: List the current matches results for a league 🆚. (filters AVAILABLE).</li>
+    <li>GET /competitions<b>/:id/fixtures</b>: List the next scheduled matches for a league 🔜. (filters AVAILABLE).</li>
+    <li>GET <b>/teams/:id</b>: List all AVAILABLE teams 🛡️. (filters AVAILABLE).</li>
+    <li>GET <b>/players/:id</b>: List all AVAILABLE players 🏃. (not implemented yet).</li>
+    <li>GET <b>/stadiums/:id</b>: List all AVAILABLE stadiums 🏟️.  (not implemented yet).</li>
     <li>GET <b>/simulator/:idTeamHome/:idTeamAway</b>: Returns a simulation match between 2 teams ♻️.  (not implemented yet).</li>
   </ul>
   <p>Some URL examples:</p>

@@ -1,4 +1,4 @@
-name: Scrape Football Standings
+name: Scrape Football Teams
 
 on:
   workflow_dispatch:
@@ -25,11 +25,11 @@ jobs:
           version: 8
           run_install: true
       - run: |
-          node scraping/standings.js
+          node scraping/teams.js
           # Crea la carpeta logs si no existe
           mkdir -p logs
           # Crea o actualiza un archivo para forzar un cambio
-          echo "Run on $(date)" > logs/last_workflow_run_standings.txt
+          echo "Run on $(date)" > logs/last_workflow_run_teams.txt
           git config --global user.email bot@footballr.com
           git config --global user.name footballr-api-bot
           git add -A

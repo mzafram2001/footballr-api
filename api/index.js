@@ -7,11 +7,12 @@ import countries from '../db/countries.json';
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024.json';
 import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
+import teams from '../db/teams.json';
 
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240805';
+const apiVersion = 'v20240806';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -30,6 +31,18 @@ const countriesEndpoint = {
     status: 'Available',
     parameters: [
         generateParameter('id', 'List one country given by id.', '/countries/:id', `${baseURL}/countries/ES`, 'Available'),
+    ],
+}
+
+// Define the countries endpoint metadata.
+const teamsEndpoint = {
+    name: 'teams',
+    description: 'List all teams.',
+    endpoint: '/teams',
+    example: `${baseURL}/teams`,
+    status: 'Available',
+    parameters: [
+        generateParameter('id', 'List one country given by id.', '/teams/:id', `${baseURL}/teams/SKbpVP5K`, 'Available'),
     ],
 }
 
@@ -79,6 +92,27 @@ app.get('/', (ctx) => {
     return ctx.json(data);
 });
 
+// Endpoint to list all teams.
+app.get('/teams', (ctx) => {
+    return ctx.json(teams);
+});
+
+// Endpoint to get a specific team by ID.
+app.get('/teams/:id', (ctx) => {
+    const id = ctx.req.param('id').toUpperCase();
+    const team = teams.teams.find((team) => team.id === id);
+
+    if (team) {
+        const response = {
+            updated: "2024-08-06",
+            team: [team]
+        };
+        return ctx.json(response);
+    } else {
+        return ctx.json({ errorCode: '404' }, 404);
+    }
+});
+
 // Endpoint to list all countries.
 app.get('/countries', (ctx) => {
     return ctx.json(countries);
@@ -87,11 +121,11 @@ app.get('/countries', (ctx) => {
 // Endpoint to get a specific country by ID.
 app.get('/countries/:id', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
-    const country = countries.countries.find((comp) => comp.id === id);
+    const country = countries.countries.find((country) => country.id === id);
 
     if (country) {
         const response = {
-            updated: "2024-08-05",
+            updated: "2024-08-06",
             country: [country]
         };
         return ctx.json(response);
@@ -108,11 +142,11 @@ app.get('/competitions', (ctx) => {
 // Endpoint to get a specific competition by ID.
 app.get('/competitions/:id', (ctx) => {
     const id = ctx.req.param('id').toUpperCase();
-    const competition = competitions.competitions.find((comp) => comp.id === id);
+    const competition = competitions.competitions.find((competition) => competition.id === id);
 
     if (competition) {
         const response = {
-            updated: "2024-08-05",
+            updated: "2024-08-06",
             competition: [competition]
         };
         return ctx.json(response);

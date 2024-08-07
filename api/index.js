@@ -12,7 +12,7 @@ import teams from '../db/teams.json';
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'vv20240807';
+const apiVersion = 'v20240807';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());

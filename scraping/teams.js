@@ -94,7 +94,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
             return {
                 name: nameElement ? nameElement.innerText.trim() : '',
                 url: nameElement ? nameElement.href : '',
-                marketValue: valueElement ? valueElement.innerText.trim() : ''
+                value: valueElement ? valueElement.innerText.trim() : ''
             };
         });
     });
@@ -110,7 +110,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                 name: team.name,
                 short: team.short,
                 color: team.color,
-                marketValue: matchingClub ? parseCurrencyString(matchingClub.marketValue) : null,
+                value: matchingClub ? parseCurrencyString(matchingClub.value) : null,
             };
         }
         return null;

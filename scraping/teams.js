@@ -44,6 +44,43 @@ const teamsData = {
     "Espanyol": { id: "QFfPdh1J", short: "ESP", name: "Espanyol", color: "#007FC8" }
 };
 
+function parseCurrencyString(str) {
+    console.log('Entrada original:', str);
+
+    // Eliminar el símbolo de euro y espacios
+    str = str.replace(/€|\s/g, '');
+    console.log('Después de quitar € y espacios:', str);
+
+    // Reemplazar la coma por un punto para el manejo decimal
+    str = str.replace(',', '.');
+    console.log('Después de reemplazar , por .:', str);
+
+    let multiplier = 1;
+
+    // Manejar "mil mill." y "mill."
+    if (str.includes('milmill.')) {
+        multiplier = 1e9;
+        str = str.replace('milmill.', '');
+        console.log('Caso mil mill., multiplier:', multiplier);
+    } else if (str.includes('mill.')) {
+        multiplier = 1e6;
+        str = str.replace('mill.', '');
+        console.log('Caso mill., multiplier:', multiplier);
+    }
+
+    console.log('Antes de parseFloat:', str);
+    const number = parseFloat(str);
+    console.log('Después de parseFloat:', number);
+
+    if (isNaN(number)) {
+        throw new Error('No se pudo convertir la cadena a un número válido');
+    }
+
+    const result = number * multiplier;
+    console.log('Resultado final:', result);
+    return result;
+}
+
 // Get detailed info for each team.
 async function getTeamsDetailedInfo(page, teams, teamsData) {
     await page.goto('https://www.transfermarkt.es/laliga/startseite/wettbewerb/ES1');
@@ -73,7 +110,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                 name: team.name,
                 short: team.short,
                 color: team.color,
-                marketValue: matchingClub.marketValue,
+                marketValue: matchingClub ? parseCurrencyString(matchingClub.marketValue) : null,
             };
         }
         return null;

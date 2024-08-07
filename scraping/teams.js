@@ -83,9 +83,8 @@ function parseCurrencyString(str) {
 
 // Get detailed info for each team.
 async function getTeamsDetailedInfo(page, teams, teamsData) {
-    await page.goto('https://www.transfermarkt.es/laliga/startseite/wettbewerb/ES1');
+    await page.goto('https://www.transfermarkt.es/laliga/startseite/wettbewerb/ES1', { waitUntil: 'networkidle0' });
 
-    // Extraer los datos de los equipos desde la página
     const clubs = await page.evaluate(() => {
         const clubElements = document.querySelectorAll('table.items tbody tr.odd, table.items tbody tr.even');
         return Array.from(clubElements).map(club => {
@@ -99,119 +98,150 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
         });
     });
 
-    // Mapear teams con la información de clubs obtenida
-    const matchedTeams = Object.keys(teams).map(key => {
-        const team = teams[key];
-        const bestMatch = stringSimilarity.findBestMatch(team.name, clubs.map(c => c.name));
-        if (bestMatch.bestMatch.rating > 0.7) { // Umbral de similitud
-            const matchingClub = clubs.find(c => c.name === bestMatch.bestMatch.target);
-            return {
-                id: team.id,
-                name: team.name,
-                short: team.short,
-                color: team.color,
-                marketValue: matchingClub ? parseCurrencyString(matchingClub.marketValue) : null,
-            };
+    const matchedTeams = [];
+
+    for (const element of clubs) {
+        try {
+            await page.goto(element.url, { waitUntil: 'networkidle0', timeout: 60000 });
+
+            // Wait for the content to load
+            await page.waitForSelector('.data-header__club', { timeout: 10000 });
+
+            const additionalInfo = await page.evaluate(() => {
+                const foundedElement = document.querySelector('span[itemprop="foundingDate"]');
+                const stadiumElement = document.querySelector('#tm-main > header > div.data-header__info-box > div > ul:nth-child(2) > li:nth-child(2) > span > a');
+
+                return {
+                    founded: foundedElement ? foundedElement.innerText.trim() : null,
+                    stadium: stadiumElement ? stadiumElement.innerText.trim() : null
+                };
+            });
+
+            element.founded = additionalInfo.founded;
+            element.stadium = additionalInfo.stadium;
+
+            console.log(`Scraped data for ${element.name}:`, additionalInfo);
+
+            // Find the matching team in teamsData
+            const teamKey = Object.keys(teamsData).find(key =>
+                stringSimilarity.compareTwoStrings(teamsData[key].name, element.name) > 0.5
+            );
+
+            if (teamKey) {
+                const team = teamsData[teamKey];
+                matchedTeams.push({
+                    id: team.id,
+                    name: team.name,
+                    short: team.short,
+                    color: team.color,
+                    founded: element.founded,
+                    marketValue: parseCurrencyString(element.marketValue),
+                    stadium: element.stadium
+                });
+            }
+
+            // Add a delay between requests to avoid rate limiting
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+        } catch (error) {
+            console.error(`Error processing ${element.name}:`, error.message);
         }
-        return null;
-    }).filter(match => match !== null);
+    }
 
-    // Mostrar resultados
-    console.log(matchedTeams);
-
+    console.log('Matched teams:', matchedTeams);
     return matchedTeams;
 }
 
 // Main function.
 async function getTeamsIndex(url, teamsData, footballRAPIObject) {
-    // Launch the Puppeteer browser in headless mode.
     const browser = await puppeteer.launch({
         headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
-    // Open a new page.
     const page = await browser.newPage();
 
-    // Navigate to the specified URL and wait until the network is idle.
-    await page.goto(url, { waitUntil: "networkidle0" });
+    try {
+        await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
 
-    // Click consent cookies banner.
-    await page.waitForSelector('#onetrust-accept-btn-handler', { visible: true, timeout: 3000 });
-    await page.click('#onetrust-accept-btn-handler');
-
-    // Create teams object.
-    const teams = [];
-    const addedTeams = new Set();
-
-    // Get all the teams URL.
-    await page.waitForSelector('.ui-table__body');
-    const teamUrls = await page.evaluate(() => {
-        const links = document.querySelectorAll('.ui-table__body a');
-        return Array.from(links).map(link => link.href);
-    });
-
-    // For each team, go to URL.
-    for (const url of teamUrls) {
+        // Click consent cookies banner
         try {
-            await page.goto(url, { waitUntil: 'networkidle0' });
-
-            // Wait until document is loaded.
-            await page.waitForSelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name');
-
-            // Get info from team.
-            const teamData = await page.evaluate(() => {
-                const urlParts = window.location.href.split('/');
-                const id = urlParts[urlParts.length - 2];
-                const name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
-                return { id, name };
-            });
-
-            // Check if the team has already been added.
-            if (addedTeams.has(teamData.id)) {
-                continue; // Skip adding this team.
-            }
-
-            // Search team info in teamsData.
-            const teamInfo = teamsData[teamData.name];
-
-            // If found is true, then push it into teams object.
-            if (teamInfo) {
-                teams.push({
-                    id: teamData.id,
-                    name: teamInfo.name,
-                    short: teamInfo.short,
-                    color: teamInfo.color
-                });
-                addedTeams.add(teamData.id); // Mark this team as added.
-            } else {
-                console.log("Error searching the team.");
-            }
+            await page.waitForSelector('#onetrust-accept-btn-handler', { visible: true, timeout: 5000 });
+            await page.click('#onetrust-accept-btn-handler');
         } catch (error) {
-            console.error(`Error al procesar la URL ${url}:`, error);
+            console.log('Cookie consent banner not found or not clickable');
         }
+
+        const teams = [];
+        const addedTeams = new Set();
+
+        await page.waitForSelector('.ui-table__body');
+        const teamUrls = await page.evaluate(() => {
+            const links = document.querySelectorAll('.ui-table__body a');
+            return Array.from(links).map(link => link.href);
+        });
+
+        for (const url of teamUrls) {
+            let retries = 3;
+            while (retries > 0) {
+                try {
+                    await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+                    await page.waitForSelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name', { timeout: 10000 });
+
+                    const teamData = await page.evaluate(() => {
+                        const urlParts = window.location.href.split('/');
+                        const id = urlParts[urlParts.length - 2];
+                        const name = document.querySelector('#mc > div.container__livetable > div.container__heading > div.heading > div.heading__title > div.heading__name').innerText;
+                        return { id, name };
+                    });
+
+                    if (!addedTeams.has(teamData.id)) {
+                        const teamInfo = teamsData[teamData.name];
+                        if (teamInfo) {
+                            teams.push({
+                                id: teamData.id,
+                                name: teamInfo.name,
+                                short: teamInfo.short,
+                                color: teamInfo.color
+                            });
+                            addedTeams.add(teamData.id);
+                        } else {
+                            console.log(`Team info not found for ${teamData.name}`);
+                        }
+                    }
+                    break;
+                } catch (error) {
+                    console.error(`Error processing ${url}, retries left: ${retries}`, error.message);
+                    retries--;
+                    if (retries === 0) {
+                        console.error(`Failed to process ${url} after 3 attempts`);
+                    } else {
+                        await new Promise(resolve => setTimeout(resolve, 5000));
+                    }
+                }
+            }
+        }
+
+        let correctTeams = await getTeamsDetailedInfo(page, teamsData, teams);
+
+        footballRAPIObject.teams.push(correctTeams);
+
+        const fileLocation = path.join(__dirname, `../db/teams.json`);
+
+        fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, teams: correctTeams }), 'utf8', (err) => {
+            if (err) {
+                console.log(`[Teams | 2024] - An error occurred while writing JSON object to file.`);
+                console.log(err);
+            } else {
+                console.log(`[Teams | 2024] - JSON file has been saved.`);
+            }
+        });
+
+    } catch (error) {
+        console.error('An error occurred during scraping:', error);
+    } finally {
+        await browser.close();
     }
-
-    // Get detailed info by team.
-    let correctTeams = await getTeamsDetailedInfo(page, teamsData, teams);
-
-    // Push to the original object.
-    footballRAPIObject.teams.push(correctTeams);
-
-    // Define the file location for saving the data.
-    const fileLocation = path.join(__dirname, `../db/teams.json`);
-
-    // Write the data to a JSON file.
-    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, teams: correctTeams }), 'utf8', (err) => {
-        if (err) {
-            console.log(`[Teams | 2024] - An error occurred while writing JSON object to file.`);
-            console.log(err);
-        } else {
-            console.log(`[Teams | 2024] - JSON file has been saved.`);
-        }
-    });
-
-    browser.close();
 }
 
 // Clone the base object for each function call.

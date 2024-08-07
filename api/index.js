@@ -49,7 +49,7 @@ const teamsEndpoint = {
 // Define the competitions endpoint metadata.
 const competitionsEndpoint = {
     name: 'competitions',
-    description: 'List all AVAILABLE competitions.',
+    description: 'List all competitions.',
     endpoint: '/competitions',
     example: `${baseURL}/competitions`,
     status: 'AVAILABLE',

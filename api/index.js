@@ -42,7 +42,7 @@ const teamsEndpoint = {
     example: `${baseURL}/teams`,
     status: 'AVAILABLE',
     parameters: [
-        generateParameter('id', 'List one country given by id.', '/teams/:id', `${baseURL}/teams/SKbpVP5K`, 'AVAILABLE'),
+        generateParameter('id', 'List one team given by id.', '/teams/:id', `${baseURL}/teams/SKbpVP5K`, 'AVAILABLE'),
     ],
 }
 

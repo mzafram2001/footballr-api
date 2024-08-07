@@ -22,7 +22,8 @@
     "cors": "^2.8.5",
     "hono": "^4.4.4",
     "puppeteer": "^22.10.0",
-    "puppeteer-cmp-clicker": "^1.0.3"
+    "puppeteer-cmp-clicker": "^1.0.3",
+    "string-similarity": "^4.0.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240605.0",

@@ -9,7 +9,7 @@ on:
     types:
       - webhook
   workflow_run:
-    workflows: ["Scrape Football Standings", "Scrape Football Fixtures"]
+    workflows: ["Scrape Football Standings", "Scrape Football Fixtures", "Scrape Football Teams"]
     types:
       - completed
       

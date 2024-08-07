@@ -2,6 +2,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const stringSimilarity = require('string-similarity');
 
 // Define URLs object.
 const URLs = {
@@ -21,27 +22,68 @@ const footballRAPIObject = {
 
 // Define the properties of teamsData.
 const teamsData = {
-    "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#FA0000" },
-    "Betis": { short: "BET", name: "Real Betis", color: "#25961D" },
-    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#FF0A0A" },
-    "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#DEDEDE" },
-    "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
-    "Barcelona": { short: "BAR", name: "Barcelona", color: "#BF0000" },
-    "Real Sociedad": { short: "RSO", name: "Real Sociedad", color: "#1610DE" },
-    "Valencia": { short: "VAL", name: "Valencia", color: "#FF8308" },
-    "Villarreal": { short: "VIL", name: "Villarreal", color: "#FFF01C" },
-    "Getafe": { short: "GET", name: "Getafe", color: "#1611A8" },
-    "Alaves": { short: "ALA", name: "Alavés", color: "#0761AF" },
-    "Sevilla": { short: "SEV", name: "Sevilla", color: "#FAFAFA" },
-    "Osasuna": { short: "OSA", name: "Osasuna", color: "#AB0505" },
-    "Las Palmas": { short: "PAL", name: "Las Palmas", color: "#FFE400" },
-    "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8ABDFF" },
-    "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#F20202" },
-    "Mallorca": { short: "MAL", name: "Mallorca", color: "#A10505" },
-    "Valladolid": { short: "VLL", name: "Valladolid", color: "#3D1169" },
-    "Leganes": { short: "LEG", name: "Leganés", color: "#0C1F6E" },
-    "Espanyol": { short: "ESP", name: "Espanyol", color: "#007FC8" },
+    "Atl. Madrid": { id: "jaarqpLQ", short: "ATM", name: "Atlético Madrid", color: "#FA0000" },
+    "Betis": { id: "vJbTeCGP", short: "BET", name: "Real Betis", color: "#25961D" },
+    "Ath Bilbao": { id: "IP5zl0cJ", short: "BIL", name: "Athletic Bilbao", color: "#FF0A0A" },
+    "Real Madrid": { id: "W8mj7MDD", short: "RMA", name: "Real Madrid", color: "#DEDEDE" },
+    "Girona": { id: "nNNpcUSL", short: "GIR", name: "Girona", color: "#CD2534" },
+    "Barcelona": { id: "SKbpVP5K", short: "BAR", name: "Barcelona", color: "#BF0000" },
+    "Real Sociedad": { id: "jNvak2f3", short: "RSO", name: "Real Sociedad", color: "#1610DE" },
+    "Valencia": { id: "CQeaytrD", short: "VAL", name: "Valencia", color: "#FF8308" },
+    "Villarreal": { id: "lUatW5jE", short: "VIL", name: "Villarreal", color: "#FFF01C" },
+    "Getafe": { id: "dboeiWOt", short: "GET", name: "Getafe", color: "#1611A8" },
+    "Alaves": { id: "hxt57t2q", short: "ALA", name: "Alavés", color: "#0761AF" },
+    "Sevilla": { id: "h8oAv4Ts", short: "SEV", name: "Sevilla", color: "#FAFAFA" },
+    "Osasuna": { id: "ETdxjU8a", short: "OSA", name: "Osasuna", color: "#AB0505" },
+    "Las Palmas": { id: "IyRQC2vM", short: "PAL", name: "Las Palmas", color: "#FFE400" },
+    "Celta Vigo": { id: "8pvUZFhf", short: "CEL", name: "Celta Vigo", color: "#8ABDFF" },
+    "Rayo Vallecano": { id: "8bcjFy6O", short: "RAY", name: "Rayo Vallecano", color: "#F20202" },
+    "Mallorca": { id: "4jDQxrbf", short: "MAL", name: "Mallorca", color: "#A10505" },
+    "Valladolid": { id: "zkpajjvm", short: "VLL", name: "Valladolid", color: "#3D1169" },
+    "Leganes": { id: "Mi0rXQg7", short: "LEG", name: "Leganés", color: "#0C1F6E" },
+    "Espanyol": { id: "QFfPdh1J", short: "ESP", name: "Espanyol", color: "#007FC8" }
 };
+
+// Get detailed info for each team.
+async function getTeamsDetailedInfo(page, teams, teamsData) {
+    await page.goto('https://www.transfermarkt.es/laliga/startseite/wettbewerb/ES1');
+
+    // Extraer los datos de los equipos desde la página
+    const clubs = await page.evaluate(() => {
+        const clubElements = document.querySelectorAll('table.items tbody tr.odd, table.items tbody tr.even');
+        return Array.from(clubElements).map(club => {
+            const nameElement = club.querySelector('td.hauptlink > a');
+            const valueElement = club.querySelector('td:last-child');
+            return {
+                name: nameElement ? nameElement.innerText.trim() : '',
+                url: nameElement ? nameElement.href : '',
+                marketValue: valueElement ? valueElement.innerText.trim() : ''
+            };
+        });
+    });
+
+    // Mapear teams con la información de clubs obtenida
+    const matchedTeams = Object.keys(teams).map(key => {
+        const team = teams[key];
+        const bestMatch = stringSimilarity.findBestMatch(team.name, clubs.map(c => c.name));
+        if (bestMatch.bestMatch.rating > 0.7) { // Umbral de similitud
+            const matchingClub = clubs.find(c => c.name === bestMatch.bestMatch.target);
+            return {
+                id: team.id,
+                name: team.name,
+                short: team.short,
+                color: team.color,
+                marketValue: matchingClub.marketValue,
+            };
+        }
+        return null;
+    }).filter(match => match !== null);
+
+    // Mostrar resultados
+    console.log(matchedTeams);
+
+    return matchedTeams;
+}
 
 // Main function.
 async function getTeamsIndex(url, teamsData, footballRAPIObject) {
@@ -95,7 +137,7 @@ async function getTeamsIndex(url, teamsData, footballRAPIObject) {
 
             // Search team info in teamsData.
             const teamInfo = teamsData[teamData.name];
-            
+
             // If found is true, then push it into teams object.
             if (teamInfo) {
                 teams.push({
@@ -113,14 +155,17 @@ async function getTeamsIndex(url, teamsData, footballRAPIObject) {
         }
     }
 
+    // Get detailed info by team.
+    let correctTeams = await getTeamsDetailedInfo(page, teamsData, teams);
+
     // Push to the original object.
-    footballRAPIObject.teams.push(teams);
+    footballRAPIObject.teams.push(correctTeams);
 
     // Define the file location for saving the data.
     const fileLocation = path.join(__dirname, `../db/teams.json`);
 
     // Write the data to a JSON file.
-    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, teams: teams }), 'utf8', (err) => {
+    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, teams: correctTeams }), 'utf8', (err) => {
         if (err) {
             console.log(`[Teams | 2024] - An error occurred while writing JSON object to file.`);
             console.log(err);

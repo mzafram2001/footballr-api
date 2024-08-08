@@ -66,6 +66,10 @@ function parseCurrencyString(str) {
         multiplier = 1e6;
         str = str.replace('mill.', '');
         console.log('Caso mill., multiplier:', multiplier);
+    } else if (str.includes('mil')) {
+        multiplier = 1e3;
+        str = str.replace('mil', '');
+        console.log('Caso mil, multiplier:', multiplier);
     }
 
     console.log('Antes de parseFloat:', str);
@@ -79,6 +83,18 @@ function parseCurrencyString(str) {
     const result = number * multiplier;
     console.log('Resultado final:', result);
     return result;
+}
+
+// Función para convertir la fecha en formato "dd/mm/yyyy (edad)" a "yyyy-mm-dd"
+function convertDate(input) {
+    const match = input.match(/^(\d{2})\/(\d{2})\/(\d{4})/);
+    if (match) {
+        const day = match[1];
+        const month = match[2];
+        const year = match[3];
+        return `${year}-${month}-${day}`;
+    }
+    return null; // Si no hay coincidencia, devuelve null o algún valor predeterminado
 }
 
 // Get detailed info for each team.
@@ -110,15 +126,71 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
             const additionalInfo = await page.evaluate(() => {
                 const foundedElement = document.querySelector('span[itemprop="foundingDate"]');
                 const stadiumElement = document.querySelector('#tm-main > header > div.data-header__info-box > div > ul:nth-child(2) > li:nth-child(2) > span > a');
+                const countryImageElement = document.querySelector('#tm-main > header > div.data-header__box--big > div > span.data-header__label > span > a > img');
+                const upsElement = document.querySelector('.transfer-record__total.transfer-record__total--positive');
+                const downsElement = document.querySelector('.transfer-record__total.transfer-record__total--negative');
+                const squadElements = document.querySelectorAll('#yw1 > table > tbody > tr');
+
+                // Crear un array para almacenar los jugadores
+                const players = [];
+
+                squadElements.forEach((row) => {
+                    const nameElement = row.querySelector('td.hauptlink > a');
+                    // const positionElement = row.querySelector('td:nth-child(2)');
+                    const ageElement = row.querySelector('td:nth-child(3)');
+                    // const nationalityElement = row.querySelector('td:nth-child(4) > img');
+                    const marketValueElement = row.querySelector('td:nth-child(5)');
+
+                    players.push({
+                        name: nameElement ? nameElement.innerText.trim() : null,
+                        // position: positionElement ? positionElement.innerText.trim() : null,
+                        age: ageElement ? ageElement.innerText.trim() : null,
+                        // nationality: nationalityElement ? nationalityElement.getAttribute('title').trim() : null,
+                        marketValue: marketValueElement ? marketValueElement.innerText.trim() : null,
+                    });
+                });
 
                 return {
                     founded: foundedElement ? foundedElement.innerText.trim() : null,
-                    stadium: stadiumElement ? stadiumElement.innerText.trim() : null
+                    stadium: stadiumElement ? stadiumElement.innerText.trim() : null,
+                    country: countryImageElement ? countryImageElement.getAttribute('title').trim() : null,
+                    ups: upsElement ? upsElement.innerText.trim() : null,
+                    downs: downsElement ? downsElement.innerText.trim() : null,
+                    players: players, // Incluir el array de jugadores en el objeto retornado
                 };
             });
 
-            element.founded = additionalInfo.founded;
+            let dateParts = additionalInfo.founded.split('/');
+            let correctFoundedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            element.founded = correctFoundedDate;
             element.stadium = additionalInfo.stadium;
+            element.ups = additionalInfo.ups;
+            element.downs = additionalInfo.downs;
+            element.squad = additionalInfo.players;
+
+            // Aplicar parseCurrencyString a cada jugador
+            element.squad = additionalInfo.players.map(player => ({
+                ...player,
+                age: player.age ? convertDate(player.age) : null,
+                marketValue: player.marketValue ? parseCurrencyString(player.marketValue).toString() : null
+            }));
+
+            const countryMap = {
+                'Spain': 'ES',
+                'España': 'ES',
+                'Germany': 'DE',
+                'Alemania': 'DE',
+                'England': 'GB',
+                'Inglaterra': 'GB',
+                // Añade más países según sea necesario
+            };
+
+            let countryCode = countryMap[additionalInfo.country] || 'Unknown';
+
+            element.country = {
+                id: countryCode,
+                name: additionalInfo.country
+            };
 
             console.log(`Scraped data for ${element.name}:`, additionalInfo);
 
@@ -135,8 +207,21 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                     short: team.short,
                     color: team.color,
                     founded: element.founded,
-                    marketValue: parseCurrencyString(element.marketValue),
-                    stadium: element.stadium
+                    stadium: element.stadium,
+                    country: element.country,
+                    ratings: {
+                        elo: "1000",
+                        eloBest: "1000",
+                    },
+                    market: {
+                        value: parseCurrencyString(element.marketValue).toString(),
+                        ups: parseCurrencyString(element.ups).toString(),
+                        downs: parseCurrencyString(element.downs).toString()
+                    },
+                    trophies: {
+
+                    },
+                    squad: element.squad
                 });
             }
 

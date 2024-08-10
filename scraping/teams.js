@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 const stringSimilarity = require('string-similarity');
+const { title } = require('process');
 
 // Define URLs object.
 const URLs = {
@@ -130,6 +131,35 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                 const upsElement = document.querySelector('.transfer-record__total.transfer-record__total--positive');
                 const downsElement = document.querySelector('.transfer-record__total.transfer-record__total--negative');
                 const squadElements = document.querySelectorAll('#yw1 > table > tbody > tr');
+                const titlesElements = document.querySelectorAll('#tm-main > header > div.data-header__badge-container > a');
+
+                const titlesToTrack = {
+                    'Campeón de la Liga de Campeones': 0,
+                    'Campeón de España': 0,
+                    'Champions League Winner': 0,
+                    'Spanish Champion': 0
+                };
+
+                titlesElements.forEach(element => {
+                    const titleName = element.getAttribute('title');
+                    const titleQuantity = parseInt(element.innerText.trim(), 10) || 0;
+
+                    if (titleName in titlesToTrack) {
+                        titlesToTrack[titleName] = titleQuantity;
+                    }
+                });
+
+                // Combinar los títulos en español e inglés
+                const combinedTitles = {
+                    'Champions League': Math.max(titlesToTrack['Campeón de la Liga de Campeones'], titlesToTrack['Champions League winner']),
+                    'LaLiga': Math.max(titlesToTrack['Campeón de España'], titlesToTrack['Spanish Champion'])
+                };
+
+                // Crear el array final de títulos
+                const titles = Object.entries(combinedTitles).map(([name, quantity]) => ({
+                    name,
+                    quantity: quantity.toString()
+                }));
 
                 // Crear un array para almacenar los jugadores
                 const players = [];
@@ -157,6 +187,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                     ups: upsElement ? upsElement.innerText.trim() : null,
                     downs: downsElement ? downsElement.innerText.trim() : null,
                     players: players, // Incluir el array de jugadores en el objeto retornado
+                    titles: titles
                 };
             });
 
@@ -167,6 +198,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
             element.ups = additionalInfo.ups;
             element.downs = additionalInfo.downs;
             element.squad = additionalInfo.players;
+            element.titles = additionalInfo.titles;
 
             // Aplicar parseCurrencyString a cada jugador
             element.squad = additionalInfo.players.map(player => ({
@@ -218,9 +250,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                         ups: parseCurrencyString(element.ups).toString(),
                         downs: parseCurrencyString(element.downs).toString()
                     },
-                    trophies: {
-
-                    },
+                    titles: element.titles,
                     squad: element.squad
                 });
             }

@@ -135,8 +135,10 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
 
                 const titlesToTrack = {
                     'Campeón de la Liga de Campeones': 0,
+                    'Campeón de la Copa de Europa': 0,
                     'Campeón de España': 0,
                     'Champions League Winner': 0,
+                    'European Champion Clubs\' Cup winner': 0,
                     'Spanish Champion': 0
                 };
 
@@ -145,14 +147,17 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
                     const titleQuantity = parseInt(element.innerText.trim(), 10) || 0;
 
                     if (titleName in titlesToTrack) {
-                        titlesToTrack[titleName] = titleQuantity;
+                        titlesToTrack[titleName] += titleQuantity;
                     }
                 });
 
                 // Combinar los títulos en español e inglés
                 const combinedTitles = {
-                    'Champions League': Math.max(titlesToTrack['Campeón de la Liga de Campeones'], titlesToTrack['Champions League winner']),
-                    'LaLiga': Math.max(titlesToTrack['Campeón de España'], titlesToTrack['Spanish Champion'])
+                    'Champions League': titlesToTrack['Campeón de la Liga de Campeones'] +
+                        titlesToTrack['Campeón de la Copa de Europa'] +
+                        titlesToTrack['Champions League Winner'] +
+                        titlesToTrack['European Champion Clubs\' Cup winner'],
+                    'LaLiga': titlesToTrack['Campeón de España'] + titlesToTrack['Spanish Champion']
                 };
 
                 // Crear el array final de títulos

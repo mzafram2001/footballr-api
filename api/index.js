@@ -12,7 +12,7 @@ import teams from '../db/teams.json';
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240807';
+const apiVersion = 'v20240810';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -104,7 +104,7 @@ app.get('/teams/:id', (ctx) => {
 
     if (team) {
         const response = {
-            updated: "2024-08-07",
+            updated: "2024-08-10",
             team: [team]
         };
         return ctx.json(response);
@@ -125,7 +125,7 @@ app.get('/countries/:id', (ctx) => {
 
     if (country) {
         const response = {
-            updated: "2024-08-07",
+            updated: "2024-08-10",
             country: [country]
         };
         return ctx.json(response);
@@ -146,7 +146,7 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            updated: "2024-08-07",
+            updated: "2024-08-10",
             competition: [competition]
         };
         return ctx.json(response);

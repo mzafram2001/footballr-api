@@ -110,7 +110,7 @@ async function getTeamsDetailedInfo(page, teams, teamsData) {
             return {
                 name: nameElement ? nameElement.innerText.trim() : '',
                 url: nameElement ? nameElement.href : '',
-                marketValue: valueElement ? valueElement.innerText.trim() : ''
+                marketValu: valueElement ? valueElement.innerText.trim() : ''
             };
         });
     });

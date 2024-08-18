@@ -7,6 +7,7 @@ import countries from '../db/countries.json';
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024.json';
 import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
+import resultsLaLiga from '../db/2024/results/resultsLaLiga2024.json';
 import teams from '../db/teams.json';
 
 // Initialize the Hono application.
@@ -57,6 +58,7 @@ const competitionsEndpoint = {
         generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'AVAILABLE'),
         generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'AVAILABLE'),
         generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'AVAILABLE'),
+        generateParameter('results', 'List the results for a league.', '/competitions/:id/results', `${baseURL}/competitions/LAL/results`, 'AVAILABLE'),
     ],
 };
 
@@ -179,6 +181,22 @@ app.get('/competitions/:id/fixtures', (ctx) => {
         switch (id) {
             case 'LAL':
                 return ctx.json(fixturesLaLiga);
+            default:
+                return ctx.json({ errorCode: '404' }, 404);
+        }
+    } else {
+        return ctx.json({ errorCode: '404' }, 404);
+    }
+});
+
+// Endpoint to get results for a specific competition by ID.
+app.get('/competitions/:id/results', (ctx) => {
+    const id = ctx.req.param('id').toUpperCase();
+    const competition = competitions.competitions.find((comp) => comp.id === id);
+    if (competition) {
+        switch (id) {
+            case 'LAL':
+                return ctx.json(resultsLaLiga);
             default:
                 return ctx.json({ errorCode: '404' }, 404);
         }

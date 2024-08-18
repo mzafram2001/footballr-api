@@ -9,14 +9,14 @@ const URLS = {
 }
 
 // Define the properties of standingsURLs.
-const RESULTS_URLS = {
+const resultsURLs = {
     SPAIN: URLS.spain,
 };
 
 // Create the base object.
 const footballRAPIObject = {
     "updated": new Date().toISOString().slice(0, 10),
-    "results": []
+    "results": [{ "round": 1, "matches": [] }, { "round": 2, "matches": [] }, { "round": 3, "matches": [] }, { "round": 4, "matches": [] }, { "round": 5, "matches": [] }, { "round": 6, "matches": [] }, { "round": 7, "matches": [] }, { "round": 8, "matches": [] }, { "round": 9, "matches": [] }, { "round": 10, "matches": [] }, { "round": 11, "matches": [] }, { "round": 12, "matches": [] }, { "round": 13, "matches": [] }, { "round": 14, "matches": [] }, { "round": 15, "matches": [] }, { "round": 16, "matches": [] }, { "round": 17, "matches": [] }, { "round": 18, "matches": [] }, { "round": 19, "matches": [] }, { "round": 20, "matches": [] }, { "round": 21, "matches": [] }, { "round": 22, "matches": [] }, { "round": 23, "matches": [] }, { "round": 24, "matches": [] }, { "round": 25, "matches": [] }, { "round": 26, "matches": [] }, { "round": 27, "matches": [] }, { "round": 28, "matches": [] }, { "round": 29, "matches": [] }, { "round": 30, "matches": [] }, { "round": 31, "matches": [] }, { "round": 32, "matches": [] }, { "round": 33, "matches": [] }, { "round": 34, "matches": [] }, { "round": 35, "matches": [] }, { "round": 36, "matches": [] }, { "round": 37, "matches": [] }, { "round": 38, "matches": [] }]
 };
 
 // Define the properties of teamsData.
@@ -44,168 +44,197 @@ const teamsData = {
 };
 
 // Main function.
-async function getLast10Matches(url) {
+async function getLast10Matches(url, teamsData, footballRAPIObject) {
+    // Launch the Puppeteer browser in headless mode.
     const browser = await puppeteer.launch({
         headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
+
+    // Open a new page.
     const page = await browser.newPage();
 
-    try {
-        await page.goto(url, { waitUntil: "networkidle0" });
-        await page.click('#onetrust-accept-btn-handler');
+    // Navigate to the specified URL and wait until the network is idle.
+    await page.goto(url, { waitUntil: "networkidle0" });
 
-        const fileLocation = path.join(process.cwd(), "./db/2024/results/resultsLaLiga2024.json");
-        let original;
+    // Click consent cookies banner.
+    await page.waitForSelector('#onetrust-accept-btn-handler', { visible: true, timeout: 3000 });
+    await page.click('#onetrust-accept-btn-handler');
+
+    // Open the current results file to edit.
+    const fileToEdit = path.join(__dirname, '..', 'db', '2024', 'results', 'resultsLaLiga2024.json');
+    fs.readFile(fileToEdit, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return;
+        }
         try {
-            const fileContent = await fs.readFile(fileLocation, 'utf8');
-            original = JSON.parse(fileContent);
-        } catch (error) {
-            if (error.code === 'ENOENT') {
-                // Si el archivo no existe, inicializamos con un objeto vacío
-                original = { results: [] };
-            } else {
-                throw error;
+            const json = JSON.parse(data);
+            console.log('JSON data:', json);
+            // Proceed with json data
+        } catch (e) {
+            console.error('Error parsing JSON:', e);
+        }
+    });
+
+    const RESULT = await page.evaluate(() => {
+        const JSON = {};
+        JSON.season = [];
+        JSON.matchesIteration = [];
+        const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
+        const RESULTS_SELECTOR = document.querySelectorAll('.event__match');
+        let round = 0;
+        let ok = Array.prototype.slice.call(RESULTS_SELECTOR);
+        const LAST_10 = ok.slice(0, 10);
+        ok = Array.prototype.slice.call(ROUNDS_SELECTOR);
+        const ROUNDS_ARRAY = ok;
+        for (let i = LAST_10.length - 1; i >= 0; i--) {
+            const TMP = {};
+            TMP.id = LAST_10[i].id.substring(4);
+            TMP.link = "https://www.flashscore.com/match/" + TMP.id;
+            JSON.matchesIteration.push(TMP);
+        }
+        for (let i = ROUNDS_ARRAY.length - 1; i >= 0; i--) {
+            const TMP = {};
+            let found = false;
+            TMP.round = parseInt(ROUNDS_ARRAY[i].innerText.substring(6));
+            round = parseInt(TMP.round);
+            TMP.results = [];
+            for (index in JSON.season) {
+                if (JSON.season[index].round == TMP.round) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                JSON.season.push(TMP);
             }
         }
+        return JSON;
+    });
 
-        const RESULT = await page.evaluate(() => {
-            const JSON = {};
-            JSON.season = [];
-            JSON.matchesIteration = [];
-            const ROUNDS_SELECTOR = document.querySelectorAll('.event__round');
-            const RESULTS_SELECTOR = document.querySelectorAll('.event__match');
-            var round = 0;
-            var ok = Array.prototype.slice.call(RESULTS_SELECTOR);
-            const LAST_10 = ok.slice(0, 10);
-            ok = Array.prototype.slice.call(ROUNDS_SELECTOR);
-            const ROUNDS_ARRAY = ok;
-            for (var i = LAST_10.length - 1; i >= 0; i--) {
-                const TMP = {};
-                TMP.id = LAST_10[i].id.substring(4);
-                TMP.link = "https://www.flashscore.com/match/" + TMP.id;
-                JSON.matchesIteration.push(TMP);
-            }
-            for (var i = ROUNDS_ARRAY.length - 1; i >= 0; i--) {
-                const TMP = {};
-                var found = false;
-                TMP.round = parseInt(ROUNDS_ARRAY[i].innerText.substring(6));
-                round = parseInt(TMP.round);
-                TMP.results = [];
-                for (index in JSON.season) {
-                    if (JSON.season[index].round == TMP.round) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    JSON.season.push(TMP);
-                }
-            }
-            return JSON;
-        });
+    for (let match of RESULT.matchesIteration) {
+        try {
+            // Navegar a la página del enlace del partido
+            await page.goto(match.link, { waitUntil: 'networkidle0' });
 
-        for (let match of RESULT.matchesIteration) {
-            await page.goto(match.link, { 'waitUntil': 'networkidle0' });
-            const MATCH = await page.evaluate(() => {
+            // Extraer la información del partido
+            const MATCH = await page.evaluate((teamsData) => {
                 const TMP = {};
-                var dumpString;
-                var dumpStringArray;
-                var title = document.evaluate("/html/head/title", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                let dumpString;
+                let dumpStringArray;
+
+                // Obtener el título de la página
+                let titleElement = document.evaluate("/html/head/title", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                let title = titleElement ? titleElement.innerText : "Unknown Title";
+
+                // Información del equipo local
                 TMP.homeTeam = {};
-                dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
-                dumpStringArray = dumpString.split('/');
-                TMP.homeTeam.id = dumpStringArray[3];
-                TMP.homeTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-                const TEAM_NAME = {
-                    "Atl. Madrid": "Atletico Madrid",
-                    "Betis": "Real Betis",
-                    "Granada CF": "Granada",
-                    "Ath Bilbao": "Athletic Bilbao",
-                    "Cadiz CF": "Cadiz",
-                    "Almeria": "Almeria",
-                }
-                const TEAM_COLOR = {
-                    "Real Madrid": "#E2E2E2",
-                    "Girona": "#CD2534",
-                    "Barcelona": "#A50044",
-                    "Atletico Madrid": "#CE3524",
-                    "Athletic Bilbao": "#EE2523",
-                    "Real Sociedad": "#143C8B",
-                    "Real Betis": "#00954C",
-                    "Valencia": "#EE3524",
-                    "Villarreal": "#FFE667",
-                    "Getafe": "#005999",
-                    "Alaves": "#009AD7",
-                    "Sevilla": "#F43333",
-                    "Osasuna": "#D91A21",
-                    "Las Palmas": "#FFE400",
-                    "Celta Vigo": "#8AC3EE",
-                    "Rayo Vallecano": "#E53027",
-                    "Mallorca": "#E20613",
-                    "Cadiz": "#F2A40C",
-                    "Granada": "#C31632",
-                    "Almeria": "#EE1119",
-                }
-                TMP.homeTeam.name = TEAM_NAME[TMP.homeTeam.name] || TMP.homeTeam.name;
-                TMP.homeTeam.shorthand = title.innerText.substring(0, 3);
-                TMP.homeTeam.color = TEAM_COLOR[TMP.homeTeam.name];
-                TMP.awayTeam = {};
-                dumpString = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a').getAttribute('href');
-                dumpStringArray = dumpString.split('/');
-                TMP.awayTeam.id = dumpStringArray[3];
-                TMP.awayTeam.name = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow').innerText;
-                TMP.awayTeam.name = TEAM_NAME[TMP.awayTeam.name] || TMP.awayTeam.name;
-                TMP.awayTeam.shorthand = title.innerText.substring(8, 11);
-                TMP.awayTeam.color = TEAM_COLOR[TMP.awayTeam.name];
-                dumpString = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a').innerText;
-                dumpStringArray = dumpString.split(" ");
-                TMP.round = parseInt(dumpStringArray[dumpStringArray.length - 1]);
-                if (TMP.round == null) {
-                    TMP.round = "Relegation Play-Offs";
-                }
-                TMP.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
-                TMP.hour = document.querySelector('.duelParticipant__startTime').innerText.substring(11);
-                TMP.home = document.querySelector('.duelParticipant__home').innerText;
-                TMP.away = document.querySelector('.duelParticipant__away').innerText;
-                TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)').innerText);
-                TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)').innerText);
-                TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus').innerText;
-                return TMP;
-            });
-            Object.assign(match, MATCH);
-            delete match.link;
-        }
-
-        original.updated = new Date().toISOString().slice(0, 10);
-
-        for (let match of RESULT.matchesIteration) {
-            const roundIndex = original.results.findIndex(r => r.round === match.round);
-            if (roundIndex !== -1) {
-                const existingMatchIndex = original.results[roundIndex].matches.findIndex(m => m.id === match.id);
-                if (existingMatchIndex !== -1) {
-                    original.results[roundIndex].matches[existingMatchIndex] = match;
+                const homeTeamElement = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__home > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a');
+                if (homeTeamElement) {
+                    dumpString = homeTeamElement.getAttribute('href');
+                    dumpStringArray = dumpString.split('/');
+                    const homeTeamName = homeTeamElement.innerText.trim(); // Obtener el nombre del equipo local
+                    TMP.homeTeam.id = dumpStringArray[3];
+                    TMP.homeTeam.name = teamsData[homeTeamName]?.name || homeTeamName; // Buscar en teamsData
+                    TMP.homeTeam.shorthand = teamsData[homeTeamName]?.short || title.substring(0, 3);
+                    TMP.homeTeam.color = teamsData[homeTeamName]?.color || null;
                 } else {
-                    original.results[roundIndex].matches.push(match);
+                    TMP.homeTeam.id = null;
+                    TMP.homeTeam.name = "Unknown";
+                    TMP.homeTeam.shorthand = title.substring(0, 3);
+                    TMP.homeTeam.color = null;
                 }
-            } else {
-                original.results.push({
-                    round: match.round,
-                    matches: [match]
-                });
-            }
+
+                // Información del equipo visitante
+                TMP.awayTeam = {};
+                const awayTeamElement = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__away > div.participant__participantNameWrapper > div.participant__participantName.participant__overflow > a');
+                if (awayTeamElement) {
+                    dumpString = awayTeamElement.getAttribute('href');
+                    dumpStringArray = dumpString.split('/');
+                    const awayTeamName = awayTeamElement.innerText.trim(); // Obtener el nombre del equipo visitante
+                    TMP.awayTeam.id = dumpStringArray[3];
+                    TMP.awayTeam.name = teamsData[awayTeamName]?.name || awayTeamName; // Buscar en teamsData
+                    TMP.awayTeam.shorthand = teamsData[awayTeamName]?.short || title.substring(8, 11);
+                    TMP.awayTeam.color = teamsData[awayTeamName]?.color || null;
+                } else {
+                    TMP.awayTeam.id = null;
+                    TMP.awayTeam.name = "Unknown";
+                    TMP.awayTeam.shorthand = title.substring(8, 11);
+                    TMP.awayTeam.color = null;
+                }
+
+                // Información del torneo y ronda
+                const tournamentHeaderElement = document.querySelector('#detail > div.tournamentHeader.tournamentHeaderDescription > div > span.tournamentHeader__country > a');
+                TMP.round = tournamentHeaderElement ? parseInt(tournamentHeaderElement.innerText.split(" ").pop()) : "Relegation Play-Offs";
+
+                // Información del horario
+                const startTimeElement = document.querySelector('.duelParticipant__startTime');
+                const dateStr = startTimeElement ? startTimeElement.innerText.substring(0, 10) : null;
+                if (dateStr) {
+                    // Split the date string to convert from DD.MM.YYYY to YYYY-MM-DD
+                    const dateParts = dateStr.split('.');
+                    TMP.date = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+                } else {
+                    TMP.date = null;
+                }
+                TMP.hour = startTimeElement ? startTimeElement.innerText.substring(11) : null;
+
+                // Información de los equipos y goles
+                // TMP.home = document.querySelector('.duelParticipant__home')?.innerText || null;
+                // TMP.away = document.querySelector('.duelParticipant__away')?.innerText || null;
+                TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)')?.innerText) || 0;
+                TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)')?.innerText) || 0;
+                TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus')?.innerText || null;
+
+                return TMP;
+            }, teamsData); // Asegúrate de pasar teamsData correctamente
+
+            // Asignar la información extraída al objeto del partido
+            Object.assign(match, MATCH);
+            delete match.link; // Eliminar el enlace si ya no es necesario
+        } catch (error) {
+            console.error(`Error processing match ${match.link}:`, error);
         }
-
-        // Ordenar las rondas de menor a mayor
-        original.results.sort((a, b) => a.round - b.round);
-
-        await fs.writeFile(fileLocation, JSON.stringify(original, null, 2));
-        console.log('JSON file has been saved.');
-    } catch (error) {
-        console.error('An error occurred:', error);
-    } finally {
-        await browser.close();
     }
+
+    // Update the timestamp
+    footballRAPIObject.updated = new Date().toISOString().slice(0, 10);
+
+    // Update results
+    for (let match of RESULT.matchesIteration) {
+        const roundIndex = footballRAPIObject.results.findIndex(r => r.round === match.round);
+        if (roundIndex !== -1) {
+            const existingMatchIndex = footballRAPIObject.results[roundIndex].matches.findIndex(m => m.id === match.id);
+            if (existingMatchIndex !== -1) {
+                footballRAPIObject.results[roundIndex].matches[existingMatchIndex] = match;
+            } else {
+                footballRAPIObject.results[roundIndex].matches.push(match);
+            }
+        } else {
+            footballRAPIObject.results.push({
+                round: match.round,
+                matches: [match]
+            });
+        }
+    }
+
+    // Sort rounds by number
+    footballRAPIObject.results.sort((a, b) => a.round - b.round);
+    footballRAPIObject.results.forEach(result => {
+        result.matches.forEach(match => {
+            delete match.round;
+        });
+    });
+    await fs.writeFile(fileToEdit, JSON.stringify(footballRAPIObject)); // Save minified JSON
+    console.log('Minified JSON file has been saved.');
+
+    await browser.close();
 }
 
-getLast10Matches(RESULTS_URLS.SPAIN);
+// Clone the base object for each function call.
+function cloneBaseObject(baseObject) {
+    return JSON.parse(JSON.stringify(baseObject));
+}
+
+getLast10Matches(resultsURLs.SPAIN, teamsData, cloneBaseObject(footballRAPIObject));

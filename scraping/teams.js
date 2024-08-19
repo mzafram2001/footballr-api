@@ -17,7 +17,6 @@ const teamsEloURLs = {
 
 // Create the base object.
 const footballRAPIObject = {
-    "updated": new Date().toISOString().slice(0, 10),
     "teams": []
 };
 
@@ -348,7 +347,7 @@ async function getTeamsIndex(url, teamsData, footballRAPIObject) {
 
         const fileLocation = path.join(__dirname, `../db/teams.json`);
 
-        fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, teams: correctTeams }), 'utf8', (err) => {
+        fs.writeFile(fileLocation, JSON.stringify({ teams: correctTeams }), 'utf8', (err) => {
             if (err) {
                 console.log(`[Teams | 2024] - An error occurred while writing JSON object to file.`);
                 console.log(err);

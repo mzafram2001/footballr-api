@@ -15,7 +15,6 @@ const fixturesURLs = {
 
 // Create the base object.
 const footballRAPIObject = {
-    "updated": new Date().toISOString().slice(0, 10),
     "competitions": []
 };
 
@@ -186,7 +185,7 @@ async function getSchedules(url) {
     const fileLocation = path.join(__dirname, `../db/${result.yearStart}/fixtures/fixtures${leagueNameTrim}${result.yearStart}.json`);
 
     // Write the data to a JSON file.
-    fs.writeFile(fileLocation, JSON.stringify({ updated: footballRAPIObject.updated, fixtures: result.season }), 'utf8', (err) => {
+    fs.writeFile(fileLocation, JSON.stringify({ fixtures: result.season }), 'utf8', (err) => {
         if (err) {
             console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
             console.log(err);

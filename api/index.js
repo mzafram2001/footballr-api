@@ -106,7 +106,6 @@ app.get('/teams/:id', (ctx) => {
 
     if (team) {
         const response = {
-            updated: "2024-08-10",
             team: [team]
         };
         return ctx.json(response);
@@ -127,7 +126,6 @@ app.get('/countries/:id', (ctx) => {
 
     if (country) {
         const response = {
-            updated: "2024-08-10",
             country: [country]
         };
         return ctx.json(response);
@@ -148,7 +146,6 @@ app.get('/competitions/:id', (ctx) => {
 
     if (competition) {
         const response = {
-            updated: "2024-08-10",
             competition: [competition]
         };
         return ctx.json(response);

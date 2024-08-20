@@ -182,8 +182,8 @@ async function getLast10Matches(url, teamsData, footballRAPIObject) {
                 // Información de los equipos y goles
                 // TMP.home = document.querySelector('.duelParticipant__home')?.innerText || null;
                 // TMP.away = document.querySelector('.duelParticipant__away')?.innerText || null;
-                TMP.homeGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)')?.innerText) || 0;
-                TMP.awayGoals = parseInt(document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)')?.innerText) || 0;
+                TMP.homeGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(1)')?.innerText || 0;
+                TMP.awayGoals = document.querySelector('#detail > div.duelParticipant > div.duelParticipant__score > div > div.detailScore__wrapper > span:nth-child(3)')?.innerText || 0;
                 TMP.status = document.querySelector('.fixedHeaderDuel__detailStatus')?.innerText || null;
 
                 return TMP;
@@ -215,15 +215,24 @@ async function getLast10Matches(url, teamsData, footballRAPIObject) {
         }
     }
 
-    // Sort rounds by number
-    footballRAPIObject.results.sort((a, b) => a.round - b.round);
-    footballRAPIObject.results.forEach(result => {
+    // Sort rounds by number and convert round numbers to strings
+    footballRAPIObject.results.sort((a, b) => a.round - b.round).forEach(result => {
+        result.round = String(result.round); // Convert round to string
+
         result.matches.forEach(match => {
-            delete match.round;
+            delete match.round; // Remove round field from each match
         });
     });
-    await fs.writeFile(fileToEdit, JSON.stringify(footballRAPIObject)); // Save minified JSON
-    console.log('Minified JSON file has been saved.');
+
+    // Write the data to a JSON file.
+    fs.writeFile(fileToEdit, JSON.stringify(footballRAPIObject), 'utf8', (err) => {
+        if (err) {
+            console.log(`[LaLiga (Results) | 2024] - An error occurred while writing JSON object to file.`);
+            console.log(err);
+        } else {
+            console.log(`[LaLiga (Results) | 2024] - JSON file has been saved.`);
+        }
+    });
 
     await browser.close();
 }

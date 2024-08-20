@@ -105,8 +105,7 @@ async function getSchedules(url) {
         for (let i = reverseRoundsSelector.length - 1; i >= 0; i--) {
             const temp = {};
             let found = false;
-            temp.round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
-            round = parseInt(temp.round);
+            round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
             temp.matches = [];
             for (index in json.season) {
                 if (json.season[index].round == temp.round) {
@@ -145,7 +144,7 @@ async function getSchedules(url) {
             temp.awayTeam.color = awayTeamData.color;
 
             
-            temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
+            temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()).toString() || "Relegation Play-Offs";
             temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             let dateParts = temp.date.split('.');
             temp.date = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
@@ -187,10 +186,10 @@ async function getSchedules(url) {
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify({ fixtures: result.season }), 'utf8', (err) => {
         if (err) {
-            console.log(`[${result.name} | ${result.yearStart}] - An error occurred while writing JSON object to file.`);
+            console.log(`[LaLiga (Fixtures) | 2024] - An error occurred while writing JSON object to file.`);
             console.log(err);
         } else {
-            console.log(`[${result.name} | ${result.yearStart}] - JSON file has been saved.`);
+            console.log(`[LaLiga (Fixtures) | 2024] - JSON file has been saved.`);
         }
     });
 

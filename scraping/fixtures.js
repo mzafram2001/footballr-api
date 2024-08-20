@@ -46,7 +46,7 @@ const teamsData = {
 async function getSchedules(url) {
     // Launch the Puppeteer browser in headless mode.
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
@@ -105,7 +105,8 @@ async function getSchedules(url) {
         for (let i = reverseRoundsSelector.length - 1; i >= 0; i--) {
             const temp = {};
             let found = false;
-            round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
+            temp.round = parseInt(reverseRoundsSelector[i].innerText.substring(6));
+            round = parseInt(temp.round);
             temp.matches = [];
             for (index in json.season) {
                 if (json.season[index].round == temp.round) {
@@ -143,8 +144,8 @@ async function getSchedules(url) {
             temp.awayTeam.shorthand = awayTeamData.short || title.innerText.substring(6, 9);
             temp.awayTeam.color = awayTeamData.color;
 
-            
-            temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()).toString() || "Relegation Play-Offs";
+
+            temp.round = parseInt(document.querySelector('.tournamentHeader__country a').innerText.split(" ").pop()) || "Relegation Play-Offs";
             temp.date = document.querySelector('.duelParticipant__startTime').innerText.substring(0, 10);
             let dateParts = temp.date.split('.');
             temp.date = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
@@ -182,6 +183,15 @@ async function getSchedules(url) {
 
     // Define the file location for saving the data.
     const fileLocation = path.join(__dirname, `../db/${result.yearStart}/fixtures/fixtures${leagueNameTrim}${result.yearStart}.json`);
+
+    // Sort rounds by number and convert round numbers to strings
+    result.season.sort((a, b) => a.round - b.round).forEach(fixture => {
+        fixture.round = String(fixture.round); // Convert round to string
+
+        fixture.matches.forEach(match => {
+            delete match.round; // Remove round field from each match
+        });
+    });
 
     // Write the data to a JSON file.
     fs.writeFile(fileLocation, JSON.stringify({ fixtures: result.season }), 'utf8', (err) => {

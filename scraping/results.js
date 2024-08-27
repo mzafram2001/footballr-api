@@ -84,7 +84,7 @@ async function getLast10Matches(url, teamsData, footballRAPIObject) {
         const RESULTS_SELECTOR = document.querySelectorAll('.event__match');
         let round = 0;
         let ok = Array.prototype.slice.call(RESULTS_SELECTOR);
-        const LAST_10 = ok.slice(0, 10);
+        const LAST_10 = ok //.slice(0, 10);
         ok = Array.prototype.slice.call(ROUNDS_SELECTOR);
         const ROUNDS_ARRAY = ok;
         for (let i = LAST_10.length - 1; i >= 0; i--) {
@@ -203,11 +203,14 @@ async function getLast10Matches(url, teamsData, footballRAPIObject) {
         if (roundIndex !== -1) {
             const existingMatchIndex = footballRAPIObject.results[roundIndex].matches.findIndex(m => m.id === match.id);
             if (existingMatchIndex !== -1) {
+                // Actualiza el partido existente
                 footballRAPIObject.results[roundIndex].matches[existingMatchIndex] = match;
             } else {
+                // Añade un nuevo partido si no existe
                 footballRAPIObject.results[roundIndex].matches.push(match);
             }
         } else {
+            // Añade una nueva ronda con su partido
             footballRAPIObject.results.push({
                 round: match.round,
                 matches: [match]
@@ -217,10 +220,10 @@ async function getLast10Matches(url, teamsData, footballRAPIObject) {
 
     // Sort rounds by number and convert round numbers to strings
     footballRAPIObject.results.sort((a, b) => a.round - b.round).forEach(result => {
-        result.round = String(result.round); // Convert round to string
-
+        result.round = String(result.round); // Convierte el número de la ronda a string
+    
         result.matches.forEach(match => {
-            delete match.round; // Remove round field from each match
+            delete match.round; // Elimina el campo 'round' de cada partido
         });
     });
 

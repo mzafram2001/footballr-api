@@ -3,7 +3,6 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
 // Import all files.
-import countries from '../db/countries.json';
 import competitions from '../db/competitions.json';
 import standingsLaLiga from '../db/2024/standings/standingsLaLiga2024.json';
 import fixturesLaLiga from '../db/2024/fixtures/fixturesLaLiga2024.json';
@@ -23,19 +22,7 @@ function generateParameter(name, description, endpoint, example, status) {
     return { name, description, endpoint, example, status };
 }
 
-// Define the countries endpoint metadata.
-const countriesEndpoint = {
-    name: 'countries',
-    description: 'List all countries.',
-    endpoint: '/countries',
-    example: `${baseURL}/countries`,
-    status: 'AVAILABLE',
-    parameters: [
-        generateParameter('id', 'List one country given by id.', '/countries/:id', `${baseURL}/countries/ES`, 'AVAILABLE'),
-    ],
-}
-
-// Define the countries endpoint metadata.
+// Define the teams endpoint metadata.
 const teamsEndpoint = {
     name: 'teams',
     description: 'List all teams.',
@@ -89,7 +76,7 @@ app.get('/', (ctx) => {
         version: footballrEndpoint.version,
         updated: footballrEndpoint.updated,
         message: footballrEndpoint.message,
-        endpoints: [countriesEndpoint, competitionsEndpoint, teamsEndpoint]
+        endpoints: [competitionsEndpoint, teamsEndpoint]
     };
     return ctx.json(data);
 });
@@ -107,26 +94,6 @@ app.get('/teams/:id', (ctx) => {
     if (team) {
         const response = {
             team: [team]
-        };
-        return ctx.json(response);
-    } else {
-        return ctx.json({ errorCode: '404' }, 404);
-    }
-});
-
-// Endpoint to list all countries.
-app.get('/countries', (ctx) => {
-    return ctx.json(countries);
-});
-
-// Endpoint to get a specific country by ID.
-app.get('/countries/:id', (ctx) => {
-    const id = ctx.req.param('id').toUpperCase();
-    const country = countries.countries.find((country) => country.id === id);
-
-    if (country) {
-        const response = {
-            country: [country]
         };
         return ctx.json(response);
     } else {

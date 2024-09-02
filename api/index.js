@@ -12,7 +12,7 @@ import teams from '../db/teams.json';
 // Initialize the Hono application.
 const app = new Hono();
 const baseURL = 'https://api-footballr.arkeos.workers.dev';
-const apiVersion = 'v20240822';
+const apiVersion = 'v20240902';
 
 // Apply CORS middleware to all routes.
 app.use('/*', cors());
@@ -60,7 +60,7 @@ function formatDate(apiVersion) {
 // Define the base API information.
 const footballrEndpoint = {
     name: 'FootballR API',
-    description: 'Advanced API designed to provide accurate, real-time data on the world of football.',
+    description: 'Advanced API designed to provide accurate, real time data and stats on the world of football.',
     repoURL: 'https://github.com/mzafram2001/footballr-api',
     version: apiVersion,
     updated: formatDate(apiVersion),

@@ -37,15 +37,15 @@ const teamsEndpoint = {
 // Define the competitions endpoint metadata.
 const competitionsEndpoint = {
     name: 'competitions',
-    description: 'List all competitions.',
+    description: 'List all available competitions.',
     endpoint: '/competitions',
     example: `${baseURL}/competitions`,
     status: 'AVAILABLE',
     parameters: [
         generateParameter('id', 'List one competition given by id.', '/competitions/:id', `${baseURL}/competitions/LAL`, 'AVAILABLE'),
         generateParameter('standings', 'List the current standings for a league.', '/competitions/:id/standings', `${baseURL}/competitions/LAL/standings`, 'AVAILABLE'),
-        generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'AVAILABLE'),
-        generateParameter('results', 'List the results for a league.', '/competitions/:id/results', `${baseURL}/competitions/LAL/results`, 'AVAILABLE'),
+        // generateParameter('fixtures', 'List the fixtures for a league.', '/competitions/:id/fixtures', `${baseURL}/competitions/LAL/fixtures`, 'AVAILABLE'),
+        // generateParameter('results', 'List the results for a league.', '/competitions/:id/results', `${baseURL}/competitions/LAL/results`, 'AVAILABLE'),
     ],
 };
 
@@ -76,7 +76,7 @@ app.get('/', (ctx) => {
         version: footballrEndpoint.version,
         updated: footballrEndpoint.updated,
         message: footballrEndpoint.message,
-        endpoints: [competitionsEndpoint, teamsEndpoint]
+        endpoints: [competitionsEndpoint]
     };
     return ctx.json(data);
 });

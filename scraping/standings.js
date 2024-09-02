@@ -103,7 +103,7 @@ async function getStandings(url, teamsData, footballRAPIObject) {
             const scoreArray = score.split(':');
             tmp.goalsFor = scoreArray[0];
             tmp.goalsAgainst = scoreArray[1];
-            tmp.goalDifference = (tmp.goalsFor - tmp.goalsAgainst).toString();
+            tmp.goalsDifference = (tmp.goalsFor - tmp.goalsAgainst).toString();
             tmp.points = element.querySelector('.table__cell--points').innerText.trim() || 0;
             const formElements = element.querySelectorAll('.tableCellFormIcon > button');
             tmp.form = Array.from(formElements).map(btn => btn.innerText).join(',') || "-";

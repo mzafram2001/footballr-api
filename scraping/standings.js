@@ -22,7 +22,7 @@ const footballRAPIObject = {
 const teamsData = {
     "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CB3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#25961D" },
-    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#DEDEDE" },
+    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#B0B0B0" },
     "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#FCF7F7" },
     "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
     "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
@@ -32,13 +32,13 @@ const teamsData = {
     "Getafe": { short: "GET", name: "Getafe", color: "#1611A8" },
     "Alaves": { short: "ALA", name: "Alavés", color: "#0761AF" },
     "Sevilla": { short: "SEV", name: "Sevilla", color: "#FAFAFA" },
-    "Osasuna": { short: "OSA", name: "Osasuna", color: "#AB0505" },
+    "Osasuna": { short: "OSA", name: "Osasuna", color: "#D91A21" },
     "Las Palmas": { short: "PAL", name: "Las Palmas", color: "#FFE400" },
     "Celta Vigo": { short: "CEL", name: "Celta Vigo", color: "#8ABDFF" },
     "Rayo Vallecano": { short: "RAY", name: "Rayo Vallecano", color: "#F20202" },
-    "Mallorca": { short: "MAL", name: "Mallorca", color: "#A10505" },
+    "Mallorca": { short: "MAL", name: "Mallorca", color: "#7A0404" },
     "Valladolid": { short: "VLL", name: "Valladolid", color: "#3D1169" },
-    "Leganes": { short: "LEG", name: "Leganés", color: "#0C1F6E" },
+    "Leganes": { short: "LEG", name: "Leganés", color: "#AD8f1f" },
     "Espanyol": { short: "ESP", name: "Espanyol", color: "#007FC8" },
 };
 

@@ -106,7 +106,10 @@ async function getStandings(url, teamsData, footballRAPIObject) {
             tmp.goalsDifference = (tmp.goalsFor - tmp.goalsAgainst).toString();
             tmp.points = element.querySelector('.table__cell--points').innerText.trim() || 0;
             const formElements = element.querySelectorAll('.tableCellFormIcon > button');
-            tmp.form = Array.from(formElements).map(btn => btn.innerText).join(',') || "-";
+            tmp.form = Array.from(formElements)
+                .filter(btn => btn.innerText !== '?')
+                .map(btn => btn.innerText)
+                .join(',') || "-";
             json.standings.push(tmp);
         });
 

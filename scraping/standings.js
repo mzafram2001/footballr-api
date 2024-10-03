@@ -20,10 +20,10 @@ const footballRAPIObject = {
 
 // Define the properties of teamsData.
 const teamsData = {
-    "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#FA0000" },
+    "Atl. Madrid": { short: "ATM", name: "Atlético Madrid", color: "#CB3524" },
     "Betis": { short: "BET", name: "Real Betis", color: "#25961D" },
-    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#FF0A0A" },
-    "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#DEDEDE" },
+    "Ath Bilbao": { short: "BIL", name: "Athletic Bilbao", color: "#DEDEDE" },
+    "Real Madrid": { short: "RMA", name: "Real Madrid", color: "#FCF7F7" },
     "Girona": { short: "GIR", name: "Girona", color: "#CD2534" },
     "Barcelona": { short: "BAR", name: "Barcelona", color: "#A50044" },
     "Real Sociedad": { short: "RSO", name: "Real Sociedad", color: "#1610DE" },

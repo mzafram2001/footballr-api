@@ -64,14 +64,14 @@
   </ul>
   <p>Some URL examples:</p>
   <ul>
-    <li>https://api-footballr.arkeos.workers.dev/areas/ITA</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/LAL/standings</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/LI1/scorers</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/fixtures</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/SEA/matches/14</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
-    <li>https://api-footballr.arkeos.workers.dev/teams/W8mj7MDD</li>
+    <li>https://footballr-api.arkeos.workers.dev/areas/ITA</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/LAL/standings</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/LI1/scorers</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/PRL/matches</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/BUN/fixtures</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/SEA/matches/14</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
+    <li>https://footballr-api.arkeos.workers.dev/teams/W8mj7MDD</li>
   </ul>
 </div>
 <br>
@@ -91,14 +91,14 @@
   </ul>
   <p>Algunas URL de ejemplo:</p>
   <ul>
-    <li>https://api-footballr.arkeos.workers.dev/areas/ITA</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/LAL/standings</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/LI1/scorers</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/BUN/fixtures</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/SEA/matches/14</li>
-    <li>https://api-footballr.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
-    <li>https://api-footballr.arkeos.workers.dev/teams/W8mj7MDD</li>
+    <li>https://footballr-api.arkeos.workers.dev/areas/ITA</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/LAL/standings</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/LI1/scorers</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/PRL/matches</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/BUN/fixtures</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/SEA/matches/14</li>
+    <li>https://footballr-api.arkeos.workers.dev/competitions/PRL/matches/1/EkT4QbqS</li>
+    <li>https://footballr-api.arkeos.workers.dev/teams/W8mj7MDD</li>
   </ul>
 </div>
 <br>
